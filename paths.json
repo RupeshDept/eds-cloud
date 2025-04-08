@@ -1,10 +1,11 @@
 {
   "mappings": [
-    "/content/eds-cloud-ru01/:/",
-    "/content/eds-cloud-ru01/configuration:/.helix/config.json",
-    "/content/eds-cloud-ru01/metadata:/metadata.json"
+    "/content/eds-ru01/:/",
+    "/content/eds-ru01/configuration:/.helix/config.json",
+    "/content/eds-ru01/metadata:/metadata.json",
+    "/content/eds-ru01/api/faq:/api/faq.json"
   ],
   "includes": [
-    "/content/eds-cloud-ru01/"
+    "/content/eds-ru01/"
   ]
 }
