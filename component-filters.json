@@ -21,6 +21,12 @@
     ]
   },
   {
+    "id": "swiper",
+    "components": [
+      "text"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
