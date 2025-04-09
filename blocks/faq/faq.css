@@ -1,0 +1,28 @@
+@import url("../accordion/accordion.css");
+
+.filter-ul{
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    font-weight: 600;
+    color: rebeccapurple;
+}
+
+.filter-ul li {
+    display: inline-table;
+    border: 1px solid #c3c7d0;
+    border-radius: 23px;
+    color: #6a738a;
+    background: #fff;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 16px;
+    padding: 10px 30px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.filter-ul li.active{
+    background: #232b5a;
+    color: #fff;
+}
