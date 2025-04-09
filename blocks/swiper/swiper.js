@@ -1,4 +1,4 @@
-import { Swiper } from "../swiper/swiper-bundle.min.js"
+import Swiper from "../swiper/swiper-bundle.min.js"
 
 export default function decorate(block) {
     console.log(block)
