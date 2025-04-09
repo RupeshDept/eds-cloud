@@ -23,7 +23,8 @@
   {
     "id": "swiper",
     "components": [
-      "text"
+      "text",
+      "hero"
     ]
   },
   {
