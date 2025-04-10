@@ -2,8 +2,10 @@ import { div, ul, li, p } from "../../scripts/dom-helpers.js"
 import buildBlockDecorate from '../accordion/accordion.js'
 
 export default async function decorate(block) {
-    const path = block.textContent.trim()
-    block.textContent = "";
+    // const path = block.textContent.trim()
+    // block.textContent = "";
+    const path = document.querySelector('.faq a').href
+    document.querySelector('.faq a').remove()
     const res = await fetch(path)
     const data = await res.json()
     const mydata = data.data

@@ -216,5 +216,23 @@
         "multi": false
       }
     ]
+  },
+  {
+    "id": "pms-hero",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      }
+    ]
   }
 ]

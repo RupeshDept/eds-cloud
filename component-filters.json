@@ -17,14 +17,15 @@
       "columns",
       "fragment",
       "faq",
-      "swiper"
+      "swiper",
+      "pms-hero"
     ]
   },
   {
     "id": "swiper",
     "components": [
       "text",
-      "hero",
+      "hero"
     ]
   },
   {
