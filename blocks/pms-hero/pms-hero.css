@@ -1,0 +1,16 @@
+.pms-hero-wrapper{
+    width: 100%;
+    /* min-height: 330px; */
+    /* padding-bottom: 40px; */
+    padding: 0px;
+    background-color: #2b2e8c;
+    background-size: cover;
+    background-position: 100% 100%;
+    color: white;
+}
+
+.pms-hero{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 25px;
+}

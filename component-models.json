@@ -234,5 +234,17 @@
         "multi": false
       }
     ]
+  },
+  {
+    "id": "pms-navbar",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
   }
 ]
