@@ -6,7 +6,7 @@
     "/content/eds-ru01/api/faq:/api/faq.json",
     "/content/eds-ru01/api/form-api:/api/form-api.json",
     "/content/eds-ru01/api/fund-api:/api/fund-api.json",
-    "/content/eds-ru01/placeholder/placeholder:/placeholder/placeholder.json"
+    "/content/eds-ru01/placeholder:/placeholder.json"
   ],
   "includes": [
     "/content/eds-ru01/"
