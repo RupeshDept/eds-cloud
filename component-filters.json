@@ -20,7 +20,8 @@
       "swiper",
       "pms-hero",
       "pms-navbar",
-      "pms-form"
+      "pms-form",
+      "fund-api"
     ]
   },
   {
