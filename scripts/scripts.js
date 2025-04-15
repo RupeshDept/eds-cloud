@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import {
   loadHeader,
   loadFooter,
@@ -12,6 +14,7 @@ import {
   loadCSS,
 } from './aem.js';
 
+import delayed from './delayed.js';
 /**
  * Moves all the attributes from a given elmenet to another given element.
  * @param {Element} from the element to copy attributes from
@@ -151,6 +154,17 @@ loadPage();
 export function fetchAPI(method, url, data) {
   return new Promise(async (resolve, reject) => {
     try {
+      // Optional: tag which API endpoint was called
+      // Sentry.configureScope(function (scope) {
+      //   scope.setTag("api-url", url); // Add a tag
+      //   scope.setContext("api-request", {
+      //     method,
+      //     url,
+      //     data
+      //   });
+      // });
+
+
       if (method === 'GET') {
         const resp = await fetch(url);
         resolve(resp);
@@ -169,7 +183,8 @@ export function fetchAPI(method, url, data) {
         const request = new Request(url, {
           method: 'POST',
           body: JSON.stringify(data.requestJson),
-          headers: data.headerJson,
+          headers: data.headerJson
+          // mode: 'no-cors'
         });
         const response = await fetch(request);
         const json = await response.json();
@@ -181,3 +196,8 @@ export function fetchAPI(method, url, data) {
     }
   });
 }
+
+
+window.addEventListener('load', () => {
+  delayed(); // ✅ this must be here!
+});

@@ -21,7 +21,14 @@
       "pms-hero",
       "pms-navbar",
       "pms-form",
-      "fund-api"
+      "fund-api",
+      "tabs"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tabsitem"
     ]
   },
   {
