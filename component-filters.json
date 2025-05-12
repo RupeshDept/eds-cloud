@@ -22,7 +22,8 @@
       "pms-navbar",
       "pms-form",
       "fund-api",
-      "tabs"
+      "tabs",
+      "calculators"
     ]
   },
   {

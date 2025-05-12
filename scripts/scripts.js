@@ -1,5 +1,7 @@
 /* eslint-disable */
 
+import loadFragment from '../blocks/fragment/fragment.js';
+
 import {
   loadHeader,
   loadFooter,
@@ -15,6 +17,7 @@ import {
 } from './aem.js';
 
 import delayed from './delayed.js';
+
 /**
  * Moves all the attributes from a given elmenet to another given element.
  * @param {Element} from the element to copy attributes from
@@ -112,12 +115,15 @@ async function loadEager(doc) {
   }
 }
 
+
+
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
   const main = doc.querySelector('main');
+  autolinkFragements(doc); // 15 Apr 25
   await loadSections(main);
 
   const { hash } = window.location;
@@ -201,3 +207,17 @@ export function fetchAPI(method, url, data) {
 window.addEventListener('load', () => {
   delayed(); // ✅ this must be here!
 });
+
+// Fragment 15 Apr 25
+
+function autolinkFragements(element) {
+  element.querySelectorAll('a').forEach((origin) => {
+    if (origin && origin.href && origin.href.includes('/fragment/')) {
+      const parent = origin.parentElement;
+      const div = document.createElement("div");
+      div.append(origin);
+      parent.append(div);
+      loadFragment(div);
+    }
+  })
+}
