@@ -23,7 +23,9 @@
       "pms-form",
       "fund-api",
       "tabs",
-      "calculators"
+      "calculators",
+      "calculatorswp",
+      "calculatorexpert"
     ]
   },
   {
