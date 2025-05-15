@@ -1,0 +1,33 @@
+.sip-container {
+  padding: 2rem;
+  background-color: #f5f6ff;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.sip-inputs > div {
+  margin-bottom: 1rem;
+}
+
+.sip-results {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.sip-growth-table {
+  margin-top: 2rem;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}
+
+.growth-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.growth-row .period {
+  color: #555;
+}
