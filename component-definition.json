@@ -298,14 +298,14 @@
         },
         {
           "title": "Calculator SWP ",
-          "id": "calculatorswp",
+          "id": "calculator-swp",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Calculator SWP",
-                  "model": "calculatorswp"
+                  "model": "calculator-swp"
                 }
               }
             }
@@ -313,14 +313,14 @@
         },
         {
           "title": "Calculator Expert",
-          "id": "calculatorexpert",
+          "id": "calculator-expert",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Calculator Expert",
-                  "model": "calculatorexpert"
+                  "model": "calculator-expert"
                 }
               }
             }
