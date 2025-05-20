@@ -1,136 +1,264 @@
 /* eslint-disable */
 
-// sip-calculator.js
 // import {
-//     div, span, button, select, option, input, strong, text, br
-// } from '../../scripts/dom-helpers.js';
-
+//   div,
+//   label,
+//   input,
+//   select,
+//   option,
+//   p,
+//   br,
+// } from "../../scripts/dom-helper.js";
 // export default function decorate(block) {
+//   const yearsOptions = [1, 3, 5, 10, 15];
+//   const returnRates = Array.from({ length: 13 }, (_, i) => i + 1);
+//   const inflationYears = Array.from({ length: 25 }, (_, i) => i + 1);
+//   const counter = [];
+//   for (let index = 1; index <= 13; index++) {
+//     counter.push(index);
+//   }
+//   block.append(
+//     div(
+//       { class: "mainDiv" },
+//       div(
+//         { class: "amount-div commonclass" },
+//         label("Your Monthly SIP Amount"),
+//         br(),
+//         input({
+//           type: "text",
+//           value: "5000",
+//           class: "amount",
+//           onchange: calculateSIP,
+//         })
+//       ),
+//       div(
+//         { class: "year-div commonclass" },
+//         label("Duration"),
+//         br(),
+//         select(
+//           { class: "years", onchange: calculateSIP },
+//           ...yearsOptions.map((year) => {
+//             return option({ value: year }, year + " year");
+//           })
+//         )
+//       ),
+//       div(
+//         { class: "commonclass" },
+//         p({ class: "resulatinvestamut" }, "Investment Amt", br(), "60000.00")
+//       ),
+//       div(
+//         { class: "rate-div2 commonclass" },
+//         div(
+//           { class: "rate-div" },
+//           label("Expected Annual Return"),
+//           select(
+//             { class: "returnRate", onchange: calculateSIP },
+//             ...counter.map((element) => {
+//               return option({ value: element }, element + " %");
+//             })
+//           )
+//         ),
+//         p({ class: "displayestimateamt" }, "60326.00")
+//       )
+//       //div({ class: "result-div commonclass" }, p({ class: "result" })),
+//       //button({ onclick: calculateSIP }, "Calculate")
+//     ),
 
+//     div(
+//       { class: "mainDiv inflation-calculator" },
+//       p("Inflation Impact Calculator"),
+//       div(
+//         { class: "commonclass" },
+//         label("Current Cost"),
+//         br(),
+//         input({
+//           type: "text",
+//           value: "1000",
+//           class: "current-cost",
+//           onchange: calculateInflation,
+//         })
+//       ),
+//       div(
+//         { class: "commonclass" },
+//         label("Inflation Rate (%)"),
+//         br(),
+//         input({
+//           type: "text",
+//           value: "6",
+//           class: "inflation-rate",
+//           onchange: calculateInflation,
+//         })
+//       ),
+//       div(
+//         { class: "commonclass" },
+//         label("Years"),
+//         br(),
+//         select(
+//           { class: "inflation-years", onchange: calculateInflation },
+//           ...inflationYears.map((year) =>
+//             option({ value: year }, `${year} years`)
+//           )
+//         )
+//       ),
+//       div(
+//         { class: "commonclass" },
+//         p({ class: "inflation-result" }, "Future Cost: ₹ 0")
+//       )
+//     )
+//   );
+// }
+// function calculateSIP() {
+//   var amount = parseFloat(document.getElementsByClassName("amount")[0].value);
+//   var years = parseInt(document.getElementsByClassName("years")[0].value);
+//   var returnRate = parseFloat(
+//     document.getElementsByClassName("returnRate")[0].value
+//   );
+
+//   if (isNaN(amount) || isNaN(years) || isNaN(returnRate)) {
+//     document.getElementById("result").innerHTML = "Please enter valid values.";
+//     return;
+//   }
+
+//   var months = years * 12;
+//   var monthlyRate = returnRate / 12 / 100;
+
+//   var futureValue =
+//     amount *
+//     (((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate) *
+//       (1 + monthlyRate));
+//   var invested = amount * months;
+//   // var gainPercent = ((futureValue - invested) / invested) * 100;
+//   document.getElementsByClassName("resulatinvestamut")[0].innerHTML =
+//     "Investment Amt" + "<br>" + invested.toFixed();
+//   document.getElementsByClassName("displayestimateamt")[0].innerHTML =
+//     futureValue.toFixed();
+//   //   document.getElementsByClassName("result")[0].innerHTML =
+//   //     "Invested Amount: ₹" +
+//   //     invested.toFixed(2) +
+//   //     "<br>" +
+//   //     "Estimated Amount: ₹" +
+//   //     futureValue.toFixed(2) +
+//   //     "<br>" +
+//   //     "Returns: " +
+//   //     gainPercent.toFixed(2) +
+//   //     "%";
 // }
 
+// function calculateInflation() {
+//   const cost = parseFloat(document.querySelector(".current-cost").value);
+//   const rate = parseFloat(document.querySelector(".inflation-rate").value);
+//   const years = parseInt(document.querySelector(".inflation-years").value);
 
-// import { createTag } from '../../scripts/dom-helpers.js';
+//   if (isNaN(cost) || isNaN(rate) || isNaN(years)) return;
 
-// export default function decorate(block) {
-//   const container = createTag('div', { class: 'sip-container' });
-
-//   const inputRow = createTag('div', { class: 'sip-inputs' }, `
-//     <label>Monthly SIP Amount: <input type="number" id="sip-amount" value="50000" /></label>
-//     <label>Duration: 
-//       <select id="sip-duration">
-//         <option value="5">5 Years</option>
-//         <option value="10">10 Years</option>
-//         <option value="15">15 Years</option>
-//       </select>
-//     </label>
-//     <label>Expected Return: <input type="number" id="sip-rate" value="13" /></label>
-//   `);
-
-//   const resultDiv = createTag('div', { class: 'sip-results' });
-
-//   const tableDiv = createTag('div', { class: 'sip-growth-table' });
-
-//   container.append(inputRow, resultDiv, tableDiv);
-//   block.innerHTML = '';
-//   block.append(container);
-
-//   // Call your calc function on change
-//   container.querySelectorAll('input, select').forEach(el => {
-//     el.addEventListener('input', () => calculateSIP(container));
-//   });
-
-//   calculateSIP(container);
+//   const futureCost = cost * Math.pow(1 + rate / 100, years);
+//   document.querySelector(".inflation-result").innerHTML =
+//     "Future Cost: ₹ " + futureCost.toFixed(2);
 // }
 
-
+// inflation-calculator.js
 import {
-    div, span, button, select, option, input, strong, text, br
-} from '../../scripts/dom-helpers.js';
+    div,
+    label,
+    input,
+    p,
+    button,
+    span,
+} from "../../scripts/dom-helper.js";
 
 export default function decorate(block) {
-    const container = div({ class: 'sip-container' });
+    block.innerHTML = "";
 
-    // --- Input Fields ---
-    const sipAmountInput = input({ type: 'number', value: 50000, id: 'sip-amount' });
-    const durationSelect = select({ id: 'sip-duration' },
-        option({ value: 5 }, '5 Years'),
-        option({ value: 10 }, '10 Years'),
-        option({ value: 15 }, '15 Years'),
-        option({ value: 20 }, '20 Years')
-    );
-    const rateInput = input({ type: 'number', value: 13, id: 'sip-rate' });
+    const inputGroup = (labelText, type, className, value) =>
+        div({ class: "input-group" },
+            label({}, labelText),
+            input({
+                type,
+                class: className,
+                value,
+                oninput: handleInputChange,
+            })
+        );
 
-    const inputFields = div({ class: 'sip-inputs' },
-        div({}, strong('Monthly SIP Amount: '), sipAmountInput),
-        div({}, strong('Duration: '), durationSelect),
-        div({}, strong('Expected Return (%): '), rateInput)
-    );
+    const sliderGroup = (className, value, min, max) =>
+        div({ class: "slider-group" },
+            input({
+                type: "range",
+                class: className,
+                min,
+                max,
+                value,
+                oninput: handleSliderChange,
+            })
+        );
 
-    // --- Results Display ---
-    const resultDisplay = div({ class: 'sip-results' });
-
-    // --- Compounding Table Container ---
-    const growthTable = div({ class: 'sip-growth-table' });
-
-    // Append all
-    container.append(inputFields, resultDisplay, growthTable);
-    block.textContent = '';
-    block.append(container);
-
-    // Event Listeners
-    [sipAmountInput, durationSelect, rateInput].forEach(el => {
-        el.addEventListener('input', () => calculateAndRender(sipAmountInput, durationSelect, rateInput, resultDisplay, growthTable));
-    });
-
-    // Initial render
-    calculateAndRender(sipAmountInput, durationSelect, rateInput, resultDisplay, growthTable);
-}
-
-// --- SIP Calculation Logic ---
-function calculateAndRender(sipAmountInput, durationSelect, rateInput, resultDisplay, growthTable) {
-    const monthlyAmount = +sipAmountInput.value;
-    const years = +durationSelect.value;
-    const rate = +rateInput.value;
-
-    const months = years * 12;
-    const monthlyRate = rate / 100 / 12;
-
-    const investedAmt = monthlyAmount * months;
-    const maturityAmt = monthlyAmount * ((Math.pow(1 + monthlyRate, months) - 1) * (1 + monthlyRate)) / monthlyRate;
-
-    resultDisplay.innerHTML = '';
-    resultDisplay.append(
-        div({}, strong('Investment Amt: '), text(`₹${formatAmount(investedAmt)}`)),
-        div({}, strong('Estimated Amt: '), text(`₹${formatAmount(maturityAmt)}`))
-    );
-
-    renderCompoundingTable(growthTable, investedAmt);
-}
-
-// --- Compounding Table Logic ---
-function renderCompoundingTable(container, baseAmt) {
-    const tableData = [
-        { multiplier: 1.4, period: 'in 5yrs' },
-        { multiplier: 2, period: 'in 7yrs 9m' },
-        { multiplier: 3, period: 'in 10yrs 10m' },
-        { multiplier: 5, period: 'in 14yrs 10m' },
-        { multiplier: 10, period: 'in 20yrs 2m' }
-    ];
-
-    const rows = tableData.map(row =>
-        div({ class: 'growth-row' },
-            span({}, `₹${formatAmount(baseAmt * row.multiplier)}`),
-            span({ class: 'period' }, `(${row.multiplier}X ${row.period})`)
+    block.append(
+        div({ class: "inflation-calculator" },
+            div({ class: "inputs-section" },
+                p({ class: "heading" }, "Inflation Calculator"),
+                inputGroup("Current Cost (₹)", "number", "current-cost", "10000"),
+                inputGroup("Inflation rate (% p.a.)", "number", "inflation-rate", "5"),
+                sliderGroup("inflation-slider", 5, 1, 30),
+                inputGroup("Investment period (in years)", "number", "years", "25"),
+                sliderGroup("years-slider", 25, 1, 25),
+                button({ class: "calculate-btn" }, "INVEST NOW")
+            ),
+            div({ class: "result-section" },
+                p({}, "Number of Years: ", span({ class: "years-display" }, "25")),
+                div({ class: "circle-chart" },
+                    div({ class: "donut" }),
+                    p({ class: "future-cost" }, "Future Cost ₹33,864")
+                ),
+                div({ class: "cost-info" },
+                    p({}, "Current Cost ₹", span({ class: "curr-cost" }, "10000")),
+                    p({}, "Cost Increase (per annum) ₹", span({ class: "increase" }, "23864"))
+                )
+            )
         )
     );
 
-    container.innerHTML = '';
-    container.append(...rows);
+    calculateInflation();
 }
 
-// --- Helper ---
-function formatAmount(val) {
-    return val.toLocaleString('en-IN', { maximumFractionDigits: 0 });
+function handleInputChange(e) {
+    const className = e.target.className;
+    if (className === "inflation-rate") {
+        document.querySelector(".inflation-slider").value = e.target.value;
+    } else if (className === "years") {
+        document.querySelector(".years-slider").value = e.target.value;
+    }
+    calculateInflation();
 }
 
+function handleSliderChange(e) {
+    const className = e.target.className;
+    if (className === "inflation-slider") {
+        document.querySelector(".inflation-rate").value = e.target.value;
+    } else if (className === "years-slider") {
+        document.querySelector(".years").value = e.target.value;
+    }
+    calculateInflation();
+}
+
+function calculateInflation() {
+    const cost = parseFloat(document.querySelector(".current-cost").value) || 0;
+    const rate = parseFloat(document.querySelector(".inflation-rate").value) || 0;
+    const years = parseInt(document.querySelector(".years").value) || 0;
+
+    const futureCost = cost * Math.pow(1 + rate / 100, years);
+    const increase = futureCost - cost;
+
+    document.querySelector(".future-cost").textContent = `Future Cost ₹${Math.round(futureCost).toLocaleString()}`;
+    document.querySelector(".curr-cost").textContent = cost.toLocaleString();
+    document.querySelector(".increase").textContent = Math.round(increase).toLocaleString();
+    document.querySelector(".years-display").textContent = years;
+
+    updateDonut(cost, increase);
+}
+
+function updateDonut(current, increase) {
+    const total = current + increase;
+    const percent = (increase / total) * 100;
+    const donut = document.querySelector(".donut");
+    donut.style.background = `conic-gradient(#2b9fd9 ${percent}%, #332f80 0)`;
+}
