@@ -29,7 +29,9 @@
       "calculator-ret",
       "calculator-sip",
       "calculator-inflation",
-      "calculator-pastperf"
+      "calculator-pastperf",
+      "calculator-lumpsum",
+      "calculator-goal-based"
     ]
   },
   {
