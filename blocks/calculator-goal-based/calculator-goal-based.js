@@ -38,7 +38,7 @@ export default function (block) {
         );
     };
 
-    const goalBasedCalc = document.querySelector(".goal-based-calculator");
+    const goalBasedCalc = document.querySelector(".calculator-goal-based");
     // Calculator Content
     const goalBasedContent = div(
         { class: "goal-based-calc-content" },

@@ -1,7 +1,7 @@
 /*eslint-disable*/
 
 import { div, h3, form, label, input, span } from "../../scripts/dom-helpers.js";
-import { } from "../lumpsum-calculator/chart.js";
+import { } from "../calculator-lumpsum/chart.js";
 export default function (block) {
     // Function form creating left content (Input Fields and Range)
     function createField(id, labelText, min, max, value) {
@@ -38,7 +38,7 @@ export default function (block) {
         );
     };
 
-    const lumpsumCalc = document.querySelector(".lumpsum-calculator");
+    const lumpsumCalc = document.querySelector(".calculator-lumpsum");
     // Calculator Content
     const lumpsumCalcContent = div({ class: "lumpsum-calc-content" },
         // Left Content
