@@ -31,7 +31,8 @@
       "calculator-inflation",
       "calculator-pastperf",
       "calculator-lumpsum",
-      "calculator-goal-based"
+      "calculator-goal-based",
+      "calculator-emi"
     ]
   },
   {
