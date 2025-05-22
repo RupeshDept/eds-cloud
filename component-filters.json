@@ -32,7 +32,8 @@
       "calculator-pastperf",
       "calculator-lumpsum",
       "calculator-goal-based",
-      "calculator-emi"
+      "calculator-emi",
+      "calculator-cost-delay"
     ]
   },
   {
