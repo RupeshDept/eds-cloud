@@ -33,7 +33,8 @@
       "calculator-lumpsum",
       "calculator-goal-based",
       "calculator-emi",
-      "calculator-cost-delay"
+      "calculator-cost-delay",
+      "calculator-step-up"
     ]
   },
   {
