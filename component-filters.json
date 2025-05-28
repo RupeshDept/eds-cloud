@@ -34,7 +34,8 @@
       "calculator-goal-based",
       "calculator-emi",
       "calculator-cost-delay",
-      "calculator-step-up"
+      "calculator-step-up",
+      "our-fund"
     ]
   },
   {
@@ -69,6 +70,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "our-fund",
+    "components": [
+      "our-fund-left-item"
     ]
   }
 ]
