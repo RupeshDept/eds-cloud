@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import {
-    div, label, input, span, ul, li, button, a, img, select, option, h3, p, strong, br, text
+    div, label, input, span, ul, li, button, a, img, select, option, h3, p, strong, br, text, h4
 } from "../../scripts/dom-helpers.js"
 import { dataObj } from "./dataObj.js"
 import { dataObjAllFundBoost } from "./dataObjAllFundBoost.js"
@@ -1020,51 +1020,60 @@ export default async function decorate(block) {
         buttons.forEach((btn) => {
             btn.addEventListener('click', (e) => {
                 const card = e.target.closest('.fundCard');
-                const fundName = card.querySelector('.planName a')?.textContent
+                const fundName = card.querySelector('.planName a')?.textContent;
                 const selectedOption = card.querySelector('.fundOption select')?.value;
 
-                // Example: You can pass this to your popup logic or cart handler
                 console.log('Clicked Invest Now for:', fundName, selectedOption);
 
-                // Call your popup or add-to-cart logic here
-                // showPopup(fundName, selectedOption);
-
-                // Disable all cards except the one that was clicked
-                const clickedBtn = e.currentTarget;
-                const clickedCard = clickedBtn.closest('.fundCard');
+                // Disable all other cards
                 const allCards = document.querySelectorAll('.fundCard');
-                allCards.forEach((card) => {
-                    if (card !== clickedCard) {
-                        card.classList.add('disable-Cart');
-                    } else {
-                        card.classList.remove('disable-Cart');
-                    }
+                allCards.forEach((c) => {
+                    if (c !== card) c.classList.add('disable-Cart');
+                    else c.classList.remove('disable-Cart');
                 });
 
-                investnowmodels(card)
+                investnowmodels(card);
             });
         });
     }
-    initInvestNowListeners()
+    initInvestNowListeners();
+
+    let lastTab = 'lumpsum'; // persist last selected tab globally
 
     function investnowmodels(card) {
+        let modal = card.querySelector('.fund-popup-modal');
 
-        const modal = div({ class: 'fund-popup-modal' });
+        if (modal) {
+            modal.classList.remove('hidden');
 
-        // Tab Buttons
+            // Restore last selected tab
+            const tabBtns = modal.querySelectorAll('.tab-btn');
+            const tabContents = modal.querySelectorAll('.tab-content');
+            tabBtns.forEach((b) => b.classList.remove('active'));
+            tabContents.forEach((tc) => tc.classList.remove('show'));
+
+            modal.querySelector(`.tab-btn[data-tab="${lastTab}"]`)?.classList.add('active');
+            modal.querySelector(`#${lastTab}`)?.classList.add('show');
+            return;
+        }
+
+        // Create modal only once
+        modal = div({ class: 'fund-popup-modal' });
+
+        // Tabs
         const tabButtons = div({ class: 'fund-tabs' },
             button({ class: 'tab-btn active', 'data-tab': 'lumpsum' }, 'Lumpsum'),
             button({ class: 'tab-btn', 'data-tab': 'sip' }, 'SIP'),
             button({ class: 'close-popup' }, '×')
         );
 
-        // Lumpsum Form
+        // Lumpsum
         const lumpsumForm = div({ class: 'tab-content show', id: 'lumpsum' },
             span({ class: 'form-label' }, 'ENTER YOUR INVESTMENT AMOUNT'),
             input({ type: 'number', placeholder: '₹ Enter Amount', class: 'input-amount' })
         );
 
-        // SIP Form
+        // SIP
         const sipForm = div({ class: 'tab-content', id: 'sip' },
             div({ class: 'sip-amount' },
                 span('Enter Amount'),
@@ -1082,32 +1091,27 @@ export default async function decorate(block) {
                 span({ class: 'frequency-label' }, 'Frequency: Monthly'),
                 span({ class: 'edit-btn' }, 'Edit')
             ),
-
             div({ class: 'sip-end' },
-                span({ class: 'end-label' }, 'End Date: Until I Cancel'),
-                // span({ class: 'edit-btn' }, 'Edit')
+                span({ class: 'end-label' }, 'End Date: Until I Cancel')
             )
         );
 
-        // Common Buttons
+        // Buttons
         const actionButtons = div({ class: 'popup-actions' },
-            // button({ class: 'add-to-cart-btn btn-white' }, 'ADD TO CART'),
-            // button({ class: 'invest-now-btn btn-blue' }, 'INVEST NOW'),
             div({ class: "buttonFactor-container" },
                 div({ class: "button-container" },
-                    div({ class: "btn-white" }, a({ class: "add-to-cart-btn" }, "ADD TO CART")),
+                    div({ class: "btn-white" }, a({ class: "add-to-cart-btn" }, "ADD TO CART"))
                 ),
-                div({ class: "btn-blue" }, a({ class: "invest-now-btn" }), "INVEST NOW")
+                div({ class: "btn-blue" }, a({ class: "invest-now-btn" }, "INVEST NOW"))
             )
         );
 
         modal.append(tabButtons, lumpsumForm, sipForm, actionButtons);
-        // block.append(modal);
         card.appendChild(modal);
 
         // Tab switching logic
         const tabBtns = tabButtons.querySelectorAll('.tab-btn');
-        const tabContents = block.querySelectorAll('.tab-content');
+        const tabContents = modal.querySelectorAll('.tab-content');
 
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -1116,71 +1120,135 @@ export default async function decorate(block) {
 
                 btn.classList.add('active');
                 const targetTab = btn.dataset.tab;
-                block.querySelector(`#${targetTab}`).classList.add('show');
+                lastTab = targetTab;
+                modal.querySelector(`#${targetTab}`)?.classList.add('show');
             });
         });
 
         // Close popup
-        // tabButtons.querySelector('.close-popup').addEventListener('click', () => {
-        //     block.innerHTML = '';
-        // });
+        tabButtons.querySelector('.close-popup').addEventListener('click', () => {
+            modal.classList.add('hidden'); // instead of removing
+            // Remove Disable from all other cards
+            const allCards = document.querySelectorAll('.fundCard');
+            allCards.forEach((c) => {
+                c.classList.remove('disable-Cart');
+            });
+        });
 
-        // Edit button functionality in SIP tab
-        block.querySelector('.edit-btn')?.addEventListener('click', () => {
-            showEditPopup(block);
+        // Edit in SIP
+        modal.querySelector('.edit-btn')?.addEventListener('click', () => {
+            showEditPopup(modal);
         });
     }
 
     // Edit Popup Logic
+
     function showEditPopup(targetContainer) {
-        // Create overlay
-        const overlay = document.createElement('div');
-        overlay.className = 'edit-popup-overlay';
+        const overlay = div({ class: 'edit-popup-overlay' });
+        const popup = div({ class: 'edit-popup' });
 
-        // Create popup container
-        const popup = document.createElement('div');
-        popup.className = 'edit-popup';
+        // Read previous values from data attributes or fallback defaults
+        const savedFrequency = targetContainer.dataset.selectedFrequency || 'Monthly';
+        const savedEndType = targetContainer.dataset.selectedEndType || 'until';
+        const savedDate = targetContainer.dataset.selectedDate || '';
 
-        popup.innerHTML = `
-    <h4>Frequency</h4>
-    <div class="frequency-options">
-      ${['Annual', 'Daily', 'Fortnightly', 'Monthly', 'Quarterly', 'Weekly'].map(freq => `
-        <label><input type="radio" name="frequency" value="${freq}" ${freq === 'Monthly' ? 'checked' : ''}> ${freq}</label>
-      `).join('')}
-    </div>
+        // Create Frequency section
+        const frequencyHeader = h4(text('Frequency'));
+        const frequencyOptions = ['Annual', 'Daily', 'Fortnightly', 'Monthly', 'Quarterly', 'Weekly'];
+        const frequencyDiv = div({ class: 'frequency-options' },
+            ...frequencyOptions.map(freq =>
+                label(
+                    input({
+                        type: 'radio',
+                        name: 'frequency',
+                        value: freq,
+                        checked: freq === savedFrequency
+                    }),
+                    text(` ${freq}`)
+                )
+            )
+        );
 
-    <h4>End Date</h4>
-    <div class="enddate-options">
-      <label><input type="radio" name="enddate" value="until" checked> Until Cancel</label>
-      <label><input type="radio" name="enddate" value="select"> Select Date</label>
-      <input type="date" class="end-date-input" style="display:none; margin-top: 5px;" />
-    </div>
+        // Create End Date section
+        const endDateHeader = h4(text('End Date'));
 
-    <div class="edit-popup-buttons">
-      <button class="cancel-btn">CANCEL</button>
-      <button class="ok-btn">OK</button>
-    </div>
-  `;
+        const dateInput = input({
+            type: 'date',
+            class: 'end-date-input',
+            value: savedDate,
+            style: savedEndType === 'select' ? 'margin-top: 5px;' : 'display:none; margin-top: 5px;'
+        });
+
+        const endDateDiv = div({ class: 'enddate-options' },
+            label(
+                input({
+                    type: 'radio',
+                    name: 'enddate',
+                    value: 'until',
+                    checked: savedEndType === 'until'
+                }),
+                text(' Until Cancel')
+            ),
+            label(
+                input({
+                    type: 'radio',
+                    name: 'enddate',
+                    value: 'select',
+                    checked: savedEndType === 'select'
+                }),
+                text(' Select Date')
+            ),
+            dateInput
+        );
+
+        // Buttons
+        const buttonContainer = div({ class: 'edit-popup-buttons' },
+            button({ class: 'cancel-btn' }, text('CANCEL')),
+            button({ class: 'ok-btn' }, text('OK'))
+        );
+
+
+        // Append all to popup
+        popup.append(
+            frequencyHeader,
+            frequencyDiv,
+            endDateHeader,
+            endDateDiv,
+            buttonContainer
+        );
 
         overlay.appendChild(popup);
         document.body.appendChild(overlay);
 
-        // Handle Select Date toggle
-        const endDateRadios = popup.querySelectorAll('input[name="enddate"]');
-        const dateInput = popup.querySelector('.end-date-input');
+        // set checked property for frequency radio
+        const freqInputs = popup.querySelectorAll('input[name="frequency"]');
+        freqInputs.forEach(input => {
+            input.checked = input.value === savedFrequency;
+        });
 
+        // set checked property for enddate radio
+        const endDateInputs = popup.querySelectorAll('input[name="enddate"]');
+        endDateInputs.forEach(input => {
+            input.checked = input.value === savedEndType;
+        });
+
+
+        // === Logic Handlers ===
+
+        // Toggle date input based on radio
+        const endDateRadios = popup.querySelectorAll('input[name="enddate"]');
         endDateRadios.forEach(radio => {
             radio.addEventListener('change', () => {
                 dateInput.style.display = radio.value === 'select' ? 'block' : 'none';
             });
         });
 
-        // CANCEL
+        // Cancel logic
         popup.querySelector('.cancel-btn').addEventListener('click', () => {
             overlay.remove();
         });
 
-        // OK
+        // OK logic
         popup.querySelector('.ok-btn').addEventListener('click', () => {
             const selectedFrequency = popup.querySelector('input[name="frequency"]:checked')?.value;
             const selectedEndType = popup.querySelector('input[name="enddate"]:checked')?.value;
@@ -1190,18 +1258,119 @@ export default async function decorate(block) {
                 ? selectedDate
                 : 'Until I Cancel';
 
-
-            // ✅ Update frequency text without destroying the Edit button
+            // Update visible labels
             const freqLabel = targetContainer.querySelector('.sip-frequency .frequency-label');
             if (freqLabel) freqLabel.textContent = `Frequency: ${selectedFrequency}`;
 
-            // ✅ Update end date text without duplicating
             const endLabel = targetContainer.querySelector('.sip-end .end-label');
             if (endLabel) endLabel.textContent = `End Date: ${endDateDisplay}`;
 
+            // Store values in dataset for future edits
+            targetContainer.dataset.selectedFrequency = selectedFrequency;
+            targetContainer.dataset.selectedEndType = selectedEndType;
+            targetContainer.dataset.selectedDate = selectedDate;
+
             overlay.remove();
         });
-
     }
+
+
+
+    // function showEditPopup(targetContainer) {
+    //     const overlay = div({ class: 'edit-popup-overlay' });
+
+    //     const popup = div({ class: 'edit-popup' });
+
+    //     // Frequency options
+    //     const frequencyOptions = ['Annual', 'Daily', 'Fortnightly', 'Monthly', 'Quarterly', 'Weekly'];
+    //     const frequencyDiv = div({ class: 'frequency-options' },
+    //         ...frequencyOptions.map(freq =>
+    //             label(
+    //                 input({
+    //                     type: 'radio',
+    //                     name: 'frequency',
+    //                     value: freq,
+    //                     checked: freq === 'Monthly'
+    //                 }),
+    //                 text(` ${freq}`)
+    //             )
+    //         )
+    //     );
+
+    //     // End Date options
+    //     const dateInput = input({
+    //         type: 'date',
+    //         class: 'end-date-input',
+    //         style: 'display:none; margin-top: 5px;'
+    //     });
+
+    //     const endDateDiv = div({ class: 'enddate-options' },
+    //         label(
+    //             input({ type: 'radio', name: 'enddate', value: 'until', checked: true }),
+    //             text(' Until Cancel')
+    //         ),
+    //         label(
+    //             input({ type: 'radio', name: 'enddate', value: 'select' }),
+    //             text(' Select Date')
+    //         ),
+    //         dateInput
+    //     );
+
+    //     // Buttons
+    //     const buttonDiv = div({ class: 'edit-popup-buttons' },
+    //         button({ class: 'cancel-btn' }, text('CANCEL')),
+    //         button({ class: 'ok-btn' }, text('OK'))
+    //     );
+
+    //     // Append everything to popup
+    //     popup.append(
+    //         h4(text('Frequency')),
+    //         frequencyDiv,
+    //         h4(text('End Date')),
+    //         endDateDiv,
+    //         buttonDiv
+    //     );
+
+    //     overlay.appendChild(popup);
+    //     document.body.appendChild(overlay);
+
+    //     // Handle show/hide of date input based on enddate radio selection
+    //     const endDateRadios = popup.querySelectorAll('input[name="enddate"]');
+    //     endDateRadios.forEach(radio => {
+    //         radio.addEventListener('change', () => {
+    //             dateInput.style.display = radio.value === 'select' ? 'block' : 'none';
+    //         });
+    //     });
+
+    //     // Cancel button
+    //     popup.querySelector('.cancel-btn').addEventListener('click', () => {
+    //         overlay.remove();
+    //     });
+
+    //     // OK button
+    //     popup.querySelector('.ok-btn').addEventListener('click', () => {
+    //         const selectedFrequency = popup.querySelector('input[name="frequency"]:checked')?.value;
+    //         const selectedEndType = popup.querySelector('input[name="enddate"]:checked')?.value;
+    //         const selectedDate = dateInput.value;
+
+    //         const endDateDisplay = selectedEndType === 'select' && selectedDate
+    //             ? selectedDate
+    //             : 'Until I Cancel';
+
+    //         const freqLabel = targetContainer.querySelector('.sip-frequency .frequency-label');
+    //         if (freqLabel) freqLabel.textContent = `Frequency: ${selectedFrequency}`;
+
+    //         const endLabel = targetContainer.querySelector('.sip-end .end-label');
+    //         if (endLabel) endLabel.textContent = `End Date: ${endDateDisplay}`;
+
+    //         overlay.remove();
+    //     });
+    // }
+
+
+
+
+    // Invest Now Logic RM11
+
 
 }

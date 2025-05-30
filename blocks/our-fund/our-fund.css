@@ -760,3 +760,7 @@ body {
 }
 
 /* buttons  */
+
+.hidden {
+  display: none;
+}
