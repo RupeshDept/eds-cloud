@@ -764,3 +764,9 @@ body {
 .hidden {
   display: none;
 }
+
+.edit-btn{
+    cursor: pointer;
+}
+
+
