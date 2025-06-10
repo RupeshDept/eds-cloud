@@ -214,6 +214,17 @@
         "valueType": "string"
       },
       {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
+      }
+      {
         "component": "group",
         "label": "Images",
         "layout": "column",
@@ -222,8 +233,7 @@
             "component": "reference",
             "name": "primaryImage",
             "label": "Primary Image",
-            "multi": false,
-            "contentType": "image"
+            "multi": false
           },
           {
             "component": "text",
@@ -234,8 +244,7 @@
             "component": "reference",
             "name": "secondaryImage",
             "label": "Secondary Image",
-            "multi": false,
-            "contentType": "image"
+            "multi": false
           },
           {
             "component": "text",
