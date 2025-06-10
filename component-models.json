@@ -225,33 +225,15 @@
         "label": "Alt Text"
       },
       {
-        "component": "group",
-        "label": "Images",
-        "layout": "column",
-        "fields": [
-          {
-            "component": "reference",
-            "name": "primaryImage",
-            "label": "Primary Image",
-            "multi": false
-          },
-          {
-            "component": "text",
-            "name": "primaryImageAlt",
-            "label": "Primary Image Alt Text"
-          },
-          {
-            "component": "reference",
-            "name": "secondaryImage",
-            "label": "Secondary Image",
-            "multi": false
-          },
-          {
-            "component": "text",
-            "name": "secondaryImageAlt",
-            "label": "Secondary Image Alt Text"
-          }
-        ]
+        "component": "reference",
+        "name": "image2",
+        "label": "Second Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt2",
+        "label": "Second Image Alt Text"
       }
     ]
   }
