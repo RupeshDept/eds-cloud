@@ -16,7 +16,14 @@
       "cards",
       "columns",
       "fragment",
-      "test"
+      "test",
+      "hero-swiper"
+    ]
+  },
+  {
+    "id": "hero-swiper",
+    "components": [
+      "hero-swiper-item"
     ]
   },
   {

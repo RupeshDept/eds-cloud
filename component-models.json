@@ -202,5 +202,48 @@
         "valueType": "string"
       }
     ]
-  }
+  },
+  [
+    {
+      "id": "hero-swiper-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Rich Text Content",
+          "valueType": "string"
+        },
+        {
+          "component": "group",
+          "label": "Images",
+          "layout": "column",
+          "fields": [
+            {
+              "component": "reference",
+              "name": "primaryImage",
+              "label": "Primary Image",
+              "multi": false
+            },
+            {
+              "component": "text",
+              "name": "primaryImageAlt",
+              "label": "Primary Image Alt Text"
+            },
+            {
+              "component": "reference",
+              "name": "secondaryImage",
+              "label": "Secondary Image",
+              "multi": false
+            },
+            {
+              "component": "text",
+              "name": "secondaryImageAlt",
+              "label": "Secondary Image Alt Text"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 ]
