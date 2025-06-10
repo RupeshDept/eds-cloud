@@ -222,18 +222,20 @@
             "component": "reference",
             "name": "primaryImage",
             "label": "Primary Image",
-            "multi": false
+            "multi": false,
+            "contentType": "image"
           },
           {
             "component": "text",
             "name": "primaryImageAlt",
-            "label": "Primary Image Alt Text"
+            "label": "Primary Image Alt Text",
           },
           {
             "component": "reference",
             "name": "secondaryImage",
             "label": "Secondary Image",
-            "multi": false
+            "multi": false,
+            "contentType": "image"
           },
           {
             "component": "text",
