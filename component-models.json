@@ -228,7 +228,7 @@
           {
             "component": "text",
             "name": "primaryImageAlt",
-            "label": "Primary Image Alt Text",
+            "label": "Primary Image Alt Text"
           },
           {
             "component": "reference",
