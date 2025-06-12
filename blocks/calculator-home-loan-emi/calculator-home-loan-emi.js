@@ -48,7 +48,7 @@ export default function decorate(block) {
             span({ class: "result-value", id }, value)
         );
 
-    const container = document.querySelector(".calculator-home-loan");
+    const container = document.querySelector(".calculator-home-loan-emi");
 
     const fields = [
         ["loan-amount", "Loan amount", 100000, 50000000, 1000000],
