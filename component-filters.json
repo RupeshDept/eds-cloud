@@ -20,6 +20,13 @@
     ]
   },
   {
+    "id": "test",
+    "components": [
+      "text",
+      "title"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
