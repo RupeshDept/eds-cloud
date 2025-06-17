@@ -16,7 +16,14 @@
       "cards",
       "columns",
       "fragment",
-      "test"
+      "test",
+      "form-block"
+    ]
+  },
+  {
+    "id": "form-block",
+    "components": [
+      "form-item-one"
     ]
   },
   {

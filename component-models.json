@@ -202,5 +202,73 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "form-item-one",
+    "fields": [
+      {
+        "component": "text",
+        "name": "col_name",
+        "value": "",
+        "label": "Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "col_type",
+        "value": "",
+        "label": "Type",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "col_label",
+        "value": "",
+        "label": "Label",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "col_placeholder",
+        "value": "",
+        "label": "Placeholder",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "col_value",
+        "value": "",
+        "label": "Value",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "col_options",
+        "value": "",
+        "label": "Options",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "col_mandatory",
+        "value": "",
+        "label": "Mandatory",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "col_validation",
+        "value": "",
+        "label": "Validation",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "col_style",
+        "value": "",
+        "label": "Style",
+        "valueType": "string"
+      }
+    ]
   }
 ]
