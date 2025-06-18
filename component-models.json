@@ -428,47 +428,47 @@
     "fields":[
       {
         "component": "text",
-        "name": "name",
+        "name": "col1_name",
         "label": "Name"
       },
       {
         "component": "text",
-        "name": "type",
+        "name": "col1_type",
         "label": "Type"
       },
       {
         "component": "text",
-        "name": "label",
+        "name": "col1_label",
         "label": "Label"
       },
       {
         "component": "text",
-        "name": "placeholder",
+        "name": "col1_placeholder",
         "label": "Placeholder"
       },
       {
         "component": "text",
-        "name": "options",
+        "name": "col1_options",
         "label": "Options"
       },
       {
         "component": "text",
-        "name": "mandatory",
+        "name": "col1_mandatory",
         "label": "Mandatory"
       },
       {
         "component": "text",
-        "name": "style",
+        "name": "col1_style",
         "label": "Style"
       },
       {
         "component": "text",
-        "name": "id",
+        "name": "col1_id",
         "label": "ID"
       },
       {
         "component": "text",
-        "name": "fieldset",
+        "name": "col1_fieldset",
         "label": "Fieldset"
       }
     ]
