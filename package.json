@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@sentry/browser": "^9.12.0",
-    "@sentry/cli": "^2.43.0"
+    "@sentry/cli": "^2.43.0",
+    "aemsync": "^5.1.2"
   }
 }

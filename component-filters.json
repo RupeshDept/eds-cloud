@@ -38,7 +38,8 @@
       "our-fund",
       "calculator-home-loan-emi",
       "calculator-education-loan-emi",
-      "my-footer"
+      "my-footer",
+      "form-calculator"
     ]
   },
   {
@@ -79,6 +80,12 @@
     "id": "our-fund",
     "components": [
       "our-fund-left-item"
+    ]
+  },
+  {
+    "id": "form-calculator",
+    "components": [
+      "form-calculator-item"
     ]
   }
 ]

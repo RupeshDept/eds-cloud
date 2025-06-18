@@ -406,5 +406,71 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id":"form-calculator",
+    "fields":[
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Set Class Name",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id":"form-calculator-item",
+    "fields":[
+      {
+        "component": "text",
+        "name": "col1",
+        "label": "Name"
+      },
+      {
+        "component": "text",
+        "name": "col1",
+        "label": "Type"
+      },
+      {
+        "component": "text",
+        "name": "col1",
+        "label": "Label"
+      },
+      {
+        "component": "text",
+        "name": "col1",
+        "label": "Placeholder"
+      },
+      {
+        "component": "text",
+        "name": "col1",
+        "label": "Options"
+      },
+      {
+        "component": "text",
+        "name": "col1",
+        "label": "Mandatory"
+      },
+      {
+        "component": "text",
+        "name": "col1",
+        "label": "Style"
+      },
+      {
+        "component": "text",
+        "name": "col1",
+        "label": "ID"
+      },
+      {
+        "component": "text",
+        "name": "col1",
+        "label": "Fieldset"
+      }
+    ]
   }
 ]
