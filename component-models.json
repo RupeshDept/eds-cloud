@@ -190,5 +190,54 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "poona-one",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "multiselect",
+        "name": "class",
+        "label": "Class",
+        "options": [
+          {
+            "name": "blockone",
+            "value": "blockone"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "poona-one-item1",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
   }
 ]

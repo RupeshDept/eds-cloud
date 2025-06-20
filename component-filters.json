@@ -15,7 +15,15 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "poona-one",
+      "poona-two"
+    ]
+  },
+  {
+    "id": "poona-two",
+    "components": [
+      "poona-two-item1"
     ]
   },
   {
