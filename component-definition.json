@@ -197,7 +197,7 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Poona Two Item1",
-                  "model": "poona-two-item1",
+                  "model": "poona-two-item1"
                 }
               }
             }
