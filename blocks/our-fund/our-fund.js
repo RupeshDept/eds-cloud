@@ -5,11 +5,11 @@ import {
 } from "../../scripts/dom-helpers.js"
 import { dataObj } from "./dataObj.js"
 import { dataObjAllFundBoost } from "./dataObjAllFundBoost.js"
+import {dataCfObj} from "./dataCfObj.js"
 
 export default async function decorate(block) {
-
-    const dataMapObj = {}
-
+    let dataMapObj = {}
+    dataMapObj['data'] = dataFilterfun(dataCfObj)
 
     Array.from(block.children).forEach((element, index) => {
         element.classList.add("inner" + (index + 1))
@@ -32,7 +32,7 @@ export default async function decorate(block) {
                     cheked: "true",
                     onclick: function (ele) {
                         document.querySelector("input[value='Regular']").checked = false
-                        eventTriggerRending(dataObjAllFundBoost.data.data.data)
+                        eventTriggerRending(dataCfObj)
                     },
                     checked: true
                 }), "Direct"
@@ -43,7 +43,7 @@ export default async function decorate(block) {
                     value: "Regular",
                     onclick: function (ele) {
                         document.querySelector("input[value='Direct']").checked = false
-                        eventTriggerRending(dataObjAllFundBoost.data.data.data)
+                        eventTriggerRending(dataCfObj)
                     }
                 }), "Regular"
             )
@@ -60,23 +60,13 @@ export default async function decorate(block) {
             div({
                 class: "filter-container"
             },
-                ...dataObj.data.data.fundCategory.map((element, index) => {
-                    if (dataMapObj[index] == undefined) {
-                        dataMapObj[index] = 0
-
-                    }
-                    element.subCategory.forEach((elme, ind) => {
-                        dataMapObj[index] += elme.schemes.length
-                    })
-                    let strSchme = [];
-                    element.subCategory.forEach((elem) => {
-                        strSchme.push(elem.schemes.join("-"));
-                    })
-                    if (element.categoryName === "Indian Equity") {
+                ...dataMapObj.data.fundCategory.map((element, index) => {
+                    if (capitalizeEachWord(Object.keys(element)[0].replaceAll("-"," ")) === "Indian Equity") {
                         dataMapObj[index + "ArrayDoc"] = div({
                             class: "Indian-Equity-container"
                         },
-                            ...element.subCategory.map((elme, ind) => {
+                            ...dataMapObj.data.fundCategory[dataMapObj.data.fundCategory.length-1]["indianEquitySub"].map((elme, ind) => {
+                                let sublabel = Object.keys(elme)[0].split("-")[1].trim(); 
                                 return label({
                                     class: "checkbox-label-container"
                                 },
@@ -86,14 +76,14 @@ export default async function decorate(block) {
                                         input({
                                             class: "categorey-direct",
                                             type: "checkbox",
-                                            dataattr: elme.schemes.join("-"),
+                                            dataattr: elme[Object.keys(elme)].join("-"),
                                             onclick: function (ele) {
                                                 console.log(ele.target.getAttribute("dataattr"));
                                                 eventTriggerRending(dataObjAllFundBoost.data.data.data)
                                             }
                                         })
                                     ),
-                                    span(elme.categoryName)
+                                    span(sublabel)
                                 )
                             })
                         )
@@ -107,7 +97,7 @@ export default async function decorate(block) {
                             input({
                                 class: "categorey-direct",
                                 type: "checkbox",
-                                dataattr: strSchme.join("-"),
+                                dataattr: element[Object.keys(element)[0]].join("-"),
                                 onclick: function (ele) {
                                     console.log(ele.target.getAttribute("dataattr"));
                                     if (ele.currentTarget.parentElement.nextElementSibling.textContent.trim().includes("Indian Equity")) {
@@ -119,8 +109,8 @@ export default async function decorate(block) {
                                 }
                             })
                         ),
-                        span(element.categoryName + "(" + dataMapObj[index] + ")"),
-                        element.categoryName === "Indian Equity" ? div({
+                        span(capitalizeEachWord(Object.keys(element)[0].replaceAll("-"," ")) + "(" + element[Object.keys(element)[0]].length + ")"),
+                        capitalizeEachWord(Object.keys(element)[0].replaceAll("-"," ")) === "Indian Equity" ? div({
                             class: "innerIndianEquity"
                         }, dataMapObj[index + "ArrayDoc"]) : ""
                     )
@@ -139,7 +129,7 @@ export default async function decorate(block) {
             div({
                 class: "fund-container"
             },
-                ...dataObj.data.data.fundType.map((element) => {
+                ...dataMapObj.data.fundType.map((element) => {
                     return label({
                         class: "checkbox-label-container"
                     },
@@ -149,14 +139,14 @@ export default async function decorate(block) {
                             input({
                                 class: "categorey-direct",
                                 type: "checkbox",
-                                dataattr: element.schemes.join("-"),
+                                dataattr: element[Object.keys(element)[0]].join("-"),
                                 onclick: function (ele) {
                                     console.log(ele.target.getAttribute("dataattr"));
                                     eventTriggerRending(dataObjAllFundBoost.data.data.data)
                                 }
                             })
                         ),
-                        span(element.typeName + "(" + element.schemes.length + ")"),
+                        span(capitalizeEachWord(Object.keys(element)[0].replaceAll("-"," ")) + "(" + element[Object.keys(element)[0]].length + ")"),
                     )
                 })
             )
@@ -1373,4 +1363,110 @@ export default async function decorate(block) {
     // Invest Now Logic RM11
 
 
+}
+
+function dataFilterfun(param){
+    let dataMapObj = {}
+        dataMapObj["fundCategory"] = [
+        {"indian-equity": []},
+        {"international-equity": []},
+        {"hybrid-&-balanced": []},
+        {"multi-asset": []},
+        {"commodity": []},
+        {"debt-&-liquid": []},
+        {"indianEquitySub" :[
+            {"Indian Equity - Large and Mid Cap":[]},
+            {"Indian Equity - Large Cap":[]},
+            {"Indian Equity - Mid Cap":[]},
+            {"Indian Equity - Small Cap":[]},
+            {"Indian Equity - Sector":[]},
+            {"Indian Equity - Factor":[]},
+            {"Indian Equity - Tax Saver (ELSS)":[]},
+            {"Indian Equity - Multi Cap":[]}
+        ]}
+    ];
+    dataMapObj["fundType"] =[
+        {"active":[]},
+        {"index-funds":[]},
+        {"etf":[]}
+    ]
+
+     for (let name of param) {
+        if ([...name.fundsTaggingSection].includes("motilal-oswal:indian-equity-")) {
+            dataMapObj["fundCategory"].forEach((element)=>{
+                if (element["indian-equity"]) {
+                    element["indian-equity"].push(name.schcode)   
+                }
+            })
+        }
+        if ([...name.fundsTaggingSection].includes("motilal-oswal:hybrid-&-balanced")) {
+             dataMapObj["fundCategory"].forEach((element)=>{
+                if (element["hybrid-&-balanced"]) {
+                    element["hybrid-&-balanced"].push(name.schcode)   
+                }
+            })
+        }
+        if ([...name.fundsTaggingSection].includes("motilal-oswal:debt-&-liquid")) {
+            dataMapObj["fundCategory"].forEach((element)=>{
+                if (element["debt-&-liquid"]) {
+                    element["debt-&-liquid"].push(name.schcode)   
+                }
+            })
+        }
+        if ([...name.fundsTaggingSection].includes("motilal-oswal:international-equity")) {
+            dataMapObj["fundCategory"].forEach((element)=>{
+                if (element["international-equity"]) {
+                    element["international-equity"].push(name.schcode)   
+                }
+            })
+        }
+        if ([...name.fundsTaggingSection].includes("motilal-oswal:multi-asset")) {
+            dataMapObj["fundCategory"].forEach((element)=>{
+                if (element["multi-asset"]) {
+                    element["multi-asset"].push(name.schcode)   
+                }
+            })
+        }
+        if ([...name.fundsTaggingSection].includes("motilal-oswal:commodity")) {
+            dataMapObj["fundCategory"].forEach((element)=>{
+                if (element["commodity"]) {
+                    element["commodity"].push(name.schcode)   
+                }
+            })
+        }
+        if ([...name.fundsTaggingSection].includes("motilal-oswal:index-funds")) {
+            dataMapObj["fundType"].forEach((element)=>{
+                if (element["index-funds"]) {
+                    element["index-funds"].push(name.schcode)   
+                }
+            })
+        }
+        if ([...name.fundsTaggingSection].includes("motilal-oswal:active")) {
+            dataMapObj["fundType"].forEach((element)=>{
+                if (element["active"]) {
+                    element["active"].push(name.schcode)   
+                }
+            })
+        }
+        if ([...name.fundsTaggingSection].includes("motilal-oswal:etf")) {
+            dataMapObj["fundType"].forEach((element)=>{
+                if (element["etf"]) {
+                    element["etf"].push(name.schcode)   
+                }
+            })
+        }
+        if (name.fundSubCategorisation) {
+            dataMapObj["fundCategory"][dataMapObj["fundCategory"].length-1]["indianEquitySub"].forEach((elementsub,index)=>{
+                if (elementsub[name.fundSubCategorisation]) {
+                    elementsub[name.fundSubCategorisation].push(name.schcode)   
+                }
+            })
+        }
+    }
+    return dataMapObj
+}
+function capitalizeEachWord(sentence) {
+  return sentence.replace(/\b\w/g, function(char) {
+    return char.toUpperCase();
+  });
 }
