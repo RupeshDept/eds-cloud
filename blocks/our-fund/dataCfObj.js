@@ -5037,7 +5037,7 @@ export const dataCfObj = [{
         "marketValueFiveYear": "18799.63572067658",
         "sevenYear_Ret": "4.72",
         "marketValueSevenYear": "13807.121093001335",
-        "tenYear_Ret": "7.09",
+        "tenYear_Ret": "7.0 9",
         "marketValueTenYear": "19828.50723213032",
         "optioncode": "D",
         "plancode": "PD",

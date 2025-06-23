@@ -32,7 +32,7 @@ export default async function decorate(block) {
                     cheked: "true",
                     onclick: function (ele) {
                         document.querySelector("input[value='Regular']").checked = false
-                        eventTriggerRending(dataCfObj)
+                        rightBottomcardRender(block,dataCfObj,dataMapObj)
                     },
                     checked: true
                 }), "Direct"
@@ -43,7 +43,7 @@ export default async function decorate(block) {
                     value: "Regular",
                     onclick: function (ele) {
                         document.querySelector("input[value='Direct']").checked = false
-                        eventTriggerRending(dataCfObj)
+                        rightBottomcardRender(block,dataCfObj,dataMapObj)
                     }
                 }), "Regular"
             )
@@ -78,8 +78,36 @@ export default async function decorate(block) {
                                             type: "checkbox",
                                             dataattr: elme[Object.keys(elme)].join("-"),
                                             onclick: function (ele) {
-                                                console.log(ele.target.getAttribute("dataattr"));
-                                                eventTriggerRending(dataObjAllFundBoost.data.data.data)
+                                                if(dataMapObj.schcode.length != 0){
+                                                    let schcode = ele.target.getAttribute("dataattr").split("-")
+                                                     let tempArrcode = [],filterData = [];
+                                                     
+                                                    dataMapObj.schcode.forEach((items)=>{
+                                                        if (!schcode.includes(items)) {
+                                                            filterData.push(items)
+                                                        }
+                                                    })
+                                                   
+                                                    dataCfObj.forEach((item)=>{
+                                                        if(filterData.includes(item.schcode)){
+                                                            tempArrcode.push(item)
+                                                        }
+                                                    })
+                                                    rightBottomcardRender(block,tempArrcode,dataMapObj)
+                                                }else{
+                                                    if (ele.target.checked) {
+                                                        let schcode = ele.target.getAttribute("dataattr").split("-")
+                                                        let tempArrcode = [] 
+                                                        dataCfObj.forEach((item)=>{
+                                                            if(schcode.includes(item.schcode)){
+                                                                tempArrcode.push(item)
+                                                            }
+                                                        })
+                                                        rightBottomcardRender(block,tempArrcode,dataMapObj)  
+                                                    }else{
+                                                        rightBottomcardRender(block,dataCfObj,dataMapObj);
+                                                    }
+                                                }
                                             }
                                         })
                                     ),
@@ -99,13 +127,30 @@ export default async function decorate(block) {
                                 type: "checkbox",
                                 dataattr: element[Object.keys(element)[0]].join("-"),
                                 onclick: function (ele) {
-                                    console.log(ele.target.getAttribute("dataattr"));
-                                    if (ele.currentTarget.parentElement.nextElementSibling.textContent.trim().includes("Indian Equity")) {
+                                    // console.log(ele.target.getAttribute("dataattr"));
+                                    
+                                    if (ele.target.checked) {
+                                        dataMapObj.schcode = ele.target.getAttribute("dataattr").split("-")
+                                        let tempArrcode = [];
+                                        if (ele.currentTarget.parentElement.nextElementSibling.textContent.trim().includes("Indian Equity")) {
+                                        block.querySelectorAll(".Indian-Equity-container .categorey-direct").forEach((element) => {
+                                            element.checked = ele.currentTarget.checked ? true : false;
+                                        }) 
+                                    }
+                                    dataCfObj.forEach((item)=>{
+                                            if(dataMapObj.schcode.includes(item.schcode)){
+                                                tempArrcode.push(item)
+                                            }
+                                       })
+                                        rightBottomcardRender(block,tempArrcode,dataMapObj)
+                                    }else{
+                                        dataMapObj.schcode = [];
                                         block.querySelectorAll(".Indian-Equity-container .categorey-direct").forEach((element) => {
                                             element.checked = ele.currentTarget.checked ? true : false;
                                         })
+                                        rightBottomcardRender(block,dataCfObj,dataMapObj)
                                     }
-                                    eventTriggerRending(dataObjAllFundBoost.data.data.data)
+                                    
                                 }
                             })
                         ),
@@ -153,17 +198,6 @@ export default async function decorate(block) {
         )
     )
 
-    let InvestMethod = "Direct"; //document.querySelector("input[type='radio']:checked").value;
-    dataMapObj.filterSeachArr = [];
-    dataMapObj.inputSelectArr = [];
-    dataObjAllFundBoost.data.data.data.forEach((elem) => {
-        elem.planList.forEach((element) => {
-            if (!dataMapObj.filterSeachArr.includes(elem.schDetail.schName)) { //element.planName == InvestMethod &&
-                dataMapObj.filterSeachArr.push(elem.schDetail.schName)
-            }
-        })
-
-    })
     const rightTopContianer = div({
         class: "rightTopContainer"
     },
@@ -210,10 +244,11 @@ export default async function decorate(block) {
                     style: "display:none"
                 },
                     ul(
-                        ...dataMapObj.filterSeachArr.map((element) => {
+                        ...dataMapObj.data.schemeName.map((element) => {
                             return li({
                                 class: "dropdown-item",
-                                dataValue: element,
+                                dataValue: element.schemeName,
+                                dataattr:element.schcode,
                                 onclick: ((event) => {
                                     const inputBox = block.querySelector('#inputBox');
                                     const dropdown = block.querySelector('#dropdown');
@@ -283,7 +318,7 @@ export default async function decorate(block) {
                                     inputBox.value = '';
                                     dropdown.style.display = 'none';
                                 })
-                            }, element)
+                            }, element.schemeName)
                         })
                     )
                 )
@@ -308,9 +343,10 @@ export default async function decorate(block) {
                     class: "dropdown-modal"
                 },
                     ul(
-                        ...dataObj.data.data.sort.map((e, index) => {
+                        ...dataMapObj.data.sort[0].ListDropdown.map((e, index) => {
                             return li({
                                 dataIndex: index,
+                                dataattr:e.value,
                                 onclick: (event) => {
                                     block.querySelectorAll(".inner2-container1 .dropdown-modal ul li").forEach((el) => {
                                         el.classList.remove("active");
@@ -321,7 +357,7 @@ export default async function decorate(block) {
                                     let schemes = dataObj.data.data.sort[event.target.getAttribute("dataIndex")].schemes
 
                                 }
-                            }, e.sortName)
+                            }, e.text)
                         })
                     )
                 )
@@ -329,298 +365,15 @@ export default async function decorate(block) {
         )
     )
 
-    function navDate(mop) {
-        let str = ""
-        let mopMonth = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
-        mop = mop.split("/");
-        str = "As on " + mop[1] + " " + mopMonth[mop[0] - 1] + " " + mop[2]
-        return str;
-    }
-
-    function cgarDate(mop) {
-        let str = ""
-        let mopMonth = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
-        mop = mop.split("-");
-        str = "As on " + mop[2] + " " + mopMonth[mop[1] - 1] + " " + mop[0]
-        return str;
-    }
-    const rightBottomContainer = div({
-        class: "main-container-bottom"
-    },
-        ...dataObjAllFundBoost.data.data.data.map((ele, index) => {
-            dataMapObj.DuplicateRemove = []
-            dataMapObj.siperiods = []
-            dataMapObj.tags = [];
-            ele.tags.forEach((element) => {
-                let temp = ["Active", "Index", "ETFs"]
-                if (!temp.includes(element)) {
-                    dataMapObj.tags.push(element)
-                }
-            })
-            ele.return.forEach((element) => {
-                if (!dataMapObj.siperiods.includes(element.period.replaceAll("yr", " Year"))) {
-                    dataMapObj.siperiods.push(element.period.replaceAll("yr", " Year"))
-                }
-            })
-            dataMapObj.siperiods = dataMapObj.siperiods.sort();
-
-            let InvestBtn = ''
-            block.querySelectorAll(".radio-button-container [type=radio]").length === 0 ? InvestBtn = "Direct" : block.querySelectorAll(".radio-button-container [type=radio]").forEach((el) => {
-                if (el.checked) {
-                    InvestBtn = el.value;
-                }
-            })
-            let AumValue = '',
-                dataAum = '',
-                navRecdt = '',
-                navValue = '',
-                navChngPer = '',
-                schReturnCagr = '',
-                schReturnAsOnDt = '';
-            ele.planList.forEach((eleTemp) => {
-                let dataCode = eleTemp.schemeCode + eleTemp.planCode;
-                [...ele.aum, ...ele.nav, ...ele.return].forEach((Aum) => {
-                    let tempAumCode = Aum.schemeCode + Aum.planCode;
-                    if (tempAumCode == dataCode) {
-                        if (Aum.latestAum) {
-                            AumValue = Aum.latestAum;
-                        }
-                        if (Aum.latestAumAsOnDt) {
-                            dataAum = Aum.latestAumAsOnDt;
-                        }
-                        if (Aum.nav) {
-                            navValue = Aum.nav;
-                        }
-                        if (Aum.navRecdt) {
-                            navRecdt = Aum.navRecdt;
-                        }
-                        if (Aum.navChngPer) {
-                            navChngPer = Aum.navChngPer;
-                        }
-                        if (Aum.schReturnCagr) {
-                            schReturnCagr = Aum.schReturnCagr
-                        }
-                        if (Aum.schReturnAsOnDt) {
-                            schReturnAsOnDt = Aum.schReturnAsOnDt
-                        }
-                    }
-                })
-            })
-            return index !== 0 && dataMapObj.filterSeachArr.includes(ele.schDetail.schName) ? div({
-                class: "submain-container-bottom"
-            },
-                div({
-                    class: "fundCard"
-                },
-                    div({
-                        class: "submain-Header"
-                    },
-                        div({
-                            class: "name-content-container"
-                        },
-                            div({
-                                class: "logoName"
-                            }, "Logo"),
-                            div({
-                                class: "planName",
-                                dataschCode: ele.schCode
-                            }, a(ele.schDetail.schName))
-                        ),
-                        div({
-                            class: "dropdown-container"
-                        },
-                            span({
-                                class: "fundOption"
-                            },
-                                select({
-                                    dataCardIndex: index,
-                                    onchange: function (event) {
-                                        let cardIndex = event.target.getAttribute("dataCardIndex");
-                                        let dataCode = event.currentTarget.options[event.target.options.selectedIndex].getAttribute("dataCode");
-                                        let AumValue = '',
-                                            dataAum = '',
-                                            navRecdt = '',
-                                            navValue = '',
-                                            navChngPer = '',
-                                            schReturnCagr = '',
-                                            schReturnAsOnDt = '';
-                                        [...ele.aum, ...ele.nav, ...ele.return].forEach((Aum) => {
-                                            let tempAumCode = Aum.schemeCode + Aum.planCode;
-                                            if (tempAumCode == dataCode) {
-                                                if (Aum.latestAum) {
-                                                    AumValue = Aum.latestAum;
-                                                }
-                                                if (Aum.latestAumAsOnDt) {
-                                                    dataAum = Aum.latestAumAsOnDt;
-                                                }
-                                                if (Aum.nav) {
-                                                    navValue = Aum.nav;
-                                                }
-                                                if (Aum.navRecdt) {
-                                                    navRecdt = Aum.navRecdt;
-                                                }
-                                                if (Aum.navChngPer) {
-                                                    navChngPer = Aum.navChngPer;
-                                                }
-                                                if (Aum.schReturnCagr) {
-                                                    schReturnCagr = Aum.schReturnCagr
-                                                }
-                                                if (Aum.schReturnAsOnDt) {
-                                                    schReturnAsOnDt = Aum.schReturnAsOnDt
-                                                }
-                                            }
-                                        })
-                                        Array.from(block.querySelector(".main-container-bottom").children).forEach((eleHTML, indexHTML) => {
-                                            if (indexHTML == (cardIndex - 1)) {
-                                                eleHTML.querySelector(".amuvalue").textContent = "";
-                                                eleHTML.querySelector(".amuvalue").textContent = AumValue;
-
-                                                eleHTML.querySelector(".fundValue").textContent = "";
-                                                eleHTML.querySelector(".fundValue").textContent = navValue;
-                                                eleHTML.querySelector(".fundRateValue").textContent = "";
-                                                eleHTML.querySelector(".fundRateValue").style.color = Math.sign(navChngPer) == -1 ? "red" : "green"
-                                                eleHTML.querySelector(".fundRateValue").textContent = "(" + navChngPer + "%)";
-                                                eleHTML.querySelector(".navFundDate").textContent = "";
-                                                eleHTML.querySelector(".navFundDate").textContent = navDate(navRecdt.split(" ")[0]);
-
-                                                eleHTML.querySelector(".cagr-rate").textContent = "";
-                                                eleHTML.querySelector(".cagr-rate").textContent = schReturnCagr;
-                                                eleHTML.querySelector(".cagr-rateDate").textContent = "";
-                                                eleHTML.querySelector(".cagr-rateDate").textContent = cgarDate(schReturnAsOnDt);
-                                            }
-                                        })
-                                        //   console.log(AumValue, dataAum, navValue,navChngPer,schReturnAsOnDt);
-                                    }
-                                },
-                                    ...ele.planList.map((seleOp) => {
-                                        if (!dataMapObj.DuplicateRemove.includes(seleOp.optionName) && InvestBtn == seleOp.planName) {
-                                            dataMapObj.DuplicateRemove.push(seleOp.optionName)
-                                            return option({
-                                                dataCode: seleOp.schemeCode + seleOp.planCode,
-                                            }, seleOp.optionName)
-                                        }
-                                    })
-                                )
-                            )
-                        ),
-                        div({
-                            class: "category-container"
-                        },
-                            span(dataMapObj.tags.join("|"))
-                        )
-                    ),
-                    div({
-                        class: "submain-Footer"
-                    },
-                        div({
-                            class: "row valueFactor-container"
-                        },
-                            div({
-                                class: "factor-container"
-                            },
-                                div({
-                                    class: "amu-container"
-                                },
-                                    label("AMU"),
-                                    span({
-                                        class: "amuvalue",
-                                    }, ("₹" + AumValue + " " + "Crs"))
-                                ),
-                                div({
-                                    class: "risk-container"
-                                },
-                                    label("Risk"),
-                                    div({
-                                        class: "riskvalue"
-                                    },
-                                        div({
-                                            class: "risklabelvalue"
-                                        }, ele.risk.risk),
-                                        div({
-                                            class: "riskinfoiconvalue"
-                                        },
-                                            img("/content.fake/path.img")
-                                        )
-                                    )
-                                ),
-                                div({
-                                    class: "nav-container"
-                                },
-                                    label("NAV"),
-                                    div({
-                                        class: "navContainervalue"
-                                    },
-                                        div({
-                                            class: "navRatevalue"
-                                        },
-                                            div({
-                                                class: "fundValue"
-                                            }, navValue),
-                                            div({
-                                                class: "fundRateValue",
-                                                style: Math.sign(navChngPer) == -1 ? "color:red" : "color:green"
-                                            }, "(" + navChngPer + "%)")
-                                        ),
-                                        div({
-                                            class: "navFundDate"
-                                        }, navDate(navRecdt.split(" ")[0]))
-                                    )
-                                ),
-                                div({
-                                    class: "cagr-container"
-                                },
-                                    label({
-                                        class: "CAGRContainer"
-                                    }, "CAGR",
-                                        select(
-                                            ...dataMapObj.siperiods.map((ele) => {
-                                                return option(ele.toUpperCase())
-                                            })
-                                        )
-                                    ),
-                                    div({
-                                        class: "cagr-rate"
-                                    }, schReturnCagr != '' ? schReturnCagr + "%" : ""),
-                                    div({
-                                        class: "cagr-rateDate"
-                                    }, schReturnAsOnDt != '' ? cgarDate(schReturnAsOnDt) : "")
-                                )
-                            )
-                        ),
-                        div({
-                            class: "buttonFactor-container"
-                        },
-                            div({
-                                class: "button-container"
-                            },
-                                div({
-                                    class: "know-more-btn"
-                                }, a({
-                                    class: "know-more"
-                                }, "Know More")),
-                            ),
-                            div({
-                                class: "invest-now-btn"
-                            }, a({
-                                class: "Invest-now"
-                            }), "Invest Now")
-                        )
-                    )
-                )
-            ) : ""
-        })
-
-    )
-
     block.querySelector(".inner1-container2").innerHTML = "";
     block.querySelector(".inner1-container2").append(leftContainer);
-
-
+    block.querySelector(".inner2-container1").innerHTML = "";
+    block.querySelector(".inner2-container1").innerHTML = "";
+    const headerRightConyainer = h3({
+        id: "our-funds"
+    }, "Our Funds")
+    block.querySelector(".inner2-container1").append(headerRightConyainer);
     block.querySelector(".inner2-container1").append(rightTopContianer);
-
-    block.querySelector(".inner2-container2").innerHTML = "";
-    block.querySelector(".inner2-container2").append(rightBottomContainer);
-
     block.querySelector(".inner2-container1 .seachBox").addEventListener("focusin", (element) => {
         block.querySelector(".inner2-container1 .container-box").classList.add("active");
         block.querySelector(".dropdown-modal").style.display = element ? "block" : "none"
@@ -633,375 +386,7 @@ export default async function decorate(block) {
     block.querySelector(".inner2-container1 .dropdown-modal").addEventListener("mouseleave", () => {
         block.querySelector(".dropdown-modal").style.display = "none";
     });
-
-    function eventTriggerRending(param) {
-        let InvestMethod = block.querySelector("input[type='radio']:checked").value;
-        dataMapObj.filterSeachArr = [];
-        let mop = [];
-        block.querySelectorAll("[type='checkbox']").forEach((element) => {
-            if (element.checked) {
-                mop.push(element.getAttribute("dataattr"))
-            }
-        })
-        mop = mop.length === 0 ? "" : mop.join("-");
-        param.forEach((elem) => {
-            elem.planList.forEach((element) => {
-                if (!dataMapObj.filterSeachArr.includes(elem.schDetail.schName) && mop.length === 0) {
-                    dataMapObj.filterSeachArr.push(elem.schDetail.schName)
-                } else {
-                    if (!dataMapObj.filterSeachArr.includes(elem.schDetail.schName) && mop.includes(elem.schCode)) {
-                        dataMapObj.filterSeachArr.push(elem.schDetail.schName)
-                    }
-                }
-            })
-
-        })
-        const rightTopContianer = div({
-            class: "rightTopContainer"
-        },
-            div({
-                class: "searchBarContainer wrapper"
-            },
-                label("Search"),
-                div({
-                    class: "inputContainer tag-container",
-                    id: "tags",
-                },
-                    input({
-                        type: "text",
-                        id: "inputBox",
-                        class: "searchField input-box",
-                        placeholder: "Search Fund",
-                        onfocus: () => {
-                            block.querySelector(".searchModal").style.display = "block";
-                        },
-                        oninput: () => {
-                            const inputBox = block.querySelector('#inputBox');
-                            const dropdown = block.querySelector('#dropdown');
-                            const tags = block.querySelector('#tags');
-
-                            block.querySelector(".searchModal").style.display = "block";
-                            const search = inputBox.value.toLowerCase();
-                            const items = block.querySelectorAll('.dropdown-item');
-
-                            items.forEach(item => {
-                                const text = item.getAttribute('dataValue').toLowerCase();
-
-                                // Only show if it matches search AND is not already selected (displayed as tag)
-                                const isAlreadySelected = Array.from(tags.children).some(tag =>
-                                    tag.textContent.replace('×', '').trim().toLowerCase() === text
-                                );
-
-                                item.style.display = (!isAlreadySelected && text.includes(search)) ? 'block' : 'none';
-                            });
-                        },
-                    }),
-                    div({
-                        id: "dropdown",
-                        class: "searchModal",
-                        style: "display:none"
-                    },
-                        ul(
-                            ...dataMapObj.filterSeachArr.map((element) => {
-                                return li({
-                                    class: "dropdown-item",
-                                    dataValue: element,
-                                    onclick: ((event) => {
-                                        const inputBox = block.querySelector('#inputBox');
-                                        const dropdown = block.querySelector('#dropdown');
-                                        const tags = block.querySelector('#tags');
-
-                                        const value = event.target.getAttribute('dataValue');
-                                        let submainContainerCard = block.querySelectorAll(".submain-container-bottom");
-                                        // Hide selected item from dropdown
-                                        event.target.style.display = 'none';
-                                        dataMapObj.inputSelectArr.push(value);
-
-                                        dataMapObj.inputSelectArr.forEach((elem, ind) => {
-                                            submainContainerCard.forEach((item, index) => {
-                                                if (item.querySelector(".planName").textContent.trim() == elem) {
-                                                    item.setAttribute("searchplane", "yes")
-                                                }
-                                            })
-                                        })
-
-                                        submainContainerCard.forEach((item, index) => {
-                                            if (item.getAttribute("searchplane") == "yes") {
-                                                item.style.display = "block"
-                                            } else {
-                                                item.style.display = "none"
-                                            }
-                                        })
-                                        // Create a tag
-                                        const tagsAppend = span({
-                                            dataClose: value,
-                                            onclick: ((event) => {
-                                                event.currentTarget.parentElement.remove(); // Remove tag
-
-                                                const items = dropdown.querySelectorAll('.dropdown-item');
-
-                                                dataMapObj.inputSelectArr = dataMapObj.inputSelectArr.filter((ele, ind) => {
-                                                    return dataMapObj.inputSelectArr.indexOf(event.target.getAttribute("dataClose")) != ind
-                                                })
-                                                items.forEach(item => {
-                                                    if (item.getAttribute('dataValue') === event.currentTarget.getAttribute("dataClose")) {
-                                                        item.style.display = 'block';
-                                                    }
-                                                });
-                                                if (dataMapObj.inputSelectArr.length != 0) {
-                                                    submainContainerCard.forEach((item, index) => {
-                                                        if (item.querySelector(".planName").textContent.trim() == event.target.getAttribute("dataClose")) {
-                                                            item.setAttribute("searchplane", "no")
-                                                            item.style.display = "none"
-                                                        }
-                                                    })
-                                                } else {
-                                                    submainContainerCard.forEach((item, index) => {
-                                                        item.style.display = "block"
-                                                    })
-                                                }
-                                                dropdown.style.display = 'none';
-                                            })
-                                        }, 'x');
-
-                                        const tag = div({
-                                            class: 'tag'
-                                        },
-                                            value,
-                                            tagsAppend)
-
-                                        tags.insertBefore(tag, inputBox);
-
-                                        inputBox.value = '';
-                                        dropdown.style.display = 'none';
-                                    })
-                                }, element)
-                            })
-                        )
-                    )
-                )
-            ),
-            div({
-                class: "dropDownField"
-            },
-                label("Sort Funds By"),
-                div({
-                    class: "dropDownField-container"
-                },
-                    div({
-                        class: "container-box"
-                    },
-                        input({
-                            class: "seachBox",
-                            placeholder: "Popular"
-                        })
-                    ),
-                    div({
-                        class: "dropdown-modal"
-                    },
-                        ul(
-                            ...dataObj.data.data.sort.map((e, index) => {
-                                return li({
-                                    dataIndex: index,
-                                    onclick: (event) => {
-                                        block.querySelectorAll(".inner2-container1 .dropdown-modal ul li").forEach((el) => {
-                                            el.classList.remove("active");
-                                        })
-                                        event.target.classList.add("active");
-                                        block.querySelector(".inner2-container1 .seachBox").value = event.target.textContent.trim()
-                                        block.querySelector(".inner2-container1 .dropdown-modal").style.display = "none";
-
-                                        let schemes = dataObj.data.data.sort[event.target.getAttribute("dataIndex")].schemes
-                                        // eventTriggerRending(dataObjAllFundBoost.data.data.data)
-                                    }
-                                }, e.sortName)
-                            })
-                        )
-                    )
-                )
-            )
-        )
-        const rightBottomContainer = div({
-            class: "main-container-bottom"
-        },
-            ...dataObjAllFundBoost.data.data.data.map((ele, index) => {
-                let InvestBtn = ''
-                block.querySelectorAll(".radio-button-container [type=radio]").forEach((el) => {
-                    if (el.checked) {
-                        InvestBtn = el.value;
-                    }
-                })
-                dataMapObj.DuplicateRemove = []
-                dataMapObj.siperiods = []
-                dataMapObj.tags = [];
-                ele.tags.forEach((element) => {
-                    let temp = ["Active", "Index", "ETFs"]
-                    if (!temp.includes(element)) {
-                        dataMapObj.tags.push(element)
-                    }
-                })
-                ele.return.forEach((element) => {
-                    if (!dataMapObj.siperiods.includes(element.period.replaceAll("yr", " Year"))) {
-                        dataMapObj.siperiods.push(element.period.replaceAll("yr", " Year"))
-                    }
-                })
-                dataMapObj.siperiods = dataMapObj.siperiods.sort();
-                return index !== 0 && dataMapObj.filterSeachArr.includes(ele.schDetail.schName) ? div({
-                    class: "submain-container-bottom"
-                },
-                    div({
-                        class: "fundCard"
-                    },
-                        div({
-                            class: "submain-Header"
-                        },
-                            div({
-                                class: "name-content-container"
-                            },
-                                div({
-                                    class: "logoName"
-                                }, "Logo"),
-                                div({
-                                    class: "planName",
-                                    dataschCode: ele.schCode
-                                }, a(ele.schDetail.schName))
-                            ),
-                            div({
-                                class: "dropdown-container"
-                            },
-                                span({
-                                    class: "fundOption"
-                                },
-                                    select(
-                                        ...ele.planList.map((seleOp) => {
-                                            if (!dataMapObj.DuplicateRemove.includes(seleOp.optionName) && seleOp.planName == InvestBtn) {
-                                                dataMapObj.DuplicateRemove.push(seleOp.optionName)
-                                                return option(seleOp.optionName)
-                                            }
-                                        })
-                                    )
-                                )
-                            ),
-                            div({
-                                class: "category-container"
-                            },
-                                span(dataMapObj.tags.join("|"))
-                            )
-                        ),
-                        div({
-                            class: "submain-Footer"
-                        },
-                            div({
-                                class: "row valueFactor-container"
-                            },
-                                div({
-                                    class: "factor-container"
-                                },
-                                    div({
-                                        class: "amu-container"
-                                    },
-                                        label("AMU"),
-                                        span({
-                                            class: "amuvalue"
-                                        }, (ele.aum[0].latestAum == null ? "" : "₹" + ele.aum[0].latestAum + " " + "Crs"))
-                                    ),
-                                    div({
-                                        class: "risk-container"
-                                    },
-                                        label("Risk"),
-                                        div({
-                                            class: "riskvalue"
-                                        },
-                                            div({
-                                                class: "risklabelvalue"
-                                            }, ele.risk.risk),
-                                            div({
-                                                class: "riskinfoiconvalue"
-                                            },
-                                                img("/content.fake/path.img")
-                                            )
-                                        )
-                                    ),
-                                    div({
-                                        class: "nav-container"
-                                    },
-                                        label("NAV"),
-                                        div({
-                                            class: "navContainervalue"
-                                        },
-                                            div({
-                                                class: "navRatevalue"
-                                            },
-                                                div({
-                                                    class: "fundValue"
-                                                }, ele.nav[0].nav),
-                                                div({
-                                                    class: "fundRateValue",
-                                                    style: Math.sign(ele.nav[0].navChng) == -1 ? "color:red" : "color:green"
-                                                }, "(" + ele.nav[0].navChng + "%)")
-                                            ),
-                                            div({
-                                                class: "navFundDate"
-                                            }, navDate(ele.nav[0].navRecdt.split(" ")[0]))
-                                        )
-                                    ),
-                                    div({
-                                        class: "cagr-container"
-                                    },
-                                        label({
-                                            class: "CAGRContainer"
-                                        }, "CAGR",
-                                            select(
-                                                ...dataMapObj.siperiods.map((ele) => {
-                                                    return option(ele.toUpperCase())
-                                                })
-                                            )
-                                        ),
-                                        div({
-                                            class: "cagr-rate"
-                                        }, ele.return.length != 0 ? ele.return[0].schReturnCagr + "%" : ""),
-                                        div({
-                                            class: "cagr-rateDate"
-                                        }, ele.return.length != 0 ? cgarDate(ele.return[0].schReturnAsOnDt) : "")
-                                    )
-                                )
-                            ),
-                            div({
-                                class: "buttonFactor-container"
-                            },
-                                div({
-                                    class: "button-container"
-                                },
-                                    div({
-                                        class: "know-more-btn"
-                                    }, a({
-                                        class: "know-more"
-                                    }, "Know More")),
-                                ),
-                                div({
-                                    class: "invest-now-btn"
-                                }, a({
-                                    class: "Invest-now"
-                                }), "Invest Now")
-                            )
-                        )
-                    )
-                ) : ""
-            })
-
-        )
-
-
-        block.querySelector(".inner2-container1").innerHTML = "";
-        const headerRightConyainer = h3({
-            id: "our-funds"
-        }, "Our Funds")
-        block.querySelector(".inner2-container1").append(headerRightConyainer);
-        block.querySelector(".inner2-container1").append(rightTopContianer);
-
-        block.querySelector(".inner2-container2").innerHTML = "";
-        block.querySelector(".inner2-container2").append(rightBottomContainer);
-    }
+    rightBottomcardRender(block,dataCfObj,dataMapObj);
 
     // Invest Now Logic RM11
     function initInvestNowListeners() {
@@ -1263,110 +648,11 @@ export default async function decorate(block) {
             overlay.remove();
         });
     }
-
-
-
-    // function showEditPopup(targetContainer) {
-    //     const overlay = div({ class: 'edit-popup-overlay' });
-
-    //     const popup = div({ class: 'edit-popup' });
-
-    //     // Frequency options
-    //     const frequencyOptions = ['Annual', 'Daily', 'Fortnightly', 'Monthly', 'Quarterly', 'Weekly'];
-    //     const frequencyDiv = div({ class: 'frequency-options' },
-    //         ...frequencyOptions.map(freq =>
-    //             label(
-    //                 input({
-    //                     type: 'radio',
-    //                     name: 'frequency',
-    //                     value: freq,
-    //                     checked: freq === 'Monthly'
-    //                 }),
-    //                 text(` ${freq}`)
-    //             )
-    //         )
-    //     );
-
-    //     // End Date options
-    //     const dateInput = input({
-    //         type: 'date',
-    //         class: 'end-date-input',
-    //         style: 'display:none; margin-top: 5px;'
-    //     });
-
-    //     const endDateDiv = div({ class: 'enddate-options' },
-    //         label(
-    //             input({ type: 'radio', name: 'enddate', value: 'until', checked: true }),
-    //             text(' Until Cancel')
-    //         ),
-    //         label(
-    //             input({ type: 'radio', name: 'enddate', value: 'select' }),
-    //             text(' Select Date')
-    //         ),
-    //         dateInput
-    //     );
-
-    //     // Buttons
-    //     const buttonDiv = div({ class: 'edit-popup-buttons' },
-    //         button({ class: 'cancel-btn' }, text('CANCEL')),
-    //         button({ class: 'ok-btn' }, text('OK'))
-    //     );
-
-    //     // Append everything to popup
-    //     popup.append(
-    //         h4(text('Frequency')),
-    //         frequencyDiv,
-    //         h4(text('End Date')),
-    //         endDateDiv,
-    //         buttonDiv
-    //     );
-
-    //     overlay.appendChild(popup);
-    //     document.body.appendChild(overlay);
-
-    //     // Handle show/hide of date input based on enddate radio selection
-    //     const endDateRadios = popup.querySelectorAll('input[name="enddate"]');
-    //     endDateRadios.forEach(radio => {
-    //         radio.addEventListener('change', () => {
-    //             dateInput.style.display = radio.value === 'select' ? 'block' : 'none';
-    //         });
-    //     });
-
-    //     // Cancel button
-    //     popup.querySelector('.cancel-btn').addEventListener('click', () => {
-    //         overlay.remove();
-    //     });
-
-    //     // OK button
-    //     popup.querySelector('.ok-btn').addEventListener('click', () => {
-    //         const selectedFrequency = popup.querySelector('input[name="frequency"]:checked')?.value;
-    //         const selectedEndType = popup.querySelector('input[name="enddate"]:checked')?.value;
-    //         const selectedDate = dateInput.value;
-
-    //         const endDateDisplay = selectedEndType === 'select' && selectedDate
-    //             ? selectedDate
-    //             : 'Until I Cancel';
-
-    //         const freqLabel = targetContainer.querySelector('.sip-frequency .frequency-label');
-    //         if (freqLabel) freqLabel.textContent = `Frequency: ${selectedFrequency}`;
-
-    //         const endLabel = targetContainer.querySelector('.sip-end .end-label');
-    //         if (endLabel) endLabel.textContent = `End Date: ${endDateDisplay}`;
-
-    //         overlay.remove();
-    //     });
-    // }
-
-
-
-
-    // Invest Now Logic RM11
-
-
 }
 
 function dataFilterfun(param){
     let dataMapObj = {}
+    dataMapObj["schemeName"] = []
         dataMapObj["fundCategory"] = [
         {"indian-equity": []},
         {"international-equity": []},
@@ -1390,7 +676,18 @@ function dataFilterfun(param){
         {"index-funds":[]},
         {"etf":[]}
     ]
-
+    dataMapObj["sort"] =[
+        {
+            "ListDropdown":[{"text":"Popular","value":"inception_Ret"},{"text":"1 Year Returns","value":"oneYear_Ret"},{"text":"3 Year Returns","value":"threeYear_Ret"},{"text":"5 Year Returns","value":"fiveYear_Ret"},{"text":"7 Year Returns","value":"sevenYear_Ret"},{"text":"10 Year Returns","value":"tenYear_Ret"}],
+            "inception_Ret" :[],
+            "oneYear_Ret":[],
+            "threeYear_Ret":[],
+            "fiveYear_Ret":[],
+            "sevenYear_Ret":[],
+            "tenYear_Ret":[],  
+        }
+    ]
+    
      for (let name of param) {
         if ([...name.fundsTaggingSection].includes("motilal-oswal:indian-equity-")) {
             dataMapObj["fundCategory"].forEach((element)=>{
@@ -1462,11 +759,261 @@ function dataFilterfun(param){
                 }
             })
         }
+        for (const element of name.returns) {
+            let key = Object.keys(element);
+            if([...key].includes("inception_Ret") && !dataMapObj["sort"][0]["inception_Ret"].includes(name.schcode)){
+                dataMapObj["sort"][0]["inception_Ret"].push(name.schcode)
+            }
+            if([...key].includes("oneYear_Ret") && !dataMapObj["sort"][0]["oneYear_Ret"].includes(name.schcode)){
+                dataMapObj["sort"][0]["oneYear_Ret"].push(name.schcode)
+            }
+            if([...key].includes("threeYear_Ret") && !dataMapObj["sort"][0]["threeYear_Ret"].includes(name.schcode)){
+                dataMapObj["sort"][0]["threeYear_Ret"].push(name.schcode)
+            }
+            if([...key].includes("fiveYear_Ret") && !dataMapObj["sort"][0]["fiveYear_Ret"].includes(name.schcode)){
+                dataMapObj["sort"][0]["fiveYear_Ret"].push(name.schcode)
+            }
+            if([...key].includes("sevenYear_Ret") && !dataMapObj["sort"][0]["sevenYear_Ret"].includes(name.schcode)){
+                dataMapObj["sort"][0]["sevenYear_Ret"].push(name.schcode)
+            }
+            if([...key].includes("tenYear_Ret") && !dataMapObj["sort"][0]["tenYear_Ret"].includes(name.schcode)){
+                dataMapObj["sort"][0]["tenYear_Ret"].push(name.schcode)
+            }
+        }
+        dataMapObj["schemeName"].push({"schemeName" : name.schDetail.schemeName,"schcode":name.schcode})  
     }
     return dataMapObj
 }
 function capitalizeEachWord(sentence) {
+    if (sentence.includes("etf")) {
+        return sentence.toUpperCase() + "'s"; 
+    }
   return sentence.replace(/\b\w/g, function(char) {
     return char.toUpperCase();
   });
+}
+
+function undefinedHandler(param){
+    let mop = [undefined,null,""]
+    if (mop.includes(param)) {
+        return "NA"
+    }
+    return param
+
+}
+
+function rightBottomcardRender(block,params,dataMapObj){
+    let InvestBtn = ''
+    let siblock = {"inception_Ret":"si","oneYear_Ret":"1 Year","threeYear_Ret":"3 Year","fiveYear_Ret":"5 Year","sevenYear_Ret":"7 Year","tenYear_Ret":"10 Year"} 
+    block.querySelectorAll(".radio-button-container [type=radio]").forEach((el) => {
+        if (el.checked) {
+            InvestBtn = el.value;
+        }
+    })
+    params.forEach((elem,index)=>{
+        dataMapObj["data"][index] = {}
+        elem.planList.forEach((element)=>{
+            if (element.planName == InvestBtn && element.optionName === "Growth") {
+                        dataMapObj.tagCode = ""
+                        dataMapObj.tagCode = element.groupedCode;
+                        [...elem.aum].forEach((aum) => {
+                            if (dataMapObj.tagCode === (aum.plancode + aum.optioncode)) {
+                                dataMapObj["data"][index].aum = aum.latestAum;
+                            }
+                        })
+                        elem.nav.forEach((aum) => {
+                            if (dataMapObj.tagCode === (aum.plancode + aum.optioncode)) {
+                                dataMapObj["data"][index].nav = aum.latnav;
+                             }
+                        })
+                        elem.returns.forEach((aum) => {
+                            if (dataMapObj.tagCode === (aum.plancode + aum.optioncode)) {
+                                dataMapObj["data"][index].schReturnCagr = aum.inception_Ret;
+                            }
+                        })
+            }
+        })
+    })
+    
+    const rightBottomContainer = div({
+            class: "main-container-bottom"
+        },
+            ...params.map((ele, index) => {
+                dataMapObj.tags = [];
+                ele.fundsTaggingSection.forEach((element) => {
+                    let temp = ["motilal-oswal:active", "motilal-oswal:index-funds", "motilal-oswal:etf"]
+                        if (!temp.includes(element)) {
+                            dataMapObj.tags.push(element.replace("motilal-oswal:",""))
+                        }
+                })
+                dataMapObj.siperiods = [];
+                let tempData = ""
+                dataMapObj[index] = {}
+                dataMapObj.DuplicateRemove = []
+                ele.returns.forEach((key,val)=>{
+                    if (Object.keys(key).includes("inception_Ret") && !dataMapObj.siperiods.includes("si")) {
+                        dataMapObj.siperiods.push("si")
+                    }
+                    if (Object.keys(key).includes("oneYear_Ret") && !dataMapObj.siperiods.includes("1 Year")) {
+                        dataMapObj.siperiods.push("1 Year")
+                    }
+                    if (Object.keys(key).includes("threeYear_Ret") && !dataMapObj.siperiods.includes("3 Year")) {
+                        dataMapObj.siperiods.push("3 Year")
+                    }
+                    if (Object.keys(key).includes("fiveYear_Ret") && !dataMapObj.siperiods.includes("5 Year")) {
+                        dataMapObj.siperiods.push("5 Year")
+                    }
+                    if (Object.keys(key).includes("sevenYear_Ret") && !dataMapObj.siperiods.includes("7 Year")) {
+                        dataMapObj.siperiods.push("7 Year")
+                    }
+                    if (Object.keys(key).includes("tenYear_Ret") && !dataMapObj.siperiods.includes("10 Year")) {
+                        dataMapObj.siperiods.push("10 Year")
+                    }
+                })
+                return  div({
+                    class: "submain-container-bottom"
+                },
+                    div({
+                        class: "fundCard"
+                    },
+                        div({
+                            class: "submain-Header"
+                        },
+                            div({
+                                class: "name-content-container"
+                            },
+                                div({
+                                    class: "logoName"
+                                }, "Logo"),
+                                div({
+                                    class: "planName",
+                                    dataschCode: ele.schcode
+                                }, a(ele.schDetail.schemeName))
+                            ),
+                            div({
+                                class: "dropdown-container"
+                            },
+                                span({
+                                    class: "fundOption"
+                                },
+                                    select(
+                                        ...ele.planList.map((seleOp,idx) => {
+                                            if (!dataMapObj.DuplicateRemove.includes(seleOp.optionName) && seleOp.planName == InvestBtn) {
+                                                dataMapObj.DuplicateRemove.push(seleOp.optionName)
+                                                return option({groupedCode:seleOp.groupedCode},seleOp.optionName)
+                                            }
+                                        }) 
+                                    )
+                                )
+                            ),
+                            div({
+                                class: "category-container"
+                            },
+                                span(capitalizeEachWord(dataMapObj.tags.join("|")))
+                            )
+                        ),
+                        div({
+                            class: "submain-Footer"
+                        },
+                            div({
+                                class: "row valueFactor-container"
+                            },
+                                div({
+                                    class: "factor-container"
+                                },
+                                    div({
+                                        class: "amu-container"
+                                    },
+                                        label("AMU"),
+                                        span({
+                                            class: "amuvalue"
+                                        }, ("₹" + undefinedHandler(dataMapObj.data[index].aum) + " " + "Crs"))
+                                    ),
+                                    div({
+                                        class: "risk-container"
+                                    },
+                                        label("Risk"),
+                                        div({
+                                            class: "riskvalue"
+                                        },
+                                            div({
+                                                class: "risklabelvalue"
+                                            }, ele.risk.riskType),
+                                            div({
+                                                class: "riskinfoiconvalue"
+                                            },
+                                                img("/content.fake/path.img")
+                                            )
+                                        )
+                                    ),
+                                    div({
+                                        class: "nav-container"
+                                    },
+                                        label("NAV"),
+                                        div({
+                                            class: "navContainervalue"
+                                        },
+                                            div({
+                                                class: "navRatevalue"
+                                            },
+                                                div({
+                                                    class: "fundValue"
+                                                }, undefinedHandler(dataMapObj.data[index].nav)),//ele.nav[0].nav
+                                                div({
+                                                    class: "fundRateValue",
+                                                    style: Math.sign(0) == -1 ? "color:red" : "color:green"
+                                                }, "(" + 0 + "%)") //ele.nav[0].navChng
+                                            ),
+                                            div({
+                                                class: "navFundDate"
+                                            }, 0)//navDate(ele.nav[0].navRecdt.split(" ")[0])
+                                        )
+                                    ),
+                                    div({
+                                        class: "cagr-container"
+                                    },
+                                        label({
+                                            class: "CAGRContainer"
+                                        }, "CAGR",
+                                            select(
+                                                ...dataMapObj.siperiods.map((ele) => {
+                                                    return option(ele.toUpperCase())
+                                                })
+                                            )
+                                        ),
+                                        div({
+                                            class: "cagr-rate"
+                                        }, undefinedHandler(dataMapObj.data[index].schReturnCagr) + "%"),
+                                        div({
+                                            class: "cagr-rateDate"
+                                        }, 0) //cgarDate(ele.return[0].schReturnAsOnDt)
+                                    )
+                                )
+                            ),
+                            div({
+                                class: "buttonFactor-container"
+                            },
+                                div({
+                                    class: "button-container"
+                                },
+                                    div({
+                                        class: "know-more-btn"
+                                    }, a({
+                                        class: "know-more"
+                                    }, "Know More")),
+                                ),
+                                div({
+                                    class: "invest-now-btn"
+                                }, a({
+                                    class: "Invest-now"
+                                }), "Invest Now")
+                            )
+                        )
+                    )
+                )
+            })
+
+        )
+    block.querySelector(".inner2-container2").innerHTML = "";
+    block.querySelector(".inner2-container2").append(rightBottomContainer);
 }
