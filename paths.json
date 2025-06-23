@@ -7,7 +7,9 @@
     "/content/eds-ru01/api/form-api:/api/form-api.json",
     "/content/eds-ru01/api/fund-api:/api/fund-api.json",
     "/content/eds-ru01/placeholder:/placeholder.json",
-    "/content/eds-ru01/schememaster:/schememaster.json"
+    "/content/eds-ru01/schememaster:/schememaster.json",
+    "/content/eds-ru01/api/NAV_AND_DIVIDEND_UPLOAD:/api/NAV_AND_DIVIDEND_UPLOAD.json"
+
   ],
   "includes": [
     "/content/eds-ru01/"
