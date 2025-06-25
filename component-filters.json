@@ -15,7 +15,9 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "explore-products-right-cards",
+      "explore-our-products-title"
     ]
   },
   {
@@ -37,6 +39,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "explore-products-right-cards",
+    "components": [
+      "explore-right-card"
     ]
   }
 ]
