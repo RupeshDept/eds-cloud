@@ -19,7 +19,8 @@
       "explore-products-right-cards",
       "explore-our-products-title",
       "footer-top",
-      "strategy-card"
+      "strategy-card",
+      "investment-philosophy-card"
     ]
   },
   {
@@ -59,6 +60,12 @@
     "id": "strategy-card",
     "components": [
       "strategy-card-item"
+    ]
+  },
+  {
+    "id": "investment-philosophy-card",
+    "components": [
+      "investment-card-item"
     ]
   }
 ]

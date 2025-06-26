@@ -1,0 +1,79 @@
+.section.investment-philosophy-card-container {
+    /* background-color: lavender; */
+    max-width: 1110px;
+    padding: 0 15px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section.investment-philosophy-card-container>diV {
+    width: 33.3%;
+    padding: 0;
+}
+
+.investment-philosophy-card-container>diV:nth-of-type(1) {
+    width: 100%;
+}
+
+.investment-philosophy-card-container h2 {
+    color: #2b2e8c;
+    margin: 0 0 35px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 46.4px;
+    font-family: sans-serif;
+    text-align: center;
+    letter-spacing: -0.4px;
+    padding: 0;
+}
+
+.section .investment-philosophy-card-wrapper {
+    padding: 0;
+    /* margin-left: -15px; */
+    /* margin-right: -15px; */
+    margin: 0;
+}
+
+.investment-philosophy-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.investment-philosophy-card .card-item {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.investment-philosophy-card .card-item .item-icon {
+    min-width: 23px;
+    height: 23px;
+}
+
+.card-item .item-content {
+    width: 100%;
+}
+
+.item-content h4 {
+    color: #1a294e;
+    font-size: 16px;
+    margin: 0 0 10px;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+.item-content p {
+    color: #707070;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+}
+
+.section.investment-philosophy-card-container div:nth-of-type(3) > p{
+    max-width: 250px;
+    height: 175px;
+    margin: 0 auto;
+}

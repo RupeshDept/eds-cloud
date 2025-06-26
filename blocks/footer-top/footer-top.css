@@ -91,6 +91,14 @@ p {
     text-decoration: none;
 }
 
+.footer-top-left>div>ul>li ul a  {
+        color: rgb(211 215 221 / 1);
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    text-decoration: none;
+}
+
 .footer-middle {
     border-top: 0.8px solid rgb(255 255 255/1);
     padding-top: 40px;
@@ -156,3 +164,4 @@ p {
     color: rgb(250 251 252/1);
     text-decoration: none;
 }
+
