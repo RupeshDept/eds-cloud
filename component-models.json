@@ -369,5 +369,57 @@
         "label": "Content"
       }
     ]
+  },
+  {
+    "id": "strategy-card-item",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "col1_imagepath",
+        "value": "",
+        "label": "Icon Source",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "col1_imagepathAlt",
+        "value": "",
+        "label": "Icon Alt",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "col2_title",
+        "value": "",
+        "label": "Card Title",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "col2_titleType",
+        "label": "Card Title Type",
+        "options": [
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "col2_carddesc",
+        "value": "",
+        "label": "Card Description",
+        "valueType": "string"
+      }
+    ]
   }
 ]

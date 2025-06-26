@@ -234,6 +234,36 @@
               }
             }
           }
+        },
+        {
+          "title": "Strategy Card",
+          "id": "strategy-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Strategy Card",
+                  "filter": "strategy-card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Strategy Card Item",
+          "id": "strategy-card-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Strategy Card Item",
+                  "model": "strategy-card-item"
+                }
+              }
+            }
+          }
         }
       ]
     }

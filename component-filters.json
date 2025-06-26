@@ -18,7 +18,8 @@
       "fragment",
       "explore-products-right-cards",
       "explore-our-products-title",
-      "footer-top"
+      "footer-top",
+      "strategy-card"
     ]
   },
   {
@@ -52,6 +53,12 @@
     "id": "footer-top",
     "components": [
       "footer-top-item"
+    ]
+  },
+  {
+    "id": "strategy-card",
+    "components": [
+      "strategy-card-item"
     ]
   }
 ]
