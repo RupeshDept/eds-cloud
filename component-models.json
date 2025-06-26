@@ -116,6 +116,10 @@
           {
             "name": "Explore Our Products",
             "value": "explore-our-products"
+          },
+          {
+            "name": "Footer",
+            "value": "footer-content"
           }
         ]
       }
@@ -328,6 +332,41 @@
         "value": "",
         "label": "Icon Alt",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "footer-top",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Select Class",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Footer Top",
+            "value": "footer-top"
+          },
+          {
+            "name": "Footer Middle",
+            "value": "footer-middle"
+          },
+          {
+            "name": "Footer Bottom",
+            "value": "footer-bottom"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "footer-top-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "title",
+        "label": "Content"
       }
     ]
   }

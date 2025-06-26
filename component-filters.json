@@ -17,7 +17,8 @@
       "columns",
       "fragment",
       "explore-products-right-cards",
-      "explore-our-products-title"
+      "explore-our-products-title",
+      "footer-top"
     ]
   },
   {
@@ -45,6 +46,12 @@
     "id": "explore-products-right-cards",
     "components": [
       "explore-right-card"
+    ]
+  },
+  {
+    "id": "footer-top",
+    "components": [
+      "footer-top-item"
     ]
   }
 ]
