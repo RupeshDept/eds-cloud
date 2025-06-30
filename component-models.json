@@ -1,6 +1,8 @@
-[{
+[
+  {
     "id": "image",
-    "fields": [{
+    "fields": [
+      {
         "component": "reference",
         "name": "image",
         "label": "Image",
@@ -15,7 +17,8 @@
   },
   {
     "id": "title",
-    "fields": [{
+    "fields": [
+      {
         "component": "text",
         "name": "title",
         "label": "Title"
@@ -24,7 +27,8 @@
         "component": "select",
         "name": "titleType",
         "label": "Title Type",
-        "options": [{
+        "options": [
+          {
             "name": "h1",
             "value": "h1"
           },
@@ -54,7 +58,8 @@
   },
   {
     "id": "button",
-    "fields": [{
+    "fields": [
+      {
         "component": "aem-content",
         "name": "link",
         "label": "Link"
@@ -73,7 +78,8 @@
         "component": "select",
         "name": "linkType",
         "label": "Type",
-        "options": [{
+        "options": [
+          {
             "name": "default",
             "value": ""
           },
@@ -91,7 +97,8 @@
   },
   {
     "id": "section",
-    "fields": [{
+    "fields": [
+      {
         "component": "text",
         "name": "name",
         "label": "Section Name",
@@ -101,16 +108,19 @@
         "component": "multiselect",
         "name": "style",
         "label": "Style",
-        "options": [{
-          "name": "Highlight",
-          "value": "highlight"
-        }]
+        "options": [
+          {
+            "name": "Highlight",
+            "value": "highlight"
+          }
+        ]
       }
     ]
   },
   {
     "id": "card",
-    "fields": [{
+    "fields": [
+      {
         "component": "reference",
         "valueType": "string",
         "name": "image",
@@ -128,7 +138,8 @@
   },
   {
     "id": "columns",
-    "fields": [{
+    "fields": [
+      {
         "component": "text",
         "valueType": "number",
         "name": "columns",
@@ -146,15 +157,18 @@
   },
   {
     "id": "fragment",
-    "fields": [{
-      "component": "aem-content",
-      "name": "reference",
-      "label": "Reference"
-    }]
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "reference",
+        "label": "Reference"
+      }
+    ]
   },
   {
     "id": "hero",
-    "fields": [{
+    "fields": [
+      {
         "component": "reference",
         "valueType": "string",
         "name": "image",
@@ -179,7 +193,8 @@
   },
   {
     "id": "faq",
-    "fields": [{
+    "fields": [
+      {
         "component": "aem-content",
         "name": "link",
         "label": "Link"
@@ -193,16 +208,19 @@
   },
   {
     "id": "swiper",
-    "fields": [{
-      "component": "reference",
-      "name": "image",
-      "label": "Image",
-      "multi": false
-    }]
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      }
+    ]
   },
   {
     "id": "pms-hero",
-    "fields": [{
+    "fields": [
+      {
         "component": "richtext",
         "name": "text",
         "value": "",
@@ -219,25 +237,30 @@
   },
   {
     "id": "pms-navbar",
-    "fields": [{
-      "component": "richtext",
-      "name": "text",
-      "value": "",
-      "label": "Text",
-      "valueType": "string"
-    }]
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
   },
   {
     "id": "pms-form",
-    "fields": [{
-      "component": "aem-content",
-      "name": "link",
-      "label": "Link"
-    }]
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      }
+    ]
   },
   {
     "id": "fund-api",
-    "fields": [{
+    "fields": [
+      {
         "component": "aem-content",
         "name": "link",
         "label": "Link"
@@ -251,7 +274,8 @@
   },
   {
     "id": "tabsitem",
-    "fields": [{
+    "fields": [
+      {
         "component": "text",
         "name": "title",
         "label": "Tab Title"
@@ -265,17 +289,20 @@
   },
   {
     "id": "calculators",
-    "fields": [{
-      "component": "richtext",
-      "name": "text",
-      "value": "",
-      "label": "Text",
-      "valueType": "string"
-    }]
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
   },
   {
     "id": "our-fund-left-item",
-    "fields": [{
+    "fields": [
+      {
         "component": "text",
         "name": "title",
         "label": "Title"
@@ -284,7 +311,8 @@
         "component": "select",
         "name": "titleType",
         "label": "Title Type",
-        "options": [{
+        "options": [
+          {
             "name": "h1",
             "value": "h1"
           },
@@ -321,7 +349,8 @@
   },
   {
     "id": "our-fund-right-item",
-    "fields": [{
+    "fields": [
+      {
         "component": "text",
         "name": "title",
         "label": "Title"
@@ -330,7 +359,8 @@
         "component": "select",
         "name": "titleType",
         "label": "Title Type",
-        "options": [{
+        "options": [
+          {
             "name": "h1",
             "value": "h1"
           },
@@ -367,17 +397,20 @@
   },
   {
     "id": "my-footer",
-    "fields": [{
-      "component": "richtext",
-      "name": "text",
-      "value": "",
-      "label": "Text Footer",
-      "valueType": "string"
-    }]
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text Footer",
+        "valueType": "string"
+      }
+    ]
   },
   {
     "id": "flexicap-tab-content",
-    "fields": [{
+    "fields": [
+      {
         "component": "text",
         "name": "title",
         "value": "",

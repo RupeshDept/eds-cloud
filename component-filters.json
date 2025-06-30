@@ -1,4 +1,5 @@
-[{
+[
+  {
     "id": "main",
     "components": [
       "section"
@@ -83,7 +84,7 @@
   },
   {
     "id": "flexicap-tab",
-    "components": [
+    "components":[
       "flexicap-tab-content"
     ]
   }
