@@ -207,7 +207,7 @@
     "id": "calculator-wealth-item",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
         "name": "text",
         "value": "",
         "label": "Calculator Text",
