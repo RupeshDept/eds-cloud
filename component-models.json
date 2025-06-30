@@ -406,5 +406,29 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "flexicap-tab-content",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "value": "",
+        "label": "Tab Title",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Tab Content Fragment URL"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Flexicap Tab Content",
+        "valueType": "string"
+      }
+    ]
   }
 ]

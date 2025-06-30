@@ -1,0 +1,202 @@
+@import url('../tab/tab.css');
+
+.flexicap-tab .tabs-list {
+    display: flex;
+    gap: 0.5ch;
+    max-width: 100%;
+    font-size: var(--body-font-size-xs);
+    overflow-x: auto;
+}
+
+@media (width >=600px) {
+    .flexicap-tab .tabs-list {
+        font-size: var(--body-font-size-s);
+    }
+}
+
+@media (width >=900px) {
+    .flexicap-tab .tabs-list {
+        font-size: var(--body-font-size-m);
+    }
+}
+
+.flexicap-tab .tabs-list button {
+    flex: 0 0 max-content;
+    margin: 0;
+    border: 1px solid #dadada;
+    border-radius: 0;
+    padding: 0.5em;
+    background-color: var(--light-color);
+    color: initial;
+    font-weight: bold;
+    line-height: unset;
+    text-align: initial;
+    text-overflow: unset;
+    overflow: unset;
+    white-space: unset;
+    transition: background-color 0.2s;
+}
+
+.flexicap-tab .tabs-list button p {
+    margin: 0;
+}
+
+
+.flexicap-tab .tabs-list button[aria-selected='true'] {
+    border-bottom: 1px solid var(--background-color);
+    background-color: var(--background-color);
+    cursor: initial;
+}
+
+.flexicap-tab .tabs-panel {
+    margin-top: -1px;
+    padding: 24px 0;
+    border: 1px solid #dadada;
+    overflow: auto;
+}
+
+.flexicap-tab .tabs-panel[aria-hidden='true'] {
+    display: none;
+}
+
+
+/* Start css required for this */
+.section.flexicap-tab-container .flexicap-tab-wrapper {
+    padding: 0;
+    max-width: 100%;
+}
+
+.list-bg {
+    background-color: #f0f9ff;
+}
+
+.flexicap-tab .tabs-list,
+.flexicap-tab .tabs-panel {
+    max-width: 1154px;
+    margin: 0 auto;
+}
+
+.flexicap-tab .tabs-list {
+    margin-bottom: 41px;
+    padding: 24px 0;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.flexicap-tab .tabs-list .tabs-tab {
+    background-color: red;
+    background-color: transparent;
+    border: none;
+    padding: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: sans-serif;
+    line-height: 20px;
+    color: #231f20;
+}
+
+.flexicap-tab .tabs-list .tabs-tab[aria-selected='true'] {
+    background-color: transparent;
+    border-bottom: 1px solid #005dac;
+    color: #005dac;
+    font-weight: 600;
+}
+
+.flexicap-tab .tabs-panel {
+    padding: 0;
+    border: none;
+}
+
+.flexicap-tab .tabs-panel ul {
+    padding: 0 15px;
+    margin: 0;
+    display: flex;
+    gap: 34px 30px;
+    flex-wrap: wrap;
+}
+
+.flexicap-tab .tabs-panel ul li {
+    border: 1px solid #fcb017;
+    border-radius: 23px;
+    list-style: none;
+    max-width: 31.36%;
+    width: 100%;
+}
+
+
+.flexicap-tab .tabs-panel ul li a {
+    padding: 10px 15px 10px 35px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: #2d2c2d;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21.14px;
+    transition: all .3s ease;
+}
+
+.flexicap-tab .tabs-panel ul li a span {
+    max-width: 42px;
+    max-height: 42px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fcb017;
+    background-color: #fff1d3;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all .3s ease;
+}
+
+.flexicap-tab .tabs-panel ul li a:hover {
+    border-radius: 23px;
+    background-color: #fff1d3;
+}
+
+.flexicap-tab .tabs-panel ul li a:hover span {
+    background-color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+    .flexicap-tab {
+        margin: 40px 24px 0;
+        background-color: lavender;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .flexicap-tab .accordion-item {
+        background-color: grey;
+    }
+
+    .flexicap-tab .accordion-item .accordion-item-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .flexicap-tab .accordion-item .accordion-item-label::after {
+        content: '';
+        border-left: 1px solid red;
+        border-bottom: 1px solid red;
+        transform: rotate(-45deg);
+        width: 8px;
+        height: 8px;
+        display: block;
+    }
+
+    .flexicap-tab .accordion-item .accordion-item-label p {
+        color: #231f20;
+        font-family: sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        margin: 0;
+    }
+}

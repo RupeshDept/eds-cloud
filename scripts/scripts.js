@@ -221,3 +221,32 @@ function autolinkFragements(element) {
     }
   })
 }
+
+ async function generateKey() {
+      return crypto.subtle.generateKey({ name: "AES-GCM", length: 256 }, true, ["encrypt", "decrypt"]);
+  }
+
+  async function encryptData(text){
+    let key = await generateKey();
+    let result = await encrypt(text ,key);
+    console.log(result);
+    
+  }
+    async function encrypt(text, key) {
+      const iv = crypto.getRandomValues(new Uint8Array(12));
+      const encoded = new TextEncoder().encode(text);
+      const ciphertext = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, encoded);
+      return { ciphertext, iv };
+    }
+
+    async function decrypt(ciphertext, iv, key) {
+      const decrypted = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, key, ciphertext);
+      return new TextDecoder().decode(decrypted);
+    }
+
+    // (async () => {
+    //   const key = await generateKey();
+    //   const { ciphertext, iv } = await encrypt("Top Secret!", key);
+    //   const result = await decrypt(ciphertext, iv, key);
+    //   $("output").textContent = `Decrypted: ${result}`;
+    // })();

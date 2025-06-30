@@ -38,7 +38,8 @@
       "our-fund",
       "calculator-home-loan-emi",
       "calculator-education-loan-emi",
-      "my-footer"
+      "my-footer",
+      "flexicap-tab"
     ]
   },
   {
@@ -79,6 +80,12 @@
     "id": "our-fund",
     "components": [
       "our-fund-left-item"
+    ]
+  },
+  {
+    "id": "flexicap-tab",
+    "components":[
+      "flexicap-tab-content"
     ]
   }
 ]
