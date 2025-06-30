@@ -1,0 +1,65 @@
+.calculator-wealth {
+  font-family: 'Inter', sans-serif;
+  padding: 2rem;
+  text-align: center;
+}
+
+.tab-wrapper {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 1rem;
+}
+.tab {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+.tab.active {
+  border-bottom: 2px solid #000;
+}
+
+.invested-block .slider-value {
+  font-size: 2rem;
+  font-weight: 600;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.slider {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.row .label {
+  font-size: 0.75rem;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.result-block {
+  margin-top: 2rem;
+}
+.result-block .returns-output {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.invest-btn {
+  padding: 0.75rem 2rem;
+  background: black;
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
