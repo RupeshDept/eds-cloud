@@ -3,7 +3,7 @@ import { div, input, span, button, select, option } from '../../scripts/dom-help
 
 export default function decorate(block) {
     const rows = [...block.children];
-    block.innerHTML = ''; // Clear original
+    block.innerHTML = '';
 
     const tabWrapper = div({ class: 'tab-wrapper' },
         button({ class: 'tab active', type: 'button' }, 'SIP'),
@@ -16,11 +16,11 @@ export default function decorate(block) {
     const cagrLabel = rows[3]?.querySelector('p')?.textContent || 'CAGR';
     const returnsLabel = rows[4]?.querySelector('p')?.textContent || 'ANNUAL RETURNS';
 
-    const investedSlider = input({ type: 'range', min: 1000, max: 1000000, step: 1000, value: 1000, class: 'slider' });
+    const investedSlider = input({ type: 'range', min: 1000, max: 500000, step: 500, value: 1000, class: 'slider' });
     const investedValue = span({ class: 'slider-value' }, '₹1,000');
 
     investedSlider.addEventListener('input', () => {
-        investedValue.textContent = `₹${(+investedSlider.value).toLocaleString()}`;
+        investedValue.textContent = formatINR(+investedSlider.value);
         updateReturns();
     });
 
@@ -30,6 +30,8 @@ export default function decorate(block) {
         option({ value: 5 }, '5 YEARS'),
         option({ value: 10 }, '10 YEARS')
     );
+
+    tenureDropdown.addEventListener('change', updateReturns);
 
     const investedAmount = span({ class: 'invested-amount' }, '₹12,000');
     const cagrValue = span({ class: 'cagr-value' }, '21.5%');
@@ -63,70 +65,37 @@ export default function decorate(block) {
         const years = +tenureDropdown.value;
         const cagr = 21.5;
 
-        const total = principal * Math.pow(1 + cagr / 100, years);
-        returnsOutput.textContent = `₹${Math.round(total).toLocaleString()}`;
+        let total;
+        // If the active tab is SIP, apply SIP formula
+        if (tabWrapper.querySelector('.tab.active').textContent === 'SIP') {
+            const monthlyRate = cagr / 100 / 12;
+            const totalMonths = years * 12;
+            total = principal * (((Math.pow(1 + monthlyRate, totalMonths) - 1) * (1 + monthlyRate)) / monthlyRate);
+        } else {
+            // Lumpsum Formula
+            total = principal * Math.pow(1 + cagr / 100, years);
+        }
 
-        investedAmount.textContent = `₹${(principal * (years * 12)).toLocaleString()}`;
+        returnsOutput.textContent = formatINR(total);
+
+        investedAmount.textContent = formatINR(principal * (years * 12));
     }
 
+    // Format INR values with commas and ₹ symbol
+    function formatINR(value) {
+        return `₹${Math.round(value).toLocaleString('en-IN')}`;
+    }
+
+    // Toggle active tab
+    const tabs = tabWrapper.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            updateReturns(); // Recalculate on tab switch
+        });
+    });
+
     updateReturns();
-
-    tenureDropdown.addEventListener('change', updateReturns);
-    investedSlider.addEventListener('change', updateReturns);
-    investBtn.addEventListener('click', () => {
-        alert('Investment process initiated!');
-    })
-
 }
 
-
-// export default function decorate(block) {
-//     console.log("CALCULATOR WEALTH BLOCK", block);
-//     const rows = [...block.children];
-
-//     rows.forEach((row, index) => {
-//         const label = row.querySelector('p');
-
-//         switch (index) {
-//             case 0: // IF YOU HAD INVESTED
-//                 label.after(
-//                     input({ type: 'number', min: 1000, step: 1000, value: 100000, class: 'invested-input' })
-//                 );
-//                 break;
-
-//             case 1: // TENURE
-//                 label.after(
-//                     input({ type: 'number', min: 1, max: 50, value: 10, class: 'tenure-input' })
-//                 );
-//                 break;
-
-//             case 2: // INVESTED AMOUNT (optional – skip if same as above)
-//                 // You can remove this row or leave empty
-//                 row.style.display = 'none'; // Hiding if it's duplicate
-//                 break;
-
-//             case 3: // CAGR
-//                 label.after(
-//                     input({ type: 'number', step: 0.1, value: 12, class: 'cagr-input' })
-//                 );
-//                 break;
-
-//             case 4: // ANNUAL RETURNS
-//                 const output = span({ class: 'returns-output' }, '₹ 0');
-//                 const calcBtn = button({ class: 'calculate-wealth' }, 'Calculate');
-//                 label.after(output, calcBtn);
-//                 break;
-//         }
-//     });
-
-//     // Calculation logic
-//     block.querySelector('.calculate-wealth').addEventListener('click', () => {
-//         const invested = +block.querySelector('.invested-input')?.value || 0;
-//         const tenure = +block.querySelector('.tenure-input')?.value || 0;
-//         const cagr = +block.querySelector('.cagr-input')?.value || 0;
-
-//         const finalValue = invested * Math.pow(1 + cagr / 100, tenure);
-//         block.querySelector('.returns-output').textContent =
-//             `₹ ${finalValue.toLocaleString(undefined, { maximumFractionDigits: 2 })}`;
-//     });
-// }

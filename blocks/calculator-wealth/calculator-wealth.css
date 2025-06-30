@@ -7,7 +7,7 @@
 .tab-wrapper {
   display: flex;
   justify-content: center;
-  border-bottom: 2px solid #ccc;
+  /* border-bottom: 2px solid #ccc; */
   margin-bottom: 1rem;
 }
 .tab {
@@ -15,11 +15,19 @@
   padding: 0.75rem 1.5rem;
   cursor: pointer;
   font-weight: bold;
+  border-radius: unset;
+  background-color: white;
+  color: black;
 }
 .tab.active {
   border-bottom: 2px solid #000;
 }
 
+.tab:hover, button:focus {
+    /* background-color: var(--link-hover-color); */
+    background-color: white;
+    cursor: pointer;
+}
 .invested-block .slider-value {
   font-size: 2rem;
   font-weight: 600;
@@ -62,4 +70,9 @@
   border-radius: 30px;
   border: none;
   cursor: pointer;
+}
+
+.tenure-block , .amount-block , .cagr-block{
+  display: flex;
+  flex-direction: column;
 }
