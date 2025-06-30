@@ -15,7 +15,9 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "performance-graph",
+      "calculator-wealth"
     ]
   },
   {
@@ -37,6 +39,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "calculator-wealth",
+    "components": [
+      "calculator-wealth-item"
     ]
   }
 ]

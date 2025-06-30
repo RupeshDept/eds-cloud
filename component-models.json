@@ -190,5 +190,29 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "performance-graph",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "calculator-wealth-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "text",
+        "value": "",
+        "label": "Calculator Text",
+        "valueType": "string"
+      }
+    ]
   }
 ]
