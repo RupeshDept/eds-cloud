@@ -7,3 +7,31 @@
 .show-graph-button {
   margin-top: 100px;
 }
+
+.chart-filter-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+}
+
+.filter-btn {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: black;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.filter-btn.active {
+  background: black;
+  color: white;
+  border-color: black;
+}
+
+.filter-btn:hover {
+  background: black;
+  color: white;
+  border-color: black;
+}
