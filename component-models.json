@@ -430,5 +430,17 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id":"other-similar-funds",
+    "fields":[
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Enter Text",
+        "valueType": "string"
+      }
+    ]
   }
 ]
