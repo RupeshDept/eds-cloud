@@ -153,5 +153,9 @@ export default function decorate(block) {
 
   })
   block.append(FundMainContain)
-  SwiperBlock(block)
+  let funcontainrClassList = [...block.classList];
+  funcontainrClassList.forEach((el)=>{
+    block.querySelector(".FundMainContain").classList.add(el)
+  })
+  SwiperBlock(block.querySelector(".FundMainContain"))
 }

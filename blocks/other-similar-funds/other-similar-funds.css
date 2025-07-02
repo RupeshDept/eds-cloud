@@ -1,3 +1,4 @@
+@import url('../swiper/swiper-bundle.min.css');
 .block.other-similar-funds .FundMainContain {
     display: flex;
     flex-wrap: nowrap;
@@ -15,6 +16,9 @@
     padding: 15px 20px 20px;
     display: flex;
     flex-direction: column;
+}
+.block.other-similar-funds .FundMainContain .swiper-wrapper{
+    gap: 10px;
 }
 
 .block.other-similar-funds .FundMainContain .funcontainerdiv .upperfuncontainer {

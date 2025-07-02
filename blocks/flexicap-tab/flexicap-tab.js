@@ -196,6 +196,7 @@ export default async function decorate(block) {
         el.classList.add("progressContain")
         if (el.querySelector(".progessBar")) {
           const progessText = el.querySelector(".progessBar").textContent.trim();
+          el.querySelector(".progessBar").innerText = "";
           const percent = (Number(progessText) / 100) * 100;
           el.querySelector(".progessBar").style.width = percent + "%";
           el.querySelector(".progessBar").textContent = Math.floor(percent) + "%";
