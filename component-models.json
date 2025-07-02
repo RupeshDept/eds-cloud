@@ -453,6 +453,10 @@
             "value": "one-point-five-view"
           },
           {
+            "name": " 2.5 View",
+            "value": "desk-two-point-five-view"
+          },
+          {
             "name": "Auto Scroll",
             "value": "auto-scroll"
           }

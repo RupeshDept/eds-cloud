@@ -89,6 +89,12 @@ export default function decorate(block) {
             objConfig['slidesPerView'] = 1.5;
             objConfig['spaceBetween'] = 10;
           }
+          if (blockClassList.indexOf("desk-two-point-five-view") != -1) {
+             objConfig["autoplay"] = true
+            objConfig['slidesPerView'] = 2.5;
+            objConfig['spaceBetween'] = 10;
+
+          }
           if (blockClassList.indexOf("auto-scroll") != -1) {
             objConfig["loop"] = true
             objConfig["autoplay"] = true
