@@ -200,3 +200,38 @@
         margin: 0;
     }
 }
+
+.tabpanelitem3 .tabpanelitem1 {
+    height: auto;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.tabpanelitem3 .tabpanelitem1::-webkit-scrollbar {
+    display: none;
+}
+
+.progressBarContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.progressBarLine {
+    position: relative;
+    color: white;
+    border: 1px solid black;
+    height: 5px;
+}
+
+.progessBar {
+    position: absolute;
+    background: #005dac;
+    height: 100%;
+}
+
+.progressLabel {
+    display: flex;
+    justify-content: space-between;
+}
