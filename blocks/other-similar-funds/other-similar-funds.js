@@ -99,7 +99,7 @@ export default function decorate(block) {
               class: "riskcontainer innerblockcard"
             },
             label("RISK"),
-            p("Very High")
+            p(elm.risk.riskType)
           ),
           div({
               class: "cagr-dropdown-container innerblockcard"
@@ -113,8 +113,8 @@ export default function decorate(block) {
                   FundSimilar.forEach((elem)=>{
                     if (event.target.getAttribute("schemecode") === elem.schcode) {
                         let cgarValue = elem.returns[0][event.target.value];
-                        block.querySelectorAll(".cagr-date-container h3")[event.target.getAttribute("dataInd")].innerText = "";
-                        block.querySelectorAll(".cagr-date-container h3")[event.target.getAttribute("dataInd")].innerText = cgarValue +"%";
+                        block.querySelector((".cagr-date-containerValue"+event.target.getAttribute("dataInd"))).innerText = "";
+                        block.querySelector((".cagr-date-containerValue"+event.target.getAttribute("dataInd"))).innerText = cgarValue +"%";
                     }
                   })  
                   console.log(event.target.value);
@@ -131,7 +131,7 @@ export default function decorate(block) {
           div({
               class: "cagr-date-container innerblockcard"
             },
-            h3(elm.returns[0][ObjTemp[tempReturns[0]]] +"%"),
+            h3({class:("cagr-date-containerValue"+index)},elm.returns[0][ObjTemp[tempReturns[0]]] +"%"),
             p("AS ON 06 MAY 2025")
           )
         )
