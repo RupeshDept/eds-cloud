@@ -1,0 +1,166 @@
+@import url('../swiper/swiper-bundle.min.css');
+
+.section .other-similar-funds-wrapper .other-similar-funds {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.block.other-similar-funds .FundMainContain {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    max-width: 1106px;
+    margin: 0 auto;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv {
+    max-width: 307px;
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+    padding: 15px 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.block.other-similar-funds .FundMainContain .swiper-wrapper {
+    gap: 10px;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .upperfuncontainer {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .upperfuncontainer h3 {
+    margin: 0;
+    color: #2b2e8c;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    text-decoration: none;
+    display: block;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .upperfuncontainer .fundTaggingLabel {
+    padding: 10px;
+    color: #717171;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .downfuncontainer {
+    padding: 15px;
+    margin-top: auto;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .downfuncontainer .subdownfuncontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .downfuncontainer .subdownfuncontainer .innerblockcard {
+    max-width: 44.5%;
+    width: 100%;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .downfuncontainer .subdownfuncontainer .innerblockcard label {
+    margin: 0;
+    color: #42526e;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .downfuncontainer .subdownfuncontainer .innerblockcard .navValue {
+    display: flex;
+    gap: 5px;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .downfuncontainer .subdownfuncontainer .innerblockcard .navValue h3 {
+    margin: 0;
+    color: #182a4e;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 20px;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .downfuncontainer .subdownfuncontainer .innerblockcard .navValue p {
+    margin: 0;
+    padding-top: 3px;
+    color: #182a4e;
+    font-family: sans-serif;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .downfuncontainer .subdownfuncontainer .innerblockcard .navDate p {
+    margin: 0;
+    color: #182a4e;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    display: inline-block;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .downfuncontainer .subdownfuncontainer .riskcontainer p {
+    color: #182a4e;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .downfuncontainer .subdownfuncontainer .innerblockcard select {
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .downfuncontainer .subdownfuncontainer .cagr-date-container {
+    padding-top: 10px;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .downfuncontainer .subdownfuncontainer .innerblockcard h3 {
+    margin: 0;
+    color: #182a4e;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 20px;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .downfuncontainer .subdownfuncontainer .innerblockcard p {
+    color: #182a4e;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .descriptionFrame {
+    position: relative;
+    border: 1px solid;
+    height: 24px;
+    border-radius: 10px;
+}
+
+.block.other-similar-funds .FundMainContain .funcontainerdiv .descriptionFrame p {
+    position: absolute;
+    margin: 0;
+    font-size: 12px;
+    padding-left: 15px;
+    padding-top: 3px;
+}

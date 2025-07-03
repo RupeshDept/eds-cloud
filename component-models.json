@@ -300,5 +300,104 @@
         "label": "Enter Label for Scheme Ratio"
       }
     ]
+  },
+  {
+    "id": "flexicap-tab-content",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "value": "",
+        "label": "Tab Title",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Tab Content Fragment URL"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Flexicap Tab Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "other-similar-funds",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Multi Select",
+        "options": [
+          {
+            "name": "Mobile Auto Scroll",
+            "value": "mobile-auto-scroll"
+          },
+          {
+            "name": "Mobile 1.5 View",
+            "value": "mobile-one-point-five-view"
+          },
+          {
+            "name": "Mobile 2.5 View",
+            "value": "two-point-five-view"
+          },
+          {
+            "name": "Mobile 3.5 View",
+            "value": "three-point-five-view"
+          },
+          {
+            "name": "Mobile Center View",
+            "value": "center-view"
+          },
+          {
+            "name": "Mobile Pagination",
+            "value": "mobile-pagination"
+          },
+          {
+            "name": "Mobile Loop",
+            "value": "mobile-loop"
+          },
+          {
+            "name": "Pagination",
+            "value": "desk-pagination"
+          },
+          {
+            "name": "Action Button",
+            "value": "left-right-navigation-btn"
+          },
+          {
+            "name": "Loop",
+            "value": "loop"
+          },
+          {
+            "name": "3 View",
+            "value": "three-point-view"
+          },
+          {
+            "name": "1.5 View",
+            "value": "one-point-five-view"
+          },
+          {
+            "name": " 2.5 View",
+            "value": "desk-two-point-five-view"
+          },
+          {
+            "name": "Auto Scroll",
+            "value": "auto-scroll"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Enter Text",
+        "valueType": "string"
+      }
+    ]
   }
 ]
