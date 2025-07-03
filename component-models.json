@@ -300,5 +300,41 @@
         "label": "Enter Label for Scheme Ratio"
       }
     ]
+  },
+  {
+    "id": "flexicap-fund-content-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Left Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "flexicap-fund-modal-item",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "col1_imagepath",
+        "value": "",
+        "label": "Image Source",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "col1_imagepathAlt",
+        "value": "",
+        "label": "Image Alt",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Enter popup path"
+      }
+    ]
   }
 ]
