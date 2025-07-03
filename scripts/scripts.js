@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   loadHeader,
   loadFooter,
@@ -11,6 +12,8 @@ import {
   loadSections,
   loadCSS,
 } from './aem.js';
+
+import { loadFragmenter } from '../blocks/fragment/fragment.js'
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -116,6 +119,7 @@ async function loadEager(doc) {
 async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadSections(main);
+  autolinkFragements(doc);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
@@ -169,4 +173,17 @@ try {
 
 } catch (error) {
   console.log("Error loading scripts:", error);
+}
+
+
+function autolinkFragements(element) {
+  element.querySelectorAll('a').forEach(function (origin) {
+    if (origin && origin.href && origin.href.includes('/fragment/')) {
+      const parent = origin.parentElement;
+      const div = document.createElement('div');
+      div.append(origin);
+      parent.append(div);
+      loadFragmenter(div);
+    }
+  })
 }
