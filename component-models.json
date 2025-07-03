@@ -214,5 +214,91 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "about-the-fund",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Enter Title for About the Fund"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Title Type",
+        "options": [
+          {
+            "name": "h1",
+            "value": "h1"
+          },
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          },
+          {
+            "name": "h5",
+            "value": "h5"
+          },
+          {
+            "name": "h6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "col1_invest_obj",
+        "label": "Enter Label for Investment Objective"
+      },
+      {
+        "component": "text",
+        "name": "col1_min_app_amount",
+        "label": "Enter Label for Minimum Application Amount"
+      },
+      {
+        "component": "text",
+        "name": "col1_min_redemp_amount",
+        "label": "Enter Label for Minimum Redemption Amount"
+      },
+      {
+        "component": "text",
+        "name": "col1_exist_load",
+        "label": "Enter Label for Exit Load"
+      },
+      {
+        "component": "text",
+        "name": "col1_launched_on",
+        "label": "Enter Label for Launched On"
+      },
+      {
+        "component": "text",
+        "name": "col1_locked_in_period",
+        "label": "Enter Label for Locked in Period"
+      },
+      {
+        "component": "text",
+        "name": "col1_expense_ratio",
+        "label": "Enter Label for Expense Ratio"
+      },
+      {
+        "component": "text",
+        "name": "col1_benchmark",
+        "label": "Enter Label for Benchmark"
+      },
+      {
+        "component": "text",
+        "name": "col1_scheme_ratio",
+        "label": "Enter Label for Scheme Ratio"
+      }
+    ]
   }
 ]
