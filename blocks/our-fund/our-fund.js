@@ -78,36 +78,26 @@ export default async function decorate(block) {
                                             type: "checkbox",
                                             dataattr: elme[Object.keys(elme)].join("-"),
                                             onclick: function (ele) {
-                                                if(dataMapObj.schcode.length != 0){
-                                                    let schcode = ele.target.getAttribute("dataattr").split("-")
-                                                     let tempArrcode = [],filterData = [];
-                                                     
-                                                    dataMapObj.schcode.forEach((items)=>{
-                                                        if (!schcode.includes(items)) {
-                                                            filterData.push(items)
-                                                        }
-                                                    })
-                                                   
-                                                    dataCfObj.forEach((item)=>{
-                                                        if(filterData.includes(item.schcode)){
-                                                            tempArrcode.push(item)
-                                                        }
-                                                    })
-                                                    rightBottomcardRender(block,tempArrcode,dataMapObj)
-                                                }else{
-                                                    if (ele.target.checked) {
-                                                        let schcode = ele.target.getAttribute("dataattr").split("-")
-                                                        let tempArrcode = [] 
-                                                        dataCfObj.forEach((item)=>{
-                                                            if(schcode.includes(item.schcode)){
-                                                                tempArrcode.push(item)
-                                                            }
-                                                        })
-                                                        rightBottomcardRender(block,tempArrcode,dataMapObj)  
-                                                    }else{
-                                                        rightBottomcardRender(block,dataCfObj,dataMapObj);
+                                               let tempSchCode =[]
+                                                document.querySelectorAll(".innerIndianEquity .categorey-direct").forEach((el)=>{
+                                                    if (el.checked) {
+                                                        tempSchCode.push(el.getAttribute('dataattr').split("-"))
                                                     }
-                                                }
+                                                })
+                                                tempSchCode = tempSchCode.flat(2)
+                                                let tempScheme = dataCfObj.filter((item)=>{
+                                                        if(tempSchCode.includes(item.schcode)){
+                                                            return item
+                                                        }
+                                                    })
+                                                   //Search Input
+                                                    Array.from(block.querySelector(".searchBarContainer .searchModal ul").children).forEach((elre)=>{
+                                                        elre.style.display="none"
+                                                        if (tempSchCode.includes(elre.getAttribute("dataattr"))) {
+                                                            elre.style.display="block"
+                                                        }
+                                                    }) 
+                                                rightBottomcardRender(block,tempScheme,dataMapObj)
                                             }
                                         })
                                     ),
@@ -116,7 +106,7 @@ export default async function decorate(block) {
                             })
                         )
                     }
-                    return label({
+                    return Object.keys(element)[0] !== 'indianEquitySub'?  label({
                         class: "checkbox-label-container"
                     },
                         span({
@@ -127,30 +117,52 @@ export default async function decorate(block) {
                                 type: "checkbox",
                                 dataattr: element[Object.keys(element)[0]].join("-"),
                                 onclick: function (ele) {
-                                    // console.log(ele.target.getAttribute("dataattr"));
-                                    
-                                    if (ele.target.checked) {
-                                        dataMapObj.schcode = ele.target.getAttribute("dataattr").split("-")
-                                        let tempArrcode = [];
-                                        if (ele.currentTarget.parentElement.nextElementSibling.textContent.trim().includes("Indian Equity")) {
-                                        block.querySelectorAll(".Indian-Equity-container .categorey-direct").forEach((element) => {
-                                            element.checked = ele.currentTarget.checked ? true : false;
-                                        }) 
-                                    }
-                                    dataCfObj.forEach((item)=>{
-                                            if(dataMapObj.schcode.includes(item.schcode)){
-                                                tempArrcode.push(item)
+                                    let tempSchCode =[];
+                                    Array.from(document.querySelector(".filter-container").children).forEach((el)=>{
+                                        if (el.querySelector(".categorey-direct").checked) {
+                                            if (el.querySelector(".innerIndianEquity")) {
+                                               document.querySelectorAll(".innerIndianEquity .categorey-direct").forEach((elm)=>{
+                                                    if(elm.checked){
+                                                        tempSchCode.push(elm.getAttribute('dataattr').split("-"))
+                                                    }
+                                                })
+                                                if (tempSchCode.length == 0) {
+                                                    document.querySelectorAll(".innerIndianEquity .categorey-direct").forEach((elsm)=>{
+                                                        elsm.checked =true;
+                                                    })
+                                                    tempSchCode.push(el.querySelector(".categorey-direct").getAttribute('dataattr').split("-"))        
+                                                }
+                                            }else{
+                                                tempSchCode.push(el.querySelector(".categorey-direct").getAttribute('dataattr').split("-"))
+                                            }   
+                                        }else{
+                                            if (el.querySelector(".innerIndianEquity")) {
+                                               document.querySelectorAll(".innerIndianEquity .categorey-direct").forEach((elm)=>{
+                                                    elm.checked =false;
+                                                })  
                                             }
-                                       })
-                                        rightBottomcardRender(block,tempArrcode,dataMapObj)
+                                        }
+                                    })    
+                                    if (ele.target.checked) {
+                                        ele.target.checked = true;
                                     }else{
-                                        dataMapObj.schcode = [];
-                                        block.querySelectorAll(".Indian-Equity-container .categorey-direct").forEach((element) => {
-                                            element.checked = ele.currentTarget.checked ? true : false;
-                                        })
-                                        rightBottomcardRender(block,dataCfObj,dataMapObj)
+                                        ele.target.checked =false;
                                     }
-                                    
+                                    //Cards
+                                    tempSchCode = tempSchCode.flat(2)
+                                    let tempScheme = dataCfObj.filter((item)=>{
+                                        if(tempSchCode.includes(item.schcode)){
+                                            return item
+                                        }
+                                    })
+                                    //Search Input
+                                     Array.from(block.querySelector(".searchBarContainer .searchModal ul").children).forEach((elre)=>{
+                                        elre.style.display="none"
+                                        if (tempSchCode.includes(elre.getAttribute("dataattr"))) {
+                                            elre.style.display="block"
+                                        }
+                                     })
+                                    rightBottomcardRender(block,tempScheme,dataMapObj)     
                                 }
                             })
                         ),
@@ -158,7 +170,7 @@ export default async function decorate(block) {
                         capitalizeEachWord(Object.keys(element)[0].replaceAll("-"," ")) === "Indian Equity" ? div({
                             class: "innerIndianEquity"
                         }, dataMapObj[index + "ArrayDoc"]) : ""
-                    )
+                    ) : ""
                 })
             )
         ),
@@ -810,6 +822,9 @@ function rightBottomcardRender(block,params,dataMapObj){
             InvestBtn = el.value;
         }
     })
+    if (params.length == 0) {
+        params = dataCfObj
+    }
     params.forEach((elem,index)=>{
         dataMapObj["data"][index] = {}
         elem.planList.forEach((element)=>{
