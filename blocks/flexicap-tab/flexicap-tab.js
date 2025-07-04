@@ -202,6 +202,13 @@ export default async function decorate(block) {
           el.querySelector(".progessBar").textContent = Math.floor(percent) + "%";
         }
       })
+      document.querySelector(".section .tab-btnitem3").addEventListener('click', () => {
+        Array.from(block.querySelector(".tabpanelitem3 .tabs-list").children).forEach((el, index) => {
+          if (el.getAttribute("aria-selected") === 'true') {
+            block.querySelector(".tabpanelitem3 .tabpanelitem" + (index + 1)).setAttribute("aria-hidden", false)
+          }
+        })
+      })
     }
   }
 

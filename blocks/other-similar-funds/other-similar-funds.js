@@ -106,9 +106,10 @@ export default function decorate(block) {
             },
             label("CAGR"),
             select({
-                class: "dropContainer",
+                class: "dropContainer"+index,
                 dataInd:index,
                 schemeCode:elm.schcode,
+                value: tempReturns[0],
                 onchange: (event) => {
                   FundSimilar.forEach((elem)=>{
                     if (event.target.getAttribute("schemecode") === elem.schcode) {
@@ -123,7 +124,6 @@ export default function decorate(block) {
               ...tempReturns.map((eloption, ind) => {
                 return option({
                   "value": ObjTemp[eloption],
-                  "selected": ind === 0 ? true : false
                 }, eloption);
               })
             )
