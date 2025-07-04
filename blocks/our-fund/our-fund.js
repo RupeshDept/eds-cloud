@@ -79,7 +79,7 @@ export default async function decorate(block) {
                                             dataattr: elme[Object.keys(elme)].join("-"),
                                             onclick: function (ele) {
                                                let tempSchCode =[]
-                                                document.querySelectorAll(".innerIndianEquity .categorey-direct").forEach((el)=>{
+                                                block.querySelectorAll(".innerIndianEquity .categorey-direct").forEach((el)=>{
                                                     if (el.checked) {
                                                         tempSchCode.push(el.getAttribute('dataattr').split("-"))
                                                     }
@@ -118,16 +118,16 @@ export default async function decorate(block) {
                                 dataattr: element[Object.keys(element)[0]].join("-"),
                                 onclick: function (ele) {
                                     let tempSchCode =[];
-                                    Array.from(document.querySelector(".filter-container").children).forEach((el)=>{
+                                    Array.from(block.querySelector(".filter-container").children).forEach((el)=>{
                                         if (el.querySelector(".categorey-direct").checked) {
                                             if (el.querySelector(".innerIndianEquity")) {
-                                               document.querySelectorAll(".innerIndianEquity .categorey-direct").forEach((elm)=>{
+                                               block.querySelectorAll(".innerIndianEquity .categorey-direct").forEach((elm)=>{
                                                     if(elm.checked){
                                                         tempSchCode.push(elm.getAttribute('dataattr').split("-"))
                                                     }
                                                 })
                                                 if (tempSchCode.length == 0) {
-                                                    document.querySelectorAll(".innerIndianEquity .categorey-direct").forEach((elsm)=>{
+                                                    block.querySelectorAll(".innerIndianEquity .categorey-direct").forEach((elsm)=>{
                                                         elsm.checked =true;
                                                     })
                                                     tempSchCode.push(el.querySelector(".categorey-direct").getAttribute('dataattr').split("-"))        
@@ -137,7 +137,7 @@ export default async function decorate(block) {
                                             }   
                                         }else{
                                             if (el.querySelector(".innerIndianEquity")) {
-                                               document.querySelectorAll(".innerIndianEquity .categorey-direct").forEach((elm)=>{
+                                               block.querySelectorAll(".innerIndianEquity .categorey-direct").forEach((elm)=>{
                                                     elm.checked =false;
                                                 })  
                                             }
@@ -198,8 +198,26 @@ export default async function decorate(block) {
                                 type: "checkbox",
                                 dataattr: element[Object.keys(element)[0]].join("-"),
                                 onclick: function (ele) {
-                                    console.log(ele.target.getAttribute("dataattr"));
-                                    eventTriggerRending(dataObjAllFundBoost.data.data.data)
+                                    let tempSchCode =[];
+                                    block.querySelectorAll(".fund-container .categorey-direct").forEach((elm)=>{
+                                        if(elm.checked){
+                                            tempSchCode.push(elm.getAttribute('dataattr').split("-"))
+                                        }
+                                    })
+                                    //Cards
+                                    tempSchCode = tempSchCode.flat(2)
+                                    let tempScheme = dataCfObj.filter((item)=>{
+                                        if(tempSchCode.includes(item.schcode)){
+                                            return item
+                                        }
+                                    })
+                                     Array.from(block.querySelector(".searchBarContainer .searchModal ul").children).forEach((elre)=>{
+                                        elre.style.display="none"
+                                            if (tempSchCode.includes(elre.getAttribute("dataattr"))) {
+                                                    elre.style.display="block"
+                                            }
+                                }) 
+                                rightBottomcardRender(block,tempScheme,dataMapObj)
                                 }
                             })
                         ),
