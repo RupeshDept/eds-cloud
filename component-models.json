@@ -412,7 +412,7 @@
       },
       {
         "component": "richtext",
-        "name": "text",
+        "name": "tex_NoteText",
         "value": "",
         "label": "Enter Note for Important Text",
         "valueType": "string"
