@@ -263,6 +263,52 @@
               }
             }
           }
+        },
+        {
+          "title": "Fund Details Banner",
+          "id": "fund-details-banner",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Fund Details Banner",
+                  "filter":"fund-details-banner",
+                  "model": "fund-details-banner"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Fund Details Banner Item",
+          "id": "fund-details-banner-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Fund Details Banner Item",
+                  "model": "fund-details-banner-item"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Form Block Item",
+          "id": "form-block-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Form Block Item",
+                  "model": "form-block-item"
+                }
+              }
+            }
+          }
         }
       ]
     }
