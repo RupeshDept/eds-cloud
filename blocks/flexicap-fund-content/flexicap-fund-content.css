@@ -1,0 +1,60 @@
+@import url('../modal/modal.css');
+.section.flexicap-fund-content-container {
+    display: flex;
+    margin: 0;
+    max-width: 1124px;
+    margin: 0 auto;
+}
+
+.section.flexicap-fund-content-container .flexicap-fund-content-wrapper {
+    padding: 32px;
+    margin-top: 90px;
+    max-width: 54.65%;
+}
+
+.flexicap-fund-content h2 {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: sans-serif;
+    line-height: 32px;
+    color: #2b2e8c;
+    margin: 0;
+}
+
+.flexicap-fund-content p {
+    color: #3c434f;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    margin-top: 10px;
+    font-family: sans-serif;
+}
+
+.section.flexicap-fund-content-container .flexicap-fund-modal-wrapper{
+    padding: 0 15px;
+    margin-top: 48px;
+    max-width: 47.35%;
+    width: 100%;
+}
+
+.flexicap-fund-modal-wrapper .flexicap-fund-modal{
+    position: relative;
+}
+
+.flexicap-fund-modal> div > div:last-child{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.flexicap-fund-modal>div>div:last-child .button-container,
+.flexicap-fund-modal>div>div:last-child .button{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    background-color: transparent;
+    color: transparent;
+}

@@ -218,6 +218,81 @@
           }
         },
         {
+          "title": "Flexicap Fund Content",
+          "id": "flexicap-fund-content",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Flexicap Fund Content",
+                  "filter": "flexicap-fund-content"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Flexicap Fund Content Item",
+          "id": "flexicap-fund-content-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Flexicap Fund Content Item",
+                  "model": "flexicap-fund-content-item"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Flexicap Fund Modal",
+          "id": "flexicap-fund-modal",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Flexicap Fund Modal",
+                  "filter": "flexicap-fund-modal"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Flexicap Fund Modal Item",
+          "id": "flexicap-fund-modal-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Flexicap Fund Modal Item",
+                  "model": "flexicap-fund-modal-item"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Embed",
+          "id": "embed",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Embed",
+                  "model": "embed"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Flexicap Tab",
           "id": "flexicap-tab",
           "plugins": {

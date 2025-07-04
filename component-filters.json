@@ -19,6 +19,9 @@
       "performance-graph",
       "calculator-wealth",
       "about-the-fund",
+      "flexicap-fund-content",
+      "flexicap-fund-modal",
+      "embed",
       "flexicap-tab",
       "other-similar-funds"
     ]
@@ -48,6 +51,18 @@
     "id": "calculator-wealth",
     "components": [
       "calculator-wealth-item"
+    ]
+  },
+  {
+    "id": "flexicap-fund-content",
+    "components": [
+      "flexicap-fund-content-item"
+    ]
+  },
+  {
+    "id": "flexicap-fund-modal",
+    "components": [
+      "flexicap-fund-modal-item"
     ]
   },
   {
