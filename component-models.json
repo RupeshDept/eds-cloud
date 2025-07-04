@@ -361,5 +361,56 @@
         "label": "Video Image Title"
       }
     ]
+  },
+  {
+    "id":"fund-details-banner-item",
+    "fields":[
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Enter Button Text",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "tex_NoteText",
+        "value": "",
+        "label": "Enter Note for Important Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id":"form-block-item",
+    "fields":[
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Enter icon and text for acknowledge",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "col_title_placeholder",
+        "label": "Enter Placeholder for input Text"
+      },
+      {
+        "component": "text",
+        "name": "col_title_submitBtn",
+        "label": "Enter Text for Submit Button"
+      },
+      {
+        "component": "text",
+        "name": "col_title_resendOTP",
+        "label": "Enter Text Resend OTP"
+      },
+      {
+        "component": "text",
+        "name": "col_title_descr",
+        "label": "Enter Text Description"
+      }
+    ]
   }
 ]

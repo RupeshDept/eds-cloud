@@ -23,7 +23,8 @@
       "flexicap-fund-modal",
       "embed",
       "flexicap-tab",
-      "other-similar-funds"
+      "other-similar-funds",
+      "fund-details-banner"
     ]
   },
   {
@@ -69,6 +70,13 @@
     "id": "flexicap-tab",
     "components": [
       "flexicap-tab-content"
+    ]
+  },
+  {
+    "id": "fund-details-banner",
+    "components": [
+      "fund-details-banner-item",
+      "form-block-item"
     ]
   }
 ]

@@ -1,0 +1,41 @@
+.section.fund-details-banner-container .default-content-wrapper {
+    position: relative;
+    margin: 20px;
+    padding: 0;
+    height: 150px;
+    max-width: 100%;
+    background: #ddd;
+}
+.section.fund-details-banner-container .default-content-wrapper h1{
+    margin: 0;
+    position: absolute;
+    padding: 46px;
+}
+
+.section.fund-details-banner-container .fund-details-banner-wrapper{
+    margin: 20px;
+    padding: 0;
+    height: auto;
+    max-width: 100%;
+}
+
+.block .banner-container .bannerWrapper .button-container .buttonWrapper ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.block .banner-container .bannerWrapper .button-container .buttonWrapper ul li a{
+    text-decoration: none;
+    color: #000;
+    padding: 5px;
+    background-color: #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.block .banner-container .bannerWrapper .button-container .buttonWrapper ul li a:hover{
+    color: #ddd;
+    background-color: #000;
+}
