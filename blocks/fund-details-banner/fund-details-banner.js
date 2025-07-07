@@ -1,4 +1,4 @@
-import {div,h1,label,p, select,ul,li,option,span} from "../../scripts/dom-helpers.js"
+import {div,h1,label,p, select,ul,li,option,span, input} from "../../scripts/dom-helpers.js"
 import {
   dataCfObj
 } from "../our-fund/dataCfObj.js"
@@ -48,6 +48,34 @@ export default function decorate(block){
     
     Array.from(block.children).forEach((elem,index)=>{
         elem.classList.add("fundDetails"+(index+1))
+    })
+    Array.from(block.querySelector(".fundDetails2").children).forEach((innerElement,jindex)=>{
+        innerElement.classList.add("subfundDetails"+(jindex+1))
+    })
+
+    let formDiv =div({class:"formOTP"},
+                    div({class:"formOTPWrapper"},
+                        div({class:"inputFields"},
+                            input({placeholder:block.querySelector(".fundDetails2 .subfundDetails2").children.item(0).textContent,class:"inputText",type:"text"}),
+                            input({value:block.querySelector(".fundDetails2 .subfundDetails2").children.item(1).textContent,class:"inputBtn",readonly:true})
+                        ),
+                        div({class:"belowContentField"},
+                            span({class:"otpdiscription"},block.querySelector(".fundDetails2 .subfundDetails2").children.item(3).textContent),
+                            span({class:"resendOTP"},block.querySelector(".fundDetails2 .subfundDetails2").children.item(2).textContent),
+                        )                       
+                    )
+                )
+    block.querySelector(".fundDetails2 .subfundDetails2").innerHTML = "";
+    block.querySelector(".fundDetails2 .subfundDetails2").append(formDiv);
+    Array.from(block.querySelector(".fundDetails1 ul").children).forEach((elinner,index)=>{
+        index === 0 ? elinner.querySelector("a").classList.add("active") : "";
+        elinner.querySelector("a").addEventListener('click',(event)=>{
+            event.preventDefault();
+             Array.from(block.querySelector(".buttonWrapper ul").children).forEach((el)=>{
+                el.querySelector("a").classList.remove("active");
+             })
+            event.target.classList.add("active")
+        })
     })
     let innerBanner = div({class:"banner-container"},
         div({class:"bannerWrapper"},

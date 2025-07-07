@@ -40,6 +40,10 @@
     font-size: 16px;
 
 }
+.block .banner-container .bannerWrapper .button-container .buttonWrapper ul li a.active {
+    color: #ddd;
+    background-color: #000;
+}
 
 .block .banner-container .bannerWrapper .button-container .buttonWrapper ul li a:hover {
     color: #ddd;
@@ -155,33 +159,117 @@
 
 .block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValueContainer .navValue,
 .block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValueContainer .navValuePercentage,
-.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValue{
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValue {
     font-size: 24px;
     font-weight: 600;
 }
 
-.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValueContainer .navValuePercentage{
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValueContainer .navValuePercentage {
     font-weight: 200;
 }
 
-.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValueContainer .navValueDate{
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValueContainer .navValueDate {
     padding-top: 15px;
 }
 
-.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .cagrContainer .cagrDropdown select{
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .cagrContainer .cagrDropdown select {
     border-radius: 75px;
     padding: 0 10px;
 }
 
-.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .discription_container{
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .discription_container {
     border: 1px solid;
     width: 82%;
     margin: 30px;
     border-radius: 25px;
 }
 
-.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .discription_container span{
-   padding: 0 50px;
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .discription_container span {
+    padding: 0 50px;
 }
 
-.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper{}
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper .fundDetails2 .subfundDetails1 ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper .fundDetails2 .subfundDetails1 ul li {
+    position: relative;
+    font-weight: 600;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper .fundDetails2 .subfundDetails1 ul li span {
+    position: absolute;
+    top: 10%;
+    right: 116%;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper .fundDetails2 .subfundDetails2 .formOTP .formOTPWrapper .inputFields{
+    display: flex;
+    border: 1px solid;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper .fundDetails2 .subfundDetails2 .formOTP .formOTPWrapper .inputFields .inputText{
+    border: none;
+    border-radius: 30px;
+    width: 100%;
+}
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper .fundDetails2 .subfundDetails2 .formOTP .formOTPWrapper .inputFields{
+    position: relative;
+    margin-top: 40px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper .fundDetails2 .subfundDetails2 .formOTP .formOTPWrapper .inputFields .inputText,
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper .fundDetails2 .subfundDetails2 .formOTP .formOTPWrapper .inputFields .inputText::placeholder{
+    padding-left: 25px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper .fundDetails2 .subfundDetails2 .formOTP .formOTPWrapper .inputFields .inputBtn{
+    position: absolute;
+    border: none;
+    border-radius: 30px;
+    width: 20%;
+    text-align: center;
+    color: #ddd;
+    background: #000;
+    height: 96%;
+    left: 79.5%;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper .fundDetails2 .subfundDetails2 .formOTP .formOTPWrapper .inputFields .inputBtn:hover{
+    color: #000;
+    background: #ddd;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper .fundDetails2 .subfundDetails2 .formOTP .formOTPWrapper .belowContentField{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper .fundDetails2 .subfundDetails2 .formOTP .formOTPWrapper .belowContentField .otpdiscription{
+    font-size: 16px;
+    font-weight: 200;
+    width: 50%;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper .fundDetails2 .subfundDetails2 .formOTP .formOTPWrapper .belowContentField .resendOTP{
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper p{
+    border: 1px solid;
+    height: 25px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 15px;
+}
