@@ -1,41 +1,187 @@
+.section.fund-details-banner-container {
+    background: #ddd;
+}
+
 .section.fund-details-banner-container .default-content-wrapper {
     position: relative;
     margin: 20px;
     padding: 0;
     height: 150px;
     max-width: 100%;
-    background: #ddd;
 }
-.section.fund-details-banner-container .default-content-wrapper h1{
+
+.section.fund-details-banner-container .default-content-wrapper h1 {
     margin: 0;
     position: absolute;
     padding: 46px;
 }
 
-.section.fund-details-banner-container .fund-details-banner-wrapper{
+.section.fund-details-banner-container .fund-details-banner-wrapper {
     margin: 20px;
     padding: 0;
     height: auto;
     max-width: 100%;
 }
 
-.block .banner-container .bannerWrapper .button-container .buttonWrapper ul{
+.block .banner-container .bannerWrapper .button-container .buttonWrapper ul {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-.block .banner-container .bannerWrapper .button-container .buttonWrapper ul li a{
+.block .banner-container .bannerWrapper .button-container .buttonWrapper ul li a {
+    border: 1px solid;
     text-decoration: none;
     color: #000;
     padding: 5px;
     background-color: #ddd;
     border-radius: 5px;
     font-size: 16px;
+
 }
 
-.block .banner-container .bannerWrapper .button-container .buttonWrapper ul li a:hover{
+.block .banner-container .bannerWrapper .button-container .buttonWrapper ul li a:hover {
     color: #ddd;
     background-color: #000;
 }
+
+.block .banner-container .bannerWrapper .Scheme-title-cotainer .Scheme-titleWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part {
+    display: flex;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper {
+    width: 50%;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper {
+    width: 50%;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .tagsPlansection .tagsPlanWrapper ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .tagsPlansection .tagsPlanWrapper ul li {
+    border-right: 1px solid;
+    padding-right: 15px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .tagsPlansection .tagsPlanWrapper ul li:nth-child(3) {
+    border-right: none
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .tagsPlansection .tagsPlanWrapper .taggingSection {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .tagsPlansection .tagsPlanWrapper .taggingSection .taggingLeft {
+    border-left: 1px solid;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .planDropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .planDropdown select {
+    border: none;
+    background: transparent;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .planDropdown .bottonline {
+    margin-top: 3px;
+    border: 0.5px solid;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .direct_regular_togglesBtn .bttn-toggles {
+    position: relative;
+    display: flex;
+    border: 1px solid;
+    border-radius: 75px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .direct_regular_togglesBtn .bttn-toggles span {
+    font-size: 15px;
+    padding: 2px 10px;
+    cursor: pointer;
+    color: #000;
+
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .direct_regular_togglesBtn .bttn-toggles .active {
+    background: black;
+    border-radius: 75px;
+    color: #ddd;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container {
+    position: relative;
+    border: 1px solid;
+    background: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 15px;
+    margin-top: 45px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValueContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .cagrContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValueContainer .navValue,
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValueContainer .navValuePercentage,
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValue{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValueContainer .navValuePercentage{
+    font-weight: 200;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .navValueContainer .navValueDate{
+    padding-top: 15px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .navCAGR_container .navCAGRWrapper .cagrContainer .cagrDropdown select{
+    border-radius: 75px;
+    padding: 0 10px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .discription_container{
+    border: 1px solid;
+    width: 82%;
+    margin: 30px;
+    border-radius: 25px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .schemeWrapper .discription_container span{
+   padding: 0 50px;
+}
+
+.block .banner-container .bannerWrapper .scheme-sub-part .formWrapper{}
