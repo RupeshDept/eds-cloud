@@ -133,6 +133,30 @@ async function loadLazy(doc) {
   loadFonts();
 }
 
+////// Scroll to section from table of contents
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollMap = {
+    "whatisDaycare": "whatisDaycare",
+    "NeedforDaycareBusinessIndia": "NeedforDaycareBusinessIndia",
+    "StepsStartDaycarBusinessedit": "StepsStartDaycarBusinessedit",
+    "StepstoApplyBusinessLoan": "StepstoApplyBusinessLoan",
+    "AbouttheAuthor": "toConclude",
+    "FrequentlyAskedQuestions": "FrequentlyAskedQuestions"
+  };
+
+  document.querySelectorAll('.section[data-id="tableofcontent"] li a').forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = scrollMap[link.getAttribute("href")];
+      const target = document.querySelector(`.section[data-id="${targetId}"]`);
+      target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+});
+
+
+///////
+
 /**
  * Loads everything that happens a lot later,
  * without impacting the user experience.
@@ -147,9 +171,29 @@ async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
+  decorateWrapper(document.querySelector('main'));
 }
 
 loadPage();
+// Scroll 
+function appendNextElements(container, nextElement) {
+  container.append(nextElement);
+}
+export default function decorateWrapper(main) {
+  // debugger;
+  main.querySelectorAll('.wrapper').forEach((block) => {
+    // wrapper.classList.remove('wrapper');
+    console.log('Decorating wrapper', block);
+
+    const blockWrapper = block;
+    let nextElement = blockWrapper.nextElementSibling;
+    while (nextElement && (!nextElement.classList.contains('wrapper'))) {
+      appendNextElements(block, nextElement);
+      nextElement = blockWrapper.nextElementSibling;
+    }
+  });
+  // block.innerHTML = '';
+}
 
 
 // AMCharts initialization RM11

@@ -112,6 +112,18 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Wrapper",
+            "value": "wrapper"
+          },
+          {
+            "name": "Wrapper2",
+            "value": "wrapper2"
+          },
+          {
+            "name": "Table-Wrapper",
+            "value": "table-wrapper"
           }
         ]
       }
@@ -363,8 +375,8 @@
     ]
   },
   {
-    "id":"fund-details-banner-item",
-    "fields":[
+    "id": "fund-details-banner-item",
+    "fields": [
       {
         "component": "richtext",
         "name": "text",
@@ -382,8 +394,8 @@
     ]
   },
   {
-    "id":"form-block-item",
-    "fields":[
+    "id": "form-block-item",
+    "fields": [
       {
         "component": "richtext",
         "name": "text",
