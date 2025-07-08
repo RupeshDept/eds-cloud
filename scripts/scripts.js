@@ -175,32 +175,6 @@ export default function decorateWrapper(main) {
   // block.innerHTML = '';
 }
 
-
-// AMCharts initialization RM11
-// try {
-//   // List of amCharts v5 libraries to load
-//   const amChartScripts = [
-//     'https://cdn.amcharts.com/lib/5/index.js',
-//     'https://cdn.amcharts.com/lib/5/xy.js',
-//     'https://cdn.amcharts.com/lib/5/themes/Animated.js'
-//   ];
-
-//   amChartScripts.forEach((src) => {
-//     const script = document.createElement('script');
-//     script.src = src;
-//     script.async = false;
-//     script.defer = false;
-//     script.onload = () => console.log(`${src} loaded`);
-//     script.onerror = () => console.error(`Failed to load: ${src}`);
-//     document.head.appendChild(script);
-//   });
-
-
-// } catch (error) {
-//   console.log("Error loading scripts:", error);
-// }
-
-
 function autolinkModals(element) {
   element.addEventListener('click', async (e) => {
     const origin = e.target.closest('a');
