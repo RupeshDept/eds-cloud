@@ -135,16 +135,25 @@ async function loadLazy(doc) {
 
 ////// Scroll to section from table of contents
 document.addEventListener("DOMContentLoaded", () => {
+  //   "whatisDaycare": "whatisDaycare",
+  // "NeedforDaycareBusinessIndia": "NeedforDaycareBusinessIndia",
+  // "StepsStartDaycarBusinessedit": "StepsStartDaycarBusinessedit",
+  // "StepstoApplyBusinessLoan": "StepstoApplyBusinessLoan",
+  // "AbouttheAuthor": "toConclude",
+  // "FrequentlyAskedQuestions": "FrequentlyAskedQuestions",
+
+  //     "FundDetailsBanner": "FundDetailsBanner",
   const scrollMap = {
-    "whatisDaycare": "whatisDaycare",
-    "NeedforDaycareBusinessIndia": "NeedforDaycareBusinessIndia",
-    "StepsStartDaycarBusinessedit": "StepsStartDaycarBusinessedit",
-    "StepstoApplyBusinessLoan": "StepstoApplyBusinessLoan",
-    "AbouttheAuthor": "toConclude",
-    "FrequentlyAskedQuestions": "FrequentlyAskedQuestions"
+    "FlexicapTab": "FlexicapTab",
+    "PerformanceGraph": "PerformanceGraph",
+    "CalculatorWealth": "CalculatorWealth",
+    "OtherSimilerFunds": "OtherSimilerFunds",
+    "AboutTheFund": "AboutTheFund"
+
+
   };
 
-  document.querySelectorAll('.section[data-id="tableofcontent"] li a').forEach(link => {
+  document.querySelectorAll('.section[data-id="FundDetailsBanner"] li a').forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const targetId = scrollMap[link.getAttribute("href")];
