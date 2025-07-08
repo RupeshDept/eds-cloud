@@ -15,14 +15,8 @@ import {
 
 import { loadFragmenter } from '../blocks/fragment/fragment.js'
 
-/**
- * Moves all the attributes from a given elmenet to another given element.
- * @param {Element} from the element to copy attributes from
- * @param {Element} to the element to copy attributes to
- */
 export function moveAttributes(from, to, attributes) {
   if (!attributes) {
-    // eslint-disable-next-line no-param-reassign
     attributes = [...from.attributes].map(({ nodeName }) => nodeName);
   }
   attributes.forEach((attr) => {
@@ -34,11 +28,6 @@ export function moveAttributes(from, to, attributes) {
   });
 }
 
-/**
- * Move instrumentation attributes from a given element to another given element.
- * @param {Element} from the element to copy attributes from
- * @param {Element} to the element to copy attributes to
- */
 export function moveInstrumentation(from, to) {
   moveAttributes(
     from,
@@ -49,38 +38,23 @@ export function moveInstrumentation(from, to) {
   );
 }
 
-/**
- * load fonts.css and set a session storage flag
- */
+
 async function loadFonts() {
   await loadCSS(`${window.hlx.codeBasePath}/styles/fonts.css`);
   try {
     if (!window.location.hostname.includes('localhost')) sessionStorage.setItem('fonts-loaded', 'true');
   } catch (e) {
-    // do nothing
   }
 }
 
-/**
- * Builds all synthetic blocks in a container element.
- * @param {Element} main The container element
- */
 function buildAutoBlocks() {
   try {
-    // TODO: add auto block, if needed
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
   }
 }
 
-/**
- * Decorates the main element.
- * @param {Element} main The main element
- */
-// eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
-  // hopefully forward compatible button decoration
   decorateButtons(main);
   decorateIcons(main);
   buildAutoBlocks(main);
@@ -88,10 +62,7 @@ export function decorateMain(main) {
   decorateBlocks(main);
 }
 
-/**
- * Loads everything needed to get to LCP.
- * @param {Element} doc The container element
- */
+
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
@@ -103,19 +74,14 @@ async function loadEager(doc) {
   }
 
   try {
-    /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
     if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
       loadFonts();
     }
   } catch (e) {
-    // do nothing
   }
 }
 
-/**
- * Loads everything that doesn't need to be delayed.
- * @param {Element} doc The container element
- */
+
 async function loadLazy(doc) {
   autolinkModals(doc);
   const main = doc.querySelector('main');
@@ -133,18 +99,8 @@ async function loadLazy(doc) {
   loadFonts();
 }
 
-
-
-///////
-
-/**
- * Loads everything that happens a lot later,
- * without impacting the user experience.
- */
 function loadDelayed() {
-  // eslint-disable-next-line import/no-cycle
   window.setTimeout(() => import('./delayed.js'), 3000);
-  // load anything that can be postponed to the latest here
 }
 
 async function loadPage() {
@@ -155,16 +111,11 @@ async function loadPage() {
 }
 
 loadPage();
-// Scroll 
 function appendNextElements(container, nextElement) {
   container.append(nextElement);
 }
 export default function decorateWrapper(main) {
-  // debugger;
   main.querySelectorAll('.wrapper').forEach((block) => {
-    // wrapper.classList.remove('wrapper');
-    console.log('Decorating wrapper', block);
-
     const blockWrapper = block;
     let nextElement = blockWrapper.nextElementSibling;
     while (nextElement && (!nextElement.classList.contains('wrapper'))) {
@@ -172,7 +123,6 @@ export default function decorateWrapper(main) {
       nextElement = blockWrapper.nextElementSibling;
     }
   });
-  // block.innerHTML = '';
 }
 
 function autolinkModals(element) {
