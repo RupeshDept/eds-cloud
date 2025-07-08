@@ -1,7 +1,12 @@
 /* eslint-disable */
 import chartsData from "./data.js";
+import * as am5 from "../../scripts/index.js";
+import * as am5xy from "../../scripts/xy.js";
+import * as am5themes_Animated from "../../scripts/Animated.js";
 
 export default function decorate(block) {
+
+    // console.log("AMCHART", am5, am5xy, am5themes_Animated);
     // Create top filter buttons
     const filterBar = document.createElement('div');
     filterBar.className = 'chart-filter-bar';
