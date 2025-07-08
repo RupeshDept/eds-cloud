@@ -255,35 +255,3 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
-
-
-/* Step 1: Make main layout a two-column grid */
-.section.wrapper.table-wrapper {
-  display: grid;
-  grid-template-columns: 500px 1fr; /* Adjust left width as needed */
-  gap: 32px;
-  align-items: start;
-  padding: 0 24px; /* Optional horizontal padding */
-}
-
-.section.wrapper.table-wrapper .section{
-  width: 100%;
-}
-
-/* Step 2: Sticky Left Panel */
-.section.fund-details-banner-container {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
-  background: #F9F9F9; /* Optional for better visual separation */
-  padding: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  z-index: 10;
-  align-self: start;
-}
-
-/* Step 3: Right-side content must start in 2nd column */
-.section:not(.fund-details-banner-container) {
-  grid-column: 2;
-}
