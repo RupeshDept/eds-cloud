@@ -133,35 +133,6 @@ async function loadLazy(doc) {
   loadFonts();
 }
 
-////// Scroll to section from table of contents
-document.addEventListener("DOMContentLoaded", () => {
-  //   "whatisDaycare": "whatisDaycare",
-  // "NeedforDaycareBusinessIndia": "NeedforDaycareBusinessIndia",
-  // "StepsStartDaycarBusinessedit": "StepsStartDaycarBusinessedit",
-  // "StepstoApplyBusinessLoan": "StepstoApplyBusinessLoan",
-  // "AbouttheAuthor": "toConclude",
-  // "FrequentlyAskedQuestions": "FrequentlyAskedQuestions",
-
-  //     "FundDetailsBanner": "FundDetailsBanner",
-  const scrollMap = {
-    "FlexicapTab": "FlexicapTab",
-    "PerformanceGraph": "PerformanceGraph",
-    "CalculatorWealth": "CalculatorWealth",
-    "OtherSimilerFunds": "OtherSimilerFunds",
-    "AboutTheFund": "AboutTheFund"
-
-
-  };
-
-  document.querySelectorAll('.section[data-id="FundDetailsBanner"] li a').forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = scrollMap[link.getAttribute("href")];
-      const target = document.querySelector(`.section[data-id="${targetId}"]`);
-      target?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  });
-});
 
 
 ///////
