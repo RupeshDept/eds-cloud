@@ -100,119 +100,119 @@ export default async function decorate(block) {
 
 
   // Periodic Return 
-  function wait(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
+  // function wait(ms) {
+  //   return new Promise(resolve => setTimeout(resolve, ms));
+  // }
 
-  async function modifyTabs() {
-    await wait(50);
+  // async function modifyTabs() {
+  //   await wait(50);
 
-    const tabsList = block.querySelector(".tabpanelitem1 .tabs-list");
-    if (tabsList !== null) {
-      Array.from(tabsList.children).forEach((el, index) => {
-        if (index === 0) {
-          el.setAttribute("dataValue", "_Ret");
-        }
-        if (index === 1) {
-          el.setAttribute("dataValue", "_marketValue");
-        }
-      });
-      let tabdiv = tableFun(FundData, "_Ret");
-      block.querySelector(".tabpanelitem1 .tabpanelitem1").innerHTML = "";
-      block.querySelector(".tabpanelitem1 .tabpanelitem1").append(tabdiv)
+  //   const tabsList = block.querySelector(".tabpanelitem1 .tabs-list");
+  //   if (tabsList !== null) {
+  //     Array.from(tabsList.children).forEach((el, index) => {
+  //       if (index === 0) {
+  //         el.setAttribute("dataValue", "_Ret");
+  //       }
+  //       if (index === 1) {
+  //         el.setAttribute("dataValue", "_marketValue");
+  //       }
+  //     });
+  //     let tabdiv = tableFun(FundData, "_Ret");
+  //     block.querySelector(".tabpanelitem1 .tabpanelitem1").innerHTML = "";
+  //     block.querySelector(".tabpanelitem1 .tabpanelitem1").append(tabdiv)
 
-      Array.from(block.querySelector(".tabpanelitem1 .tabs-list").children).forEach((element) => {
-        element.addEventListener('click', (event) => {
-          if (event.target.parentElement.getAttribute("dataValue") == "_Ret") {
-            let dataVal = event.target.parentElement.getAttribute("dataValue");
-            let tabdiv = tableFun(FundData, dataVal);
-            block.querySelector(".tabpanelitem1 .tabpanelitem1").innerHTML = "";
-            block.querySelector(".tabpanelitem1 .tabpanelitem1").append(tabdiv)
-          } else {
-            let dataVal = event.target.parentElement.getAttribute("dataValue");
-            let tabdiv = tableFun(FundData, dataVal)
-            block.querySelector(".tabpanelitem1 .tabpanelitem2").innerHTML = "";
-            block.querySelector(".tabpanelitem1 .tabpanelitem2").append(tabdiv);
-          }
-        })
-      })
+  //     Array.from(block.querySelector(".tabpanelitem1 .tabs-list").children).forEach((element) => {
+  //       element.addEventListener('click', (event) => {
+  //         if (event.target.parentElement.getAttribute("dataValue") == "_Ret") {
+  //           let dataVal = event.target.parentElement.getAttribute("dataValue");
+  //           let tabdiv = tableFun(FundData, dataVal);
+  //           block.querySelector(".tabpanelitem1 .tabpanelitem1").innerHTML = "";
+  //           block.querySelector(".tabpanelitem1 .tabpanelitem1").append(tabdiv)
+  //         } else {
+  //           let dataVal = event.target.parentElement.getAttribute("dataValue");
+  //           let tabdiv = tableFun(FundData, dataVal)
+  //           block.querySelector(".tabpanelitem1 .tabpanelitem2").innerHTML = "";
+  //           block.querySelector(".tabpanelitem1 .tabpanelitem2").append(tabdiv);
+  //         }
+  //       })
+  //     })
 
-      document.querySelector(".section .tab-btnitem1").addEventListener('click', () => {
-        Array.from(block.querySelector(".tabpanelitem1 .tabs-list").children).forEach((el, index) => {
-          if (el.getAttribute("aria-selected") === 'true') {
-            block.querySelector(".tabpanelitem1 .tabpanelitem" + (index + 1)).setAttribute("aria-hidden", false)
-          }
-        })
-      })
-    }
+  //     document.querySelector(".section .tab-btnitem1").addEventListener('click', () => {
+  //       Array.from(block.querySelector(".tabpanelitem1 .tabs-list").children).forEach((el, index) => {
+  //         if (el.getAttribute("aria-selected") === 'true') {
+  //           block.querySelector(".tabpanelitem1 .tabpanelitem" + (index + 1)).setAttribute("aria-hidden", false)
+  //         }
+  //       })
+  //     })
+  //   }
 
-    await wait(100);
-    const tabsListPR = block.querySelector(".tabpanelitem3 .tabs-list");
-    if (tabsListPR !== null) {
-      //Portfolio Returns
-      let tablePR = document.createElement('table')
-      FundData[0].holdings.forEach((el, index) => {
-        if (index == 0) {
-          let tr = document.createElement('tr')
-          for (const element in el) {
-            let td = document.createElement('td')
-            td.append(element)
-            tr.append(td)
-          }
-          tablePR.append(tr);
-        }
-        let tr = document.createElement('tr')
-        for (const element in el) {
-          let td = document.createElement('td')
-          td.append(el[element])
-          tr.append(td)
-        }
-        tablePR.append(tr);
-      })
-      block.querySelector(".tabpanelitem3 .tabpanelitem2").innerHTML = ""
-      block.querySelector(".tabpanelitem3 .tabpanelitem2").append(tablePR)
-      //Progress Bar
-      block.querySelector(".tabpanelitem3 .tabpanelitem1").innerHTML = ""
-      block.querySelector(".tabpanelitem3 .tabpanelitem1").append(div({
-          class: "progressBarContainer"
-        },
-        ...FundData[0].sector.map((el, index) => {
-          return div(
-            div({class:"progressLabel"},
-              label(strong(el.name)),
-              label(strong(el.percentage+"%"))
-            ),
-            div({
-                class: "progressBarLine"
-              },
-              div({
-                class: "progessBar"
-              }, el.percentage)
-            )
-          )
-        })
-      ))
-      Array.from(block.querySelector(".tabpanelitem3 .tabpanelitem1 .progressBarContainer").children).forEach((el) => {
-        el.classList.add("progressContain")
-        if (el.querySelector(".progessBar")) {
-          const progessText = el.querySelector(".progessBar").textContent.trim();
-          el.querySelector(".progessBar").innerText = "";
-          const percent = (Number(progessText) / 100) * 100;
-          el.querySelector(".progessBar").style.width = percent + "%";
-          el.querySelector(".progessBar").textContent = Math.floor(percent) + "%";
-        }
-      })
-      document.querySelector(".section .tab-btnitem3").addEventListener('click', () => {
-        Array.from(block.querySelector(".tabpanelitem3 .tabs-list").children).forEach((el, index) => {
-          if (el.getAttribute("aria-selected") === 'true') {
-            block.querySelector(".tabpanelitem3 .tabpanelitem" + (index + 1)).setAttribute("aria-hidden", false)
-          }
-        })
-      })
-    }
-  }
+  //   await wait(100);
+  //   const tabsListPR = block.querySelector(".tabpanelitem3 .tabs-list");
+  //   if (tabsListPR !== null) {
+  //     //Portfolio Returns
+  //     let tablePR = document.createElement('table')
+  //     FundData[0].holdings.forEach((el, index) => {
+  //       if (index == 0) {
+  //         let tr = document.createElement('tr')
+  //         for (const element in el) {
+  //           let td = document.createElement('td')
+  //           td.append(element)
+  //           tr.append(td)
+  //         }
+  //         tablePR.append(tr);
+  //       }
+  //       let tr = document.createElement('tr')
+  //       for (const element in el) {
+  //         let td = document.createElement('td')
+  //         td.append(el[element])
+  //         tr.append(td)
+  //       }
+  //       tablePR.append(tr);
+  //     })
+  //     block.querySelector(".tabpanelitem3 .tabpanelitem2").innerHTML = ""
+  //     block.querySelector(".tabpanelitem3 .tabpanelitem2").append(tablePR)
+  //     //Progress Bar
+  //     block.querySelector(".tabpanelitem3 .tabpanelitem1").innerHTML = ""
+  //     block.querySelector(".tabpanelitem3 .tabpanelitem1").append(div({
+  //         class: "progressBarContainer"
+  //       },
+  //       ...FundData[0].sector.map((el, index) => {
+  //         return div(
+  //           div({class:"progressLabel"},
+  //             label(strong(el.name)),
+  //             label(strong(el.percentage+"%"))
+  //           ),
+  //           div({
+  //               class: "progressBarLine"
+  //             },
+  //             div({
+  //               class: "progessBar"
+  //             }, el.percentage)
+  //           )
+  //         )
+  //       })
+  //     ))
+  //     Array.from(block.querySelector(".tabpanelitem3 .tabpanelitem1 .progressBarContainer").children).forEach((el) => {
+  //       el.classList.add("progressContain")
+  //       if (el.querySelector(".progessBar")) {
+  //         const progessText = el.querySelector(".progessBar").textContent.trim();
+  //         el.querySelector(".progessBar").innerText = "";
+  //         const percent = (Number(progessText) / 100) * 100;
+  //         el.querySelector(".progessBar").style.width = percent + "%";
+  //         el.querySelector(".progessBar").textContent = Math.floor(percent) + "%";
+  //       }
+  //     })
+  //     document.querySelector(".section .tab-btnitem3").addEventListener('click', () => {
+  //       Array.from(block.querySelector(".tabpanelitem3 .tabs-list").children).forEach((el, index) => {
+  //         if (el.getAttribute("aria-selected") === 'true') {
+  //           block.querySelector(".tabpanelitem3 .tabpanelitem" + (index + 1)).setAttribute("aria-hidden", false)
+  //         }
+  //       })
+  //     })
+  //   }
+  // }
 
-  modifyTabs();
+  // modifyTabs();
 
   //Fund Manager
   let funddiv = document.createElement('div');
