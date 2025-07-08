@@ -36,14 +36,14 @@ export default function decorate(block) {
       return el
     }
   })
-  console.log(FundData);
+  // console.log(FundData);
 
   let FundSimilar = dataCfObj.filter((el, infex) => {
     if (el.fundsTaggingSection.includes(FundData[0].fundsTaggingSection[0]) && el.fundsTaggingSection.includes(FundData[0].fundsTaggingSection[1])) {
       return el
     }
   })
-  console.log(FundSimilar);
+  // console.log(FundSimilar);
   let FundMainContain = div({
     class: "FundMainContain"
   })
@@ -53,74 +53,74 @@ export default function decorate(block) {
     elm.returns.forEach((ret, jind) => {
       if (jind == 0) {
         for (const key in ret) {
-          if (ObjTemp[key]) {   
+          if (ObjTemp[key]) {
             tempReturns.push(ObjTemp[key])
           }
         }
       }
     })
-    
+
     let FundContainerDiv = div({
-        class: "funcontainerdiv"
-      },
+      class: "funcontainerdiv"
+    },
       div({
-          class: "upperfuncontainer"
-        },
+        class: "upperfuncontainer"
+      },
         h3(elm.schDetail.schemeName),
         div({
-            class: "fundTaggingLabel"
-          },
+          class: "fundTaggingLabel"
+        },
           (elm.fundsTaggingSection[1].replaceAll("motilal-oswal:", "").replaceAll("-", " ").toUpperCase() + " | " + elm.fundsTaggingSection[0].replaceAll("motilal-oswal:", "").toUpperCase().replaceAll("-", " "))
         )
       ),
       div({
-          class: "downfuncontainer"
-        },
+        class: "downfuncontainer"
+      },
         div({
-            class: "subdownfuncontainer"
-          },
+          class: "subdownfuncontainer"
+        },
           div({
-              class: "nav-date-container innerblockcard"
-            },
+            class: "nav-date-container innerblockcard"
+          },
             label("NAV"),
             div({
-                class: "navValue"
-              },
-              h3(Number( elm.nav[0].latnav).toFixed(2)),
+              class: "navValue"
+            },
+              h3(Number(elm.nav[0].latnav).toFixed(2)),
               p("(-2.88%)")
             ),
             div({
-                class: "navDate"
-              },
+              class: "navDate"
+            },
               p("AS ON 06 MAY 2025")
             )
           ),
           div({
-              class: "riskcontainer innerblockcard"
-            },
+            class: "riskcontainer innerblockcard"
+          },
             label("RISK"),
             p(elm.risk.riskType)
           ),
           div({
-              class: "cagr-dropdown-container innerblockcard"
-            },
+            class: "cagr-dropdown-container innerblockcard"
+          },
             label("CAGR"),
             select({
-                class: "dropContainer"+index,
-                dataInd:index,
-                schemeCode:elm.schcode,
-                value: tempReturns[0],
-                onchange: (event) => {
-                  FundSimilar.forEach((elem)=>{
-                    if (event.target.getAttribute("schemecode") === elem.schcode) {
-                        let cgarValue = elem.returns[0][event.target.value];
-                        block.querySelector((".cagr-date-containerValue"+event.target.getAttribute("dataInd"))).innerText = "";
-                        block.querySelector((".cagr-date-containerValue"+event.target.getAttribute("dataInd"))).innerText = cgarValue +"%";
-                    }
-                  })  
-                  console.log(event.target.value);
-                }
-              },
+              class: "dropContainer" + index,
+              dataInd: index,
+              schemeCode: elm.schcode,
+              value: tempReturns[0],
+              onchange: (event) => {
+                FundSimilar.forEach((elem) => {
+                  if (event.target.getAttribute("schemecode") === elem.schcode) {
+                    let cgarValue = elem.returns[0][event.target.value];
+                    block.querySelector((".cagr-date-containerValue" + event.target.getAttribute("dataInd"))).innerText = "";
+                    block.querySelector((".cagr-date-containerValue" + event.target.getAttribute("dataInd"))).innerText = cgarValue + "%";
+                  }
+                })
+                // console.log(event.target.value);
+              }
+            },
               ...tempReturns.map((eloption, ind) => {
                 return option({
                   "value": ObjTemp[eloption],
@@ -129,32 +129,32 @@ export default function decorate(block) {
             )
           ),
           div({
-              class: "cagr-date-container innerblockcard"
-            },
-            h3({class:("cagr-date-containerValue"+index)},elm.returns[0][ObjTemp[tempReturns[0]]] +"%"),
+            class: "cagr-date-container innerblockcard"
+          },
+            h3({ class: ("cagr-date-containerValue" + index) }, elm.returns[0][ObjTemp[tempReturns[0]]] + "%"),
             p("AS ON 06 MAY 2025")
           )
         )
       ),
       div({
-          class: "descriptionFrame"
-        },
+        class: "descriptionFrame"
+      },
         p("2.7 LAKH PEOPLE HAVE INVESTED IN THIS FUND")
       ),
       div({
-          class: "btnContainer"
-        },
+        class: "btnContainer"
+      },
         button("KNOW MORE"),
         button("INVEST NOW")
       )
     )
-      FundMainContain.append(FundContainerDiv);
-    
+    FundMainContain.append(FundContainerDiv);
+
 
   })
   block.append(FundMainContain)
   let funcontainrClassList = [...block.classList];
-  funcontainrClassList.forEach((el)=>{
+  funcontainrClassList.forEach((el) => {
     block.querySelector(".FundMainContain").classList.add(el)
   })
   SwiperBlock(block.querySelector(".FundMainContain"))

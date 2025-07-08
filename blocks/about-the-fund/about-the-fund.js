@@ -11,7 +11,7 @@ export default function decorate(block) {
     Array.from(block.querySelector('.fund-container div').children).forEach(function (item) {
         fundTitles.push(item.textContent.trim())
     })
-    console.log(fundTitles); // ["Investment Objective", "Application Amount", "Redemption Amount", "Exit Load", "Launched On", "Locked in Period", "Expense Ratio", "Benchmark", "Scheme Ratio"]
+    // console.log(fundTitles); // ["Investment Objective", "Application Amount", "Redemption Amount", "Exit Load", "Launched On", "Locked in Period", "Expense Ratio", "Benchmark", "Scheme Ratio"]
 
     const fundUls = div({ class: 'fund-uls' },
         ...fundTitles.map((title, index) => {

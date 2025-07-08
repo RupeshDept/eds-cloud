@@ -88,7 +88,7 @@ export default async function decorate(block) {
                                             type: "checkbox",
                                             dataattr: elme.schemes.join("-"),
                                             onclick: function (ele) {
-                                                console.log(ele.target.getAttribute("dataattr"));
+                                                // console.log(ele.target.getAttribute("dataattr"));
                                                 eventTriggerRending(dataObjAllFundBoost.data.data.data)
                                             }
                                         })
@@ -109,7 +109,7 @@ export default async function decorate(block) {
                                 type: "checkbox",
                                 dataattr: strSchme.join("-"),
                                 onclick: function (ele) {
-                                    console.log(ele.target.getAttribute("dataattr"));
+                                    // console.log(ele.target.getAttribute("dataattr"));
                                     if (ele.currentTarget.parentElement.nextElementSibling.textContent.trim().includes("Indian Equity")) {
                                         block.querySelectorAll(".Indian-Equity-container .categorey-direct").forEach((element) => {
                                             element.checked = ele.currentTarget.checked ? true : false;
@@ -1023,7 +1023,7 @@ export default async function decorate(block) {
                 const fundName = card.querySelector('.planName a')?.textContent;
                 const selectedOption = card.querySelector('.fundOption select')?.value;
 
-                console.log('Clicked Invest Now for:', fundName, selectedOption);
+                // console.log('Clicked Invest Now for:', fundName, selectedOption);
 
                 // Disable all other cards
                 const allCards = document.querySelectorAll('.fundCard');
