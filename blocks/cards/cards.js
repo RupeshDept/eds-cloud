@@ -114,4 +114,8 @@ export default function decorate(block) {
     block.innerHTML = "";
     block.append(fundDivcard) 
   }
+
+  document.querySelectorAll(".table-wrapper").forEach((el)=>{
+    document.querySelector(".navlinks").append(el)
+  })
 }

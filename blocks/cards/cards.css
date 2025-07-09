@@ -33,6 +33,7 @@
 }
 
 .wrapper .datacards{
+  margin: 0;
   width: 30%;
 }
 
@@ -48,4 +49,9 @@
   flex-direction: row;
   gap: 50px;
   background: #f0f9ff;
+}
+
+.wrapper .navlinks .table-wrapper{
+  width: 90%;
+  padding: 20px 30px;
 }
