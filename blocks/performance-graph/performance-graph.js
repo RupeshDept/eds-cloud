@@ -39,6 +39,8 @@ export default function decorate(block) {
     block.append(filterBar, graphDiv);
 
     const useLiveAPI = false;
+    // const useLiveAPI = true;
+
 
     async function showGraph(filter) {
         try {
@@ -52,6 +54,7 @@ export default function decorate(block) {
                     invamount: "10000",
                     isCompare: "",
                     isin: "INF247L01445",
+                    period: "Y",
                     schcode: "FM"
                 };
 

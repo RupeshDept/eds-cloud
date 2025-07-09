@@ -3,10 +3,13 @@
 
 .flexicap-tab .tabs-list {
     display: flex;
-    gap: 0.5ch;
     max-width: 100%;
     font-size: var(--body-font-size-xs);
     overflow-x: auto;
+      margin-bottom: 41px;
+    padding: 24px 0;
+    gap: 40px;
+    justify-content: center;
 }
 
 @media (width >=600px) {
@@ -51,9 +54,9 @@
 
 .flexicap-tab .tabs-panel {
     margin-top: -1px;
-    padding: 24px 0;
-    border: 1px solid #dadada;
     overflow: auto;
+    padding: 0;
+    border: none;
 }
 
 .flexicap-tab .tabs-panel[aria-hidden='true'] {
@@ -77,13 +80,6 @@
     margin: 0 auto;
 }
 
-.flexicap-tab .tabs-list {
-    margin-bottom: 41px;
-    padding: 24px 0;
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-}
 
 .flexicap-tab .tabs-list .tabs-tab {
     background-color: red;
@@ -102,11 +98,6 @@
     border-bottom: 1px solid #005dac;
     color: #005dac;
     font-weight: 600;
-}
-
-.flexicap-tab .tabs-panel {
-    padding: 0;
-    border: none;
 }
 
 .flexicap-tab .tabs-panel ul {
@@ -161,7 +152,7 @@
     background-color: #fff;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (width <= 1024px) {
     .flexicap-tab {
         margin: 40px 24px 0;
         background-color: lavender;
