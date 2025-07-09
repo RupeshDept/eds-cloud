@@ -38,8 +38,8 @@ export default function decorate(block) {
     graphDiv.style.height = "500px";
     block.append(filterBar, graphDiv);
 
-    const useLiveAPI = false;
-    // const useLiveAPI = true;
+    // const useLiveAPI = false;
+    const useLiveAPI = true;
 
 
     async function showGraph(filter) {
@@ -47,16 +47,26 @@ export default function decorate(block) {
             let parsedChartData;
 
             if (useLiveAPI) {
+                // const requestData = {
+                //     api_name: "PerformanceGraphNew",
+                //     cmt_schcode: "24097",
+                //     graphType: "Lumpsum",
+                //     invamount: "10000",
+                //     isCompare: "",
+                //     isin: "INF247L01445",
+                //     period: "Y",
+                //     schcode: "FM"
+                // };
                 const requestData = {
                     api_name: "PerformanceGraphNew",
-                    cmt_schcode: "24097",
+                    cmt_schcode: "26136",
                     graphType: "Lumpsum",
                     invamount: "10000",
                     isCompare: "",
-                    isin: "INF247L01445",
+                    isin: "INF247L01502",
                     period: "Y",
-                    schcode: "FM"
-                };
+                    schcode: "CP"
+                }
 
                 parsedChartData = await myAPI('POST', 'https://www.motilaloswalmf.com/mutualfund/api/v1/PerformanceGraphNew', requestData);
             } else {
@@ -234,7 +244,8 @@ export default function decorate(block) {
                     if (xhr.status >= 200 && xhr.status < 300) {
                         try {
                             const json = JSON.parse(xhr.responseText);
-                            resolve(json);
+                            // resolve(json);
+                            resolve(json.data.response)
                         } catch (err) {
                             resolve(xhr.responseText);
                         }
