@@ -36,6 +36,7 @@
   margin: 0;
   width: 30%;
 }
+
 .wrapper .datacards .block{
   position: fixed;
   width: 30%;
@@ -54,6 +55,7 @@
   flex-direction: row;
   gap: 50px;
   background: #f0f9ff;
+  z-index: 1;
 }
 
 .wrapper .navlinks .table-wrapper{
@@ -61,3 +63,11 @@
   padding: 20px 30px;
 }
 
+.table-wrapper{
+  margin-top: 50px;
+}
+
+.table-wrapper h1{
+  margin: 0;
+  padding: 75px;
+}
