@@ -202,5 +202,17 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "performance-graph",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
   }
 ]
