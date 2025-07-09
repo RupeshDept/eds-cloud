@@ -112,6 +112,10 @@
           {
             "name": "Wrapper",
             "value": "Wrapper"
+          },
+          {
+            "name": "Table Wrapper",
+            "value": "table-wrapper"
           }
         ]
       }
