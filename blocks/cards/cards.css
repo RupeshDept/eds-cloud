@@ -36,6 +36,10 @@
   margin: 0;
   width: 30%;
 }
+.wrapper .datacards .block{
+  position: fixed;
+  width: 30%;
+}
 
 .wrapper .navlinks{
   margin: 0;
@@ -43,6 +47,7 @@
 }
 
 .wrapper .navlinks ul{
+  position: fixed;
   padding: 10px;
   list-style: none;
   display: flex;
@@ -55,3 +60,4 @@
   width: 90%;
   padding: 20px 30px;
 }
+
