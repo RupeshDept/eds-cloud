@@ -1,0 +1,13 @@
+.compounding {
+  display: flex;
+  flex-wrap: wrap;
+}
+.compounding .hero-section-wrapper {
+  width: 650px;
+}
+.compounding .hero-section {
+  width: 650px;
+}
+.compounding .default-content-wrapper {
+  width: 100%;
+}/*# sourceMappingURL=calculator-sip.css.map */

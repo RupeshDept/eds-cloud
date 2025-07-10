@@ -215,33 +215,51 @@
     "fields": [
       {
         "component": "text",
+        "name": "searchPlaceholder",
+        "label": "Search Text Placeholder",
+        "value": "Search a fund"
+      },
+      {
+        "component": "text",
         "name": "defaultFund",
         "label": "Default Fund Name",
         "value": "Motilal Oswal Mid cap fund"
       },
       {
         "component": "text",
-        "name": "buttonText",
-        "label": "CTA Button Text",
-        "value": "Start SIP"
+        "name": "sipLabel",
+        "label": "SIP Button Label",
+        "value": "SIP"
       },
       {
         "component": "text",
-        "name": "calculatorLink",
-        "label": "Other Calculators Link Text",
-        "value": "View other calculators"
+        "name": "lumpsumLabel",
+        "label": "Lumpsum Button Label",
+        "value": "Lumpsum"
       },
       {
         "component": "text",
-        "name": "calculatorUrl",
-        "label": "Other Calculators URL",
-        "value": "#"
+        "name": "sipInputLabel",
+        "label": "SIP Investment Label",
+        "value": "If you would have invested monthly"
+      },
+      {
+        "component": "text",
+        "name": "lumpsumInputLabel",
+        "label": "Lumpsum Investment Label",
+        "value": "If you would have invested"
       },
       {
         "component": "number",
         "name": "defaultAmount",
         "label": "Default Investment Amount",
         "value": 10000
+      },
+      {
+        "component": "text",
+        "name": "tenureInputLabel",
+        "label": "Tenure Input Label",
+        "value": "Tenure"
       },
       {
         "component": "select",
@@ -288,35 +306,29 @@
         ]
       },
       {
+        "component": "text",
+        "name": "currentValueInputLabel",
+        "label": "Current Value Input Label",
+        "value": "Current Value of Investment"
+      },
+      {
+        "component": "number",
+        "name": "defaultCurrentValue",
+        "label": "Default Current Value of Investment",
+        "value": 2500000
+      },
+      {
+        "component": "text",
+        "name": "returnCagrInputLabel",
+        "label": "Return (CAGR) Input Label",
+        "value": "Return (CAGR)"
+      },
+      {
         "component": "number",
         "name": "annualReturnRate",
         "label": "Annual Return Rate (%)",
-        "value": 15,
+        "value": 18,
         "description": "Expected annual return rate for calculations"
-      },
-      {
-        "component": "text",
-        "name": "sipLabel",
-        "label": "SIP Button Label",
-        "value": "SIP"
-      },
-      {
-        "component": "text",
-        "name": "lumpsumLabel",
-        "label": "Lumpsum Button Label",
-        "value": "Lumpsum"
-      },
-      {
-        "component": "text",
-        "name": "sipInputLabel",
-        "label": "SIP Investment Label",
-        "value": "If you would have invested monthly"
-      },
-      {
-        "component": "text",
-        "name": "lumpsumInputLabel",
-        "label": "Lumpsum Investment Label",
-        "value": "If you would have invested"
       },
       {
         "component": "boolean",
@@ -345,6 +357,24 @@
             "value": "lumpsum"
           }
         ]
+      },
+      {
+        "component": "text",
+        "name": "buttonText",
+        "label": "CTA Button Text",
+        "value": "Start SIP"
+      },
+      {
+        "component": "text",
+        "name": "calculatorLink",
+        "label": "Other Calculators Link Text",
+        "value": "View other calculators"
+      },
+      {
+        "component": "text",
+        "name": "calculatorUrl",
+        "label": "Other Calculators URL",
+        "value": "#"
       }
     ]
   },
