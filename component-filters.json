@@ -16,42 +16,13 @@
       "cards",
       "columns",
       "fragment",
-      "faq",
-      "swiper",
-      "pms-hero",
-      "pms-navbar",
-      "pms-form",
-      "fund-api",
-      "tabs",
-      "calculators",
-      "calculator-swp",
-      "calculator-expert",
-      "calculator-ret",
-      "calculator-sip",
-      "calculator-inflation",
-      "calculator-pastperf",
-      "calculator-lumpsum",
-      "calculator-goal-based",
-      "calculator-emi",
-      "calculator-cost-delay",
-      "calculator-step-up",
-      "our-fund",
-      "calculator-home-loan-emi",
-      "calculator-education-loan-emi",
-      "my-footer"
+      "tabs"
     ]
   },
   {
     "id": "tabs",
     "components": [
       "tabsitem"
-    ]
-  },
-  {
-    "id": "swiper",
-    "components": [
-      "text",
-      "hero"
     ]
   },
   {
@@ -73,12 +44,6 @@
       "image",
       "button",
       "title"
-    ]
-  },
-  {
-    "id": "our-fund",
-    "components": [
-      "our-fund-left-item"
     ]
   }
 ]
