@@ -293,6 +293,58 @@
         "label": "Annual Return Rate (%)",
         "value": 15,
         "description": "Expected annual return rate for calculations"
+      },
+      {
+        "component": "text",
+        "name": "sipLabel",
+        "label": "SIP Button Label",
+        "value": "SIP"
+      },
+      {
+        "component": "text",
+        "name": "lumpsumLabel",
+        "label": "Lumpsum Button Label",
+        "value": "Lumpsum"
+      },
+      {
+        "component": "text",
+        "name": "sipInputLabel",
+        "label": "SIP Investment Label",
+        "value": "If you would have invested monthly"
+      },
+      {
+        "component": "text",
+        "name": "lumpsumInputLabel",
+        "label": "Lumpsum Investment Label",
+        "value": "If you would have invested"
+      },
+      {
+        "component": "boolean",
+        "name": "showSip",
+        "label": "Show SIP Option",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "name": "showLumpsum",
+        "label": "Show Lumpsum Option",
+        "value": true
+      },
+      {
+        "component": "select",
+        "name": "defaultInvestmentType",
+        "label": "Default Investment Type",
+        "value": "sip",
+        "options": [
+          {
+            "name": "SIP",
+            "value": "sip"
+          },
+          {
+            "name": "Lumpsum",
+            "value": "lumpsum"
+          }
+        ]
       }
     ]
   }
