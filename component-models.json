@@ -201,8 +201,7 @@
     "fields": [{
       "component": "text",
       "name": "text",
-      "label": "Enter Text",
-      "value":"Data Will Populate From API"
+      "label": "Enter Text"
     }]
   }
 ]
