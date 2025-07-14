@@ -309,7 +309,7 @@
         "component": "text",
         "name": "investedAmountInputLabel",
         "label": "Invested Amount Label",
-        "value": "Total Invested Amount"
+        "value": "Invested Amount"
       },
       {
         "component": "number",
