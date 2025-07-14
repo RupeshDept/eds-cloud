@@ -10,13 +10,16 @@
     padding: 20px;
 
     .hero-section-wrapper {
-        width: 500px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-        color: rgb(62, 62, 209);
+        .hero-section {
+            width: 490px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            color: rgb(62, 62, 209);
+        }
+
     }
 
     .calculator-sip-wrapper{
