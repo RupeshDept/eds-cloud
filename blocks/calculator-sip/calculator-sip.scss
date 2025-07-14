@@ -1,13 +1,160 @@
+:root {
+    --text-color: #333;
+    --border-color: #ccc;
+}
+
 .compounding {
     display: flex;
     flex-wrap: wrap;
+    background-color: aliceblue;
+    padding: 20px;
+
     .hero-section-wrapper {
-        width: 650px;
+        width: 500px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        color: rgb(62, 62, 209);
     }
-    .hero-section{
-        width: 650px;
+
+    .calculator-sip-wrapper{
+        width: 700px;
+        .calContainer{
+        background: white;
+        border: 1px solid wheat;
+        padding: 15px;
+
+        .searchBarchWrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            label {
+                font-weight: 600;
+                color: var(--text-color);
+            }
+            input {
+                width: 100%;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid var(--border-color);
+                font-size: 16px;
+            }
+        }
+        .schemeBtnsWrapper{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            button {
+                padding: 10px 20px;
+                border-radius: 35px;
+                border: 1px solid blue;
+                background-color: white;
+                // color: var(--text-color);
+                color: blue;
+                font-size: 16px;
+                cursor: pointer;
+                &:hover {
+                    background-color: #192bd1; // Replace with a manually darkened color
+                    color: white;
+                }
+            }
+
+        }
+        .investmentWrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 60px;
+            border-bottom: 1px solid var(--border-color);
+            .sipWrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                label {
+                    // font-weight: 600;
+                    // color: var(--text-color);
+                    color: #766a6a;
+                    font-size: smaller;
+                }
+                input {
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 5px;
+                    // border: 1px solid var(--border-color);
+                    border: none;
+                    font-size: 16px;
+                }
+            }
+            .tenureWrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                label {
+                    // font-weight: 600;
+                    // color: var(--text-color);
+                     color: #766a6a;
+                    font-size: smaller;
+                }
+                input {
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 5px;
+                    // border: 1px solid var(--border-color);
+                    border: none;
+                    font-size: 16px;
+                }
+            }
+           
+        }
+        .caldiscription {
+            display: flex;
+            flex-direction: row;
+            gap: 80px;
+            .currentValueWrapper, .returnCagrWrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                label {
+                    // font-weight: 600;
+                    // color: var(--text-color);
+                    color: #766a6a;
+                    font-size: smaller;
+                }
+                span {
+                    font-size: 16px;
+                    color: var(--text-color);
+                }
+            }
+            .startSipbtn {
+
+                button {
+                    padding: 10px 20px;
+                    border-radius: 35px;
+                    border: 1px solid blue;
+                    background-color: blue;
+                    // color: var(--text-color);
+                    color: white;
+                    font-size: 16px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: white; // Replace with a manually darkened color
+                        color: #192bd1
+                    }
+                }
+            }
+        }
+    }
+    .viewBtnCal {
+        padding-top: 10px;
+    }
+        
     }
     .default-content-wrapper {
         width: 100%;
+        max-width: 1500px;
+        margin: 0 auto;
+        padding: 20px;
     }
 }
+

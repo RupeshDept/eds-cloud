@@ -1,13 +1,140 @@
+:root {
+  --text-color: #333;
+  --border-color: #ccc;
+}
+
 .compounding {
   display: flex;
   flex-wrap: wrap;
+  background-color: aliceblue;
+  padding: 20px;
 }
 .compounding .hero-section-wrapper {
-  width: 650px;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  color: rgb(62, 62, 209);
 }
-.compounding .hero-section {
-  width: 650px;
+.compounding .calculator-sip-wrapper {
+  width: 700px;
+}
+.compounding .calculator-sip-wrapper .calContainer {
+  background: white;
+  border: 1px solid wheat;
+  padding: 15px;
+}
+.compounding .calculator-sip-wrapper .calContainer .searchBarchWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.compounding .calculator-sip-wrapper .calContainer .searchBarchWrapper label {
+  font-weight: 600;
+  color: var(--text-color);
+}
+.compounding .calculator-sip-wrapper .calContainer .searchBarchWrapper input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  font-size: 16px;
+}
+.compounding .calculator-sip-wrapper .calContainer .schemeBtnsWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.compounding .calculator-sip-wrapper .calContainer .schemeBtnsWrapper button {
+  padding: 10px 20px;
+  border-radius: 35px;
+  border: 1px solid blue;
+  background-color: white;
+  color: blue;
+  font-size: 16px;
+  cursor: pointer;
+}
+.compounding .calculator-sip-wrapper .calContainer .schemeBtnsWrapper button:hover {
+  background-color: #192bd1;
+  color: white;
+}
+.compounding .calculator-sip-wrapper .calContainer .investmentWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  border-bottom: 1px solid var(--border-color);
+}
+.compounding .calculator-sip-wrapper .calContainer .investmentWrapper .sipWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.compounding .calculator-sip-wrapper .calContainer .investmentWrapper .sipWrapper label {
+  color: #766a6a;
+  font-size: smaller;
+}
+.compounding .calculator-sip-wrapper .calContainer .investmentWrapper .sipWrapper input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+.compounding .calculator-sip-wrapper .calContainer .investmentWrapper .tenureWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.compounding .calculator-sip-wrapper .calContainer .investmentWrapper .tenureWrapper label {
+  color: #766a6a;
+  font-size: smaller;
+}
+.compounding .calculator-sip-wrapper .calContainer .investmentWrapper .tenureWrapper input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+.compounding .calculator-sip-wrapper .calContainer .caldiscription {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+}
+.compounding .calculator-sip-wrapper .calContainer .caldiscription .currentValueWrapper, .compounding .calculator-sip-wrapper .calContainer .caldiscription .returnCagrWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.compounding .calculator-sip-wrapper .calContainer .caldiscription .currentValueWrapper label, .compounding .calculator-sip-wrapper .calContainer .caldiscription .returnCagrWrapper label {
+  color: #766a6a;
+  font-size: smaller;
+}
+.compounding .calculator-sip-wrapper .calContainer .caldiscription .currentValueWrapper span, .compounding .calculator-sip-wrapper .calContainer .caldiscription .returnCagrWrapper span {
+  font-size: 16px;
+  color: var(--text-color);
+}
+.compounding .calculator-sip-wrapper .calContainer .caldiscription .startSipbtn button {
+  padding: 10px 20px;
+  border-radius: 35px;
+  border: 1px solid blue;
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+.compounding .calculator-sip-wrapper .calContainer .caldiscription .startSipbtn button:hover {
+  background-color: white;
+  color: #192bd1;
+}
+.compounding .calculator-sip-wrapper .viewBtnCal {
+  padding-top: 10px;
 }
 .compounding .default-content-wrapper {
   width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
 }/*# sourceMappingURL=calculator-sip.css.map */
