@@ -17,8 +17,12 @@
       "columns",
       "fragment",
       "tabs",
+<<<<<<< HEAD
       "calculator-sip",
       "hero-section"
+=======
+      "fund-card"
+>>>>>>> d0ada696843a87d3635871eb3c2df7eb51b7776e
     ]
   },
   {
