@@ -307,6 +307,18 @@
       },
       {
         "component": "text",
+        "name": "investedAmountInputLabel",
+        "label": "Invested Amount Label",
+        "value": "Total Invested Amount"
+      },
+      {
+        "component": "number",
+        "name": "defaultInvestedAmount",
+        "label": "Default Total Invested Amount",
+        "value": 1000000
+      },
+      {
+        "component": "text",
         "name": "currentValueInputLabel",
         "label": "Current Value Input Label",
         "value": "Current Value of Investment"
