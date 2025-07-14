@@ -1,6 +1,8 @@
-[{
+[
+  {
     "id": "image",
-    "fields": [{
+    "fields": [
+      {
         "component": "reference",
         "name": "image",
         "label": "Image",
@@ -15,7 +17,8 @@
   },
   {
     "id": "title",
-    "fields": [{
+    "fields": [
+      {
         "component": "text",
         "name": "title",
         "label": "Title"
@@ -24,7 +27,8 @@
         "component": "select",
         "name": "titleType",
         "label": "Title Type",
-        "options": [{
+        "options": [
+          {
             "name": "h1",
             "value": "h1"
           },
@@ -54,7 +58,8 @@
   },
   {
     "id": "button",
-    "fields": [{
+    "fields": [
+      {
         "component": "aem-content",
         "name": "link",
         "label": "Link"
@@ -73,7 +78,8 @@
         "component": "select",
         "name": "linkType",
         "label": "Type",
-        "options": [{
+        "options": [
+          {
             "name": "default",
             "value": ""
           },
@@ -91,7 +97,8 @@
   },
   {
     "id": "section",
-    "fields": [{
+    "fields": [
+      {
         "component": "text",
         "name": "name",
         "label": "Section Name",
@@ -101,7 +108,8 @@
         "component": "multiselect",
         "name": "style",
         "label": "Style",
-        "options": [{
+        "options": [
+          {
             "name": "Our Popular Funds",
             "value": "our-popular-funds"
           },
@@ -127,7 +135,8 @@
   },
   {
     "id": "card",
-    "fields": [{
+    "fields": [
+      {
         "component": "reference",
         "valueType": "string",
         "name": "image",
@@ -145,7 +154,8 @@
   },
   {
     "id": "columns",
-    "fields": [{
+    "fields": [
+      {
         "component": "text",
         "valueType": "number",
         "name": "columns",
@@ -163,15 +173,18 @@
   },
   {
     "id": "fragment",
-    "fields": [{
-      "component": "aem-content",
-      "name": "reference",
-      "label": "Reference"
-    }]
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "reference",
+        "label": "Reference"
+      }
+    ]
   },
   {
     "id": "hero",
-    "fields": [{
+    "fields": [
+      {
         "component": "reference",
         "valueType": "string",
         "name": "image",
@@ -196,7 +209,8 @@
   },
   {
     "id": "tabsitem",
-    "fields": [{
+    "fields": [
+      {
         "component": "text",
         "name": "title",
         "label": "Tab Title"
@@ -413,6 +427,28 @@
         "name": "subtitle",
         "label": "Hero Subtitle",
         "value": "Explore how much wealth you would have created by investing in our schemes using this SIP Calculator"
+      }
+    ]
+  },
+  {
+    "id": "future-building-item",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Future Building Item Description",
+        "value": ""
       }
     ]
   }
