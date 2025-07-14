@@ -2,66 +2,64 @@
 import { div, a, label, h4, input, span, button } from '../../scripts/dom-helpers.js';
 export default function decorate(block) {
     console.log('Calculator SIP block loaded', block);
-    // const config = block.dataset || {};
     Array.from(block.children).forEach((child, index) => {
-        child.classList.add('calContainer' + (index + 1));
+        child.classList.add('cal-container' + (index + 1));
     });
-    let calContainer = div({ class: 'calContainer' },
-        div({ class: "searchBarchWrapper" },
-            span(block.querySelector('.calContainer1 p').textContent.trim()),
+    let calContainer = div({ class: 'cal-container' },
+        div({ class: "search-bar-wrapper" },
+            span(block.querySelector('.cal-container1 p').textContent.trim()),
             input({
-                value: block.querySelector('.calContainer2 p').textContent.trim(),
+                value: block.querySelector('.cal-container2 p').textContent.trim(),
                 type: "text",
                 placeholder: "Search a fund",
                 name: "searchFundInput",
                 id: "searchFundInput",
             }),
         ),
-        div({ class: "schemeBtnsWrapper" },
-            button(block.querySelector('.calContainer3 p').textContent.trim()),
-            button(block.querySelector('.calContainer4').textContent.trim()),
+        div({ class: "scheme-btns-wrapper" },
+            button(block.querySelector('.cal-container3 p').textContent.trim()),
+            button(block.querySelector('.cal-container4').textContent.trim()),
         ),
-        div({ class: "investmentWrapper" },
-            div({ class: "sipWrapper" },
-                label({ class: "labelforsip" }, block.querySelector('.calContainer5').textContent.trim()),
-                label({ class: "labelforlumsum", style: "display:none" }, block.querySelector('.calContainer6').textContent.trim()),
+        div({ class: "investment-wrapper" },
+            div({ class: "sip-wrapper" },
+                label({ class: "labelforsip" }, block.querySelector('.cal-container5').textContent.trim()),
+                label({ class: "labelforlumsum", style: "display:none" }, block.querySelector('.cal-container6').textContent.trim()),
                 input({
                     type: "number",
-                    value: block.querySelector('.calContainer7').textContent.trim(),
+                    value: block.querySelector('.cal-container7').textContent.trim(),
                     name: "investmentAmount",
                     id: "investmentAmount",
                     placeholder: "Enter amount",
                 }),
             ),
-            div({ class: "tenureWrapper" },
-                label(block.querySelector('.calContainer8').textContent.trim()),
+            div({ class: "tenure-wrapper" },
+                label(block.querySelector('.cal-container8').textContent.trim()),
                 input({
                     type: "number",
-                    value: block.querySelector('.calContainer9').textContent.trim(),
+                    value: block.querySelector('.cal-container9').textContent.trim(),
                     name: "investmentTenure",
                     id: "investmentTenure",
                     placeholder: "Enter tenure in years",
                 }),
             )
         ),
-        div({ class: "caldiscription" },
-            div({ class: "currentValueWrapper" },
-                label({ class: "labelforcurrvalueofinv" }, block.querySelector('.calContainer10')),
-                span({ class: "currentValue" }, block.querySelector('.calContainer11').textContent.trim() || '0'),
+        div({ class: "cal-discription" },
+            div({ class: "current-value-wrapper" },
+                label({ class: "label-for-currvalueof-inv" }, block.querySelector('.cal-container10')),
+                span({ class: "current-value" }, block.querySelector('.cal-container11').textContent.trim() || '0'),
 
             ),
-            div({ class: "returnCagrWrapper" },
-                label({ class: "labelforretrun" }, block.querySelector('.calContainer12')),
-                span({ class: "returnCagr" }, block.querySelector('.calContainer13').textContent.trim() || '0'),
+            div({ class: "return-cagr-wrapper" },
+                label({ class: "labelforretrun" }, block.querySelector('.cal-container12')),
+                span({ class: "return-cagr" }, block.querySelector('.cal-container13').textContent.trim() || '0'),
             ),
-            div({ class: "startSipbtn" },
-                // block.querySelector('.calContainer17'),
-                button(block.querySelector('.calContainer17').textContent.trim()),
+            div({ class: "start-sip-btn" },
+                button(block.querySelector('.cal-container17').textContent.trim()),
             )
         )
     )
-    let viewOthCalBtn = div({ class: "viewBtnCal" },
-        a({ href: block.querySelector('.calContainer18').textContent.trim() || '#', class: "viewOtherCalBtn" }, block.querySelector('.calContainer18').textContent.trim() || 'View other calculators')
+    let viewOthCalBtn = div({ class: "view-btn-cal" },
+        a({ href: block.querySelector('.cal-container18').textContent.trim() || '#', class: "view-othercal-btn" }, block.querySelector('.cal-container18').textContent.trim() || 'View other calculators')
     );
     block.innerHTML = '';
     block.append(calContainer, viewOthCalBtn);

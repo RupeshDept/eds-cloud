@@ -24,12 +24,12 @@
 
     .calculator-sip-wrapper{
         width: 700px;
-        .calContainer{
+        .cal-container{
         background: white;
         border: 1px solid wheat;
         padding: 15px;
 
-        .searchBarchWrapper {
+        .search-bar-wrapper {
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -45,7 +45,7 @@
                 font-size: 16px;
             }
         }
-        .schemeBtnsWrapper{
+        .scheme-btns-wrapper{
             display: flex;
             flex-direction: row;
             gap: 10px;
@@ -59,23 +59,22 @@
                 font-size: 16px;
                 cursor: pointer;
                 &:hover {
-                    background-color: #192bd1; // Replace with a manually darkened color
+                    background-color: #192bd1; 
                     color: white;
                 }
             }
 
         }
-        .investmentWrapper {
+        .investment-wrapper {
             display: flex;
             flex-direction: row;
             gap: 60px;
             border-bottom: 1px solid var(--border-color);
-            .sipWrapper {
+            .sip-wrapper {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
                 label {
-                    // font-weight: 600;
                     // color: var(--text-color);
                     color: #766a6a;
                     font-size: smaller;
@@ -89,12 +88,11 @@
                     font-size: 16px;
                 }
             }
-            .tenureWrapper {
+            .tenure-wrapper {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
                 label {
-                    // font-weight: 600;
                     // color: var(--text-color);
                      color: #766a6a;
                     font-size: smaller;
@@ -110,16 +108,15 @@
             }
            
         }
-        .caldiscription {
+        .cal-discription {
             display: flex;
             flex-direction: row;
             gap: 80px;
-            .currentValueWrapper, .returnCagrWrapper {
+            .current-value-wrapper, .return-cagr-wrapper {
                 display: flex;
                 flex-direction: column;
                 gap: 5px;
                 label {
-                    // font-weight: 600;
                     // color: var(--text-color);
                     color: #766a6a;
                     font-size: smaller;
@@ -129,7 +126,7 @@
                     color: var(--text-color);
                 }
             }
-            .startSipbtn {
+            .start-sip-btn {
 
                 button {
                     padding: 10px 20px;
@@ -141,14 +138,14 @@
                     font-size: 16px;
                     cursor: pointer;
                     &:hover {
-                        background-color: white; // Replace with a manually darkened color
+                        background-color: white; 
                         color: #192bd1
                     }
                 }
             }
         }
     }
-    .viewBtnCal {
+    .view-btn-cal {
         padding-top: 10px;
     }
         

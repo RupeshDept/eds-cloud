@@ -21,33 +21,33 @@
 .compounding .calculator-sip-wrapper {
   width: 700px;
 }
-.compounding .calculator-sip-wrapper .calContainer {
+.compounding .calculator-sip-wrapper .cal-container {
   background: white;
   border: 1px solid wheat;
   padding: 15px;
 }
-.compounding .calculator-sip-wrapper .calContainer .searchBarchWrapper {
+.compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.compounding .calculator-sip-wrapper .calContainer .searchBarchWrapper label {
+.compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper label {
   font-weight: 600;
   color: var(--text-color);
 }
-.compounding .calculator-sip-wrapper .calContainer .searchBarchWrapper input {
+.compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper input {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid var(--border-color);
   font-size: 16px;
 }
-.compounding .calculator-sip-wrapper .calContainer .schemeBtnsWrapper {
+.compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper {
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
-.compounding .calculator-sip-wrapper .calContainer .schemeBtnsWrapper button {
+.compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper button {
   padding: 10px 20px;
   border-radius: 35px;
   border: 1px solid blue;
@@ -56,67 +56,67 @@
   font-size: 16px;
   cursor: pointer;
 }
-.compounding .calculator-sip-wrapper .calContainer .schemeBtnsWrapper button:hover {
+.compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper button:hover {
   background-color: #192bd1;
   color: white;
 }
-.compounding .calculator-sip-wrapper .calContainer .investmentWrapper {
+.compounding .calculator-sip-wrapper .cal-container .investment-wrapper {
   display: flex;
   flex-direction: row;
   gap: 60px;
   border-bottom: 1px solid var(--border-color);
 }
-.compounding .calculator-sip-wrapper .calContainer .investmentWrapper .sipWrapper {
+.compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.compounding .calculator-sip-wrapper .calContainer .investmentWrapper .sipWrapper label {
+.compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper label {
   color: #766a6a;
   font-size: smaller;
 }
-.compounding .calculator-sip-wrapper .calContainer .investmentWrapper .sipWrapper input {
+.compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
   border: none;
   font-size: 16px;
 }
-.compounding .calculator-sip-wrapper .calContainer .investmentWrapper .tenureWrapper {
+.compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.compounding .calculator-sip-wrapper .calContainer .investmentWrapper .tenureWrapper label {
+.compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper label {
   color: #766a6a;
   font-size: smaller;
 }
-.compounding .calculator-sip-wrapper .calContainer .investmentWrapper .tenureWrapper input {
+.compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
   border: none;
   font-size: 16px;
 }
-.compounding .calculator-sip-wrapper .calContainer .caldiscription {
+.compounding .calculator-sip-wrapper .cal-container .cal-discription {
   display: flex;
   flex-direction: row;
   gap: 80px;
 }
-.compounding .calculator-sip-wrapper .calContainer .caldiscription .currentValueWrapper, .compounding .calculator-sip-wrapper .calContainer .caldiscription .returnCagrWrapper {
+.compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper, .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.compounding .calculator-sip-wrapper .calContainer .caldiscription .currentValueWrapper label, .compounding .calculator-sip-wrapper .calContainer .caldiscription .returnCagrWrapper label {
+.compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper label, .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper label {
   color: #766a6a;
   font-size: smaller;
 }
-.compounding .calculator-sip-wrapper .calContainer .caldiscription .currentValueWrapper span, .compounding .calculator-sip-wrapper .calContainer .caldiscription .returnCagrWrapper span {
+.compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper span, .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper span {
   font-size: 16px;
   color: var(--text-color);
 }
-.compounding .calculator-sip-wrapper .calContainer .caldiscription .startSipbtn button {
+.compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button {
   padding: 10px 20px;
   border-radius: 35px;
   border: 1px solid blue;
@@ -125,11 +125,11 @@
   font-size: 16px;
   cursor: pointer;
 }
-.compounding .calculator-sip-wrapper .calContainer .caldiscription .startSipbtn button:hover {
+.compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button:hover {
   background-color: white;
   color: #192bd1;
 }
-.compounding .calculator-sip-wrapper .viewBtnCal {
+.compounding .calculator-sip-wrapper .view-btn-cal {
   padding-top: 10px;
 }
 .compounding .default-content-wrapper {
