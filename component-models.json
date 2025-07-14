@@ -116,6 +116,10 @@
           {
             "name": "Know Our Funds",
             "value": "known-our-funds"
+          },
+          {
+            "name": "Quick Actions",
+            "value": "quick-actions"
           }
         ]
       }
