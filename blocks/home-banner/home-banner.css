@@ -88,6 +88,33 @@ blockquote {
     display: none;
 }
 
+.home-banner .sub-home-banner .sub-banner-item-4 {
+    position: absolute;
+    bottom: -24px;
+    right: 67px;
+}
+
+.home-banner .sub-home-banner .sub-banner-item-4 ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+}
+
+.home-banner .sub-home-banner .sub-banner-item-4 ul li {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    background: var(--Blue-1-500, #4338F3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-banner .sub-home-banner .sub-banner-item-4 ul li:first-of-type {
+    background: var(--Blue-1-300, #7986FD);
+}
+
+
 @media screen and (max-width: 950px) {
     .home-banner .sub-home-banner .sub-banner-item-2 {
         padding: 48px 20px 71px;
@@ -97,7 +124,8 @@ blockquote {
 @media screen and (max-width:768px) {
 
     .home-banner .sub-home-banner .sub-banner-item-1,
-    .home-banner .sub-home-banner .sub-banner-item-2 {
+    .home-banner .sub-home-banner .sub-banner-item-2 ,
+    .home-banner .sub-home-banner .sub-banner-item-4{
         display: none;
     }
 
