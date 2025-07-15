@@ -363,5 +363,17 @@
                 "valueType": "string"
             }
         ]
+    },
+    {
+      "id":"live-streaming",
+      "fields":[
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Live Streaming Content",
+          "valueType": "string"
+        }
+      ]
     }
 ]
