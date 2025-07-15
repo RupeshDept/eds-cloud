@@ -18,7 +18,8 @@
       "fragment",
       "tabs",
       "calculator-sip",
-      "hero-section"
+      "hero-section",
+      "calculator-block"
     ]
   },
   {
@@ -46,6 +47,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "calculator-block",
+    "components": [
+      "calculator-item"
     ]
   }
 ]
