@@ -54,5 +54,9 @@
     {
         "id": "cornerstones-advantage-cards",
         "components": ["cornerstones-advantage-cards-item"]
+    },
+    {
+        "id": "live-streaming",
+        "components": ["live-streaming-content"]
     }
 ]

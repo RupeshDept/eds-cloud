@@ -365,7 +365,7 @@
         ]
     },
     {
-      "id":"live-streaming",
+      "id":"live-streaming-content",
       "fields":[
         {
           "component": "richtext",
