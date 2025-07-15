@@ -2,12 +2,20 @@
     background-color: red;
 }
 
-.home-banner .sub-home-banner .sub-banner-item-1{
+.home-banner .sub-home-banner{
     position: relative;
 }
 
-.home-banner .sub-home-banner .sub-banner-item-1 p:last-of-type{
+.home-banner .sub-home-banner .sub-banner-item-1 picture{
+    line-height: 0;
+    display: block;
+    height: 100%;
+}
+
+.home-banner .sub-home-banner .sub-banner-item-3{
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .home-banner .sub-home-banner .sub-banner-item-2{

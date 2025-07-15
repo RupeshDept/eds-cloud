@@ -238,13 +238,6 @@
               "value": ""
           },
           {
-              "component": "richtext",
-              "name": "col3_text",
-              "value": "",
-              "label": "Text",
-              "valueType": "string"
-          },
-          {
               "component": "reference",
               "valueType": "string",
               "name": "col3_bannercontentImg",
@@ -257,6 +250,13 @@
               "name": "col3_bannercontentImgAlt",
               "label": "Alt",
               "value": ""
+          },
+          {
+              "component": "richtext",
+              "name": "col3_text",
+              "value": "",
+              "label": "Text",
+              "valueType": "string"
           }
       ]
   }
