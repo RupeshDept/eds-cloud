@@ -12,7 +12,7 @@ export default function decorate(block) {
         { class: 'card-upper-title' },
         div(
           { class: 'title' },
-          h3('Motilal Oswal Asset Allocation Passive Fund Conversative'),
+          h2('Motilal Oswal Asset Allocation Passive Fund Conversative'),
         ),
         div(
           { class: 'Star' },
