@@ -212,9 +212,17 @@ export default function decorate(block) {
             currentFocus--;
             addActive(items);
             e.preventDefault();
+        } else if (e.key === 'PageDown') {
+            currentFocus += 5;
+            addActive(items);
+            e.preventDefault();
+        } else if (e.key === 'PageUp') {
+            currentFocus -= 5;
+            addActive(items);
+            e.preventDefault();
         } else if (e.key === 'Enter') {
             e.preventDefault();
-            if (currentFocus > -1) {
+            if (currentFocus > -1 && items[currentFocus]) {
                 items[currentFocus].click();
             }
         }
@@ -223,14 +231,34 @@ export default function decorate(block) {
     function addActive(items) {
         if (!items) return;
         removeActive(items);
-        if (currentFocus >= items.length) currentFocus = 0;
-        if (currentFocus < 0) currentFocus = items.length - 1;
+        if (currentFocus >= items.length) currentFocus = items.length - 1;
+        if (currentFocus < 0) currentFocus = 0;
         items[currentFocus].classList.add('active');
+        items[currentFocus].scrollIntoView({ block: 'nearest' });
     }
 
     function removeActive(items) {
         items.forEach(item => item.classList.remove('active'));
     }
+
+    li.addEventListener('click', () => {
+        searchInput.value = name;
+        searchResults.innerHTML = '';
+        console.log(`User selected: ${name}`);
+
+        // ✅ UPDATE fund selection!
+        const foundFund = moslFundData.find(fund => fund.schDetail.schemeName === name);
+        if (foundFund) {
+            selectedFund = foundFund;
+            selectedFundCode = foundFund.schcode;
+
+            const foundReturn = foundFund.returns.find(ret => ret.inception_Ret !== undefined);
+            returnCAGR = foundReturn ? parseFloat(foundReturn.inception_Ret) : 0;
+
+            updateValues();
+        }
+    });
+
 
     // Auto-hide when clicking outside
     document.addEventListener('click', (e) => {

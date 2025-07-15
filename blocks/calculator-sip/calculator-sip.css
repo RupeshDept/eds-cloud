@@ -69,9 +69,9 @@
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li:hover {
   background: #f0f0f0;
 }
-.compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li li.active {
+.compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li.active {
   background: #e0e0e0;
-  cursor: pointer;
+  border-left: 3px solid #007bff;
 }
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper {
   display: flex;

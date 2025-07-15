@@ -34,64 +34,56 @@
         padding: 15px;
 
         .search-bar-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            label {
-                font-weight: 600;
-                color: var(--text-color);
-            }
-            input {
-                width: 100%;
-                padding: 10px;
-                border-radius: 5px;
-                border: 1px solid var(--border-color);
-                font-size: 16px;
-                box-sizing: border-box;
-            }
-        }
-        .search-results-wrapper {
-            position: relative;
-            ul {
-                // position: absolute;
-                // top: 100%;
-                // left: 0;
-                // background: white;
-                // border: 1px solid var(--border-color);
-                // width: 100%;
-                // list-style: none;
-                // margin: 0;
-                // padding: 0;
-                // z-index: 10;
-                // max-height: 200px;
-                // overflow-y: auto;
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                max-height: 200px;
-                overflow-y: auto;
-                border: 1px solid #ccc;
-                background: #fff;
-                position: absolute;
-                width: 100%;
-                z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
-                li {
-                    padding: 10px;
-                    cursor: pointer;
+  label {
+    font-weight: 600;
+    color: var(--text-color);
+  }
 
-                &:hover {
-                    background: #f0f0f0;
-                }
-                li.active {
-                    background: #e0e0e0;
-                    cursor: pointer;
-                }
-
-                
-                }
-            }
+  input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    font-size: 16px;
+    box-sizing: border-box;
+  }
 }
+
+.search-results-wrapper {
+  position: relative;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+
+    li {
+      padding: 10px;
+      cursor: pointer;
+
+      &:hover {
+        background: #f0f0f0;
+      }
+
+      &.active {
+        background: #e0e0e0;
+        border-left: 3px solid #007bff; // Optional: add a blue indicator
+      }
+    }
+  }
+}
+
 
         .scheme-btns-wrapper{
             display: flex;
