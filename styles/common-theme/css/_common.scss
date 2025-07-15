@@ -1,0 +1,118 @@
+@import "./variables_mixins";
+@import "./fluid-typography";
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointer-event-none {
+  pointer-events: none;
+}
+
+.pointer-none {
+  cursor: none;
+}
+
+// DISPLAY
+
+.dsp {
+  display: none;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-flex-end {
+  justify-content: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.dsp-none {
+  display: none !important;
+}
+
+.mob-dsp-none {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  // opacity: 0.4;
+  background-color: #969696 !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.background-color-body {
+  background: #f3f3f3;
+}
+
+
+// dynamic height for floating header
+:root {
+  --header-height: 0px; // Default value to prevent errors before JS runs
+}
+
+.margin-top-banner {
+  margin-top: calc(var(--header-height) + 32px);
+}
+
+// font
+
+.font-primary :is(p, h1, h2, h3, h4, h5, h6) {
+  font-family: $roboto !important;
+  font-style: normal !important;
+}
+
+// POPUP SLIDE ANIMATION
+
+.slide-in {
+  animation-duration: 2s;
+  animation-name: slide-in;
+
+  @include mobile {
+    animation-name: slide-in-bottom-to-top;
+  }
+}
+
+.slide-out {
+  animation-duration: 2s;
+  animation-name: slide-out;
+
+  @include mobile {
+    animation-name: slide-out-top-to-bottom;
+  }
+}
+
+.popup-back-animation {
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 2s;
+  -o-animation: fadeIn 2s;
+  -ms-animation: fadeIn 2s;
+}
+
+
+body.loading {
+  overflow: hidden;
+  pointer-events: none;
+}
+.bg-white {
+  background-color: #fff !important;
+}

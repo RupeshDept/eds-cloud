@@ -1,0 +1,264 @@
+@import "./variables_mixins";
+@import "./fluid-typography";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+}
+
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+// html {
+//   scroll-behavior: smooth;
+// }
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  box-sizing: border-box;
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $primary-white;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $neutrals-n50;
+    border-radius: 40px;
+  }
+
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p {
+  text-decoration: none;
+  list-style: none;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+a,
+.transition,
+input[type="submit"] {
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+  color: $primary-black;
+  // font-family: ;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    color: inherit;
+    background-color: transparent;
+  }
+
+  &:focus {
+    color: inherit;
+    background-color: transparent;
+  }
+
+  &:visited {
+    color: inherit;
+    background-color: transparent;
+  }
+
+  &:focus-visible {
+    color: inherit;
+    background-color: transparent;
+  }
+
+  &:target {
+    color: inherit;
+    background-color: transparent;
+  }
+
+  &:focus-within {
+    color: inherit;
+    background-color: transparent;
+  }
+
+  &:active {
+    color: inherit;
+    background-color: transparent;
+  }
+}
+
+a:not([href]) {
+  cursor: default;
+}
+
+textarea,
+input,
+select {
+  border: 0;
+  outline: 0;
+  resize: none;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+body,
+html,
+button,
+input {
+  line-height: normal;
+}
+
+table,
+tr,
+td,
+th {
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+img,
+video {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+html,
+body {
+  font-size: rem(16px);
+  line-height: normal;
+  font-family:$roboto;
+  font-weight: map-get($font-weights, regular);
+}
+
+main.container {
+  padding: 0 !important;
+}

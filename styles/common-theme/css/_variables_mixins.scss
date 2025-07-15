@@ -1,0 +1,273 @@
+// @import url(../../../styles/common-theme/css/_reset.scss);
+@import "../../../styles/fonts.css";
+
+// Primary colors
+$primary-black: #000000;
+$primary-white: #ffffff;
+$primary-blue: #2E2A94;
+
+// Primary
+$new-primary-blue-1: #2B2E8C;
+
+// Neutral colors
+$neutrals-00: #262626;
+$neutrals-50: #e6e6e6;
+$neutrals-75: #969696;
+$neutrals-100: #6b6b6b;
+$neutrals-200: #2b2b2b;
+$neutrals-300: #000000;
+$neutrals-400: #000000;
+$neutrals-500: hsl(0, 0%, 0%);
+$neutrals-600: #b0b0b0;
+$neutrals-700: #828282;
+$neutrals-800: #424242;
+$neutrals-900: #8a8a8a;
+$neutrals-n25: #ebebeb;
+$neutrals-n50: #adadad;
+$neutrals-n200: #4a4a4a;
+$neutrals-n400: #1f1f1f;
+
+// Old Sliver
+$old-silver-00: #efefef;
+$old-silver-50: #f3f3f3;
+$old-silver-75: #cccccc;
+$old-silver-100: #b7b7b7;
+$old-silver-200: #989898;
+$old-silver-300: #838383; //Primary
+$old-silver-400: #5c5c5c;
+$old-silver-500: #505050;
+$old-silver-600: #545454;
+$old-silver-700: #404040;
+
+// Olive drab
+$oliver-drab-50: #ededec;
+$oliver-drab-75: #b6b3b1;
+$oliver-drab-100: #989490;
+$oliver-drab-200: #6c6560;
+$oliver-drab-300: #4e4640; //Primary
+$oliver-drab-400: #37312d;
+$oliver-drab-500: #302b27;
+
+// Dark liver
+$dark-liver-50: #edeeed;
+$dark-liver-75: #b6b8b6;
+$dark-liver-100: #979a98;
+$dark-liver-200: #6a6f6b;
+$dark-liver-300: #4c514d; //Primary
+$dark-liver-400: #353936;
+$dark-liver-500: #2e312f;
+
+// Success
+$success-50: #e9fdec;
+$success-75: #a4f8b2;
+$success-100: #7ef591;
+$success-200: #46f062;
+$success-300: #20ed42;
+$success-400: #16a62e;
+$success-500: #149128;
+
+// Alarm
+$alarm-50: #fdf6e9;
+$alarm-75: #f8dca4;
+$alarm-100: #f5cd7e;
+$alarm-200: #f0b846;
+$alarm-300: #eda920;
+$alarm-400: #a67616;
+$alarm-500: #916714;
+
+// Danger
+$danger-50: #fde9e9;
+$danger-75: #f8a4a4;
+$danger-100: #f57e7e;
+$danger-200: #f04646;
+$danger-300: #ed2020;
+$danger-400: #a61616;
+$danger-500: #911414;
+
+$blue-100: #4e78e6;
+$dark-500: #7b7b7b;
+$Light-600: #9d9d9d;
+
+// Button colors
+$Button-Primary-Default: #2E2A94;
+$Button-Primary-Hover: #2B2E8C;
+$Button-Primary-Active: #262A84;
+$Button-Primary-Disabled: #969696;
+$Button-Secondary-Default: #FFFFFF;
+$Button-Secondary-Hover: #F3F3F3;
+$Button-Secondary-Active: #E6E6E6;
+$Button-Secondary-Disabled: #B0B0B0;
+$Button-Secondary-Text: #2E2A94;
+
+
+
+// Fonts
+// $playFairDisplayItalic: "playFairDisplayItalic", sans-serif;
+
+$roboto: roboto, sans-serif;
+
+// Border Radius
+$r4: 4px;
+$r8: 8px;
+$r12: 12px;
+$r14: 14px;
+$r16: 16px;
+$r24: 24px;
+$r26: 26px;
+$r32: 32px;
+$r37: 37px;
+$r40: 40px;
+$r41: 41px;
+$r52: 52px;
+$r83: 83px;
+$r100: 100px;
+
+$font-weights: (
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
+  "heavy": 900,
+);
+
+@mixin fonts($size, $line-height, $color, $family: "roboto", $weight: null) {
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+  font-family: $family;
+
+  @if $weight !=null {
+    font-weight: $weight;
+  }
+}
+
+@mixin flex-normal($align-item: center, $justify-content: center) {
+  display: flex;
+  align-items: $align-item;
+  justify-content: $justify-content;
+}
+
+$mobile-sm: 361px;
+$mobile-md: 391px;
+$mobile: 768px;
+$tab: 1025px;
+$desktop-sm: 1299px;
+$desktop-md: 1367px;
+$desktop-lg: 1681px;
+$desktop-xl: 1921px;
+
+// less than 361
+@mixin mobile-sm {
+  @media (max-width: $mobile-sm) {
+    @content;
+  }
+}
+
+// less than 390
+@mixin mobile-md {
+  @media (max-width: $mobile-md) {
+    @content;
+  }
+}
+
+// 767px - 390px
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+//1024px - 768px
+@mixin tab {
+  @media (max-width: $tab) {
+    @content;
+  }
+}
+
+//1298px - 1025px
+@mixin desktop-sm {
+  @media (max-width: $desktop-sm) {
+    @content;
+  }
+}
+
+//1365px - 1299px
+@mixin desktop-md {
+  @media (max-width: $desktop-md) {
+    @content;
+  }
+}
+
+//1366px - 1680px
+@mixin desktop-lg {
+  @media (max-width: $desktop-lg) {
+    @content;
+  }
+}
+
+//1681px - 1920px
+@mixin desktop-xl {
+  @media (max-width: $desktop-xl) {
+    @content;
+  }
+}
+
+//button Animation Common Css  Start//
+
+// for after icon
+
+@mixin hoverAfterEffect($translateX: 5px) {
+  &:hover::after {
+    transform: translateX($translateX);
+  }
+}
+
+//for before icon
+@mixin hoverBeforeEffect($translateX: 5px) {
+  &:hover::before {
+    transform: translateX($translateX);
+  }
+}
+
+// using above mixin
+//@include hoverAfterEffect(5px);
+
+@mixin hoverImageEffect($translateX: 5px) {
+  &:hover {
+    img {
+      transform: translateX($translateX);
+
+    }
+  }
+}
+
+@mixin transitionTransform {
+  transition: transform 0.5s ease;
+}
+
+//button Animation Common Css  end//
+
+
+
+
+
+//secondary button animation mixin //
+@mixin hover-secondarybtn($color) {
+  &:hover {
+    background-color: $color;
+    backdrop-filter: blur(22px);
+    color: #fff;
+  }
+}
+
+// Use the mixin
+// @include hover-secondarybtn(#000);
+@mixin hover-secondarybtnwhite() {
+  &:hover {
+    backdrop-filter: blur(22px);
+    color: #000;
+    background-color: #fff;
+  }
+}

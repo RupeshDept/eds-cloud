@@ -17,7 +17,8 @@
       "columns",
       "fragment",
       "tabs",
-      "fund-card"
+      "hero-section",
+      "future-building"
     ]
   },
   {
@@ -45,6 +46,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "future-building",
+    "components": [
+      "future-building-item"
     ]
   }
 ]
