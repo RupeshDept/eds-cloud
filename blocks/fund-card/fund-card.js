@@ -1,9 +1,24 @@
 import {
   button, div, h3, label, option, select, span, ul, li, h2, p,
 } from '../../scripts/dom-helpers.js';
+import dataMapMoObj from "../../scripts/constant.js"
+export default function decorate(block) { 
+  let fundsTaggingSection =  block.fundsTaggingSection.slice(0,2);
+  let DirectPlanlistArr = block.planList.filter((el)=>{
+    return el.planName === "Regular" ? el.optionName : ""
+  })
 
-export default function decorate(block) {
-  block.innerHTML = '';
+  const tempReturns = [];
+      block.returns.forEach((ret, jind) => {
+        if (jind == 0) {
+          for (const key in ret) {
+            if (dataMapMoObj.ObjTemp[key]) {
+              tempReturns.push(dataMapMoObj.ObjTemp[key]);
+            }
+          }
+        }
+      });
+
   const cardContainer = div(
     { class: 'card-container' },
     div(
@@ -12,7 +27,7 @@ export default function decorate(block) {
         { class: 'card-upper-title' },
         div(
           { class: 'title' },
-          h2('Motilal Oswal Asset Allocation Passive Fund Conversative'),
+          h2(block.schDetail.schemeName),
         ),
         div(
           { class: 'Star' },
@@ -23,16 +38,18 @@ export default function decorate(block) {
         { class: 'card-category' },
         div(
           { class: 'fundTagging' },
-          ul(
-            li('Indian Equity'),
-            li('Mid Cap'),
+          ul({class:"fundTaggingList"},
+            ...fundsTaggingSection.map((eloption)=>{
+              return li(eloption.replaceAll('motilal-oswal:', '').replaceAll('-', ' ').toUpperCase())
+            })
           ),
         ),
         div(
           { class: 'planlistDropdown' },
           select(
-            option('Growth'),
-            option('IDWC Payout'),
+            ...DirectPlanlistArr?.map((el)=>{
+              return option({value:el.groupedCode},el.optionName)
+            })
           ),
         ),
       ),
@@ -42,13 +59,14 @@ export default function decorate(block) {
           { class: 'cagrDropdown' },
           label('Return (Absolute)'),
           select(
-            option('Since Inception'),
-            option('1 YEAR'),
+             ...tempReturns.map((eloption, ind) => option({
+                value: dataMapMoObj.ObjTemp[eloption],
+              }, eloption))
           ),
         ),
         div(
           { class: 'cagrValue' },
-          h2('15.28%'),
+          h2(block.returns[0][dataMapMoObj.ObjTemp[tempReturns[0]]]+"%"),
           p({ class: 'schemeYet', style: 'display:none' }, 'Scheme is yet to complete 10 Years'),
           p({ class: 'cagrDate' }, '15th Mar 2020'),
         ),
@@ -56,7 +74,7 @@ export default function decorate(block) {
       div(
         { class: 'risk-container' },
         label('Risk Factor'),
-        span('Very High'),
+        span(block.risk.riskType),
       ),
       div(
         { class: 'discription' },
@@ -73,5 +91,5 @@ export default function decorate(block) {
       ),
     ),
   );
-  block.append(cardContainer);
+  return cardContainer;
 }
