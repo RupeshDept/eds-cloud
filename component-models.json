@@ -273,5 +273,17 @@
               "valueType": "string"
           }
       ]
+  },
+  {
+    "id":"cornerstones-advantage-title",
+    "fields":[
+      {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Headline and Description",
+          "valueType": "string"
+      }
+    ]
   }
 ]
