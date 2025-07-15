@@ -1,0 +1,15 @@
+.home-banner{
+    background-color: red;
+}
+
+.home-banner .sub-home-banner .sub-banner-item-1{
+    position: relative;
+}
+
+.home-banner .sub-home-banner .sub-banner-item-1 p:last-of-type{
+    position: absolute;
+}
+
+.home-banner .sub-home-banner .sub-banner-item-2{
+    display: none;
+}
