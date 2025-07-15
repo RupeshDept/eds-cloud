@@ -226,28 +226,35 @@
           {
               "component": "reference",
               "valueType": "string",
-              "name": "col1_bannercontentImg",
+              "name": "col2_bannercontentImg",
               "label": "Banner Content Image",
               "multi": false
           },
           {
               "component": "text",
               "valueType": "string",
-              "name": "col1_bannercontentImgAlt",
+              "name": "col2_bannercontentImgAlt",
               "label": "Alt",
               "value": ""
           },
           {
+              "component": "richtext",
+              "name": "col2_text",
+              "value": "",
+              "label": "Text",
+              "valueType": "string"
+          },
+          {
               "component": "reference",
               "valueType": "string",
-              "name": "col2_mobBanner",
+              "name": "col3_mobBanner",
               "label": "Mobile Image",
               "multi": false
           },
           {
               "component": "text",
               "valueType": "string",
-              "name": "col2_mobBannerAlt",
+              "name": "col3_mobBannerAlt",
               "label": "Mobile Alt",
               "value": ""
           },
@@ -255,7 +262,7 @@
               "component": "richtext",
               "name": "col3_text",
               "value": "",
-              "label": "Text",
+              "label": "Mobile Button Text",
               "valueType": "string"
           }
       ]
