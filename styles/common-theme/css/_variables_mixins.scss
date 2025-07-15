@@ -85,14 +85,26 @@ $danger-400: #a61616;
 $danger-500: #911414;
 
 $blue-100: #4e78e6;
-
 $dark-500: #7b7b7b;
 $Light-600: #9d9d9d;
+
+// Button colors
+$Button-Primary-Default: #2E2A94;
+$Button-Primary-Hover: #2B2E8C;
+$Button-Primary-Active: #262A84;
+$Button-Primary-Disabled: #969696;
+$Button-Secondary-Default: #FFFFFF;
+$Button-Secondary-Hover: #F3F3F3;
+$Button-Secondary-Active: #E6E6E6;
+$Button-Secondary-Disabled: #B0B0B0;
+$Button-Secondary-Text: #2E2A94;
+
+
 
 // Fonts
 // $playFairDisplayItalic: "playFairDisplayItalic", sans-serif;
 
-$butler: butler, sans-serif;
+$roboto: roboto, sans-serif;
 
 // Border Radius
 $r4: 4px;
@@ -120,7 +132,7 @@ $font-weights: (
   "heavy": 900,
 );
 
-@mixin fonts($size, $line-height, $color, $family: "Butler", $weight: null) {
+@mixin fonts($size, $line-height, $color, $family: "roboto", $weight: null) {
   font-size: $size;
   line-height: $line-height;
   color: $color;
