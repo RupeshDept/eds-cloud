@@ -58,7 +58,16 @@ export default function decorate(block) {
         div(
           { class: 'cagrDropdown' },
           label('Return (Absolute)'),
-          select(
+          select({
+            schemeCode: block.schcode,
+            value:tempReturns[0],
+            onchange:(event)=>{
+               const cgarValue = block.returns[0][event.target.value];
+               console.log(cgarValue);
+               event.target.closest(".cagr-container").querySelector(".cagrValue h2").textContent =""
+               event.target.closest(".cagr-container").querySelector(".cagrValue h2").textContent =cgarValue+"%"
+            }
+          },
              ...tempReturns.map((eloption, ind) => option({
                 value: dataMapMoObj.ObjTemp[eloption],
               }, eloption))
