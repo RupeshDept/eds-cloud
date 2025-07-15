@@ -226,6 +226,20 @@
           {
               "component": "reference",
               "valueType": "string",
+              "name": "col1_bannercontentImg",
+              "label": "Banner Content Image",
+              "multi": false
+          },
+          {
+              "component": "text",
+              "valueType": "string",
+              "name": "col1_bannercontentImgAlt",
+              "label": "Alt",
+              "value": ""
+          },
+          {
+              "component": "reference",
+              "valueType": "string",
               "name": "col2_mobBanner",
               "label": "Mobile Image",
               "multi": false
@@ -235,20 +249,6 @@
               "valueType": "string",
               "name": "col2_mobBannerAlt",
               "label": "Mobile Alt",
-              "value": ""
-          },
-          {
-              "component": "reference",
-              "valueType": "string",
-              "name": "col3_bannercontentImg",
-              "label": "Banner Content Image",
-              "multi": false
-          },
-          {
-              "component": "text",
-              "valueType": "string",
-              "name": "col3_bannercontentImgAlt",
-              "label": "Alt",
               "value": ""
           },
           {
