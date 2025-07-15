@@ -44,10 +44,16 @@
 }
 .future-building-container .future-building .swiper-wrapper {
   display: flex;
+  align-items: stretch;
 }
 .future-building-container .future-building .swiper-wrapper .swiper-slide {
   width: 400px !important;
   height: auto;
+}
+@media (max-width: 768px) {
+  .future-building-container .future-building .swiper-wrapper .swiper-slide {
+    width: 326px !important;
+  }
 }
 .future-building-container .future-building .swiper-wrapper .swiper-slide .swiper-slide-cards-2 > ul {
   list-style: none;
@@ -98,20 +104,52 @@
     margin-bottom: 4px;
   }
 }
+.future-building-container .future-building .swiper-wrapper .swiper-slide .swiper-slide-cards-2 > ul > li:nth-child(3) {
+  font-family: roboto, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #424242;
+  font-family: roboto, sans-serif;
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  .future-building-container .future-building .swiper-wrapper .swiper-slide .swiper-slide-cards-2 > ul > li:nth-child(3) {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+}
 .future-building-container .future-building .swiper-wrapper .swiper-slide .swiper-slide-cards-2 > ul > li:last-child {
   margin-top: 25px;
+}
+.future-building-container .future-building .swiper-wrapper .swiper-slide .swiper-slide-cards-2 > ul > li:last-child a {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #2E2A94;
+  font-family: roboto, sans-serif;
+  font-weight: 400;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: 2.8px;
+  text-underline-position: from-font;
+  border: none;
 }
 @media (max-width: 768px) {
   .future-building-container .future-building .swiper-wrapper .swiper-slide .swiper-slide-cards-2 > ul > li:last-child {
     margin-top: 12px;
   }
 }
+.future-building-container .future-building .swiper-wrapper .swiper-slide:last-child {
+  margin-right: 0 !important;
+}
 .future-building-container > div:nth-child(3) {
   display: inline-block;
   position: absolute;
   padding: 0;
   top: 35px;
-  right: 62px;
+  right: 130px;
 }
 @media (max-width: 768px) {
   .future-building-container > div:nth-child(3) {
