@@ -45,6 +45,33 @@
   border-radius: 5px;
   border: 1px solid var(--border-color);
   font-size: 16px;
+  box-sizing: border-box;
+}
+.compounding .calculator-sip-wrapper .cal-container .search-results-wrapper {
+  position: relative;
+}
+.compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+}
+.compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+.compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li:hover {
+  background: #f0f0f0;
+}
+.compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li li.active {
+  background: #e0e0e0;
+  cursor: pointer;
 }
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper {
   display: flex;
@@ -62,6 +89,10 @@
 }
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper button:hover {
   background-color: #192bd1;
+  color: white;
+}
+.compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper button.active {
+  background-color: blue;
   color: white;
 }
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper {
@@ -101,6 +132,27 @@
   border-radius: 5px;
   border: none;
   font-size: 16px;
+}
+.compounding .calculator-sip-wrapper .cal-container .invested-amount {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0;
+}
+.compounding .calculator-sip-wrapper .cal-container .invested-amount .invested-amount-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.compounding .calculator-sip-wrapper .cal-container .invested-amount .invested-amount-wrapper label {
+  color: #766a6a;
+  font-size: smaller;
+}
+.compounding .calculator-sip-wrapper .cal-container .invested-amount .invested-amount-wrapper span {
+  font-size: 16px;
+  color: var(--text-color);
+  font-weight: bold;
 }
 .compounding .calculator-sip-wrapper .cal-container .cal-discription {
   display: flex;
