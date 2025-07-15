@@ -1,14 +1,7 @@
-*,
-p,
-dl,
-ol,
-ul,
-pre,
-blockquote {
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    line-height: 0;
 }
 
 .section.home-banner-container .home-banner-wrapper {
