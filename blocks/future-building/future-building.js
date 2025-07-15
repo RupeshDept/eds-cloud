@@ -1,4 +1,4 @@
-// import { createElement } from '../../scripts/scripts.js';
+/* eslint-disable */
 import Swiper from '../swiper/swiper-bundle.min.js';
 
 export default function decorate(block) {
@@ -9,7 +9,7 @@ export default function decorate(block) {
     swiperPagination.classList.add('swiper-pagination');
     swiperWrapper.classList.add('swiper-wrapper');
 
-    Array.from(block.children).forEach((row, index) => {
+    Array.from(block.children).forEach((row) => {
         row.classList.add('swiper-slide');
 
         // Add unique class to each direct <div> inside .swiper-slide
@@ -47,5 +47,3 @@ export default function decorate(block) {
         },
     });
 }
-// This code initializes a Swiper instance on the block element, allowing for a responsive carousel of slides with pagination and autoplay functionality.
-// Each slide is expected to contain direct child <div> elements, which are assigned unique classes based on their order within the slide. The Swiper instance is configured to handle different screen sizes, with specific settings for larger screens (769px and above). The autoplay feature is enabled, allowing the slides to automatically transition every 5 seconds, and pagination is included for user navigation. The code ensures that the Swiper functionality is applied correctly to the block element and its children.
