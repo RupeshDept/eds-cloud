@@ -234,6 +234,21 @@
               }
           },
           {
+              "title": "Cornerstones Advantage Title Richtext",
+              "id": "cornerstones-advantage-title-richtext",
+              "plugins": {
+                  "xwalk": {
+                      "page": {
+                          "resourceType": "core/franklin/components/block/v1/block/item",
+                          "template": {
+                              "name": "Cornerstones Advantage Title Richtext",
+                              "model": "cornerstones-advantage-title-richtext"
+                          }
+                      }
+                  }
+              }
+          },
+          {
               "title": "Cornerstones Advantage Cards",
               "id": "cornerstones-advantage-cards",
               "plugins": {
@@ -249,15 +264,15 @@
               }
           },
           {
-              "title": "Cornerstones Advantage Richtext",
-              "id": "cornerstones-advantage-richtext",
+              "title": "Cornerstones Advantage Cards Item",
+              "id": "cornerstones-advantage-cards-item",
               "plugins": {
                   "xwalk": {
                       "page": {
                           "resourceType": "core/franklin/components/block/v1/block/item",
                           "template": {
-                              "name": "Cornerstones Advantage Richtext",
-                              "model": "cornerstones-advantage-richtext"
+                              "name": "Cornerstones Advantage Cards Item",
+                              "model": "cornerstones-advantage-cards-item"
                           }
                       }
                   }
