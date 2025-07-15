@@ -17,6 +17,7 @@ export default function decorate(block) {
     // 2️⃣ Find selected fund & CAGR
     let selectedFundCode = 'CP';
     let selectedFund = moslFundData.find(fund => fund.schcode === selectedFundCode);
+    let selectedFundName = selectedFund.schDetail.schemeName;
     let returnCAGR = 0;
     if (selectedFund) {
         const foundReturn = selectedFund.returns.find(ret => ret.inception_Ret !== undefined);
@@ -163,21 +164,32 @@ export default function decorate(block) {
     let currentFocus = -1;
 
     searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase();
-        searchResults.innerHTML = ''; // Clear previous
+        const query = e.target.value.toLowerCase().trim();
+        searchResults.innerHTML = '';
         currentFocus = -1;
 
-        if (query.length === 0) return;
+        let filteredFunds;
 
-        const filteredFunds = schemeNames.filter(name =>
-            name.toLowerCase().includes(query)
-        );
+        if (query.length === 0) {
+            // ✅ If empty, show ALL funds
+            filteredFunds = schemeNames;
+        } else {
+            filteredFunds = schemeNames.filter(name =>
+                name.toLowerCase().includes(query)
+            );
+        }
 
         filteredFunds.forEach(name => {
             const li = document.createElement('li');
-            // Highlight matched part
-            const regex = new RegExp(`(${query})`, 'gi');
-            li.innerHTML = name.replace(regex, '<strong>$1</strong>');
+
+            if (query.length > 0) {
+                // ✅ Highlight match
+                const regex = new RegExp(`(${query})`, 'gi');
+                li.innerHTML = name.replace(regex, '<strong>$1</strong>');
+            } else {
+                li.textContent = name;
+            }
+
             li.addEventListener('click', () => {
                 searchInput.value = name;
                 searchResults.innerHTML = '';
@@ -188,16 +200,16 @@ export default function decorate(block) {
                 if (foundFund) {
                     selectedFund = foundFund;
                     selectedFundCode = foundFund.schcode;
-
                     const foundReturn = foundFund.returns.find(ret => ret.inception_Ret !== undefined);
                     returnCAGR = foundReturn ? parseFloat(foundReturn.inception_Ret) : 0;
-
                     updateValues();
                 }
             });
+
             searchResults.appendChild(li);
         });
     });
+
 
     // Listen for keydown for arrow + enter
     searchInput.addEventListener('keydown', (e) => {
@@ -225,7 +237,11 @@ export default function decorate(block) {
             if (currentFocus > -1 && items[currentFocus]) {
                 items[currentFocus].click();
             }
+        } else if (e.key === 'Escape' || e.key === 'Esc') {
+            searchResults.innerHTML = '';
+            currentFocus = -1;
         }
+
     });
 
     function addActive(items) {
@@ -241,67 +257,25 @@ export default function decorate(block) {
         items.forEach(item => item.classList.remove('active'));
     }
 
-    li.addEventListener('click', () => {
-        searchInput.value = name;
-        searchResults.innerHTML = '';
-        console.log(`User selected: ${name}`);
+    // li.addEventListener('click', () => {
+    //     searchInput.value = name;
+    //     selectedFundName = name;
+    //     searchResults.innerHTML = '';
+    //     console.log(`User selected: ${name}`);
 
-        // ✅ UPDATE fund selection!
-        const foundFund = moslFundData.find(fund => fund.schDetail.schemeName === name);
-        if (foundFund) {
-            selectedFund = foundFund;
-            selectedFundCode = foundFund.schcode;
+    //     // ✅ UPDATE fund selection!
+    //     const foundFund = moslFundData.find(fund => fund.schDetail.schemeName === name);
+    //     if (foundFund) {
+    //         selectedFund = foundFund;
+    //         selectedFundCode = foundFund.schcode;
 
-            const foundReturn = foundFund.returns.find(ret => ret.inception_Ret !== undefined);
-            returnCAGR = foundReturn ? parseFloat(foundReturn.inception_Ret) : 0;
+    //         const foundReturn = foundFund.returns.find(ret => ret.inception_Ret !== undefined);
+    //         returnCAGR = foundReturn ? parseFloat(foundReturn.inception_Ret) : 0;
 
-            updateValues();
-        }
-    });
-
-
-    // Auto-hide when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-            searchResults.innerHTML = '';
-        }
-    });
-
-
-
-    // searchInput.addEventListener('input', (e) => {
-    //     const query = e.target.value.toLowerCase();
-    //     searchResults.innerHTML = ''; // Clear previous
-
-    //     if (query.length === 0) return;
-
-    //     const filteredFunds = schemeNames.filter(name =>
-    //         name.toLowerCase().includes(query)
-    //     );
-
-    //     filteredFunds.forEach(name => {
-    //         const li = document.createElement('li');
-    //         li.textContent = name;
-    //         li.addEventListener('click', () => {
-    //             console.log(`User selected: ${name}`);
-    //             searchInput.value = name;
-    //             searchResults.innerHTML = '';
-
-    //             // ✅ UPDATE fund selection!
-    //             const foundFund = moslFundData.find(fund => fund.schDetail.schemeName === name);
-    //             if (foundFund) {
-    //                 selectedFund = foundFund;
-    //                 selectedFundCode = foundFund.schcode;
-
-    //                 const foundReturn = foundFund.returns.find(ret => ret.inception_Ret !== undefined);
-    //                 returnCAGR = foundReturn ? parseFloat(foundReturn.inception_Ret) : 0;
-
-    //                 updateValues();
-    //             }
-    //         });
-    //         searchResults.appendChild(li);
-    //     });
+    //         updateValues();
+    //     }
     // });
+
 
     // Auto-hide when clicking outside
     // document.addEventListener('click', (e) => {
@@ -310,6 +284,15 @@ export default function decorate(block) {
     //     }
     // });
 
+    document.addEventListener('click', (e) => {
+        console.log('Clicked inside block:', e.target);
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.innerHTML = '';
+            if (searchInput.value.trim() === '') {
+                searchInput.value = selectedFundName;
+            }
+        }
+    });
 
     // 9️⃣ Init
     updateValues();
