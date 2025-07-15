@@ -1,64 +1,57 @@
 [
-  {
-    "id": "main",
-    "components": [
-      "section"
-    ]
-  },
-  {
-    "id": "section",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title",
-      "hero",
-      "cards",
-      "columns",
-      "fragment",
-      "tabs",
-      "home-banner",
-      "cornerstones-advantage-title",
-      "cornerstones-advantage-cards"
-    ]
-  },
-  {
-    "id": "tabs",
-    "components": [
-      "tabsitem"
-    ]
-  },
-  {
-    "id": "cards",
-    "components": [
-      "card"
-    ]
-  },
-  {
-    "id": "columns",
-    "components": [
-      "column"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  },
-  {
-    "id":"home-banner",
-    "components":["banner-item"]
-  },
-  {
-    "id":"cornerstones-advantage-title",
-    "components":["cornerstones-advantage-title-richtext"]
-  },
-  {
-    "id":"cornerstones-advantage-cards",
-    "components":["cornerstones-advantage-cards-item"]
-  }
+    {
+        "id": "main",
+        "components": ["section"]
+    },
+    {
+        "id": "section",
+        "components": [
+            "text",
+            "image",
+            "button",
+            "title",
+            "hero",
+            "cards",
+            "columns",
+            "fragment",
+            "tabs",
+            "hero-section",
+            "future-building",
+            "home-banner",
+            "cornerstones-advantage-title",
+            "cornerstones-advantage-cards"
+        ]
+    },
+    {
+        "id": "tabs",
+        "components": ["tabsitem"]
+    },
+    {
+        "id": "cards",
+        "components": ["card"]
+    },
+    {
+        "id": "columns",
+        "components": ["column"]
+    },
+    {
+        "id": "column",
+        "components": ["text", "image", "button", "title"]
+    },
+    {
+        "id": "future-building",
+        "components": ["future-building-item"]
+    },
+    {
+        "id": "home-banner",
+        "components": ["banner-item"]
+    },
+    {
+        "id": "cornerstones-advantage-title",
+        "components": ["cornerstones-advantage-title-richtext"]
+    },
+    {
+        "id": "cornerstones-advantage-cards",
+        "components": ["cornerstones-advantage-cards-item"]
+    }
 ]
