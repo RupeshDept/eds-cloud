@@ -252,9 +252,11 @@
               "value": ""
           },
           {
-              "component": "aem-content",
-              "name": "link",
-              "label": "Banner Button URL"
+              "component": "richtext",
+              "name": "text",
+              "value": "",
+              "label": "Text",
+              "valueType": "string"
           }
       ]
   }
