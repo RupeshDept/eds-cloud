@@ -11,6 +11,10 @@
         height: 100%;
         padding-bottom: 40px;
 
+        // @include mobile {
+        //     padding-bottom: 24px;
+        // }
+
         h3 {
             @include fonts(rem(40px), rem(48px), $primary-blue, $roboto, 600);
             margin: 0;
@@ -25,7 +29,7 @@
         }
 
         p {
-            @include fonts(rem(16px), rem(20px), $primary-blue, $roboto, "regular");
+            @include fonts(rem(16px), rem(20px), $primary-blue, $roboto, regular);
             margin: 0;
             padding: 0;
             line-height: 1.5;
@@ -171,6 +175,11 @@
                 border-radius: $r8;
                 background: $Button-Primary-Default;
                 @include fonts(rem(14px), rem(20px), $primary-white, $roboto, 600);
+
+                @include mobile {
+                    font-size: rem(16px);
+                    line-height: rem(20px);
+                }
 
             }
         }

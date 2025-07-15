@@ -30,7 +30,7 @@
   line-height: 1.25rem;
   color: #2E2A94;
   font-family: roboto, sans-serif;
-  font-weight: "regular";
+  font-weight: regular;
   margin: 0;
   padding: 0;
   line-height: 1.5;
@@ -178,4 +178,10 @@
   color: #ffffff;
   font-family: roboto, sans-serif;
   font-weight: 600;
+}
+@media (max-width: 768px) {
+  .future-building-container > div:nth-child(3) p a {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
 }/*# sourceMappingURL=future-building.css.map */
