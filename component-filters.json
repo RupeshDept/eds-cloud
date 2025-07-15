@@ -16,7 +16,8 @@
       "cards",
       "columns",
       "fragment",
-      "tabs"
+      "tabs",
+      "home-banner"
     ]
   },
   {
@@ -45,5 +46,9 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id":"home-banner",
+    "components":["banner-item"]
   }
 ]
