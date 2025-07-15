@@ -1,0 +1,88 @@
+.section.live-streaming-carousel-container {
+    background-color: lavender;
+    padding: 24px 0;
+    margin: 0;
+}
+
+.section.live-streaming-carousel-container .live-streaming-carousel-wrapper,
+.section.live-streaming-carousel-container .default-content-wrapper {
+    max-width: 1232px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.section.live-streaming-carousel-container h5 {
+    margin: 0 0 8px;
+    color: var(--blue-1800-primary, #2E2A94);
+    font-size: var(--Body-Small-medium-Size, 14px);
+    font-weight: 500;
+    line-height: var(--Body-Small-medium-Line-Height, 16px);
+}
+
+.live-streaming-carousel ul {
+    border-top: 1px solid rgba(66, 82, 110, 0.20);
+    padding: 16px 0 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.live-streaming-carousel ul li:first-of-type {
+    color: var(--Text-Body, #424242);
+    font-size: var(--Body-Medium-regular-Size, 16px);
+    font-weight: 400;
+    line-height: var(--Body-Medium-regular-Line-Height, 24px);
+}
+
+.live-streaming-carousel ul li:last-of-type {
+    color: var(--Text-Header, #382AD7);
+    font-size: var(--Body-Medium-medium-Size, 16px);
+    font-weight: 500;
+    line-height: var(--Body-Medium-medium-Line-Height, 20px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.live-streaming-carousel ul li:last-of-type::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    display: block;
+    background-color: #FF0000;
+    border-radius: 50%;
+}
+
+@media screen and (max-width:1366px) {
+    .section.live-streaming-carousel-container {
+        padding: 24px 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section.live-streaming-carousel-container h5 {
+        font-size: var(--Paragraph-XSmall-Size, 12px);
+        line-height: var(--Paragraph-XSmall-Line-Height, 16px);
+    }
+
+    .live-streaming-carousel ul {
+        flex-direction: column-reverse;
+        align-items: start;
+        max-width: 75.53%;
+        width: 100%;
+    }
+
+    .live-streaming-carousel ul li:first-of-type {
+        font-size: var(--Body-Small-regular-Size, 14px);
+        line-height: var(--Label-Large-Line-Height, 20px);
+    }
+
+
+    .live-streaming-carousel ul li:last-of-type {
+        gap: 8px;
+        font-size: var(--Body-Small-medium-Size, 14px);
+        line-height: var(--Body-Small-medium-Line-Height, 16px);
+    }
+}
