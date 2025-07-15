@@ -275,13 +275,13 @@
       ]
   },
   {
-    "id":"cornerstones-advantage-title",
+    "id":"cornerstones-advantage-richtext",
     "fields":[
       {
           "component": "richtext",
           "name": "text",
           "value": "",
-          "label": "Headline and Description",
+          "label": "Text",
           "valueType": "string"
       }
     ]

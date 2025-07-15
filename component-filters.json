@@ -18,7 +18,8 @@
       "fragment",
       "tabs",
       "home-banner",
-      "cornerstones-advantage-title"
+      "cornerstones-advantage-title",
+      "cornerstones-advantage-cards"
     ]
   },
   {
@@ -51,5 +52,13 @@
   {
     "id":"home-banner",
     "components":["banner-item"]
+  },
+  {
+    "id":"cornerstones-advantage-title",
+    "components":["cornerstones-advantage-cards-item"]
+  },
+  {
+    "id":"cornerstones-advantage-cards",
+    "components":["cornerstones-advantage-cards-item"]
   }
 ]

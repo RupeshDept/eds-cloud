@@ -227,8 +227,37 @@
                           "resourceType": "core/franklin/components/block/v1/block",
                           "template": {
                               "name": "Cornerstones Advantage Title",
-                              "filter": "cornerstones-advantage-title",
-                              "model": "cornerstones-advantage-title"
+                              "filter": "cornerstones-advantage-title"
+                          }
+                      }
+                  }
+              }
+          },
+          {
+              "title": "Cornerstones Advantage Cards",
+              "id": "cornerstones-advantage-cards",
+              "plugins": {
+                  "xwalk": {
+                      "page": {
+                          "resourceType": "core/franklin/components/block/v1/block",
+                          "template": {
+                              "name": "Cornerstones Advantage Cards",
+                              "filter": "cornerstones-advantage-cards"
+                          }
+                      }
+                  }
+              }
+          },
+          {
+              "title": "Cornerstones Advantage Richtext",
+              "id": "cornerstones-advantage-richtext",
+              "plugins": {
+                  "xwalk": {
+                      "page": {
+                          "resourceType": "core/franklin/components/block/v1/block/item",
+                          "template": {
+                              "name": "Cornerstones Advantage Richtext",
+                              "model": "cornerstones-advantage-richtext"
                           }
                       }
                   }
