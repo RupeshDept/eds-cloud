@@ -55,10 +55,10 @@
   },
   {
     "id":"cornerstones-advantage-title",
-    "components":["cornerstones-advantage-cards-item"]
+    "components":["cornerstones-advantage-richtext"]
   },
   {
     "id":"cornerstones-advantage-cards",
-    "components":["cornerstones-advantage-cards-item"]
+    "components":["cornerstones-advantage-richtext"]
   }
 ]
