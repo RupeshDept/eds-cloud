@@ -116,6 +116,10 @@
           {
             "name": "Compounding",
             "value": "compounding"
+          },
+          {
+            "name": "Compounding-two",
+            "value": "compounding-two"
           }
         ]
       }
