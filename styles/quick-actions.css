@@ -1,3 +1,5 @@
+@import '../styles/common-theme/css/_variables_mixins.scss';
+
 .section.quick-actions {
     margin: 40px 0;
 }
@@ -31,6 +33,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 16px;
     list-style: none;
 }
@@ -38,21 +41,54 @@
 .section.quick-actions>div>ul>li>ul>li {
     flex: 1;
     display: flex;
+    align-items: center;
     gap: 4px;
+    color: #2E2A94;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.section.quick-actions>div>ul>li>ul>li .icon {
+    width: 56px;
+    height: 56px;
 }
 
 @media (max-width: 768px) {
+
     .section.quick-actions>div>ul>li {
         flex-direction: column;
         align-items: flex-start;
+        gap: 24px;
+    }
+
+    .section.quick-actions>div>ul p {
+        font-size: 24px;
+        font-style: normal;
+        line-height: 32px;
     }
 
     .section.quick-actions>div>ul>li>ul {
-        flex-direction: column;
         width: 100%;
+        row-gap: 48px;
+        column-gap: 12px;
     }
 
     .section.quick-actions>div>ul>li>ul>li {
-        width: 100%;
+        max-width: 48%;
+        flex: 0 0 48%;
+        gap: 16px;
+        flex-direction: column;
+        text-align: center;
+        white-space: nowrap;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .section.quick-actions>div>ul>li>ul>li .icon {
+        width: 48px;
+        height: 48px;
     }
 }
