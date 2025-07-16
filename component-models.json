@@ -231,55 +231,55 @@
     "fields": [
       {
         "component": "text",
-        "name": "searchPlaceholder",
+        "name": "col1_searchPlaceholder",
         "label": "Search Text Placeholder",
         "value": "Search a fund"
       },
       {
         "component": "text",
-        "name": "defaultFund",
+        "name": "col1_defaultFund",
         "label": "Default Fund Name",
         "value": "Motilal Oswal Mid cap fund"
       },
       {
         "component": "text",
-        "name": "sipLabel",
+        "name": "col1_sipLabel",
         "label": "SIP Button Label",
         "value": "SIP"
       },
       {
         "component": "text",
-        "name": "lumpsumLabel",
+        "name": "col1_lumpsumLabel",
         "label": "Lumpsum Button Label",
         "value": "Lumpsum"
       },
       {
         "component": "text",
-        "name": "sipInputLabel",
+        "name": "col2_sipInputLabel",
         "label": "SIP Investment Label",
         "value": "If you would have invested monthly"
       },
       {
         "component": "text",
-        "name": "lumpsumInputLabel",
+        "name": "col2_lumpsumInputLabel",
         "label": "Lumpsum Investment Label",
         "value": "If you would have invested"
       },
       {
         "component": "number",
-        "name": "defaultAmount",
+        "name": "col2_defaultAmount",
         "label": "Default Investment Amount",
         "value": 10000
       },
       {
         "component": "text",
-        "name": "tenureInputLabel",
+        "name": "col2_tenureInputLabel",
         "label": "Tenure Input Label",
         "value": "Tenure"
       },
       {
         "component": "select",
-        "name": "defaultTenure",
+        "name": "col3_defaultTenure",
         "label": "Default Tenure",
         "value": "10",
         "options": [
@@ -323,44 +323,44 @@
       },
       {
         "component": "text",
-        "name": "currentValueInputLabel",
+        "name": "col3_currentValueInputLabel",
         "label": "Current Value Input Label",
         "value": "Current Value of Investment"
       },
       {
         "component": "number",
-        "name": "defaultCurrentValue",
+        "name": "col3_defaultCurrentValue",
         "label": "Default Current Value of Investment",
         "value": 2500000
       },
       {
         "component": "text",
-        "name": "returnCagrInputLabel",
+        "name": "col3_returnCagrInputLabel",
         "label": "Return (CAGR) Input Label",
         "value": "Return (CAGR)"
       },
       {
         "component": "number",
-        "name": "annualReturnRate",
+        "name": "col4_annualReturnRate",
         "label": "Annual Return Rate (%)",
         "value": 18,
         "description": "Expected annual return rate for calculations"
       },
       {
         "component": "boolean",
-        "name": "showSip",
+        "name": "col4_showSip",
         "label": "Show SIP Option",
         "value": true
       },
       {
         "component": "boolean",
-        "name": "showLumpsum",
+        "name": "col4_showLumpsum",
         "label": "Show Lumpsum Option",
         "value": true
       },
       {
         "component": "select",
-        "name": "defaultInvestmentType",
+        "name": "col4_defaultInvestmentType",
         "label": "Default Investment Type",
         "value": "sip",
         "options": [
@@ -376,19 +376,19 @@
       },
       {
         "component": "text",
-        "name": "buttonText",
+        "name": "col5_buttonText",
         "label": "CTA Button Text",
         "value": "Start SIP"
       },
       {
         "component": "text",
-        "name": "calculatorLink",
+        "name": "col5_calculatorLink",
         "label": "Other Calculators Link Text",
         "value": "View other calculators"
       },
       {
         "component": "text",
-        "name": "calculatorUrl",
+        "name": "col5_calculatorUrl",
         "label": "Other Calculators URL",
         "value": "#"
       }
