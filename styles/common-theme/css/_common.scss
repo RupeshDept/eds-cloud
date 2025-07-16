@@ -1,33 +1,56 @@
 @import "./variables_mixins";
 @import "./fluid-typography";
 
-.pointer {
+// ----------------------------------------
+// POINTER & INTERACTIVITY
+// ----------------------------------------
+
+.cursor-pointer {
   cursor: pointer;
 }
 
-.pointer-event-none {
-  pointer-events: none;
-}
-
-.pointer-none {
+.cursor-none {
   cursor: none;
 }
 
-// DISPLAY
+.pointer-events-none {
+  pointer-events: none;
+}
 
-.dsp {
-  display: none;
+.disabled {
+  pointer-events: none;
+  background-color: #969696 !important;
+  // opacity: 0.4; // Uncomment if you want visual feedback
+}
+
+// ----------------------------------------
+// DISPLAY & FLEX UTILITIES
+// ----------------------------------------
+
+.d-none {
+  display: none !important;
+}
+
+.dsp-none {
+  display: none !important;
+}
+
+// Mobile specific display toggle
+.mob-d-none {
+  @include mobile {
+    display: none !important;
+  }
 }
 
 .justify-center {
   justify-content: center;
 }
 
-.justify-space-between {
+.justify-between {
   justify-content: space-between;
 }
 
-.justify-flex-end {
+.justify-end {
   justify-content: flex-end;
 }
 
@@ -35,21 +58,15 @@
   align-items: center;
 }
 
-.dsp-none {
-  display: none !important;
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.mob-dsp-none {
-  @include mobile {
-    display: none !important;
-  }
-}
-
-.disabled {
-  pointer-events: none;
-  // opacity: 0.4;
-  background-color: #969696 !important;
-}
+// ----------------------------------------
+// VISIBILITY & OVERFLOW
+// ----------------------------------------
 
 .overflow-hidden {
   overflow: hidden !important;
@@ -59,12 +76,31 @@
   visibility: hidden;
 }
 
-.background-color-body {
-  background: #f3f3f3;
+// ----------------------------------------
+// BACKGROUND & COLORS
+// ----------------------------------------
+
+.bg-body {
+  background-color: #f3f3f3;
 }
 
+.bg-white {
+  background-color: #fff !important;
+}
 
-// dynamic height for floating header
+// ----------------------------------------
+// TYPOGRAPHY
+// ----------------------------------------
+
+.font-primary :is(p, h1, h2, h3, h4, h5, h6) {
+  font-family: $roboto !important;
+  font-style: normal !important;
+}
+
+// ----------------------------------------
+// HEADER HEIGHT MANAGEMENT
+// ----------------------------------------
+
 :root {
   --header-height: 0px; // Default value to prevent errors before JS runs
 }
@@ -73,14 +109,9 @@
   margin-top: calc(var(--header-height) + 32px);
 }
 
-// font
-
-.font-primary :is(p, h1, h2, h3, h4, h5, h6) {
-  font-family: $roboto !important;
-  font-style: normal !important;
-}
-
-// POPUP SLIDE ANIMATION
+// ----------------------------------------
+// ANIMATIONS
+// ----------------------------------------
 
 .slide-in {
   animation-duration: 2s;
@@ -108,11 +139,11 @@
   -ms-animation: fadeIn 2s;
 }
 
+// ----------------------------------------
+// BODY STATES
+// ----------------------------------------
 
 body.loading {
   overflow: hidden;
   pointer-events: none;
-}
-.bg-white {
-  background-color: #fff !important;
 }
