@@ -163,6 +163,7 @@ export default function decorate(block) {
 
     let currentFocus = -1;
 
+    // 🔥 2️⃣ Update the li click logic to ALWAYS update the CAGR and call updateValues correctly
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase().trim();
         searchResults.innerHTML = '';
@@ -171,7 +172,6 @@ export default function decorate(block) {
         let filteredFunds;
 
         if (query.length === 0) {
-            // ✅ If empty, show ALL funds
             filteredFunds = schemeNames;
         } else {
             filteredFunds = schemeNames.filter(name =>
@@ -183,7 +183,6 @@ export default function decorate(block) {
             const li = document.createElement('li');
 
             if (query.length > 0) {
-                // ✅ Highlight match
                 const regex = new RegExp(`(${query})`, 'gi');
                 li.innerHTML = name.replace(regex, '<strong>$1</strong>');
             } else {
@@ -191,18 +190,24 @@ export default function decorate(block) {
             }
 
             li.addEventListener('click', () => {
+                // ✅ Update input value & selected name
                 searchInput.value = name;
+                selectedFundName = name;
                 searchResults.innerHTML = '';
-                console.log(`User selected: ${name}`);
 
-                // ✅ Update selected fund + CAGR
+                // ✅ Find the new fund and update CAGR
                 const foundFund = moslFundData.find(fund => fund.schDetail.schemeName === name);
                 if (foundFund) {
                     selectedFund = foundFund;
                     selectedFundCode = foundFund.schcode;
+
                     const foundReturn = foundFund.returns.find(ret => ret.inception_Ret !== undefined);
                     returnCAGR = foundReturn ? parseFloat(foundReturn.inception_Ret) : 0;
-                    updateValues();
+
+                    console.log('Fund selected:', name);
+                    console.log('New return CAGR:', returnCAGR);
+
+                    updateValues(); // ✅ Call calculation again
                 }
             });
 
@@ -211,7 +216,6 @@ export default function decorate(block) {
     });
 
 
-    // Listen for keydown for arrow + enter
     searchInput.addEventListener('keydown', (e) => {
         const items = searchResults.querySelectorAll('li');
         if (!items.length) return;
@@ -224,25 +228,20 @@ export default function decorate(block) {
             currentFocus--;
             addActive(items);
             e.preventDefault();
-        } else if (e.key === 'PageDown') {
-            currentFocus += 5;
-            addActive(items);
-            e.preventDefault();
-        } else if (e.key === 'PageUp') {
-            currentFocus -= 5;
-            addActive(items);
-            e.preventDefault();
         } else if (e.key === 'Enter') {
             e.preventDefault();
-            if (currentFocus > -1 && items[currentFocus]) {
+            // ✅ NEW: If no li is focused, default to first
+            if (currentFocus === -1) currentFocus = 0;
+
+            if (items[currentFocus]) {
                 items[currentFocus].click();
             }
-        } else if (e.key === 'Escape' || e.key === 'Esc') {
+        } else if (e.key === 'Escape') {
             searchResults.innerHTML = '';
             currentFocus = -1;
         }
-
     });
+
 
     function addActive(items) {
         if (!items) return;
@@ -257,42 +256,15 @@ export default function decorate(block) {
         items.forEach(item => item.classList.remove('active'));
     }
 
-    // li.addEventListener('click', () => {
-    //     searchInput.value = name;
-    //     selectedFundName = name;
-    //     searchResults.innerHTML = '';
-    //     console.log(`User selected: ${name}`);
-
-    //     // ✅ UPDATE fund selection!
-    //     const foundFund = moslFundData.find(fund => fund.schDetail.schemeName === name);
-    //     if (foundFund) {
-    //         selectedFund = foundFund;
-    //         selectedFundCode = foundFund.schcode;
-
-    //         const foundReturn = foundFund.returns.find(ret => ret.inception_Ret !== undefined);
-    //         returnCAGR = foundReturn ? parseFloat(foundReturn.inception_Ret) : 0;
-
-    //         updateValues();
-    //     }
-    // });
-
-
-    // Auto-hide when clicking outside
-    // document.addEventListener('click', (e) => {
-    //     if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-    //         searchResults.innerHTML = '';
-    //     }
-    // });
-
     document.addEventListener('click', (e) => {
-        console.log('Clicked inside block:', e.target);
         if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
             searchResults.innerHTML = '';
             if (searchInput.value.trim() === '') {
-                searchInput.value = selectedFundName;
+                searchInput.value = selectedFundName; // ✅ fallback to latest
             }
         }
     });
+
 
     // 9️⃣ Init
     updateValues();
