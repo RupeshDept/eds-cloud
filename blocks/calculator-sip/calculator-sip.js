@@ -69,7 +69,7 @@ export default function decorate(block) {
         div({ class: "invested-amount" },
             div({ class: "invested-amount-wrapper" },
                 label({}, block.querySelector('.cal-container10').textContent.trim()),
-                span({ class: "invested-amount-value" }, '0'),
+                span({ class: "invested-amount-value" }, block.querySelector('.cal-container11').textContent.trim()),
             )
         ),
         div({ class: "cal-discription" },
@@ -78,17 +78,17 @@ export default function decorate(block) {
                 span({ class: "current-value" }, '0'),
             ),
             div({ class: "return-cagr-wrapper" },
-                label({ class: "labelforretrun" }, block.querySelector('.cal-container14').textContent.trim()),
+                label({ class: "labelforretrun" }, block.querySelector('.cal-container12').textContent.trim()),
                 span({ class: "return-cagr" }, `${returnCAGR.toFixed(2)}%`),
             ),
             div({ class: "start-sip-btn" },
-                button(block.querySelector('.cal-container19').textContent.trim()),
+                button(block.querySelector('.cal-container17').textContent.trim()),
             )
         )
     );
 
     let viewOthCalBtn = div({ class: "view-btn-cal" },
-        a({ href: block.querySelector('.cal-container21').textContent.trim() || '#', class: "view-othercal-btn" }, block.querySelector('.cal-container20').textContent.trim() || 'View other calculators')
+        a({ href: block.querySelector('.cal-container19').textContent.trim() || '#', class: "view-othercal-btn" }, block.querySelector('.cal-container18').textContent.trim() || 'View other calculators')
     );
 
     block.innerHTML = '';
