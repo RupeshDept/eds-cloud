@@ -207,11 +207,13 @@
   {
     "id": "investment-block",
     "fields": [{
-      "component": "text",
-      "name": "text",
-      "label": "Set Part Contain"
-    },
-    {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Enter Context",
+        "valueType": "string"
+      },
+      {
         "component": "select",
         "name": "classes",
         "label": "please select working block class name",
