@@ -35,8 +35,8 @@ export default function decorate(block) {
         //     disableOnInteraction: false,
         // },
         pagination: {
-            el: swiperPagination,
-            clickable: true,
+            // el: swiperPagination,
+            disabledClass: 'swiper-pagination-disabled',
         },
         breakpoints: {
             769: {

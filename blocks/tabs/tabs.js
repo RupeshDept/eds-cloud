@@ -1,9 +1,11 @@
 /* eslint-disable */
 // eslint-disable-next-line import/no-unresolved
 import { toClassName } from '../../scripts/aem.js';
-
+import dataCfObj from "../../scripts/dataCfObj.js";
+import fundCardblock from "../fund-card/fund-card.js"
 export default async function decorate(block) {
     // build tablist
+    // console.log(dataCfObj);
     const tablist = document.createElement('div');
     tablist.className = 'tabs-list';
     tablist.setAttribute('role', 'tablist');
@@ -45,4 +47,82 @@ export default async function decorate(block) {
     });
 
     block.prepend(tablist);
+
+    if (block.closest(".our-popular-funds")) {
+        let dataCf = dataCfObj.slice(0,4);
+
+        Array.from(tablist.children).forEach(element=>{
+            element.addEventListener("click",(event)=>{
+                if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-trending-funds") {
+                    dataCf = dataCfObj.slice(0,4)
+                    
+                }else if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-most-searched-funds") {
+                    dataCf = dataCfObj.map((elem)=>{
+                        return [...elem.fundsTaggingSection].includes("motilal-oswal:active") ? elem : ""
+                    })
+                    dataCf = dataCf.filter((el)=> el)
+                    dataCf = dataCf.slice(0,4)
+                }else if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-most-bought-funds") {
+                    dataCf = dataCfObj.map((elem)=>{
+                        return elem.fundCategorisation ==='Passive Funds' ? elem : ""
+                    })
+                    dataCf = dataCf.filter((el)=> el)
+                    dataCf = dataCf.slice(0,4)
+                }
+                block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).innerHTML = ""
+                dataCf.map((element)=>{
+                    return block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).append(fundCardblock(element))
+                });    
+            })
+        })
+
+        tablist.children[0].click();
+    }
+    if (block.closest(".known-our-funds")) {    
+        let dataCf = dataCfObj.slice(0,4);
+
+        Array.from(tablist.children).forEach(element=>{
+            element.addEventListener("click",(event)=>{
+                if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-trending-funds") {
+                    dataCf = dataCfObj.slice(0,4)
+                } else if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-international-equity") {
+                    dataCf = dataCfObj.map((elem)=>{
+                        return [...elem.fundsTaggingSection].includes("motilal-oswal:international-equity") ? elem : ""
+                    })
+                    dataCf = dataCf.filter((el)=> el)
+                    dataCf = dataCf.slice(0,4)
+                }else if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-hybrid-balanced") { //tabpanel-index 
+                    dataCf = dataCfObj.map((elem)=>{
+                        return [...elem.fundsTaggingSection].includes("motilal-oswal:hybrid-&-balanced") ? elem : ""
+                    })
+                    dataCf = dataCf.filter((el)=> el)
+                    dataCf = dataCf.slice(0,4)
+                }else if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-index") {  
+                    dataCf = dataCfObj.map((elem)=>{
+                        return [...elem.fundsTaggingSection].includes("motilal-oswal:index-funds") ? elem : ""
+                    })
+                    dataCf = dataCf.filter((el)=> el)
+                    dataCf = dataCf.slice(0,4)
+                }else if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-etfs") { 
+                    dataCf = dataCfObj.map((elem)=>{
+                        return [...elem.fundsTaggingSection].includes("motilal-oswal:etf") ? elem : ""
+                    })
+                    dataCf = dataCf.filter((el)=> el)
+                    dataCf = dataCf.slice(0,4)
+                }else if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-others") {
+                    dataCf = dataCfObj.map((elem)=>{
+                        return elem.sebiSubCategory ==='Other ETF' ? elem : ""
+                    })
+                    dataCf = dataCf.filter((el)=> el)
+                    dataCf = dataCf.slice(0,4)
+                } 
+                block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).innerHTML = ""
+                dataCf.map((element)=>{
+                    return block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).append(fundCardblock(element))
+                });    
+            })
+        })
+
+        tablist.children[0].click();
+    }
 }
