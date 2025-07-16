@@ -19,6 +19,8 @@ export default function decorate(block) {
     .append(pagination, nextBtn, prevBtn);
 
   const wrapper = block.closest(".live-streaming-carousel-wrapper");
+  const mobPageLine = div({ class: "mobile-pagination-line" });
+  wrapper.append(mobPageLine);
   const swiper = new Swiper(".live-streaming-carousel", {
     loop: true,
     pagination: {
