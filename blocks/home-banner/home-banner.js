@@ -2,7 +2,6 @@ import Swiper from "../swiper/swiper-bundle.min.js";
 import { div } from "../../scripts/dom-helpers.js";
 
 export default function decorate(block) {
-  // block.closest(".home-banner-wrapper").classList.add('swiper');
   const swiperWrapper = div({ class: "swiper-wrapper" });
   block.classList.add("swiper");
   Array.from(block.children).forEach((ele) => {
@@ -24,16 +23,12 @@ export default function decorate(block) {
 
     pagination: {
       el: ".swiper-pagination",
+      clickable: true
     },
 
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-
-    // And if we need scrollbar
-    // scrollbar: {
-    //   el: ".swiper-scrollbar",
-    // },
+      nextEl: block.querySelector(".swiper-button-next"),
+      prevEl: block.querySelector(".swiper-button-prev"),
+    }
   });
 }

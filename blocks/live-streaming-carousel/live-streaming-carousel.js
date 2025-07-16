@@ -19,7 +19,7 @@ export default function decorate(block) {
     .append(pagination, nextBtn, prevBtn);
 
   const wrapper = block.closest(".live-streaming-carousel-wrapper");
-  const swiper = new Swiper(block, {
+  const swiper = new Swiper(".live-streaming-carousel", {
     loop: true,
     pagination: {
       el: wrapper.querySelector(".swiper-pagination"),
@@ -43,13 +43,12 @@ export default function decorate(block) {
       },
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: block
+        .closest(".live-streaming-carousel-wrapper")
+        .querySelector(".swiper-button-next"),
+      prevEl: block
+        .closest(".live-streaming-carousel-wrapper")
+        .querySelector(".swiper-button-prev"),
     },
-
-    // And if we need scrollbar
-    // scrollbar: {
-    //   el: ".swiper-scrollbar",
-    // },
   });
 }
