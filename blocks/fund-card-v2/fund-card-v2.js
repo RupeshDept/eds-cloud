@@ -1,4 +1,5 @@
-import {a, div, h2, li, option, select, span, ul} from "../../scripts/dom-helpers.js"
+import {a, div, h2, li, option, select, span, ul, p} from "../../scripts/dom-helpers.js"
+import dataMapMoObj from "../../scripts/constant.js"
 export default function decorate(block){
     let fundsTaggingSection =  block.fundsTaggingSection.slice(0,2);
     let DirectPlanlistArr = block.planList.filter((el)=>{
@@ -8,14 +9,14 @@ export default function decorate(block){
         div({class:"cardWrapper"},
             div({class:"benchmarkStar"},
                 div({class:"benchmarksec"},
-                    span("NIFTY 500 ETF")
+                    span(block.benchmark)
                 ),
                 div({ class: 'Star' },
                     span('★'),
                 ),
             ),
             div({class:"schemeName"},
-                p("Motilal Oswal Asset Allocation Passiv Fund Conservative")
+                p(block.schDetail.schemeName)
             ),
             div({class:"dropdownTags"},
                 div({class:"dropdown"},
@@ -37,7 +38,7 @@ export default function decorate(block){
             ),
             div({class:"returnBtn"},
                 div({ class: 'cagrValue' },
-                    h2(block.returns[0][dataMapMoObj.ObjTemp[tempReturns[0]]]+"%"),
+                    h2("15.28%"),
                 ),
                 div({class:"btnKnowMore"},
                     a("Know More")
