@@ -1,5 +1,5 @@
 import {
-  button, div, h3, label, option, select, span, ul, li, h2, p,
+  button, div, h3, label, option, select, span, ul, li, h2, p, img
 } from '../../scripts/dom-helpers.js';
 import dataMapMoObj from "../../scripts/constant.js"
 export default function decorate(block) { 
