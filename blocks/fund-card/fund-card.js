@@ -46,9 +46,18 @@ export default function decorate(block) {
         ),
         div(
           { class: 'planlistDropdown' },
-          select(
-            ...DirectPlanlistArr?.map((el)=>{
-              return option({value:el.groupedCode},el.optionName)
+          select({
+            onchange:(event)=>{
+                  console.log(event.target.value);
+                  console.log(event.target.closest(".card-wrapper").querySelector(".cagr-container .cagrDropdown"));
+                  console.log(block.returns,block.planList,block.schDetail.schemeName);
+                  planListEvent(event,block)
+                }
+              },
+            ...DirectPlanlistArr.map((el)=>{
+              return option({
+                value:el.groupedCode,
+              },el.optionName)
             })
           ),
         ),
@@ -101,4 +110,76 @@ export default function decorate(block) {
     ),
   );
   return cardContainer;
+}
+
+function planListEvent(param, block) {
+  const tempReturns = [],
+    codeTempArr = [];
+  block.returns.forEach((el) => {
+    codeTempArr.push((el.plancode + el.optioncode))
+    if (param.target.value === (el.plancode + el.optioncode)) {
+      for (const key in el) {
+        if (dataMapMoObj.ObjTemp[key]) {
+          tempReturns.push(dataMapMoObj.ObjTemp[key]);
+        }
+      }
+    }
+  })
+  param.target.closest(".card-wrapper").querySelector(".cagr-container").innerHTML = ""
+  if (codeTempArr.includes(param.target.value) && tempReturns.length != 0) {
+    param.target.closest(".card-wrapper").querySelector(".cagr-container").append(
+      div({
+          class: 'cagrDropdown'
+        },
+        label('Return (Absolute)'),
+        select({
+            schemeCode: block.schcode,
+            value: tempReturns[0],
+            onchange: (event) => {
+              const cgarValue = block.returns[0][event.target.value];
+              console.log(cgarValue);
+              event.target.closest(".cagr-container").querySelector(".cagrValue h2").textContent = ""
+              event.target.closest(".cagr-container").querySelector(".cagrValue h2").textContent = cgarValue + "%"
+            }
+          },
+          ...tempReturns.map((eloption, ind) => option({
+            value: dataMapMoObj.ObjTemp[eloption],
+          }, eloption))
+        ),
+      ),
+      div({
+          class: 'cagrValue'
+        },
+        h2(block.returns[0][dataMapMoObj.ObjTemp[tempReturns[0]]] + "%"),
+        p({
+          class: 'schemeYet',
+          style: 'display:none'
+        }, 'Scheme is yet to complete 10 Years'),
+        p({
+          class: 'cagrDate'
+        }, '15th Mar 2020'),
+      ),
+    )
+  } else {
+    param.target.closest(".card-wrapper").querySelector(".cagr-container .cagrDropdown").append(
+      div({
+          class: 'cagrDropdown'
+        },
+        label('Return (Absolute)'),
+        label("NA")
+      ),
+      div({
+          class: 'cagrValue'
+        },
+        h2("NA"),
+        p({
+          class: 'schemeYet',
+          style: 'display:none'
+        }, 'Scheme is yet to complete 10 Years'),
+        p({
+          class: 'cagrDate'
+        }, '15th Mar 2020'),
+      ),
+    )
+  }
 }
