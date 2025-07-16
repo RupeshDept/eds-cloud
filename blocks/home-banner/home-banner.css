@@ -1,5 +1,4 @@
 /* @import url('../swiper/swiper-bundle.min.css'); */
-
 * {
     padding: 0;
     margin: 0;
@@ -19,12 +18,13 @@
 
 .home-banner .sub-home-banner {
     position: relative;
+
     /* margin-bottom: 24px; */
 }
 
 .home-banner .sub-home-banner .sub-banner-item-1::after {
     content: '';
-    background: linear-gradient(90deg, #787735 -1.21%, rgba(120, 119, 53, 0.00) 52.42%);
+    background: linear-gradient(90deg, #787735 -1.21%, rgb(120 119 53 / 0%) 52.42%);
     width: 100%;
     height: 100%;
     display: block;
@@ -71,11 +71,12 @@
 }
 
 .home-banner .sub-home-banner .sub-banner-item-2 .button-container .button {
-    color: var(--Button-Primary-Default, #2E2A94);
+    color: var(--button-primary-default, #2E2A94);
+
     /* font-family: var(--Body, Poppins); */
-    font-size: var(--Button-Medium-Size, 16px);
+    font-size: var(--button-medium-size, 16px);
     font-weight: 600;
-    line-height: var(--Button-Medium-Line-Height, 20px);
+    line-height: var(--button-medium-line-height, 20px);
     padding: 12px;
     background-color: #fff;
     border-radius: 8px;
@@ -164,7 +165,7 @@
     width: 48px;
     height: 48px;
     border-radius: 24px;
-    background: var(--Blue-1-500, #4338F3);
+    background: var(--blue-1-500, #4338F3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -172,17 +173,16 @@
 }
 
 .section.home-banner-container ul li:first-of-type {
-    background: var(--Blue-1-300, #7986FD);
+    background: var(--blue-1-300, #7986FD);
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (width <= 950px) {
     .home-banner .sub-home-banner .sub-banner-item-2 {
         padding: 48px 20px 71px;
     }
 }
 
-@media screen and (max-width:768px) {
-
+@media screen and (width <=768px) {
     .home-banner .sub-home-banner .sub-banner-item-1,
     .home-banner .sub-home-banner .sub-banner-item-2,
     .home-banner .sub-home-banner .sub-banner-item-4 {
@@ -212,18 +212,23 @@
     .home-banner .sub-home-banner .sub-banner-item-3 .button-container {
         position: absolute;
         top: 50%;
+
         /* left: 93px; */
         left: 25%;
+
         /* transform: translateY(-50%); */
+
         /* width: 100%; */
+
         /* height: 100%; */
+
         /* padding: 117px 93px; */
     }
 
     .home-banner .sub-home-banner .sub-banner-item-3 .button-container .button {
-        color: var(--Button-Primary-Default, #2E2A94);
-        font-size: var(--Button-Small-Size, 14px);
-        line-height: var(--Button-Small-Line-Height, 16px);
+        color: var(--button-primary-default, #2E2A94);
+        font-size: var(--button-small-size, 14px);
+        line-height: var(--button-small-line-height, 16px);
         background-color: #fff;
         padding: 8px 12px;
         border-radius: 8px;
