@@ -203,5 +203,13 @@
       "name": "text",
       "label": "Enter Text"
     }]
+  },
+  {
+    "id": "investment-block",
+    "fields": [{
+      "component": "text",
+      "name": "text",
+      "label": "Set Part Contain"
+    }]
   }
 ]

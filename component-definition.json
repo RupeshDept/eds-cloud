@@ -202,6 +202,21 @@
               }
             }
           }
+        },
+        {
+          "title": "Investment Block",
+          "id": "investment-block",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Investment Block",
+                  "model": "investment-block"
+                }
+              }
+            }
+          }
         }
       ]
     }
