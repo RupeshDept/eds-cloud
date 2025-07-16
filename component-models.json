@@ -330,13 +330,6 @@
                 "value": "",
                 "label": "Mobile Button Text",
                 "valueType": "string"
-            },
-            {
-                "component": "richtext",
-                "name": "col4_text",
-                "value": "",
-                "label": "External links icons",
-                "valueType": "string"
             }
         ]
     },

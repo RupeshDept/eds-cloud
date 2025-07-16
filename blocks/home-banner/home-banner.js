@@ -1,6 +1,39 @@
+import Swiper from "../swiper/swiper-bundle.min.js";
+import { div } from "../../scripts/dom-helpers.js";
+
 export default function decorate(block) {
-    block.querySelector(".home-banner div").classList.add("sub-home-banner");
-    block.querySelectorAll('.sub-home-banner div').forEach((ele,i)=>{
-        ele.classList.add(`sub-banner-item-${i+1}`)
-    })
+  // block.closest(".home-banner-wrapper").classList.add('swiper');
+  const swiperWrapper = div({ class: "swiper-wrapper" });
+  block.classList.add("swiper");
+  Array.from(block.children).forEach((ele) => {
+    ele.classList.add("sub-home-banner", "swiper-slide");
+    Array.from(ele.children).forEach((innerEle, i) => {
+      innerEle.classList.add(`sub-banner-item-${i + 1}`);
+    });
+    swiperWrapper.append(ele);
+  });
+
+  //   Create div for pagination and buttons
+  const paginationDiv = div({ class: "swiper-pagination" });
+  const nextBtn = div({ class: "swiper-button-next" });
+  const prevBtn = div({ class: "swiper-button-prev" });
+
+  block.append(swiperWrapper, paginationDiv, nextBtn, prevBtn);
+  const swiper = new Swiper(block, {
+    loop: true,
+
+    pagination: {
+      el: ".swiper-pagination",
+    },
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    // And if we need scrollbar
+    // scrollbar: {
+    //   el: ".swiper-scrollbar",
+    // },
+  });
 }
