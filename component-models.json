@@ -368,5 +368,33 @@
           "valueType": "string"
         }
       ]
+    },
+    {
+        "id":"newsletter-subscription",
+        "fields":[
+            {
+                "component": "richtext",
+                "name": "text",
+                "value": "",
+                "label": "Live Streaming Content",
+                "valueType": "string"
+            },
+            {
+                "component": "text",
+                "name": "label",
+                "label": "Enter Label for Email"
+            },
+            {
+                "component": "text",
+                "name": "labelText",
+                "label": "Text"
+            },
+            {
+                "component": "text",
+                "name": "labelTitle",
+                "label": "Title"
+            }
+
+        ]
     }
 ]
