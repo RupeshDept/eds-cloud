@@ -1,1 +1,250 @@
-.card-container .card-wrapper{width:30%;height:100%;border:1px solid}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.section.known-our-funds {
+    background-color: lavenderblush;
+    max-width: 1232px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.section.known-our-funds .default-content-wrapper {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+.section.known-our-funds .default-content-wrapper h1 {
+    color: var(--blue-1800-primary, #2E2A94);
+    font-family: var(--title, ButlerPro);
+    font-size: var(--heading-h2-size, 40px);
+    font-weight: 700;
+    line-height: var(--heading-h2-line-height, 48px);
+    margin: 0;
+}
+
+.section.known-our-funds .tabs-wrapper {
+    margin: 8px 0 0;
+    max-width: 100%;
+    padding: 0;
+}
+
+.section.known-our-funds .tabs-list {
+    display: flex;
+    gap: 0;
+    border-bottom: var(--border-width-01, 1px) solid var(--color-neutrals-400, #B6BCC7);
+    margin: 0 0 24px;
+    max-width: max-content;
+}
+
+.section.known-our-funds .tabs-list .tabs-tab {
+    border: none;
+    background-color: transparent;
+    padding: 12px;
+    color: #2E2A94;
+    font-family: var(--body, Poppins);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.section.known-our-funds .tabs-list .tabs-tab[aria-selected="true"] {
+    font-weight: 600;
+    border-bottom: var(--border-width-03, 2px) solid var(--blue-1800-primary, #2E2A94);
+}
+
+.section.known-our-funds .tabs-wrapper .tabs-panel {
+    margin: 0;
+    border: none;
+    padding: 0;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.section.known-our-funds .tabs-panel .card-container {
+    max-width: 296px;
+    width: 100%;
+    padding: 24px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--neutrals-400, #BDBDBD);
+}
+
+.section.known-our-funds .card-container .card-upper-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 0 0 8px;
+}
+
+.section.known-our-funds .card-upper-title h2 {
+    margin: 0;
+    color: var(--blue-1800-primary, #2E2A94);
+    font-family: var(--body, Poppins);
+    font-size: var(--body-small-medium-size, 14px);
+    font-weight: 500;
+    line-height: var(--body-small-medium-line-height, 16px);
+}
+
+.section.known-our-funds .card-upper-title .star {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.section.known-our-funds .card-upper-title .star.star-filled .star-icon,
+.section.known-our-funds .card-upper-title .star:not(.star-filled) .fillstar-icon {
+    display: none;
+}
+
+.section.known-our-funds .card-upper-title .star img {
+    width: 100%;
+    height: 100%;
+}
+
+.section.known-our-funds .card-container .card-category {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 0 0 16px;
+}
+
+.section.known-our-funds .card-category .fundtagging-list {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+}
+
+.section.known-our-funds .fundtagging-list li,
+.section.known-our-funds .planlist-dropdown select {
+    color: var(--text-body, #424242);
+    font-family: var(--body, Poppins);
+    font-size: var(--disclaimer-xsmall-size, 12px);
+    font-weight: 400;
+    line-height: var(--disclaimer-xsmall-line-height, 16px);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.section.known-our-funds .fundtagging-list li::before,
+.section.known-our-funds .planlist-dropdown::before {
+    content: '';
+    min-width: 3px;
+    height: 3px;
+    display: block;
+    background-color: #2E2A94;
+    border-radius: 50%;
+}
+
+.section.known-our-funds .fundtagging-list li:first-of-type::before {
+    content: unset;
+}
+
+.section.known-our-funds .card-category .planlist-dropdown {
+    max-width: 70px;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.section.known-our-funds .planlist-dropdown select {
+    border: none;
+    outline: none;
+    appearance: none;
+    background-color: transparent;
+    width: 100%;
+}
+
+.section.known-our-funds .card-container .cagr-container {
+    display: flex;
+    align-items: start;
+    gap: 24px;
+}
+
+.section.known-our-funds .cagr-container .cagr-dropdown {
+    max-width: 46%;
+    position: relative;
+}
+
+.section.known-our-funds .cagr-container .cagr-dropdown label {
+    color: var(--text-body, #424242);
+    font-family: var(--body, Poppins);
+    font-size: var(--disclaimer-xsmall-size, 12px);
+    font-weight: 400;
+    line-height: var(--disclaimer-xsmall-line-height, 16px);
+    padding-bottom: 4px;
+}
+
+.section.known-our-funds .cagr-select-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.section.known-our-funds .cagr-select-wrapper::after {
+    content: '';
+    background: url('../../icons/down-arrow-small.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 12px;
+    height: 12px;
+    display: block;
+}
+
+.section.known-our-funds .cagr-select-wrapper select {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    appearance: none;
+    padding: 4px 24px 4px 0;
+    color: var(--blue-1800-primary, #2E2A94);
+    font-family: var(--body, Poppins);
+    font-size: var(--disclaimer-xsmall-size, 12px);
+    font-weight: 500;
+    line-height: var(--disclaimer-xsmall-line-height, 16px);
+}
+
+.section.known-our-funds .cagr-container .cagr-value {
+    max-width: 46%;
+    width: 100%;
+}
+
+.section.known-our-funds .cagr-value h2 {
+    margin: 0;
+    color: var(--blue-1800-primary, #2E2A94);
+    text-align: right;
+    font-family: var(--body, Poppins);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+.section.known-our-funds .cagr-value .scheme-yet,
+.section.known-our-funds .cagr-value .cagr-date {
+    color: var(--text-body, #424242);
+    text-align: right;
+    font-family: var(--body, Poppins);
+    font-size: var(--disclaimer-xsmall-size, 12px);
+    font-weight: 400;
+    line-height: var(--disclaimer-xsmall-line-height, 16px);
+    margin: 0;
+}
+
+.section.known-our-funds .cagr-value .cagr-desc {
+    background: var(--neutrals-200, #EEE);
+    padding: 12px 8px;
+}
+
+.section.known-our-funds .card-container .cagr-container.not-provided .cagr-dropdown,
+.section.known-our-funds .card-container .cagr-container.not-provided .cagr-value,
+.section.known-our-funds .card-container .cagr-container:not(.not-provided) .cagr-desc {
+    display: none;
+}

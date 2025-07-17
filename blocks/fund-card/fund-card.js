@@ -30,22 +30,23 @@ export default function decorate(block) {
           h2(block.schDetail.schemeName),
         ),
         div(
-          { class: 'Star' },
-          span('★'),
+          { class: 'star' },
+          img({class:"star-icon",src:"../../icons/star.svg"}),
+          img({class:"fillstar-icon",src:"../../icons/star-filled.svg"})
         ),
       ),
       div(
         { class: 'card-category' },
         div(
-          { class: 'fundTagging' },
-          ul({class:"fundTaggingList"},
+          { class: 'fund-tagging' },
+          ul({class:"fundtagging-list"},
             ...fundsTaggingSection.map((eloption)=>{
               return li(eloption.replaceAll('motilal-oswal:', '').replaceAll('-', ' ').toUpperCase())
             })
           ),
         ),
         div(
-          { class: 'planlistDropdown' },
+          { class: 'planlist-dropdown' },
           select({
             onchange:(event)=>{
                   console.log(event.target.value);
@@ -63,31 +64,36 @@ export default function decorate(block) {
         ),
       ),
       div(
-        { class: 'cagr-container' },
+        { class: 'cagr-container not-provided' },
         div(
-          { class: 'cagrDropdown' },
+          { class: 'cagr-dropdown' },
           label('Return (Absolute)'),
-          select({
-            schemeCode: block.schcode,
-            value:tempReturns[0],
-            onchange:(event)=>{
-               const cgarValue = block.returns[0][event.target.value];
-               console.log(cgarValue);
-               event.target.closest(".cagr-container").querySelector(".cagrValue h2").textContent =""
-               event.target.closest(".cagr-container").querySelector(".cagrValue h2").textContent =cgarValue+"%"
-            }
-          },
-             ...tempReturns.map((eloption, ind) => option({
-                value: dataMapMoObj.ObjTemp[eloption],
-              }, eloption))
-          ),
+          div({class:'cagr-select-wrapper'},
+            select({
+              schemeCode: block.schcode,
+              value:tempReturns[0],
+              onchange:(event)=>{
+                 const cgarValue = block.returns[0][event.target.value];
+                 console.log(cgarValue);
+                 event.target.closest(".cagr-container").querySelector(".cagr-value h2").textContent =""
+                 event.target.closest(".cagr-container").querySelector(".cagr-value h2").textContent =cgarValue+"%"
+              }
+            },
+               ...tempReturns.map((eloption, ind) => option({
+                  value: dataMapMoObj.ObjTemp[eloption],
+                }, eloption))
+            ),
+          )
         ),
         div(
-          { class: 'cagrValue' },
+          { class: 'cagr-value' },
           h2(block.returns[0][dataMapMoObj.ObjTemp[tempReturns[0]]]+"%"),
-          p({ class: 'schemeYet', style: 'display:none' }, 'Scheme is yet to complete 10 Years'),
-          p({ class: 'cagrDate' }, '15th Mar 2020'),
+          p({ class: 'scheme-yet', style: 'display:none' }, 'Scheme is yet to complete 10 Years'),
+          p({ class: 'cagr-date' }, '15th Mar 2020'),
         ),
+        div({class:"cagr-desc"}, 
+          span("Return is not provided because thescheme has not completed 6 months")
+        )
       ),
       div(
         { class: 'risk-container' },
