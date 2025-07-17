@@ -30,7 +30,7 @@ export default function decorate(block){
                 }),
                 span({class:"error dsp-none"},"Enter Valid Email Address")
             ),
-            div({class:"submitntn"},
+            div({class:"submitbtn"},
                 button(a({href:block.querySelector(".newsitem2 .newsinneritem2 a").getAttribute("href")}),block.querySelector(".newsitem2 .newsinneritem2").textContent.trim())
             )
         )
