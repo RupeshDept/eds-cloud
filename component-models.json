@@ -271,5 +271,201 @@
         "value": ""
       }
     ]
+  },
+  {
+    "id": "hero-section",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Hero Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Hero Title",
+        "value": "Power of Compounding Starts Here"
+      },
+      {
+        "component": "richtext",
+        "name": "subtitle",
+        "label": "Hero Subtitle",
+        "value": "Explore how much wealth you would have created by investing in our schemes using this SIP Calculator"
+      }
+    ]
+  },
+  {
+    "id": "calculator-sip",
+    "fields": [
+      {
+        "component": "text",
+        "name": "col1_searchPlaceholder",
+        "label": "Search Text Placeholder",
+        "value": "Search a fund"
+      },
+      {
+        "component": "text",
+        "name": "col1_defaultFund",
+        "label": "Default Fund Name",
+        "value": "Motilal Oswal Mid cap fund"
+      },
+      {
+        "component": "text",
+        "name": "col1_sipLabel",
+        "label": "SIP Button Label",
+        "value": "SIP"
+      },
+      {
+        "component": "text",
+        "name": "col1_lumpsumLabel",
+        "label": "Lumpsum Button Label",
+        "value": "Lumpsum"
+      },
+      {
+        "component": "text",
+        "name": "col2_sipInputLabel",
+        "label": "SIP Investment Label",
+        "value": "If you would have invested monthly"
+      },
+      {
+        "component": "text",
+        "name": "col2_lumpsumInputLabel",
+        "label": "Lumpsum Investment Label",
+        "value": "If you would have invested"
+      },
+      {
+        "component": "number",
+        "name": "col2_defaultAmount",
+        "label": "Default Investment Amount",
+        "value": 10000
+      },
+      {
+        "component": "text",
+        "name": "col2_tenureInputLabel",
+        "label": "Tenure Input Label",
+        "value": "Tenure"
+      },
+      {
+        "component": "select",
+        "name": "col3_defaultTenure",
+        "label": "Default Tenure",
+        "value": "10",
+        "options": [
+          {
+            "name": "1 year",
+            "value": "1"
+          },
+          {
+            "name": "2 years",
+            "value": "2"
+          },
+          {
+            "name": "3 years",
+            "value": "3"
+          },
+          {
+            "name": "5 years",
+            "value": "5"
+          },
+          {
+            "name": "10 years",
+            "value": "10"
+          },
+          {
+            "name": "15 years",
+            "value": "15"
+          },
+          {
+            "name": "20 years",
+            "value": "20"
+          },
+          {
+            "name": "25 years",
+            "value": "25"
+          },
+          {
+            "name": "30 years",
+            "value": "30"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "col3_currentValueInputLabel",
+        "label": "Current Value Input Label",
+        "value": "Current Value of Investment"
+      },
+      {
+        "component": "number",
+        "name": "col3_defaultCurrentValue",
+        "label": "Default Current Value of Investment",
+        "value": 2500000
+      },
+      {
+        "component": "text",
+        "name": "col3_returnCagrInputLabel",
+        "label": "Return (CAGR) Input Label",
+        "value": "Return (CAGR)"
+      },
+      {
+        "component": "number",
+        "name": "col4_annualReturnRate",
+        "label": "Annual Return Rate (%)",
+        "value": 18,
+        "description": "Expected annual return rate for calculations"
+      },
+      {
+        "component": "boolean",
+        "name": "col4_showSip",
+        "label": "Show SIP Option",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "name": "col4_showLumpsum",
+        "label": "Show Lumpsum Option",
+        "value": true
+      },
+      {
+        "component": "select",
+        "name": "col4_defaultInvestmentType",
+        "label": "Default Investment Type",
+        "value": "sip",
+        "options": [
+          {
+            "name": "SIP",
+            "value": "sip"
+          },
+          {
+            "name": "Lumpsum",
+            "value": "lumpsum"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "col5_buttonText",
+        "label": "CTA Button Text",
+        "value": "Start SIP"
+      },
+      {
+        "component": "text",
+        "name": "col5_calculatorLink",
+        "label": "Other Calculators Link Text",
+        "value": "View other calculators"
+      },
+      {
+        "component": "text",
+        "name": "col5_calculatorUrl",
+        "label": "Other Calculators URL",
+        "value": "#"
+      }
+    ]
   }
 ]
