@@ -389,16 +389,20 @@
                 "label": "Enter Label for Email"
             },
             {
-                "component": "text",
-                "name": "col1_btnText",
-                "label": "Enter Text for Button"
+                "component": "aem-content",
+                "name": "col1_link",
+                "label": "Link"
             },
             {
                 "component": "text",
-                "name": "col1_btnTitle",
-                "label": "Enter Title for Button"
+                "name": "col1_linkText",
+                "label": "Text"
+            },
+            {
+                "component": "text",
+                "name": "col1_linkTitle",
+                "label": "Title"
             }
-
         ]
     }
 ]
