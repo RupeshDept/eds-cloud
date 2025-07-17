@@ -132,6 +132,10 @@
                     {
                         "name": "Need Assistance",
                         "value": "need-assistance"
+                    },
+                    {
+                        "name": "Motilal Equity",
+                        "value": "motilal-equity"
                     }
                 ]
             }
@@ -362,20 +366,20 @@
         ]
     },
     {
-      "id":"live-streaming-content",
-      "fields":[
-        {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Live Streaming Content",
-          "valueType": "string"
-        }
-      ]
+        "id": "live-streaming-content",
+        "fields": [
+            {
+                "component": "richtext",
+                "name": "text",
+                "value": "",
+                "label": "Live Streaming Content",
+                "valueType": "string"
+            }
+        ]
     },
     {
-        "id":"newsletter-subscription",
-        "fields":[
+        "id": "newsletter-subscription",
+        "fields": [
             {
                 "component": "richtext",
                 "name": "text",
@@ -397,6 +401,33 @@
                 "component": "text",
                 "name": "col1_linkText",
                 "label": "Enter Text Button"
+            }
+        ]
+    },
+    {
+        "id": "think-equity",
+        "fields": [
+            {
+                "component": "reference",
+                "name": "oneimage",
+                "label": "Image",
+                "multi": false
+            },
+            {
+                "component": "text",
+                "name": "oneimageAlt",
+                "label": "Alt Text"
+            },
+            {
+                "component": "reference",
+                "name": "twoimage",
+                "label": "Image",
+                "multi": false
+            },
+            {
+                "component": "text",
+                "name": "twoimageAlt",
+                "label": "Alt Text"
             }
         ]
     }
