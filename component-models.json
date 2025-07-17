@@ -128,6 +128,10 @@
                     {
                         "name": "Quick Actions",
                         "value": "quick-actions"
+                    },
+                    {
+                        "name": "Need Assistance",
+                        "value": "need-assistance"
                     }
                 ]
             }
@@ -381,18 +385,18 @@
             },
             {
                 "component": "text",
-                "name": "label",
+                "name": "col1_label",
                 "label": "Enter Label for Email"
             },
             {
                 "component": "text",
-                "name": "labelText",
-                "label": "Text"
+                "name": "col1_labelText",
+                "label": "Enter Text for Button"
             },
             {
                 "component": "text",
-                "name": "labelTitle",
-                "label": "Title"
+                "name": "col1_labelTitle",
+                "label": "Enter Title for Button"
             }
 
         ]
