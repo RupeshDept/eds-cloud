@@ -390,12 +390,12 @@
             },
             {
                 "component": "text",
-                "name": "col1_labelText",
+                "name": "col1_btnText",
                 "label": "Enter Text for Button"
             },
             {
                 "component": "text",
-                "name": "col1_labelTitle",
+                "name": "col1_btnTitle",
                 "label": "Enter Title for Button"
             }
 
