@@ -10,6 +10,7 @@
  * governing permissions and limitations under the License.
  */
 @import url("./quick-actions.css");
+@import url("../blocks/complete-the-investment/complete-the-investment.css");
 
 * {
   padding: 0;
