@@ -391,17 +391,12 @@
             {
                 "component": "aem-content",
                 "name": "col1_link",
-                "label": "Link"
+                "label": "Enter Link for Button"
             },
             {
                 "component": "text",
                 "name": "col1_linkText",
-                "label": "Text"
-            },
-            {
-                "component": "text",
-                "name": "col1_linkTitle",
-                "label": "Title"
+                "label": "Enter Text Button"
             }
         ]
     }
