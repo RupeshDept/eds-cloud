@@ -1,5 +1,5 @@
 const dataMapMoObj = {
-    ObjTemp :{
+  ObjTemp: {
     inception_Ret: 'SINCE INCEPTION',
     oneYear_Ret: '1 YEAR',
     threeYear_Ret: '3 YEAR',
@@ -12,7 +12,7 @@ const dataMapMoObj = {
     '5 YEAR': 'fiveYear_Ret',
     '7 YEAR': 'sevenYear_Ret',
     '10 YEAR': 'tenYear_Ret',
-  }
-}
+  },
+};
 
 export default dataMapMoObj;

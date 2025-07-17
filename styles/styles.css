@@ -9,18 +9,18 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-@import url(./quick-actions.css);
+@import url("./quick-actions.css");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   outline: none;
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
   text-size-adjust: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  text-size-adjust: none;
+  text-size-adjust: none;
+  appearance: none;
+  appearance: none;
   appearance: none;
 }
 
