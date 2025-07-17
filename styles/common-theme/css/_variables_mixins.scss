@@ -127,8 +127,8 @@ $light-600: #9d9d9d;
 // ----------------------------------------
 // FONTS
 // ----------------------------------------
-
-$roboto: "roboto", sans-serif;
+$Poppins: "Poppins", sans-serif;
+$ButlerPro: "ButlerPro", sans-serif;
 
 $font-weights: (
   light: 300,
@@ -141,7 +141,7 @@ $font-weights: (
 );
 
 // Font mixin
-@mixin font-style($size, $line-height, $color, $weight: null, $family: $roboto) {
+@mixin font-style($size, $line-height, $color, $weight: null, $family: $ButlerPro) {
   font-size: $size;
   line-height: $line-height;
   color: $color;

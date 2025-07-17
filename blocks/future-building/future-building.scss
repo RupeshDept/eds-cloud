@@ -12,7 +12,7 @@
         }
     }
 
-    >div:first-child {
+    div:first-child {
         width: 100%;
         height: 100%;
         padding-bottom: 40px;
@@ -31,10 +31,11 @@
         }
 
         p {
-            @include font-style(16px, 20px, $primary-blue, map-get($font-weights, regular));
+
+            @include font-style(16px, 20px, $primary-blue, map-get($font-weights, regular), $Poppins);
+            // font-family: $Poppins;
             margin: 0;
             padding: 0;
-            line-height: 1.5;
             max-width: rem(600px);
 
             @include media(mobile) {
@@ -62,12 +63,12 @@
                 // .swiper-slide-cards-1 {}
 
                 .swiper-slide-cards-2 {
-                    >ul {
+                    ul {
                         list-style: none;
                         padding: 0;
                         margin: 0;
 
-                        >li {
+                        li {
                             padding: 0;
                             margin: 0;
                             line-height: normal;
@@ -88,7 +89,7 @@
                             }
                         }
 
-                        &>li:first-child {
+                        &li:first-child {
                             margin-bottom: 25px;
 
                             @include media(mobile) {
@@ -96,9 +97,9 @@
                             }
                         }
 
-                        &>li:nth-child(2) {
+                        &li:nth-child(2) {
                             color: $primary-blue-dark;
-                            font-family: $roboto;
+                            font-family: $ButlerPro;
                             @include font-style(18px, 24px, $primary-blue, map-get($font-weights, bold));
                             margin-bottom: 8px;
 
@@ -108,8 +109,8 @@
                             }
                         }
 
-                        &>li:nth-child(3) {
-                            font-family: $roboto;
+                        &li:nth-child(3) {
+                            font-family: $ButlerPro;
                             @include font-style(14px, 20px, map-get($neutrals, 800), map-get($font-weights, regular));
 
                             @include media(mobile) {
@@ -117,7 +118,7 @@
                             }
                         }
 
-                        &>li:last-child {
+                        &li:last-child {
                             margin-top: 25px;
 
                             a {
@@ -145,7 +146,7 @@
         }
     }
 
-    &>div:nth-child(3) {
+    &div:nth-child(3) {
         display: inline-block;
         position: absolute;
         padding: 0;
