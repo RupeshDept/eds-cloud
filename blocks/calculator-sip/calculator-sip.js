@@ -401,9 +401,72 @@ export default function decorate(block) {
 
     let mode = col4[3].textContent.trim() || 'sip'; // default mode from col4
 
+    // function updateValues() {
+    //     const amount = parseFloat(sipAmountInput.value) || 0;
+    //     const tenure = parseInt(tenureInput.value, 10) || 0;
+
+    //     const r = returnCAGR / 100 / 12; // monthly
+    //     const n = tenure * 12;
+
+    //     let investedAmount = 0;
+    //     let futureValue = 0;
+
+    //     if (mode === 'sip') {
+    //         investedAmount = amount * n;
+    //         if (r > 0) {
+    //             futureValue = amount * ((((1 + r) ** n - 1) / r) * (1 + r));
+    //         }
+    //     } else if (mode === 'lumpsum') {
+    //         investedAmount = amount;
+    //         const lumpsumRate = returnCAGR / 100;
+    //         futureValue = amount * (1 + lumpsumRate) ** tenure;
+    //     }
+
+    //     investedAmountSpan.textContent = `₹${(investedAmount / 100000).toFixed(2)} Lac`;
+    //     currentValueSpan.textContent = `₹${(futureValue / 100000).toFixed(2)} Lac`;
+    //     returnCAGRSpan.textContent = `${returnCAGR.toFixed(2)}%`;
+    // }
+
     function updateValues() {
         const amount = parseFloat(sipAmountInput.value) || 0;
         const tenure = parseInt(tenureInput.value, 10) || 0;
+
+        const investmentWrapper = document.querySelector('.investment-wrapper');
+        const investedAmountEl = document.querySelector('.invested-amount');
+        const calDescription = document.querySelector('.cal-discription');
+
+        // ✅ Check if returnCAGR is missing or invalid
+        if (!returnCAGR || isNaN(returnCAGR) || returnCAGR <= 0) {
+            investedAmountSpan.textContent = '—';
+            currentValueSpan.textContent = '—';
+            returnCAGRSpan.textContent = '—';
+
+
+
+            // Add message only once
+            if (!document.querySelector('.no-returns-msg')) {
+                const msg = document.createElement('div');
+                msg.className = 'no-returns-msg';
+                msg.textContent = 'Returns for this fund are not provided because the scheme has not completed 1 year. Please select a different fund.';
+                calContainer.appendChild(msg);
+            }
+
+            // ✅ Hide sections
+            if (investmentWrapper) investmentWrapper.style.display = 'none';
+            if (investedAmountEl) investedAmountEl.style.display = 'none';
+            if (calDescription) calDescription.style.display = 'none';
+
+            return; // Skip calculation
+        } else {
+            // Remove message if it exists
+            const oldMsg = document.querySelector('.no-returns-msg');
+            if (oldMsg) oldMsg.remove();
+
+            // ✅ Show sections
+            if (investmentWrapper) investmentWrapper.style.display = '';
+            if (investedAmountEl) investedAmountEl.style.display = '';
+            if (calDescription) calDescription.style.display = '';
+        }
 
         const r = returnCAGR / 100 / 12; // monthly
         const n = tenure * 12;
@@ -426,6 +489,7 @@ export default function decorate(block) {
         currentValueSpan.textContent = `₹${(futureValue / 100000).toFixed(2)} Lac`;
         returnCAGRSpan.textContent = `${returnCAGR.toFixed(2)}%`;
     }
+
 
     sipAmountInput.addEventListener('input', updateValues);
     tenureInput.addEventListener('input', updateValues);
