@@ -1,4 +1,5 @@
 @import url("../fund-card/fund-card.css");
+
 .tabs .tabs-list {
     display: flex;
     gap: 0.5ch;

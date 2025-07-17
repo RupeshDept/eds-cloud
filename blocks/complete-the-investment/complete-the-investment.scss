@@ -1,0 +1,59 @@
+@import '../../styles/common-theme/css/variables_mixins.scss';
+@import '../../styles/common-theme/css/fluid-typography.scss';
+
+.complete-the-investment {
+    >div:first-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        padding: 20px 0px;
+        align-items: flex-start;
+        flex-shrink: 0;
+        align-self: stretch;
+
+       @include media(mobile) {
+            padding: 0 16px;
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+        }
+
+        >p:first-child {
+            font-family: ButlerPro;
+            @include font-style(28px, 32px, $primary-Blue-1-900, map-get($font-weights, medium));
+            grid-column: 1 / 2;
+
+           @include media(mobile) {
+                grid-column: 1 / -1;
+                text-align: left;
+            }
+        }
+
+        >p:nth-child(2) {
+            font-family: ButlerPro;
+            @include font-style(28px, 32px, $primary-Blue-1-900, map-get($font-weights, medium));
+            grid-column: 1 / 2;
+
+           @include media(mobile){
+                grid-column: 1 / -1;
+                text-align: left;
+            }
+        }
+
+        >p:nth-child(3) {
+            font-size: 18px;
+            font-weight: bold;
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+
+           @include media(mobile) {
+                grid-column: 1 / 3;
+                grid-row: inherit;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

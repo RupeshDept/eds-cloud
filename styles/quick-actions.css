@@ -1,4 +1,4 @@
-@import '../styles/common-theme/css/_variables_mixins.scss';
+/* @import '../styles/common-theme/css/_variables_mixins.scss'; */
 
 .section.quick-actions {
     margin: 40px 0;
@@ -44,7 +44,8 @@
     align-items: center;
     gap: 4px;
     color: #2E2A94;
-    font-family: Poppins;
+
+    /* font-family: Poppins; */
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -56,8 +57,7 @@
     height: 56px;
 }
 
-@media (max-width: 768px) {
-
+@media (width <= 768px) {
     .section.quick-actions>div>ul>li {
         flex-direction: column;
         align-items: flex-start;
@@ -72,8 +72,7 @@
 
     .section.quick-actions>div>ul>li>ul {
         width: 100%;
-        row-gap: 48px;
-        column-gap: 12px;
+        gap: 48px 12px;
     }
 
     .section.quick-actions>div>ul>li>ul>li {
