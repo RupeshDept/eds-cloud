@@ -17,7 +17,7 @@
   font-size: 40px;
   line-height: 48px;
   color: #2e2a94;
-  font-family: "roboto", sans-serif;
+  font-family: "ButlerPro", sans-serif;
   font-weight: 700;
   margin: 0;
   padding: 0;
@@ -34,11 +34,11 @@
   font-size: 16px;
   line-height: 20px;
   color: #2e2a94;
-  font-family: "roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.5;
   max-width: 37.5rem;
 }
 @media (max-width: 768px) {
@@ -93,11 +93,11 @@
 }
 .future-building-container .future-building .swiper-wrapper .swiper-slide .swiper-slide-cards-2 > ul > li:nth-child(2) {
   color: #2b2e8c;
-  font-family: "roboto", sans-serif;
+  font-family: "ButlerPro", sans-serif;
   font-size: 18px;
   line-height: 24px;
   color: #2e2a94;
-  font-family: "roboto", sans-serif;
+  font-family: "ButlerPro", sans-serif;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -106,17 +106,17 @@
     font-size: 16px;
     line-height: 20px;
     color: #2e2a94;
-    font-family: "roboto", sans-serif;
+    font-family: "ButlerPro", sans-serif;
     font-weight: 700;
     margin-bottom: 4px;
   }
 }
 .future-building-container .future-building .swiper-wrapper .swiper-slide .swiper-slide-cards-2 > ul > li:nth-child(3) {
-  font-family: "roboto", sans-serif;
+  font-family: "ButlerPro", sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #424242;
-  font-family: "roboto", sans-serif;
+  font-family: "ButlerPro", sans-serif;
   font-weight: 400;
 }
 @media (max-width: 768px) {
@@ -124,7 +124,7 @@
     font-size: 16px;
     line-height: 20px;
     color: #424242;
-    font-family: "roboto", sans-serif;
+    font-family: "ButlerPro", sans-serif;
     font-weight: 400;
   }
 }
@@ -135,7 +135,7 @@
   font-size: 14px;
   line-height: 20px;
   color: #2e2a94;
-  font-family: "roboto", sans-serif;
+  font-family: "ButlerPro", sans-serif;
   font-weight: 400;
   text-decoration-line: underline;
   text-decoration-style: solid;
@@ -186,7 +186,7 @@
   font-size: 14px;
   line-height: 20px;
   color: #fff;
-  font-family: "roboto", sans-serif;
+  font-family: "ButlerPro", sans-serif;
   font-weight: 700;
 }
 @media (max-width: 768px) {
@@ -194,7 +194,7 @@
     font-size: 16px;
     line-height: 20px;
     color: #fff;
-    font-family: "roboto", sans-serif;
+    font-family: "ButlerPro", sans-serif;
     font-weight: 700;
   }
 }/*# sourceMappingURL=future-building.css.map */

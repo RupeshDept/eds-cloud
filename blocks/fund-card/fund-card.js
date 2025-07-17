@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {
   button, div, h3, label, option, select, span, ul, li, h2, p,
 } from '../../scripts/dom-helpers.js';

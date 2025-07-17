@@ -31,10 +31,11 @@
         }
 
         p {
-            @include font-style(16px, 20px, $primary-blue, map-get($font-weights, regular));
+
+            @include font-style(16px, 20px, $primary-blue, map-get($font-weights, regular), $Poppins);
+            font-family: $Poppins;
             margin: 0;
             padding: 0;
-            line-height: 1.5;
             max-width: rem(600px);
 
             @include media(mobile) {
@@ -98,7 +99,7 @@
 
                         &>li:nth-child(2) {
                             color: $primary-blue-dark;
-                            font-family: $roboto;
+                            font-family: $ButlerPro;
                             @include font-style(18px, 24px, $primary-blue, map-get($font-weights, bold));
                             margin-bottom: 8px;
 
@@ -109,7 +110,7 @@
                         }
 
                         &>li:nth-child(3) {
-                            font-family: $roboto;
+                            font-family: $ButlerPro;
                             @include font-style(14px, 20px, map-get($neutrals, 800), map-get($font-weights, regular));
 
                             @include media(mobile) {
