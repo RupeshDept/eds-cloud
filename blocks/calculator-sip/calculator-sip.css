@@ -27,52 +27,6 @@
   margin: 0 auto;
   width: 100%;
 }
-.compounding .hero-section-wrapper {
-  flex: 1 1 40%;
-}
-.compounding .hero-section-wrapper .hero-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 16px;
-}
-.compounding .hero-section-wrapper .hero-section .hero-image {
-  flex: 0 0 auto;
-  width: 88px;
-  height: 88px;
-  flex-shrink: 0;
-}
-.compounding .hero-section-wrapper .hero-section .hero-image img {
-  width: 80px;
-  height: auto;
-  display: block;
-}
-.compounding .hero-section-wrapper .hero-section .hero-text {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.compounding .hero-section-wrapper .hero-section .hero-text div:first-child p {
-  margin: 0;
-  width: 441px;
-  color: #2E2A94;
-  font-feature-settings: "liga" off;
-  font-family: "ButlerPro", serif;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 48px;
-}
-.compounding .hero-section-wrapper .hero-section .hero-text div:last-child p {
-  align-self: stretch;
-  color: #2E2A94;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  margin: 0;
-}
 .compounding .calculator-sip-wrapper {
   flex: 1 1 50%;
   max-width: 600px;
@@ -389,34 +343,6 @@
     flex-direction: column;
     gap: 20px;
     width: 100%;
-  }
-  .compounding .hero-section-wrapper {
-    flex: 1 1 100%;
-    width: 100%;
-    text-align: center;
-  }
-  .compounding .hero-section-wrapper .hero-section {
-    flex-direction: row;
-    align-items: start;
-  }
-  .compounding .hero-section-wrapper .hero-section .hero-text {
-    text-align: left;
-  }
-  .compounding .hero-section-wrapper .hero-section .hero-text div:first-child p {
-    font-size: 28px;
-    line-height: 36px;
-    width: 100%;
-  }
-  .compounding .hero-section-wrapper .hero-section .hero-text div:last-child p {
-    font-size: 14px;
-    line-height: 18px;
-  }
-  .compounding .hero-section-wrapper .hero-section .hero-image {
-    width: 60px;
-    height: 60px;
-  }
-  .compounding .hero-section-wrapper .hero-section .hero-image img {
-    width: 60px;
   }
   .compounding .calculator-sip-wrapper {
     flex: 1 1 100%;
