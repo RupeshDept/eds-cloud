@@ -1,9 +1,14 @@
 @import url("../../../styles/fonts.css");
 @import url('../swiper/swiper-bundle.min.css');
 
+@import url("../../../styles/fonts.css");
+@import url('../swiper/swiper-bundle.min.css');
+
 .future-building-container {
   position: relative;
 }
+
+@media (width <= 768px) {
 
 @media (width <= 768px) {
   .future-building-container .future-building-wrapper {
@@ -16,6 +21,7 @@
   height: 100%;
   padding-bottom: 40px;
 }
+
 
 .future-building-container > div:first-child h3 {
   font-size: 40px;
@@ -36,9 +42,9 @@
   }
 }
 
+
 .future-building-container > div:first-child p {
   font-size: 16px;
-  line-height: 20px;
   color: #2e2a94;
   font-weight: 400;
   font-family: Poppins, sans-serif;
@@ -106,6 +112,7 @@
   }
 }
 
+
 .future-building-container .future-building .swiper-wrapper .swiper-slide .swiper-slide-cards-2 > ul > li:nth-child(2) {
   font-size: 18px;
   line-height: 24px;
@@ -114,6 +121,8 @@
   font-weight: 700;
   margin-bottom: 8px;
 }
+
+@media (width <= 768px) {
 
 @media (width <= 768px) {
   .future-building-container .future-building .swiper-wrapper .swiper-slide .swiper-slide-cards-2 > ul > li:nth-child(2) {
@@ -125,6 +134,7 @@
     margin-bottom: 4px;
   }
 }
+
 
 .future-building-container .future-building .swiper-wrapper .swiper-slide .swiper-slide-cards-2 > ul > li:nth-child(3) {
   font-size: 14px;
@@ -211,6 +221,8 @@
   font-family: ButlerPro, sans-serif;
   font-weight: 700;
 }
+
+@media (width <= 768px) {
 
 @media (width <= 768px) {
   .future-building-container > div:nth-child(3) p a {

@@ -1,454 +1,650 @@
 [
-    {
-        "id": "image",
-        "fields": [
-            {
-                "component": "reference",
-                "name": "image",
-                "label": "Image",
-                "multi": false
-            },
-            {
-                "component": "text",
-                "name": "imageAlt",
-                "label": "Alt Text"
-            }
+  {
+    "id": "image",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
+      }
+    ]
+  },
+  {
+    "id": "title",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Title Type",
+        "options": [
+          {
+            "name": "h1",
+            "value": "h1"
+          },
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          },
+          {
+            "name": "h5",
+            "value": "h5"
+          },
+          {
+            "name": "h6",
+            "value": "h6"
+          }
         ]
-    },
-    {
-        "id": "title",
-        "fields": [
-            {
-                "component": "text",
-                "name": "title",
-                "label": "Title"
-            },
-            {
-                "component": "select",
-                "name": "titleType",
-                "label": "Title Type",
-                "options": [
-                    {
-                        "name": "h1",
-                        "value": "h1"
-                    },
-                    {
-                        "name": "h2",
-                        "value": "h2"
-                    },
-                    {
-                        "name": "h3",
-                        "value": "h3"
-                    },
-                    {
-                        "name": "h4",
-                        "value": "h4"
-                    },
-                    {
-                        "name": "h5",
-                        "value": "h5"
-                    },
-                    {
-                        "name": "h6",
-                        "value": "h6"
-                    }
-                ]
-            }
+      }
+    ]
+  },
+  {
+    "id": "button",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "linkText",
+        "label": "Text"
+      },
+      {
+        "component": "text",
+        "name": "linkTitle",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "linkType",
+        "label": "Type",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          }
         ]
-    },
-    {
-        "id": "button",
-        "fields": [
-            {
-                "component": "aem-content",
-                "name": "link",
-                "label": "Link"
-            },
-            {
-                "component": "text",
-                "name": "linkText",
-                "label": "Text"
-            },
-            {
-                "component": "text",
-                "name": "linkTitle",
-                "label": "Title"
-            },
-            {
-                "component": "select",
-                "name": "linkType",
-                "label": "Type",
-                "options": [
-                    {
-                        "name": "default",
-                        "value": ""
-                    },
-                    {
-                        "name": "primary",
-                        "value": "primary"
-                    },
-                    {
-                        "name": "secondary",
-                        "value": "secondary"
-                    }
-                ]
-            }
+      }
+    ]
+  },
+  {
+    "id": "section",
+    "fields": [
+      {
+        "component": "text",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
+      },
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Our Popular Funds",
+            "value": "our-popular-funds"
+          },
+          {
+            "name": "Highlight",
+            "value": "highlight"
+          },
+          {
+            "name": "Compounding",
+            "value": "compounding"
+          },
+          {
+            "name": "Know Our Funds",
+            "value": "known-our-funds"
+          },
+          {
+            "name": "Quick Actions",
+            "value": "quick-actions"
+          },
+          {
+            "name": "Need Assistance",
+            "value": "need-assistance"
+          },
+          {
+            "name": "Motilal Equity",
+            "value": "motilal-equity"
+          },
+          {
+            "name": "Compound Journey",
+            "value": "compound-journey"
+          },
+          {
+            "name": "Index Fund",
+            "value": "index-fund"
+          }
         ]
-    },
-    {
-        "id": "section",
-        "fields": [
-            {
-                "component": "text",
-                "name": "name",
-                "label": "Section Name",
-                "description": "The label shown for this section in the Content Tree"
-            },
-            {
-                "component": "multiselect",
-                "name": "style",
-                "label": "Style",
-                "options": [
-                    {
-                        "name": "Our Popular Funds",
-                        "value": "our-popular-funds"
-                    },
-                    {
-                        "name": "Highlight",
-                        "value": "highlight"
-                    },
-                    {
-                        "name": "Compounding",
-                        "value": "compounding"
-                    },
-                    {
-                        "name": "Know Our Funds",
-                        "value": "known-our-funds"
-                    },
-                    {
-                        "name": "Quick Actions",
-                        "value": "quick-actions"
-                    },
-                    {
-                        "name": "Need Assistance",
-                        "value": "need-assistance"
-                    },
-                    {
-                        "name": "Motilal Equity",
-                        "value": "motilal-equity"
-                    },
-                     {
-                    "name": "Compound Journey",
-                    "value": "compound-journey"
-                  },
-                  {
-                    "name": "Index Fund",
-                    "value": "index-fund"
-                  }
-                ]
-            }
+      }
+    ]
+  },
+  {
+    "id": "card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "columns",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Columns"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "value": "",
+        "label": "Rows"
+      }
+    ]
+  },
+  {
+    "id": "fragment",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "reference",
+        "label": "Reference"
+      }
+    ]
+  },
+  {
+    "id": "hero",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "tabsitem",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Tab Title"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Fragment URL"
+      }
+    ]
+  },
+  {
+    "id": "hero-section",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Hero Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Hero Title",
+        "value": "Power of Compounding Starts Here"
+      },
+      {
+        "component": "richtext",
+        "name": "subtitle",
+        "label": "Hero Subtitle",
+        "value": "Explore how much wealth you would have created by investing in our schemes using this SIP Calculator"
+      }
+    ]
+  },
+  {
+    "id": "future-building-item",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Future Building Item Description",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "banner-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "col1_deskBanner",
+        "label": "Desktop Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "col1_deskBannerAlt",
+        "label": "Desktop Alt",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "col2_bannercontentImg",
+        "label": "Banner Content Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "col2_bannercontentImgAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "col2_text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "col3_mobBanner",
+        "label": "Mobile Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "col3_mobBannerAlt",
+        "label": "Mobile Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "col3_text",
+        "value": "",
+        "label": "Mobile Button Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "cornerstones-advantage-title-richtext",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Headline and description",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "cornerstones-advantage-cards-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Cards Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "live-streaming-content",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Live Streaming Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "newsletter-subscription",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Live Streaming Content",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "col1_label",
+        "label": "Enter Label for Email"
+      },
+      {
+        "component": "aem-content",
+        "name": "col1_link",
+        "label": "Enter Link for Button"
+      },
+      {
+        "component": "text",
+        "name": "col1_linkText",
+        "label": "Enter Text Button"
+      }
+    ]
+  },
+  {
+    "id": "think-equity",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "oneimage",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "oneimageAlt",
+        "label": "Alt Text"
+      },
+      {
+        "component": "reference",
+        "name": "twoimage",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "twoimageAlt",
+        "label": "Alt Text"
+      }
+    ]
+  },
+  {
+    "id": "investment-block",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Enter Context",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "hero-section",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Hero Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Hero Title",
+        "value": "Power of Compounding Starts Here"
+      },
+      {
+        "component": "richtext",
+        "name": "subtitle",
+        "label": "Hero Subtitle",
+        "value": "Explore how much wealth you would have created by investing in our schemes using this SIP Calculator"
+      }
+    ]
+  },
+  {
+    "id": "calculator-sip",
+    "fields": [
+      {
+        "component": "text",
+        "name": "col1_searchPlaceholder",
+        "label": "Search Text Placeholder",
+        "value": "Search a fund"
+      },
+      {
+        "component": "text",
+        "name": "col1_defaultFund",
+        "label": "Default Fund Name",
+        "value": "Motilal Oswal Mid cap fund"
+      },
+      {
+        "component": "text",
+        "name": "col1_sipLabel",
+        "label": "SIP Button Label",
+        "value": "SIP"
+      },
+      {
+        "component": "text",
+        "name": "col1_lumpsumLabel",
+        "label": "Lumpsum Button Label",
+        "value": "Lumpsum"
+      },
+      {
+        "component": "text",
+        "name": "col2_sipInputLabel",
+        "label": "SIP Investment Label",
+        "value": "If you would have invested monthly"
+      },
+      {
+        "component": "text",
+        "name": "col2_lumpsumInputLabel",
+        "label": "Lumpsum Investment Label",
+        "value": "If you would have invested"
+      },
+      {
+        "component": "number",
+        "name": "col2_defaultAmount",
+        "label": "Default Investment Amount",
+        "value": 10000
+      },
+      {
+        "component": "text",
+        "name": "col2_tenureInputLabel",
+        "label": "Tenure Input Label",
+        "value": "Tenure"
+      },
+      {
+        "component": "select",
+        "name": "col3_defaultTenure",
+        "label": "Default Tenure",
+        "value": "10",
+        "options": [
+          {
+            "name": "1 year",
+            "value": "1"
+          },
+          {
+            "name": "2 years",
+            "value": "2"
+          },
+          {
+            "name": "3 years",
+            "value": "3"
+          },
+          {
+            "name": "5 years",
+            "value": "5"
+          },
+          {
+            "name": "10 years",
+            "value": "10"
+          },
+          {
+            "name": "15 years",
+            "value": "15"
+          },
+          {
+            "name": "20 years",
+            "value": "20"
+          },
+          {
+            "name": "25 years",
+            "value": "25"
+          },
+          {
+            "name": "30 years",
+            "value": "30"
+          }
         ]
-    },
-    {
-        "id": "card",
-        "fields": [
-            {
-                "component": "reference",
-                "valueType": "string",
-                "name": "image",
-                "label": "Image",
-                "multi": false
-            },
-            {
-                "component": "richtext",
-                "name": "text",
-                "value": "",
-                "label": "Text",
-                "valueType": "string"
-            }
+      },
+      {
+        "component": "text",
+        "name": "col3_currentValueInputLabel",
+        "label": "Current Value Input Label",
+        "value": "Current Value of Investment"
+      },
+      {
+        "component": "number",
+        "name": "col3_defaultCurrentValue",
+        "label": "Default Current Value of Investment",
+        "value": 2500000
+      },
+      {
+        "component": "text",
+        "name": "col3_returnCagrInputLabel",
+        "label": "Return (CAGR) Input Label",
+        "value": "Return (CAGR)"
+      },
+      {
+        "component": "number",
+        "name": "col4_annualReturnRate",
+        "label": "Annual Return Rate (%)",
+        "value": 18,
+        "description": "Expected annual return rate for calculations"
+      },
+      {
+        "component": "boolean",
+        "name": "col4_showSip",
+        "label": "Show SIP Option",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "name": "col4_showLumpsum",
+        "label": "Show Lumpsum Option",
+        "value": true
+      },
+      {
+        "component": "select",
+        "name": "col4_defaultInvestmentType",
+        "label": "Default Investment Type",
+        "value": "sip",
+        "options": [
+          {
+            "name": "SIP",
+            "value": "sip"
+          },
+          {
+            "name": "Lumpsum",
+            "value": "lumpsum"
+          }
         ]
-    },
-    {
-        "id": "columns",
-        "fields": [
-            {
-                "component": "text",
-                "valueType": "number",
-                "name": "columns",
-                "value": "",
-                "label": "Columns"
-            },
-            {
-                "component": "text",
-                "valueType": "number",
-                "name": "rows",
-                "value": "",
-                "label": "Rows"
-            }
-        ]
-    },
-    {
-        "id": "fragment",
-        "fields": [
-            {
-                "component": "aem-content",
-                "name": "reference",
-                "label": "Reference"
-            }
-        ]
-    },
-    {
-        "id": "hero",
-        "fields": [
-            {
-                "component": "reference",
-                "valueType": "string",
-                "name": "image",
-                "label": "Image",
-                "multi": false
-            },
-            {
-                "component": "text",
-                "valueType": "string",
-                "name": "imageAlt",
-                "label": "Alt",
-                "value": ""
-            },
-            {
-                "component": "richtext",
-                "name": "text",
-                "value": "",
-                "label": "Text",
-                "valueType": "string"
-            }
-        ]
-    },
-    {
-        "id": "tabsitem",
-        "fields": [
-            {
-                "component": "text",
-                "name": "title",
-                "label": "Tab Title"
-            },
-            {
-                "component": "aem-content",
-                "name": "link",
-                "label": "Fragment URL"
-            }
-        ]
-    },
-    {
-        "id": "hero-section",
-        "fields": [
-            {
-                "component": "reference",
-                "name": "image",
-                "label": "Hero Image",
-                "multi": false
-            },
-            {
-                "component": "text",
-                "name": "imageAlt",
-                "label": "Alt Text"
-            },
-            {
-                "component": "text",
-                "name": "title",
-                "label": "Hero Title",
-                "value": "Power of Compounding Starts Here"
-            },
-            {
-                "component": "richtext",
-                "name": "subtitle",
-                "label": "Hero Subtitle",
-                "value": "Explore how much wealth you would have created by investing in our schemes using this SIP Calculator"
-            }
-        ]
-    },
-    {
-        "id": "future-building-item",
-        "fields": [
-            {
-                "component": "reference",
-                "name": "image",
-                "label": "Image",
-                "multi": false
-            },
-            {
-                "component": "text",
-                "name": "imageAlt",
-                "label": "Alt Text"
-            },
-            {
-                "component": "richtext",
-                "name": "description",
-                "label": "Future Building Item Description",
-                "value": ""
-            }
-        ]
-    },
-    {
-        "id": "banner-item",
-        "fields": [
-            {
-                "component": "reference",
-                "valueType": "string",
-                "name": "col1_deskBanner",
-                "label": "Desktop Image",
-                "multi": false
-            },
-            {
-                "component": "text",
-                "valueType": "string",
-                "name": "col1_deskBannerAlt",
-                "label": "Desktop Alt",
-                "value": ""
-            },
-            {
-                "component": "reference",
-                "valueType": "string",
-                "name": "col2_bannercontentImg",
-                "label": "Banner Content Image",
-                "multi": false
-            },
-            {
-                "component": "text",
-                "valueType": "string",
-                "name": "col2_bannercontentImgAlt",
-                "label": "Alt",
-                "value": ""
-            },
-            {
-                "component": "richtext",
-                "name": "col2_text",
-                "value": "",
-                "label": "Text",
-                "valueType": "string"
-            },
-            {
-                "component": "reference",
-                "valueType": "string",
-                "name": "col3_mobBanner",
-                "label": "Mobile Image",
-                "multi": false
-            },
-            {
-                "component": "text",
-                "valueType": "string",
-                "name": "col3_mobBannerAlt",
-                "label": "Mobile Alt",
-                "value": ""
-            },
-            {
-                "component": "richtext",
-                "name": "col3_text",
-                "value": "",
-                "label": "Mobile Button Text",
-                "valueType": "string"
-            }
-        ]
-    },
-    {
-        "id": "cornerstones-advantage-title-richtext",
-        "fields": [
-            {
-                "component": "richtext",
-                "name": "text",
-                "value": "",
-                "label": "Headline and description",
-                "valueType": "string"
-            }
-        ]
-    },
-    {
-        "id": "cornerstones-advantage-cards-item",
-        "fields": [
-            {
-                "component": "richtext",
-                "name": "text",
-                "value": "",
-                "label": "Cards Content",
-                "valueType": "string"
-            }
-        ]
-    },
-    {
-        "id": "live-streaming-content",
-        "fields": [
-            {
-                "component": "richtext",
-                "name": "text",
-                "value": "",
-                "label": "Live Streaming Content",
-                "valueType": "string"
-            }
-        ]
-    },
-    {
-        "id": "newsletter-subscription",
-        "fields": [
-            {
-                "component": "richtext",
-                "name": "text",
-                "value": "",
-                "label": "Live Streaming Content",
-                "valueType": "string"
-            },
-            {
-                "component": "text",
-                "name": "col1_label",
-                "label": "Enter Label for Email"
-            },
-            {
-                "component": "aem-content",
-                "name": "col1_link",
-                "label": "Enter Link for Button"
-            },
-            {
-                "component": "text",
-                "name": "col1_linkText",
-                "label": "Enter Text Button"
-            }
-        ]
-    },
-    {
-        "id": "think-equity",
-        "fields": [
-            {
-                "component": "reference",
-                "name": "oneimage",
-                "label": "Image",
-                "multi": false
-            },
-            {
-                "component": "text",
-                "name": "oneimageAlt",
-                "label": "Alt Text"
-            },
-            {
-                "component": "reference",
-                "name": "twoimage",
-                "label": "Image",
-                "multi": false
-            },
-            {
-                "component": "text",
-                "name": "twoimageAlt",
-                "label": "Alt Text"
-            }
-        ]
-    },
-     {
-      "id": "investment-block",
-      "fields": [
-        {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Enter Context",
-          "valueType": "string"
-        }
-      ]
-    }
+      },
+      {
+        "component": "text",
+        "name": "col5_buttonText",
+        "label": "CTA Button Text",
+        "value": "Start SIP"
+      },
+      {
+        "component": "text",
+        "name": "col5_calculatorLink",
+        "label": "Other Calculators Link Text",
+        "value": "View other calculators"
+      },
+      {
+        "component": "text",
+        "name": "col5_calculatorUrl",
+        "label": "Other Calculators URL",
+        "value": "#"
+      }
+    ]
+  }
 ]
