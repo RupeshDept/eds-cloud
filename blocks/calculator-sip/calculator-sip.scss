@@ -20,20 +20,32 @@
     align-items: center;
     justify-content: center;
     gap: 40px;
-    max-width: 1200px;
+    // max-width: 1200px;
     margin: 0 auto;
+    width: 1232px;
   }
 
   .hero-section-wrapper {
     flex: 1 1 40%;
+//     display: flex;
+// width: 608px;
+// align-items: center;
+// gap: 16px;
+// flex-shrink: 0;
+
        .hero-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 30px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 16px;
+          // width: 608px;
+          // flex-shrink: 0;
 
   .hero-image {
     flex: 0 0 auto;
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
 
     img {
       width: 80px; // adjust if needed
@@ -42,25 +54,56 @@
     }
   }
 
+  // .hero-text {
+  //   display: flex;
+  //   flex-direction: column;
+  //   gap: 10px;
+
+  //   p:first-child {
+  //     font-size: 32px;
+  //     font-weight: 700;
+  //     color: rgb(62, 62, 209);
+  //     margin: 0;
+  //   }
+
+  //   p:last-child {
+  //     font-size: 16px;
+  //     font-weight: 400;
+  //     color: #333;
+  //     margin: 0;
+  //   }
+  // }
+
   .hero-text {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
-    p:first-child {
-      font-size: 32px;
-      font-weight: 700;
-      color: rgb(62, 62, 209);
-      margin: 0;
-    }
-
-    p:last-child {
-      font-size: 16px;
-      font-weight: 400;
-      color: #333;
-      margin: 0;
-    }
+  div:first-child p {
+    margin: 0;
+    width: 441px; 
+    color: #2E2A94; // ✅ Blue 1800 Primary
+    font-feature-settings: 'liga' off;
+    font-family: 'ButlerPro', serif; 
+    font-size: 40px; 
+    font-style: normal;
+    font-weight: 700;
+    line-height: 48px; 
+    margin: 0;
   }
+
+  div:last-child p {
+     align-self: stretch; 
+    color: #2E2A94; 
+    font-family: 'Poppins', sans-serif; 
+    font-size: 16px; 
+    font-style: normal;
+    font-weight: 500; 
+    line-height: 20px;
+    margin: 0;
+  }
+}
+
 }
   }
 
@@ -70,14 +113,26 @@
 
     .cal-container {
       background: #fff;
-      border: 1px solid #d1d5db;
-      padding: 32px;
+      // border: 1px solid #d1d5db;
+      padding: 24px;
       border-radius: 8px;
+      align-self: stretch;
+      
 
       .search-bar-wrapper {
         display: flex;
         flex-direction: column;
         gap: 8px;
+          span {
+            align-self: stretch;
+            color: #424242; // Text/Body Neutrals/800
+            font-family: 'Poppins', sans-serif; // Body
+            font-size: 12px; // Disclaimer XSmall Size
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px; // Disclaimer XSmall Line Height (133%)
+      }
+
         label {
           font-weight: 600;
           color: var(--text-color);
@@ -85,12 +140,21 @@
         }
 
         input {
+          width: 100%;
+          // width: 294px; // Figma width for fund name
+          color: #2E2A94; // Blue 1/800 Primary
+          font-family: 'Poppins', sans-serif;
+          font-size: 16px; // Body-Medium-medium Size
+          font-style: normal;
+          font-weight: 500;
+          line-height: 20px; // Body-Medium-medium Line Height (125%)
           padding: 12px 16px;
           border-radius: 4px;
-          border: 1px solid black;
-          font-size: 16px;
-          width: 100%;
+          border: 1px solid var(--border-color);
           box-sizing: border-box;
+
+          background: url('../../icons/magnifyingglass.svg') no-repeat right 12px center;
+          background-size: 20px 20px; // adjust size if needed
         }
       }
 
@@ -127,32 +191,83 @@
         }
       }
 
+      // .scheme-btns-wrapper {
+      //   display: flex;
+      //   gap: 12px;
+      //   margin-top: 16px;
+      //   // flex-direction: row;
+
+
+      //   button {
+      //     padding: 8px 20px;
+      //     border-radius: 35px;
+      //     border: 1px solid #4f46e5;
+      //     background: white;
+      //     color: #4f46e5;
+      //     font-size: 16px;
+      //     cursor: pointer;
+      //     font-weight: 500;
+
+      //     &:hover {
+      //       background-color: #4f46e5;
+      //       color: white;
+      //     }
+
+      //     &.active {
+      //       background-color: #4f46e5;
+      //       color: white;
+      //     }
+      //   }
+      // }
+
       .scheme-btns-wrapper {
-        display: flex;
-        gap: 12px;
-        margin-top: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-top: 16px;
 
-        button {
-          padding: 8px 20px;
-          border-radius: 35px;
-          border: 1px solid #4f46e5;
-          background: white;
-          color: #4f46e5;
-          font-size: 16px;
-          cursor: pointer;
-          font-weight: 500;
+  button {
+    display: flex;
+    width: 104px;   // Figma width
+    height: 32px;   // Figma height
+    min-width: 40px;
+    padding: 8px 12px;  // from Spacing-8, Spacing-12
+    justify-content: center;
+    align-items: center;
 
-          &:hover {
-            background-color: #4f46e5;
-            color: white;
-          }
+    border-radius: 1000px; // circle pill shape
+    // border: 1px solid #382AD7; // Strokes/Selected
+    border: 1px solid #BDBDBD;
+    // background: #EDF1FF;       // Surface/Selected
 
-          &.active {
-            background-color: #4f46e5;
-            color: white;
-          }
-        }
-      }
+    // color: #2E2A94; // Text/Button Default
+    // color: #FAFAFA;
+        background: #FAFAFA;
+    color: #424242;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px; // Body-medium-bold
+    font-style: normal;
+    font-weight: 600; // bold
+    line-height: 22px; // Body-medium-bold line-height
+    font-feature-settings: 'liga' off;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+
+    &:hover {
+      background: #382AD7;
+      color: #ffffff;
+    }
+
+    &.active {
+      // background: #382AD7;
+      background: #EDF1FF;
+      // color: #ffffff;
+      color: #2E2A94;
+    }
+  }
+}
+
 
       .investment-wrapper {
         display: flex;
@@ -161,6 +276,8 @@
         border-bottom: 1px solid var(--border-color);
         padding-bottom: 20px;
         margin: 20px 0;
+        flex-direction: row;
+
 
         .sip-wrapper,
         .tenure-wrapper {
@@ -169,43 +286,125 @@
           flex-direction: column;
           gap: 6px;
 
-          label {
-            color: #6b7280;
-            font-size: 14px;
+          width: 290px;   // ✅ Figma width
+          height: 68px;   // ✅ Figma height
+          padding: 8px 0; // ✅ Figma padding
+          justify-content: space-between;
+          align-items: flex-start;
+          border: 0 solid #9E9E9E; // ✅ Strokes/Default
+          background: #FFF;         // ✅ Neutrals/White
+
+          label {        
+            align-self: stretch;    // ✅ Stretch
+            color: #424242;         // ✅ Text/Body
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;        // ✅ Disclaimer Xsmall
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;      // ✅ 133.333%
           }
 
           input {
-            width: 100%;
             padding: 12px 16px;
             border-radius: 4px;
             border: 1px solid var(--border-color);
-            font-size: 16px;
             box-sizing: border-box;
+            color: #2E2A94;          // ✅ Blue 1/800 Primary
+            font-family: 'Poppins', sans-serif; // ✅ Desktop/Body/Xlarge-medium
+            font-size: 20px;         // ✅ Body-Xlarge-medium
+            font-style: normal;
+            font-weight: 500;        // ✅ medium weight
+            line-height: 24px;       // ✅ line height
+            //border: none;            // Optional: remove border if you don’t want default input styling
+            //outline: none;           // Optional: remove focus outline if styled elsewhere
+            width: 100%;             // Take full width of parent
+            
+
+            //
+             // Remove default number spinners
+            appearance: textfield;
+            -moz-appearance: textfield;
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            ///
           }
         }
+
+         // ✅ Only the tenure-wrapper: add icon
+  .tenure-wrapper {
+    position: relative; // Needed for absolute positioning
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 10px;
+      bottom: 12px;
+      width: 20px;  // Adjust to your icon size
+      height: 20px;
+      background: url('../../icons/frame.svg') no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+      width: 20px;
+      height: 20px;
+      aspect-ratio: 1/1;
+      top: 65%;
+    }
+  }
       }
 
       .invested-amount {
         display: flex;
         margin: 20px 0;
+        align-items: flex-start;
+        gap: 4px;
+        align-self: stretch;
+
+        // .invested-amount-wrapper {
+        //   display: flex;
+        //   flex-direction: row;
+        //   align-items: center;
+        //   gap: 10px;
+
+        //   label {
+        //     font-size: 14px;
+        //     color: #6b7280;
+        //   }
+
+        //   span {
+        //     font-size: 16px;
+        //     font-weight: bold;
+        //     color: var(--text-color);
+        //   }
+        // }
 
         .invested-amount-wrapper {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;           // ✅ Figma gap
+  align-self: stretch; // ✅ Figma align
 
-          label {
-            font-size: 14px;
-            color: #6b7280;
-          }
+  label {
+    color: #424242;    // ✅ Text/Body
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;   // ✅ Desktop/Disclaimer/Xsmall
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; // ✅ 133.333%
+  }
 
-          span {
-            font-size: 16px;
-            font-weight: bold;
-            color: var(--text-color);
-          }
-        }
+  span {
+    color: #2B2E8C;    // ✅ surface/text/primary/strong
+    font-family: 'Poppins', sans-serif;  // Or "Rupee Foradian" if you’re using ₹
+    font-size: 12px;   // ✅ same as label
+    font-style: normal;
+    font-weight: 600;  // ✅ strong
+    line-height: 16px; // ✅ same
+  }
+}
+
       }
 
       .cal-discription {
@@ -221,14 +420,24 @@
           gap: 5px;
 
           label {
-            font-size: 14px;
-            color: #6b7280;
+
+
+            color: #424242;     // ✅ Text/Body
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;    // ✅ Desktop/Disclaimer/Xsmall
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;  // ✅ 133.333%
           }
 
           span {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--text-color);
+
+             color: #2E2A94;     // ✅ Blue 1/800 (Primary)
+    font-family: 'Poppins', sans-serif; // Or "Rupee Foradian" if only symbol
+    font-size: 24px;    // ✅ Figma size
+    font-style: normal;
+    font-weight: 600;   // ✅ Regular
+    line-height: 32px;  // ✅ 133.333%
           }
         }
 
@@ -242,8 +451,30 @@
             font-size: 16px;
             cursor: pointer;
 
+            //
+            display: flex;
+  width: 132px;                  // ✅ fixed width from figma
+  padding: 12px;                 // ✅ figma spacing
+  justify-content: center;
+  align-items: center;
+  gap: 8px;                      // ✅ if you add an icon or text next to text
+  border-radius: 8px;            // ✅ rounded corners
+  background: #2E2A94;           // ✅ Primary Default Blue
+  border: none;                  // ✅ remove default border
+
+  color: #fff;                   // ✅ white text
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;               // Optional — adjust as per your figma
+  font-style: normal;
+  font-weight: 600;              // ✅ medium-bold for buttons
+  line-height: 22px;             // ✅ as needed
+
+  cursor: pointer;               // ✅ pointer on hover
+            //
+
             &:hover {
-              background: #3b35d1;
+              // background: #3b35d1;
+                background: darken(#2E2A94, 5%); // Optional: darker on hover
             }
           }
         }
@@ -263,31 +494,77 @@
     }
 
     .view-btn-cal {
-      margin-top: 10px;
+      // margin-top: 10px;
+       padding-top: 10px;
 
       a {
-        font-size: 14px;
-        color: #4f46e5;
-        text-decoration: underline;
+        // font-size: 14px;
+        // color: #4f46e5;
+        // text-decoration: underline;
+
+         color: #2E2A94;                           // ✅ Button Primary Default
+    font-family: 'Poppins', sans-serif;       // ✅ Body font
+    font-size: 14px;                          // ✅ Text Link Small
+    font-style: normal;
+    font-weight: 400;                         // ✅ normal weight
+    line-height: 20px;                        // ✅ Text Link Small line height
+
+    text-decoration-line: underline;          // ✅ underline style
+    text-decoration-style: solid;             // ✅ solid underline
+    text-decoration-skip-ink: auto;           // ✅ skip ink for better readability
+    text-decoration-thickness: auto;          // ✅ browser handles best thickness
+    text-underline-offset: 2.8px;             // ✅ ~20% of 14px ≈ 2.8px offset
+    text-underline-position: from-font;       // ✅ align underline nicely
 
         &:hover {
-          color: #3b35d1;
+          // color: #3b35d1;
+           color: darken(#2E2A94, 10%); 
         }
       }
     }
   }
 
+  // .default-content-wrapper {
+  //   max-width: 1200px;
+  //   margin: 30px auto 0;
+  //   font-size: 13px;
+
+  //   ul {
+  //     padding-left: 20px;
+  //   }
+
+  //   li {
+  //     margin-bottom: 6px;
+  //   }
+  // }
+
   .default-content-wrapper {
-    max-width: 1200px;
-    margin: 30px auto 0;
-    font-size: 13px;
+  max-width: 1200px;
+  margin: 30px auto 0;
 
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
+  // Disclaimer styling for the entire block
+  p,
+  ul,
+  li {
+    color: #424242;                      // Neutrals/800
+    font-family: 'Poppins', sans-serif;  // Body
+    font-size: 12px;                     // Disclaimer Xsmall
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;                   // 133.333%
   }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 6px;
+  }
+
+  strong {
+    font-weight: 600; // Make "Disclaimer" bold
+  }
+}
+
 }

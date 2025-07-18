@@ -174,7 +174,8 @@ export default function decorate(block) {
     if (mode === 'sip') {
       investedAmount = amount * n;
       if (r > 0) {
-        futureValue = amount * ((((1 + r) ** n - 1) / r) * (1 + r));
+        // futureValue = amount * ((((1 + r) ** n - 1) / r) * (1 + r));
+        futureValue = amount * ((((1 + r) ** n - 1) / r));
       }
     } else if (mode === 'lumpsum') {
       investedAmount = amount;
