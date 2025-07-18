@@ -53,6 +53,10 @@ export default async function decorate(block) {
 
         Array.from(tablist.children).forEach(element=>{
             element.addEventListener("click",(event)=>{
+                block.querySelectorAll(".tabs-panel").forEach((el)=>{
+                    el.style.display = "none";
+                })
+
                 if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-trending-funds") {
                     dataCf = dataCfObj.slice(0,4)
                     
@@ -73,9 +77,20 @@ export default async function decorate(block) {
                 dataCf.map((element)=>{
                     return block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).append(fundCardblock(element))
                 });    
+                block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).style.display = "flex"
             })
         })
 
+        const wrapperTablist = document.createElement("div");
+        wrapperTablist.classList.add("wrappertablist");
+        wrapperTablist.append(block.querySelector(".tabs-list"))
+        wrapperTablist.append(block.closest('.section').querySelector(".button-container"))
+        let tabspanel = block.querySelectorAll(".tabs-panel");
+        block.innerHTML = "";
+        block.append(wrapperTablist);
+        tabspanel.forEach((el)=>{
+            block.append(el); 
+        })
         tablist.children[0].click();
     }
     if (block.closest(".known-our-funds")) {    
@@ -83,6 +98,10 @@ export default async function decorate(block) {
 
         Array.from(tablist.children).forEach(element=>{
             element.addEventListener("click",(event)=>{
+                block.querySelectorAll(".tabs-panel").forEach((el)=>{
+                    el.style.display = "none";
+                })
+
                 if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-trending-funds") {
                     dataCf = dataCfObj.slice(0,4)
                 } else if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-international-equity") {
@@ -120,7 +139,19 @@ export default async function decorate(block) {
                 dataCf.map((element)=>{
                     return block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).append(fundCardblock(element))
                 });    
+                block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).style.display = "flex"
             })
+        })
+
+        const wrapperTablist = document.createElement("div");
+        wrapperTablist.classList.add("wrappertablist");
+        wrapperTablist.append(block.querySelector(".tabs-list"))
+        wrapperTablist.append(block.closest('.section').querySelector(".button-container"))
+        let tabspanel = block.querySelectorAll(".tabs-panel");
+        block.innerHTML = "";
+        block.append(wrapperTablist);
+        tabspanel.forEach((el)=>{
+            block.append(el); 
         })
 
         tablist.children[0].click();
