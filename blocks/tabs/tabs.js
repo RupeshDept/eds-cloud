@@ -3,6 +3,7 @@
 import { toClassName } from '../../scripts/aem.js';
 import dataCfObj from "../../scripts/dataCfObj.js";
 import fundCardblock from "../fund-card/fund-card.js"
+import {button,a} from "../../scripts/dom-helpers.js"
 export default async function decorate(block) {
     // build tablist
     // console.log(dataCfObj);
@@ -84,7 +85,10 @@ export default async function decorate(block) {
         const wrapperTablist = document.createElement("div");
         wrapperTablist.classList.add("wrappertablist");
         wrapperTablist.append(block.querySelector(".tabs-list"))
-        wrapperTablist.append(block.closest('.section').querySelector(".button-container"))
+        wrapperTablist.append(
+            button(a({href:block.closest('.section').querySelector(".button-container a").getAttribute("href")}),
+            block.closest('.section').querySelector(".button-container a").textContent.trim())
+        )
         let tabspanel = block.querySelectorAll(".tabs-panel");
         block.innerHTML = "";
         block.append(wrapperTablist);
@@ -146,7 +150,10 @@ export default async function decorate(block) {
         const wrapperTablist = document.createElement("div");
         wrapperTablist.classList.add("wrappertablist");
         wrapperTablist.append(block.querySelector(".tabs-list"))
-        wrapperTablist.append(block.closest('.section').querySelector(".button-container"))
+        wrapperTablist.append(
+            button(a({href:block.closest('.section').querySelector(".button-container a").getAttribute("href")}),
+            block.closest('.section').querySelector(".button-container a").textContent.trim())
+        )
         let tabspanel = block.querySelectorAll(".tabs-panel");
         block.innerHTML = "";
         block.append(wrapperTablist);
