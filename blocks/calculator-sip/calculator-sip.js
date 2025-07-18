@@ -77,7 +77,7 @@ export default function decorate(block) {
       { class: 'invested-amount' },
       div(
         { class: 'invested-amount-wrapper' },
-        label({}, col3[1].textContent.trim()),
+        label({}, 'Invested Amount'),
         span({ class: 'invested-amount-value' }, col3[2].textContent.trim()),
       ),
     ),
