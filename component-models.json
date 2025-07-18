@@ -108,6 +108,14 @@
           {
             "name": "Know Our Funds",
             "value": "known-our-funds"
+          },
+          {
+            "name": "Compound Journey",
+            "value": "compound-journey"
+          },
+          {
+            "name": "Index Fund",
+            "value": "index-fund"
           }
         ]
       }
@@ -212,20 +220,6 @@
         "value": "",
         "label": "Enter Context",
         "valueType": "string"
-      },
-      {
-        "component": "select",
-        "name": "classes",
-        "label": "please select working block class name",
-        "options": [{
-            "name": "Compound Journey",
-            "value": "compound-journey"
-          },
-          {
-            "name": "Index Fund",
-            "value": "index-fund"
-          }
-        ]
       }
   ]
   }
