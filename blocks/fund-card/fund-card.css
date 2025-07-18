@@ -1,3 +1,5 @@
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable media-feature-range-notation */
 * {
     padding: 0;
     margin: 0;
@@ -107,6 +109,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    width: 100%;
 }
 
 .section .card-container .card-upper-title {
@@ -203,6 +206,7 @@
 
 .section .card-container .cagr-container {
     display: flex;
+    justify-content: space-between;
     align-items: start;
     gap: 24px;
 }
@@ -234,6 +238,7 @@
 .section .card-container .cagr-select-wrapper {
     display: flex;
     align-items: center;
+    width: 150px;
 }
 
 .section .card-container .cagr-select-wrapper::after {
@@ -386,6 +391,7 @@
     font-size: var(--button-small-size, 14px);
     font-weight: 600;
     line-height: 16px;
+    border: none;
 }
 
 .section .card-container .cagr-container.not-provided .cagr-dropdown,
@@ -422,7 +428,8 @@
 }
 
 .section .index-fund .card-items .card-container {
-    box-shadow: 2px 9px 12px 0px rgba(0, 0, 0, 0.08);
+    /* stylelint-disable-next-line color-function-notation */
+    box-shadow: 2px 9px 12px 0 rgba(0, 0, 0, 0.08);
 }
 
 .section .index-fund .card-items .card-container:nth-child(odd) {
@@ -510,7 +517,7 @@
 /* Make Index Fund End */
 
 @media screen and (max-width: 1300px) {
-    .section .card-container {
+    .section.tabs-container .card-container {
         max-width: 31.8%;
     }
 }
@@ -522,7 +529,7 @@
 }
 
 @media screen and (max-width: 850px) {
-    .section .card-container {
+    .section.tabs-container .card-container {
         max-width: 47%;
     }
 }
@@ -555,9 +562,9 @@
     }
 
     .section .card-container,
+    .section.tabs-container .card-container,
     .section .card-container .card-wrapper {
         max-width: 100%;
-        width: 100%;
     }
 
     .section .card-container .card-upper-title h2 {
