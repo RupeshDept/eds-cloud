@@ -51,9 +51,7 @@ img {
 
 .think-equity-container .default-content-wrapper {
     text-align: center;
-    max-width: 860px;
-    margin-left: auto;
-    margin-right: auto;
+    
 }
 
 .think-equity-container .default-content-wrapper p {
@@ -154,10 +152,9 @@ img {
 
 .think-equity-container .default-content-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 24px;
-    max-width: 860px;
     margin-left: auto;
     margin-right: auto;
     border: 1px solid #dee2e6;
@@ -167,7 +164,7 @@ img {
 
 .think-equity-container .default-content-wrapper p:first-child {
     margin: 0;
-    padding-right: 30%;
+    text-align: left;
     color: var(--blue-1800-primary, #2E2A94);
 
     /* Desktop/Body/Medium-medium */
