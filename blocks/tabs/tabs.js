@@ -86,9 +86,13 @@ export default async function decorate(block) {
         wrapperTablist.classList.add("wrappertablist");
         wrapperTablist.append(block.querySelector(".tabs-list"))
         wrapperTablist.append(
-            button(a({href:block.closest('.section').querySelector(".button-container a").getAttribute("href")}),
+            button({
+                class:"btndesk"},a({
+                href:block.closest('.section').querySelector(".button-container a").getAttribute("href")
+            }),
             block.closest('.section').querySelector(".button-container a").textContent.trim())
         )
+        block.closest('.section').querySelector(".button-container").classList.add("btnMob");
         let tabspanel = block.querySelectorAll(".tabs-panel");
         block.innerHTML = "";
         block.append(wrapperTablist);
@@ -151,9 +155,14 @@ export default async function decorate(block) {
         wrapperTablist.classList.add("wrappertablist");
         wrapperTablist.append(block.querySelector(".tabs-list"))
         wrapperTablist.append(
-            button(a({href:block.closest('.section').querySelector(".button-container a").getAttribute("href")}),
+            button({
+                class:"btndesk"},a({
+                href:block.closest('.section').querySelector(".button-container a").getAttribute("href"),
+                class:"btndesk"
+            }),
             block.closest('.section').querySelector(".button-container a").textContent.trim())
         )
+        block.closest('.section').querySelector(".button-container").classList.add("btnMob");
         let tabspanel = block.querySelectorAll(".tabs-panel");
         block.innerHTML = "";
         block.append(wrapperTablist);
