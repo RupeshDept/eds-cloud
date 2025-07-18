@@ -25,7 +25,7 @@
   justify-content: center;
   gap: 40px;
   margin: 0 auto;
-  width: 100%; /* <-- Add this */
+  width: 100%;
 }
 .compounding .hero-section-wrapper {
   flex: 1 1 40%;
@@ -90,12 +90,12 @@
 }
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper span {
   align-self: stretch;
-  color: #424242;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
   line-height: 16px;
+  font-style: normal;
+  color: #424242;
 }
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper label {
   font-weight: 600;
@@ -110,9 +110,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
-  padding: 12px 16px;
   border-radius: 4px;
-  border: 1px solid var(--border-color);
   box-sizing: border-box;
   background: url("../../icons/magnifyingglass.svg") no-repeat right 12px center;
   background-size: 20px 20px;
@@ -184,7 +182,6 @@
   flex-wrap: wrap;
   gap: 40px;
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 20px;
   margin: 20px 0;
   flex-direction: row;
 }
@@ -214,9 +211,7 @@
 }
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input {
-  padding: 12px 16px;
   border-radius: 4px;
-  border: 1px solid var(--border-color);
   box-sizing: border-box;
   color: #2E2A94;
   font-family: "Poppins", sans-serif;
@@ -425,24 +420,30 @@
   }
   .compounding .calculator-sip-wrapper {
     flex: 1 1 100%;
-    max-width: 100%;
+    width: 100%;
   }
   .compounding .calculator-sip-wrapper .cal-container {
     padding: 16px;
   }
-  .compounding .calculator-sip-wrapper .investment-wrapper {
+  .compounding .calculator-sip-wrapper .cal-container .investment-wrapper {
     flex-direction: column;
     gap: 20px;
   }
-  .compounding .calculator-sip-wrapper .investment-wrapper .sip-wrapper,
-  .compounding .calculator-sip-wrapper .investment-wrapper .tenure-wrapper {
+  .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper,
+  .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper {
     width: 100%;
+    border-bottom: 1px solid #BDBDBD;
   }
-  .compounding .calculator-sip-wrapper .cal-discription {
+  .compounding .calculator-sip-wrapper .cal-container .cal-discription {
     flex-direction: row;
     gap: 10px;
+    flex-wrap: wrap;
   }
-  .compounding .calculator-sip-wrapper .cal-discription .start-sip-btn button {
+  .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper,
+  .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper {
+    flex: 1 1 45%;
+  }
+  .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button {
     width: 100%;
   }
   .compounding .calculator-sip-wrapper .view-btn-cal {
