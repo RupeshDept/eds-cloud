@@ -39,8 +39,8 @@
   --link-hover-color: #1d3ecf;
 
   /* fonts */
-  --body-font-family: ButlerPro, ButlerPro-fallback, sans-serif;
-  --heading-font-family: ButlerPro-bold, ButlerPro-bold-fallback, sans-serif;
+  --body-font-family: butlerpro, butlerpro-fallback, sans-serif;
+  --heading-font-family: butlerpro-bold, butlerpro-bold-fallback, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -111,7 +111,7 @@ body.loading {
 }
 
 .font-primary :is(p, h1, h2, h3, h4, h5, h6) {
-  font-family: "ButlerPro", sans-serif !important;
+  font-family: ButlerPro, sans-serif !important;
   font-style: normal !important;
 }
 
