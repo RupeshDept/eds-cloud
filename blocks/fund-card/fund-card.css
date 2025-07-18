@@ -51,11 +51,55 @@
     margin: 0 auto;
 }
 
+.section.tabs-container .wrappertablist {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section.tabs-container .wrappertablist .btndesk,
+.section.tabs-container .btnmob {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    max-width: 105px;
+    width: 100%;
+    background-color: unset;
+    border-radius: var(--border-radius-8, 8px);
+}
+
+.section.tabs-container .btnmob a,
+.section.tabs-container .wrappertablist .btndesk a {
+    border-radius: var(--border-radius-8, 8px);
+    border: 1px solid var(--button-primary-default, #2E2A94);
+    width: 100%;
+    background-color: transparent;
+    padding: 8px;
+    color: var(--blue-1800-primary, #2E2A94);
+    font-family: var(--body, Poppins);
+    font-size: var(--button-small-size, 14px);
+    font-weight: 600;
+    line-height: 16px;
+    text-decoration: none;
+    display: block;
+    margin: 0;
+}
+
+.section.our-popular-funds.tabs-container .btnmob a,
+.section.our-popular-funds.tabs-container .wrappertablist .btndesk a{
+    border: 1px solid var(--neutrals-white, #FFF);
+    color: var(--text-white, #FFF);
+}
+
+.section.tabs-container .btnmob {
+    display: none;
+}
+
 .section.tabs-container .tabs-list {
     display: flex;
     gap: 0;
     border-bottom: var(--border-width-01, 1px) solid var(--color-neutrals-400, #B6BCC7);
-    margin: 0 0 24px;
     max-width: max-content;
 }
 
@@ -85,7 +129,7 @@
 }
 
 .section.tabs-container .tabs-wrapper .tabs-panel {
-    margin: 0;
+    margin: 24px 0 0;
     border: none;
     padding: 0;
     display: flex;
@@ -315,8 +359,6 @@
     margin: 8px 0 0;
 }
 
-
-
 .section .card-container .risk-container span {
     color: var(--blue-1800-primary, #2E2A94);
     font-family: var(--body, Poppins);
@@ -405,7 +447,6 @@
     margin: 40px auto;
     max-width: 1232px;
     width: 100%;
-    background: lavender;
     padding: 12px 10px;
 }
 
@@ -448,7 +489,6 @@
     width: 100%;
     min-height: 180px;
     height: max-content;
-    background-color: lavenderblush;
 }
 
 .section .index-fund .compound-item .compound-sub-item h2 {
@@ -555,6 +595,15 @@
     .section.tabs-container .tabs-list .tabs-tab {
         font-size: var(--body-small-semibold-size, 14px);
         line-height: var(--body-small-semibold-line-height, 16px);
+    }
+
+    .section.tabs-container .wrappertablist .btndesk {
+        display: none;
+    }
+
+    .section.tabs-container .btnmob {
+        display: block;
+        margin: 40px auto 0;
     }
 
     .section .card-container {

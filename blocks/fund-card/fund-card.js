@@ -1,23 +1,22 @@
 import {
-  button, div, h3, label, option, select, span, ul, li, h2, p, img
+  button, div, label, option, select, span, ul, li, h2, p, img,
 } from '../../scripts/dom-helpers.js';
-import dataMapMoObj from "../../scripts/constant.js"
-export default function decorate(block) { 
-  let fundsTaggingSection =  block.fundsTaggingSection.slice(0,2);
-  let DirectPlanlistArr = block.planList.filter((el)=>{
-    return el.planName === "Regular" ? el.optionName : ""
-  })
+import dataMapMoObj from '../../scripts/constant.js';
+
+export default function decorate(block) {
+  const fundsTaggingSection = block.fundsTaggingSection.slice(0, 2);
+  const DirectPlanlistArr = block.planList.filter((el) => (el.planName === 'Regular' ? el.optionName : ''));
 
   const tempReturns = [];
-      block.returns.forEach((ret, jind) => {
-        if (jind == 0) {
-          for (const key in ret) {
-            if (dataMapMoObj.ObjTemp[key]) {
-              tempReturns.push(dataMapMoObj.ObjTemp[key]);
-            }
-          }
+  block.returns.forEach((ret, jind) => {
+    if (jind === 0) {
+      for (const key in ret) {
+        if (dataMapMoObj.ObjTemp[key]) {
+          tempReturns.push(dataMapMoObj.ObjTemp[key]);
         }
-      });
+      }
+    }
+  });
 
   const cardContainer = div(
     { class: 'card-container' },
@@ -31,35 +30,33 @@ export default function decorate(block) {
         ),
         div(
           { class: 'star' },
-          img({class:"star-icon",src:"../../icons/star.svg"}),
-          img({class:"fillstar-icon",src:"../../icons/star-filled.svg"})
+          img({ class: 'star-icon', src: '../../icons/star.svg' }),
+          img({ class: 'fillstar-icon', src: '../../icons/star-filled.svg' }),
         ),
       ),
       div(
         { class: 'card-category' },
         div(
           { class: 'fund-tagging' },
-          ul({class:"fundtagging-list"},
-            ...fundsTaggingSection.map((eloption)=>{
-              return li(eloption.replaceAll('motilal-oswal:', '').replaceAll('-', ' ').toUpperCase())
-            })
+          ul(
+            { class: 'fundtagging-list' },
+            ...fundsTaggingSection.map((eloption) => li(eloption.replaceAll('motilal-oswal:', '').replaceAll('-', ' ').toUpperCase())),
           ),
         ),
         div(
           { class: 'planlist-dropdown' },
-          select({
-            onchange:(event)=>{
-                  console.log(event.target.value);
-                  console.log(event.target.closest(".card-wrapper").querySelector(".cagr-container .cagr-dropdown"));
-                  console.log(block.returns,block.planList,block.schDetail.schemeName);
-                  planListEvent(event,block)
-                }
+          select(
+            {
+              onchange: (event) => {
+                // console.log(event.target.value);
+                // console.log(event.target.closest('.card-wrapper').querySelector('.cagr-container .cagr-dropdown'));
+                // console.log(block.returns, block.planList, block.schDetail.schemeName);
+                planListEvent(event, block);
               },
-            ...DirectPlanlistArr.map((el)=>{
-              return option({
-                value:el.groupedCode,
-              },el.optionName)
-            })
+            },
+            ...DirectPlanlistArr.map((el) => option({
+              value: el.groupedCode,
+            }, el.optionName)),
           ),
         ),
       ),
@@ -68,32 +65,34 @@ export default function decorate(block) {
         div(
           { class: 'cagr-dropdown' },
           label('Return (Absolute)'),
-          div({class:'cagr-select-wrapper'},
-            select({
-              schemeCode: block.schcode,
-              value:tempReturns[0],
-              onchange:(event)=>{
-                 const cgarValue = block.returns[0][event.target.value];
-                 console.log(cgarValue);
-                 event.target.closest(".cagr-container").querySelector(".cagr-value h2").textContent =""
-                 event.target.closest(".cagr-container").querySelector(".cagr-value h2").textContent =cgarValue+"%"
-              }
-            },
-               ...tempReturns.map((eloption, ind) => option({
-                  value: dataMapMoObj.ObjTemp[eloption],
-                }, eloption))
+          div(
+            { class: 'cagr-select-wrapper' },
+            select(
+              {
+                schemeCode: block.schcode,
+                value: tempReturns[0],
+                onchange: (event) => {
+                  const cgarValue = block.returns[0][event.target.value];
+                  event.target.closest('.cagr-container').querySelector('.cagr-value h2').textContent = '';
+                  event.target.closest('.cagr-container').querySelector('.cagr-value h2').textContent = `${cgarValue}%`;
+                },
+              },
+              ...tempReturns.map((eloption) => option({
+                value: dataMapMoObj.ObjTemp[eloption],
+              }, eloption)),
             ),
-          )
+          ),
         ),
         div(
           { class: 'cagr-value' },
-          h2(block.returns[0][dataMapMoObj.ObjTemp[tempReturns[0]]]+"%"),
+          h2(`${block.returns[0][dataMapMoObj.ObjTemp[tempReturns[0]]]}%`),
           p({ class: 'scheme-yet', style: 'display:none' }, 'Scheme is yet to complete 10 Years'),
           p({ class: 'cagr-date' }, '15th Mar 2020'),
         ),
-        div({class:"cagr-desc"}, 
-          span("Return is not provided because thescheme has not completed 6 months")
-        )
+        div(
+          { class: 'cagr-desc' },
+          span('Return is not provided because thescheme has not completed 6 months'),
+        ),
       ),
       div(
         { class: 'risk-container' },
@@ -119,10 +118,10 @@ export default function decorate(block) {
 }
 
 function planListEvent(param, block) {
-  const tempReturns = [],
-    codeTempArr = [];
+  const tempReturns = [];
+  const codeTempArr = [];
   block.returns.forEach((el) => {
-    codeTempArr.push((el.plancode + el.optioncode))
+    codeTempArr.push((el.plancode + el.optioncode));
     if (param.target.value === (el.plancode + el.optioncode)) {
       for (const key in el) {
         if (dataMapMoObj.ObjTemp[key]) {
@@ -130,62 +129,66 @@ function planListEvent(param, block) {
         }
       }
     }
-  })
-  param.target.closest(".card-wrapper").querySelector(".cagr-container").innerHTML = ""
-  if (codeTempArr.includes(param.target.value) && tempReturns.length != 0) {
-    param.target.closest(".card-wrapper").querySelector(".cagr-container").append(
-      div({
-          class: 'cagr-dropdown'
+  });
+  param.target.closest('.card-wrapper').querySelector('.cagr-container').innerHTML = '';
+  if (codeTempArr.includes(param.target.value) && tempReturns.length !== 0) {
+    param.target.closest('.card-wrapper').querySelector('.cagr-container').append(
+      div(
+        {
+          class: 'cagr-dropdown',
         },
         label('Return (Absolute)'),
-        select({
+        select(
+          {
             schemeCode: block.schcode,
             value: tempReturns[0],
             onchange: (event) => {
               const cgarValue = block.returns[0][event.target.value];
-              console.log(cgarValue);
-              event.target.closest(".cagr-container").querySelector(".cagr-value h2").textContent = ""
-              event.target.closest(".cagr-container").querySelector(".cagr-value h2").textContent = cgarValue + "%"
-            }
+              event.target.closest('.cagr-container').querySelector('.cagr-value h2').textContent = '';
+              event.target.closest('.cagr-container').querySelector('.cagr-value h2').textContent = `${cgarValue}%`;
+            },
           },
-          ...tempReturns.map((eloption, ind) => option({
+          ...tempReturns.map((eloption) => option({
             value: dataMapMoObj.ObjTemp[eloption],
-          }, eloption))
+          }, eloption)),
         ),
       ),
-      div({
-          class: 'cagr-value'
+      div(
+        {
+          class: 'cagr-value',
         },
-        h2(block.returns[0][dataMapMoObj.ObjTemp[tempReturns[0]]] + "%"),
+        h2(`${block.returns[0][dataMapMoObj.ObjTemp[tempReturns[0]]]}%`),
         p({
           class: 'scheme-yet',
-          style: 'display:none'
+          style: 'display:none',
         }, 'Scheme is yet to complete 10 Years'),
         p({
-          class: 'cagr-date'
+          class: 'cagr-date',
         }, '15th Mar 2020'),
       ),
-    )
+    );
   } else {
-    param.target.closest(".card-wrapper").querySelector(".cagr-container .cagr-dropdown").append(
-      div({
-          class: 'cagr-dropdown'
+    param.target.closest('.card-wrapper').querySelector('.cagr-container .cagr-dropdown').append(
+      div(
+        {
+          class: 'cagr-dropdown',
         },
         label('Return (Absolute)'),
-        label("NA")
+        label('NA'),
       ),
-      div({
-          class: 'cagr-value'
+      div(
+        {
+          class: 'cagr-value',
         },
-        h2("NA"),
+        h2('NA'),
         p({
           class: 'scheme-yet',
-          style: 'display:none'
+          style: 'display:none',
         }, 'Scheme is yet to complete 10 Years'),
         p({
-          class: 'cagr-date'
+          class: 'cagr-date',
         }, '15th Mar 2020'),
       ),
-    )
+    );
   }
 }
