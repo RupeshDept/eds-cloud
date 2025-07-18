@@ -50,7 +50,7 @@ export default function decorate(block) {
           select({
             onchange:(event)=>{
                   console.log(event.target.value);
-                  console.log(event.target.closest(".card-wrapper").querySelector(".cagr-container .cagrDropdown"));
+                  console.log(event.target.closest(".card-wrapper").querySelector(".cagr-container .cagr-dropdown"));
                   console.log(block.returns,block.planList,block.schDetail.schemeName);
                   planListEvent(event,block)
                 }
@@ -103,9 +103,9 @@ export default function decorate(block) {
       div(
         { class: 'discription' },
         p(
-          { class: 'disChoosen' },
-          'Chosen by',
-          span({ class: 'disInvestor' }, '2.7 lakh investors'),
+          { class: 'dis-choosen' },
+          'Chosen by ',
+          span({ class: 'dis-investor' }, '2.7 lakh investors'),
         ),
       ),
       div(
@@ -135,7 +135,7 @@ function planListEvent(param, block) {
   if (codeTempArr.includes(param.target.value) && tempReturns.length != 0) {
     param.target.closest(".card-wrapper").querySelector(".cagr-container").append(
       div({
-          class: 'cagrDropdown'
+          class: 'cagr-dropdown'
         },
         label('Return (Absolute)'),
         select({
@@ -144,8 +144,8 @@ function planListEvent(param, block) {
             onchange: (event) => {
               const cgarValue = block.returns[0][event.target.value];
               console.log(cgarValue);
-              event.target.closest(".cagr-container").querySelector(".cagrValue h2").textContent = ""
-              event.target.closest(".cagr-container").querySelector(".cagrValue h2").textContent = cgarValue + "%"
+              event.target.closest(".cagr-container").querySelector(".cagr-value h2").textContent = ""
+              event.target.closest(".cagr-container").querySelector(".cagr-value h2").textContent = cgarValue + "%"
             }
           },
           ...tempReturns.map((eloption, ind) => option({
@@ -154,36 +154,36 @@ function planListEvent(param, block) {
         ),
       ),
       div({
-          class: 'cagrValue'
+          class: 'cagr-value'
         },
         h2(block.returns[0][dataMapMoObj.ObjTemp[tempReturns[0]]] + "%"),
         p({
-          class: 'schemeYet',
+          class: 'scheme-yet',
           style: 'display:none'
         }, 'Scheme is yet to complete 10 Years'),
         p({
-          class: 'cagrDate'
+          class: 'cagr-date'
         }, '15th Mar 2020'),
       ),
     )
   } else {
-    param.target.closest(".card-wrapper").querySelector(".cagr-container .cagrDropdown").append(
+    param.target.closest(".card-wrapper").querySelector(".cagr-container .cagr-dropdown").append(
       div({
-          class: 'cagrDropdown'
+          class: 'cagr-dropdown'
         },
         label('Return (Absolute)'),
         label("NA")
       ),
       div({
-          class: 'cagrValue'
+          class: 'cagr-value'
         },
         h2("NA"),
         p({
-          class: 'schemeYet',
+          class: 'scheme-yet',
           style: 'display:none'
         }, 'Scheme is yet to complete 10 Years'),
         p({
-          class: 'cagrDate'
+          class: 'cagr-date'
         }, '15th Mar 2020'),
       ),
     )
