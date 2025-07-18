@@ -1,0 +1,250 @@
+@import "../../../styles/fonts.css";
+
+// ----------------------------------------
+// COLORS
+// ----------------------------------------
+
+// Primary colors
+$primary-black: #000;
+$primary-white: #fff;
+$primary-blue: #2e2a94;
+$primary-blue-dark: #2b2e8c;
+$primary-Blue-1-900: #242177;
+
+// Brand buttons
+$button-primary: (
+  default: #2e2a94,
+  hover: #2b2e8c,
+  active: #262a84,
+  disabled: #969696,
+);
+
+$button-secondary: (
+  default: #ffffff,
+  hover: #f3f3f3,
+  active: #e6e6e6,
+  disabled: #b0b0b0,
+  text: #2e2a94,
+);
+
+// Neutral colors
+$neutrals: (
+  n00: #262626,
+  n25: #ebebeb,
+  n50: #adadad,
+  n200: #4a4a4a,
+  n400: #1f1f1f,
+  50: #e6e6e6,
+  75: #969696,
+  100: #6b6b6b,
+  200: #2b2b2b,
+  300: #000000,
+  400: #000000,
+  500: hsl(0, 0%, 0%),
+  600: #b0b0b0,
+  700: #828282,
+  800: #424242,
+  900: #8a8a8a,
+);
+
+// Old Silver
+$old-silver: (
+  00: #efefef,
+  50: #f3f3f3,
+  75: #cccccc,
+  100: #b7b7b7,
+  200: #989898,
+  300: #838383,
+  400: #5c5c5c,
+  500: #505050,
+  600: #545454,
+  700: #404040,
+);
+
+// Olive Drab
+$olive-drab: (
+  50: #ededec,
+  75: #b6b3b1,
+  100: #989490,
+  200: #6c6560,
+  300: #4e4640,
+  400: #37312d,
+  500: #302b27,
+);
+
+// Dark Liver
+$dark-liver: (
+  50: #edeeed,
+  75: #b6b8b6,
+  100: #979a98,
+  200: #6a6f6b,
+  300: #4c514d,
+  400: #353936,
+  500: #2e312f,
+);
+
+// Success
+$success: (
+  50: #e9fdec,
+  75: #a4f8b2,
+  100: #7ef591,
+  200: #46f062,
+  300: #20ed42,
+  400: #16a62e,
+  500: #149128,
+);
+
+// Alarm
+$alarm: (
+  50: #fdf6e9,
+  75: #f8dca4,
+  100: #f5cd7e,
+  200: #f0b846,
+  300: #eda920,
+  400: #a67616,
+  500: #916714,
+);
+
+// Danger
+$danger: (
+  50: #fde9e9,
+  75: #f8a4a4,
+  100: #f57e7e,
+  200: #f04646,
+  300: #ed2020,
+  400: #a61616,
+  500: #911414,
+);
+
+// ----------------------------------------
+// MISC COLORS
+// ----------------------------------------
+
+$blue-100: #4e78e6;
+$dark-500: #7b7b7b;
+$light-600: #9d9d9d;
+
+// ----------------------------------------
+// FONTS
+// ----------------------------------------
+$Poppins: "Poppins", sans-serif;
+$ButlerPro: "ButlerPro", sans-serif;
+
+$font-weights: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  heavy: 900
+);
+
+// Font mixin
+@mixin font-style($size, $line-height, $color, $weight: null, $family: $ButlerPro) {
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+  font-family: $family;
+  @if $weight != null {
+    font-weight: $weight;
+  }
+}
+
+// ----------------------------------------
+// BORDER RADIUS
+// ----------------------------------------
+
+$radius: (
+  r4: 4px,
+  r8: 8px,
+  r12: 12px,
+  r14: 14px,
+  r16: 16px,
+  r24: 24px,
+  r26: 26px,
+  r32: 32px,
+  r37: 37px,
+  r40: 40px,
+  r41: 41px,
+  r52: 52px,
+  r83: 83px,
+  r100: 100px,
+);
+
+// ----------------------------------------
+// BREAKPOINTS
+// ----------------------------------------
+
+$breakpoints: (
+  mobile-sm: 361px,
+  mobile-md: 391px,
+  mobile: 768px,
+  tab: 1025px,
+  desktop-sm: 1299px,
+  desktop-md: 1367px,
+  desktop-lg: 1681px,
+  desktop-xl: 1921px
+);
+
+// Media query mixins
+@mixin media($breakpoint) {
+  $bp: map-get($breakpoints, $breakpoint);
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+// ----------------------------------------
+// FLEXBOX UTILITIES
+// ----------------------------------------
+
+@mixin flex-center($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// ----------------------------------------
+// TRANSITIONS & HOVER EFFECTS
+// ----------------------------------------
+
+@mixin transitionTransform {
+  transition: transform 0.5s ease;
+}
+
+@mixin hoverAfterEffect($translateX: 5px) {
+  &:hover::after {
+    transform: translateX($translateX);
+  }
+}
+
+@mixin hoverBeforeEffect($translateX: 5px) {
+  &:hover::before {
+    transform: translateX($translateX);
+  }
+}
+
+@mixin hoverImageEffect($translateX: 5px) {
+  &:hover img {
+    transform: translateX($translateX);
+  }
+}
+
+// Secondary Button Effects
+@mixin hover-secondarybtn($color: #000) {
+  &:hover {
+    backdrop-filter: blur(22px);
+    background-color: $color;
+    color: #fff;
+  }
+}
+
+@mixin hover-secondarybtnwhite() {
+  &:hover {
+    backdrop-filter: blur(22px);
+    background-color: #fff;
+    color: #000;
+  }
+}
+  

@@ -1,0 +1,149 @@
+@import "./variables_mixins";
+@import "./fluid-typography";
+
+// ----------------------------------------
+// POINTER & INTERACTIVITY
+// ----------------------------------------
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-none {
+  cursor: none;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.disabled {
+  pointer-events: none;
+  background-color: #969696 !important;
+  // opacity: 0.4; // Uncomment if you want visual feedback
+}
+
+// ----------------------------------------
+// DISPLAY & FLEX UTILITIES
+// ----------------------------------------
+
+.d-none {
+  display: none !important;
+}
+
+.dsp-none {
+  display: none !important;
+}
+
+// Mobile specific display toggle
+.mob-d-none {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// ----------------------------------------
+// VISIBILITY & OVERFLOW
+// ----------------------------------------
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+// ----------------------------------------
+// BACKGROUND & COLORS
+// ----------------------------------------
+
+.bg-body {
+  background-color: #f3f3f3;
+}
+
+.bg-white {
+  background-color: #fff !important;
+}
+
+// ----------------------------------------
+// TYPOGRAPHY
+// ----------------------------------------
+
+.font-primary :is(p, h1, h2, h3, h4, h5, h6) {
+  font-family: $ButlerPro !important;
+  font-style: normal !important;
+}
+
+// ----------------------------------------
+// HEADER HEIGHT MANAGEMENT
+// ----------------------------------------
+
+:root {
+  --header-height: 0px; // Default value to prevent errors before JS runs
+}
+
+.margin-top-banner {
+  margin-top: calc(var(--header-height) + 32px);
+}
+
+// ----------------------------------------
+// ANIMATIONS
+// ----------------------------------------
+
+.slide-in {
+  animation-duration: 2s;
+  animation-name: slide-in;
+
+  @include mobile {
+    animation-name: slide-in-bottom-to-top;
+  }
+}
+
+.slide-out {
+  animation-duration: 2s;
+  animation-name: slide-out;
+
+  @include mobile {
+    animation-name: slide-out-top-to-bottom;
+  }
+}
+
+.popup-back-animation {
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: fadeIn 2s;
+  -o-animation: fadeIn 2s;
+  -ms-animation: fadeIn 2s;
+}
+
+// ----------------------------------------
+// BODY STATES
+// ----------------------------------------
+
+body.loading {
+  overflow: hidden;
+  pointer-events: none;
+}

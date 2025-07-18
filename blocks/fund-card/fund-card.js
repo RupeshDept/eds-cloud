@@ -1,6 +1,12 @@
+/* eslint-disable */
 import {
   button, div, label, option, select, span, ul, li, h2, p, img,
 } from '../../scripts/dom-helpers.js';
+import dataMapMoObj from '../../scripts/constant.js';
+
+export default function decorate(block) {
+  const fundsTaggingSection = block.fundsTaggingSection.slice(0, 2);
+  const DirectPlanlistArr = block.planList.filter((el) => (el.planName === 'Regular' ? el.optionName : ''));
 import dataMapMoObj from '../../scripts/constant.js';
 
 export default function decorate(block) {
