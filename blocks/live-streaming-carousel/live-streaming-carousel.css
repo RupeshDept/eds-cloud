@@ -24,8 +24,9 @@
 
 .section.live-streaming-carousel-container h5 {
     margin: 0 0 8px;
-    color: var(--blue-1800-primary);
-    font-size: var(--body-small-regular-size);
+    color: var(--blue-1800-primary, #2E2A94);
+    font-family: var(--body, Poppins);
+    font-size: var(--body-small-medium-size, 14px);
     font-weight: 500;
     line-height: var(--body-small-medium-line-height, 16px);
 }
@@ -125,7 +126,7 @@
     }
 }
 
-@media screen and (width <= 768px) {
+@media screen and (width <=768px) {
     .section.live-streaming-carousel-container .live-streaming-carousel {
         margin-right: 115px;
     }
