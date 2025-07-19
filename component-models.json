@@ -109,31 +109,35 @@
                 "name": "style",
                 "label": "Style",
                 "options": [
-                  {
-                    "name": "Our Popular Funds",
-                    "value": "our-popular-funds"
-                  },
-                  {
-                    "name": "Highlight",
-                    "value": "highlight"
-                  },
-                  {
-                    "name": "Compounding",
-                    "value": "compounding"
-                  },
-                  {
-                    "name": "Know Our Funds",
-                    "value": "known-our-funds"
-                  },
-                  {
-                    "name": "Quick Actions",
-                    "value": "quick-actions"
-                  },
-                  {
-                    "name": "Need Assistance",
-                    "value": "need-assistance"
-                  },
-                  {
+                    {
+                        "name": "Our Popular Funds",
+                        "value": "our-popular-funds"
+                    },
+                    {
+                        "name": "Highlight",
+                        "value": "highlight"
+                    },
+                    {
+                        "name": "Compounding",
+                        "value": "compounding"
+                    },
+                    {
+                        "name": "Know Our Funds",
+                        "value": "known-our-funds"
+                    },
+                    {
+                        "name": "Quick Actions",
+                        "value": "quick-actions"
+                    },
+                    {
+                        "name": "Need Assistance",
+                        "value": "need-assistance"
+                    },
+                    {
+                        "name": "Motilal Equity",
+                        "value": "motilal-equity"
+                    },
+                     {
                     "name": "Compound Journey",
                     "value": "compound-journey"
                   },
@@ -370,20 +374,20 @@
         ]
     },
     {
-      "id":"live-streaming-content",
-      "fields":[
-        {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Live Streaming Content",
-          "valueType": "string"
-        }
-      ]
+        "id": "live-streaming-content",
+        "fields": [
+            {
+                "component": "richtext",
+                "name": "text",
+                "value": "",
+                "label": "Live Streaming Content",
+                "valueType": "string"
+            }
+        ]
     },
     {
-        "id":"newsletter-subscription",
-        "fields":[
+        "id": "newsletter-subscription",
+        "fields": [
             {
                 "component": "richtext",
                 "name": "text",
@@ -409,6 +413,33 @@
         ]
     },
     {
+        "id": "think-equity",
+        "fields": [
+            {
+                "component": "reference",
+                "name": "oneimage",
+                "label": "Image",
+                "multi": false
+            },
+            {
+                "component": "text",
+                "name": "oneimageAlt",
+                "label": "Alt Text"
+            },
+            {
+                "component": "reference",
+                "name": "twoimage",
+                "label": "Image",
+                "multi": false
+            },
+            {
+                "component": "text",
+                "name": "twoimageAlt",
+                "label": "Alt Text"
+            }
+        ]
+    },
+     {
       "id": "investment-block",
       "fields": [
         {
