@@ -1,7 +1,8 @@
 import {
   div, a, label, input, span, button, ul,
 } from '../../scripts/dom-helpers.js';
-import moslFundData from './datacal.js';
+// import moslFundData from './datacal.js';
+import dataCfObj from "../../scripts/dataCfObj.js";
 
 export default function decorate(block) {
   const col1 = block.children[0].querySelectorAll('p');
@@ -11,11 +12,11 @@ export default function decorate(block) {
   const col5 = block.children[4].querySelectorAll('p');
 
   // 1️⃣ Filter scheme names
-  const schemeNames = moslFundData.map((fund) => fund.schDetail.schemeName);
+  const schemeNames = dataCfObj.map((fund) => fund.schDetail.schemeName);
 
   // 2️⃣ Find selected fund & CAGR
   let selectedFundCode = 'CP';
-  let selectedFund = moslFundData.find((fund) => fund.schcode === selectedFundCode);
+  let selectedFund = dataCfObj.find((fund) => fund.schcode === selectedFundCode);
   let selectedFundName = selectedFund.schDetail.schemeName;
   let returnCAGR = parseFloat(col4[0].textContent.trim()) || 0;
 
@@ -249,7 +250,7 @@ export default function decorate(block) {
         selectedFundName = name;
         searchResults.innerHTML = '';
 
-        const foundFund = moslFundData.find((fund) => fund.schDetail.schemeName === name);
+        const foundFund = dataCfObj.find((fund) => fund.schDetail.schemeName === name);
         if (foundFund) {
           selectedFund = foundFund;
           selectedFundCode = foundFund.schcode;
