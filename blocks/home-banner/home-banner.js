@@ -1,5 +1,6 @@
 import Swiper from '../swiper/swiper-bundle.min.js';
 import { div } from '../../scripts/dom-helpers.js';
+import { loadCSS } from '../../scripts/aem.js';
 
 export default function decorate(block) {
   const swiperWrapper = div({ class: 'swiper-wrapper' });
@@ -31,4 +32,5 @@ export default function decorate(block) {
       prevEl: block.querySelector('.swiper-button-prev'),
     },
   });
+  loadCSS(import.meta.url.replace('.js', '.css'));
 }

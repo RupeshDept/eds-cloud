@@ -1,5 +1,6 @@
 import Swiper from '../swiper/swiper-bundle.min.js';
 import { div } from '../../scripts/dom-helpers.js';
+import { loadCSS } from '../../scripts/aem.js';
 
 export default function decorate(block) {
   block.classList.add('swiper');
@@ -50,4 +51,5 @@ export default function decorate(block) {
         .querySelector('.swiper-button-prev'),
     },
   });
+  loadCSS(import.meta.url.replace('.js', '.css'));
 }

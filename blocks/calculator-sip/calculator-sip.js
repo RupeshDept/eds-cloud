@@ -1,3 +1,4 @@
+import { loadCSS } from '../../scripts/aem.js';
 import {
   div, a, label, input, span, button, ul,
 } from '../../scripts/dom-helpers.js';
@@ -316,4 +317,6 @@ export default function decorate(block) {
       wrapper.append(calc);
     }
   }
+
+  loadCSS(import.meta.url.replace('.js', '.css'));
 }

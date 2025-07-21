@@ -1,3 +1,4 @@
+import { loadCSS } from '../../scripts/aem.js';
 import {
   a, button, div, input, label, span,
 } from '../../scripts/dom-helpers.js';
@@ -41,4 +42,5 @@ export default function decorate(block) {
   );
   block.querySelector('.newsitem2').innerHTML = '';
   block.querySelector('.newsitem2').append(formContainer);
+  loadCSS(import.meta.url.replace('.js', '.css'));
 }

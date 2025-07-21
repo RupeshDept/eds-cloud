@@ -1,3 +1,5 @@
+import { loadCSS } from '../../scripts/aem.js';
+
 export default function decorate(block) {
   Array.from(block.children).forEach((el, index) => {
     el.classList.add(`imagelist${index + 1}`);
@@ -5,4 +7,5 @@ export default function decorate(block) {
       elsub.classList.add('subimagelist');
     });
   });
+  loadCSS(import.meta.url.replace('.js', '.css'));
 }

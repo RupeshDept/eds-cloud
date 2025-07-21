@@ -1,1 +1,94 @@
 /* add global styles that can be loaded post LCP here */
+
+/* @import '../styles/common-theme/css/_variables_mixins.scss'; */
+
+.section.quick-actions {
+    margin: 40px 0;
+}
+
+.section.quick-actions>div>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.section.quick-actions>div>ul>li {
+    display: flex;
+    align-items: center;
+    gap: 72px;
+    align-self: stretch;
+}
+
+.section.quick-actions>div>ul p {
+    margin: 0;
+    padding: 0;
+    color: #2B2E8C;
+    font-family: Poppins, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.section.quick-actions>div>ul>li>ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    list-style: none;
+}
+
+.section.quick-actions>div>ul>li>ul>li {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #2E2A94;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.section.quick-actions>div>ul>li>ul>li .icon {
+    width: 56px;
+    height: 56px;
+}
+
+@media (width <= 768px) {
+    .section.quick-actions>div>ul>li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .section.quick-actions>div>ul p {
+        font-size: 24px;
+        font-style: normal;
+        line-height: 32px;
+    }
+
+    .section.quick-actions>div>ul>li>ul {
+        width: 100%;
+        gap: 48px 12px;
+    }
+
+    .section.quick-actions>div>ul>li>ul>li {
+        max-width: 48%;
+        flex: 0 0 48%;
+        gap: 16px;
+        flex-direction: column;
+        text-align: center;
+        white-space: nowrap;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .section.quick-actions>div>ul>li>ul>li .icon {
+        width: 48px;
+        height: 48px;
+    }
+}

@@ -1,3 +1,4 @@
+import { loadCSS } from '../../scripts/aem.js';
 import {
   a, div, h2, li, option, select, span, ul, p,
 } from '../../scripts/dom-helpers.js';
@@ -55,6 +56,6 @@ export default function decorate(block) {
       ),
     ),
   );
-
+  loadCSS(import.meta.url.replace('.js', '.css'));
   return container;
 }

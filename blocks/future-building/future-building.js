@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { loadCSS } from '../../scripts/aem.js';
 import Swiper from '../swiper/swiper-bundle.min.js';
 
 export default function decorate(block) {
@@ -46,4 +47,5 @@ export default function decorate(block) {
             }
         },
     });
+    loadCSS(import.meta.url.replace('.js', '.css'));
 }

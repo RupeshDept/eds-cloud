@@ -10,6 +10,7 @@ import {
 } from '../../scripts/scripts.js';
 
 import {
+  loadCSS,
   loadSections,
 } from '../../scripts/aem.js';
 
@@ -56,6 +57,7 @@ export default async function decorate(block) {
       block.replaceChildren(...fragmentSection.childNodes);
     }
   }
+  loadCSS(import.meta.url.replace('.js', '.css'));
 }
 
 

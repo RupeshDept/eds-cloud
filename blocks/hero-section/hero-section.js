@@ -1,5 +1,7 @@
 /* eslint-disable */
 
+import { loadCSS } from '../../scripts/aem.js';
+
 export default function decorate(block) {
     // Get the original parts
     const imgContainer = block.children[0];
@@ -18,4 +20,5 @@ export default function decorate(block) {
     // Clear old block & rebuild
     block.innerHTML = '';
     block.append(heroImage, heroText);
+    loadCSS(import.meta.url.replace('.js', '.css'));
 }
