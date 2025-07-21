@@ -2,81 +2,77 @@
 @import '../../styles/common-theme/css/fluid-typography.scss';
 
 .complete-the-investment {
-    >div:first-child {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: start;
-        padding: 20px 0px;
-        align-items: flex-start;
-        flex-shrink: 0;
-        align-self: stretch;
+  >div:first-child {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    padding: 20px 0px;
+    align-items: flex-start;
+    flex-shrink: 0;
+    align-self: stretch;
 
-       @include media(mobile) {
-            padding: 0 16px;
-            grid-template-columns: 1fr;
-            row-gap: 20px;
-        }
-
-        >p:first-child {
-            // font-family: ButlerPro;
-            @include font-style(28px, 32px, $primary-Blue-1-900, map-get($font-weights, medium), $ButlerPro);
-            grid-column: 1 / 2;
-
-            @include media(mobile) {
-                grid-column: 1 / -1;
-                text-align: left;
-            }
-        }
-
-        >p:nth-child(2) {
-            // font-family: ButlerPro;
-            @include font-style(28px, 32px, $primary-Blue-1-900, map-get($font-weights, medium), $ButlerPro);
-            grid-column: 1 / 2;
-            margin: 0;
-            padding: 0;
-            padding-top: 132px;
-
-            @include media(mobile) {
-                grid-column: 1 / -1;
-                text-align: left;
-                padding: 0;
-
-            }
-
-            a {
-                @include font-style(14px, 16px, $primary-white, map-get($font-weights, semi-bold), $Poppins);
-                margin: 0;
-                padding: 0;
-                display: flex;
-                width: 143px;
-                padding: 12px var(--Spacing-12, 12px) var(--Spacing-12, 12px) var(--Spacing-12, 12px);
-                justify-content: center;
-                align-items: center;
-                gap: var(--Spacing-8, 8px);
-                border-radius: var(--Border-Radius-8, 8px);
-                background: var(--Blue-1-900, #242177);
-            }
-        }
-
-        >p:nth-child(3) {
-            font-size: 18px;
-            font-weight: bold;
-            grid-column: 2 / 3;
-            grid-row: 1 / 3;
-
-            @include media(mobile) {
-                grid-column: 1 / 3;
-                grid-row: 2 / 2;
-                padding: 0;
-                margin: 0;
-            }
-
-            img {
-                max-width: 100%;
-                height: 276px;
-                object-fit: cover;
-                border-radius: 8px;
-            }
-        }
+    @include media(mobile) {
+      padding: 0 16px;
+      grid-template-columns: 1fr;
+      row-gap: 20px;
     }
+
+    >p:first-child {
+      @include font-style(28px, 32px, $primary-Blue-1-900, map-get($font-weights, medium), $ButlerPro);
+      grid-column: 1 / 2;
+
+      @include media(mobile) {
+        grid-column: 1 / -1;
+        text-align: left;
+      }
+    }
+
+    >p:nth-child(2) {
+      @include font-style(28px, 32px, $primary-Blue-1-900, map-get($font-weights, medium), $ButlerPro);
+      grid-column: 1 / 2;
+      margin: 0;
+      padding: 0;
+      padding-top: 132px;
+
+      @include media(mobile) {
+        grid-column: 1 / -1;
+        text-align: left;
+        padding: 0;
+      }
+
+      a {
+        @include font-style(14px, 16px, $primary-white, map-get($font-weights, semi-bold), $Poppins);
+        margin: 0;
+        display: flex;
+        width: 143px;
+        padding: var(--spacing-12, 12px);
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-8, 8px);
+        border-radius: var(--border-radius-8, 8px);
+        background: var(--blue-1-900, #242177);
+      }
+    }
+
+    >p:nth-child(3) {
+      font-size: 18px;
+      font-weight: bold;
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+
+      @include media(mobile) {
+        grid-column: 1 / 3;
+        grid-row: 2 / 2;
+        padding: 0;
+        margin: 0;
+      }
+
+      img {
+        max-width: 100%;
+        height: 276px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+  }
 }

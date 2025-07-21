@@ -1,7 +1,6 @@
 import {
-  a, div, h2, li, option, select, span, ul, p, img,
+  a, div, h2, li, option, select, span, ul, p,
 } from '../../scripts/dom-helpers.js';
-import dataMapMoObj from '../../scripts/constant.js';
 
 export default function decorate(block) {
   const fundsTaggingSection = block.fundsTaggingSection.slice(0, 2);

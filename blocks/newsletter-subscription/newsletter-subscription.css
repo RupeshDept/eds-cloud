@@ -1,4 +1,5 @@
-@import "../../../styles/fonts.css";
+@import url("../../../styles/fonts.css");
+
 .newsletter-subscription-container {
   display: flex;
   padding: 20px 10px;
@@ -7,6 +8,7 @@
   gap: 10px;
   align-self: stretch;
 }
+
 .newsletter-subscription-container .default-content-wrapper {
   max-width: 100%;
   margin: 0;
@@ -17,23 +19,27 @@
   align-self: stretch;
   background: var(--blue-1-25, #EDF1FF);
 }
+
 .newsletter-subscription-container .default-content-wrapper p:nth-child(1) {
   color: var(--blue-1-900, #242177);
   text-align: center;
-  font-family: ButlerPro;
+  font-family: ButlerPro, sans-serif;
   font-size: 44px;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
+
   /* 52.8px */
-  letter-spacing: var(--display-medium-tracking, 0px);
+  letter-spacing: var(--display-medium-tracking, 0);
 }
+
 .newsletter-subscription-container .default-content-wrapper .button-container {
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: flex-end;
 }
+
 .newsletter-subscription-container .default-content-wrapper .button-container a {
   display: flex;
   width: 166px;
@@ -44,7 +50,7 @@
   flex-shrink: 0;
   color: #FFF;
   text-align: center;
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -53,6 +59,7 @@
   border-radius: 8px;
   background: var(--blue-1800-primary, #2E2A94);
 }
+
 .newsletter-subscription-container .block {
   display: flex;
   padding: 40px 10px;
@@ -62,41 +69,48 @@
   align-self: stretch;
   background: #FFF;
 }
+
 .newsletter-subscription-container .block .newsitem1 {
   align-self: stretch;
 }
+
 .newsletter-subscription-container .block .newsitem1 .newssubitem .newsinneritem1 {
   margin: 0;
   color: var(--blue-1-900, #242177);
   text-align: center;
-  font-family: ButlerPro;
+  font-family: ButlerPro, sans-serif;
   font-size: 44px;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
+
   /* 52.8px */
-  letter-spacing: var(--display-medium-tracking, 0px);
+  letter-spacing: var(--display-medium-tracking, 0);
 }
+
 .newsletter-subscription-container .block .newsitem1 .newssubitem .newsinneritem2 {
   margin: 0;
   color: var(--blue-1-900, #242177);
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: 170%;
-  letter-spacing: var(--display-medium-tracking, 0px);
+  letter-spacing: var(--display-medium-tracking, 0);
   text-align: center;
 }
+
 .newsletter-subscription-container .block .newsitem2 {
   width: 100%;
 }
+
 .newsletter-subscription-container .block .newsitem2 .form-container .formwrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .newsletter-subscription-container .block .newsitem2 .form-container .formwrapper {
     display: flex;
     flex-direction: column;
@@ -104,6 +118,7 @@
     gap: 10px;
   }
 }
+
 .newsletter-subscription-container .block .newsitem2 .form-container .formwrapper .inputfield {
   display: flex;
   width: 343px;
@@ -112,16 +127,18 @@
   gap: 10px;
   flex-shrink: 0;
 }
+
 .newsletter-subscription-container .block .newsitem2 .form-container .formwrapper .inputfield label {
   color: var(--blue-1-900, #242177);
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 16.8px;
-  letter-spacing: var(--headline-small-tracking, 0px);
+  letter-spacing: var(--headline-small-tracking, 0);
   text-transform: uppercase;
 }
+
 .newsletter-subscription-container .block .newsitem2 .form-container .formwrapper .inputfield input {
   display: flex;
   height: 40px;
@@ -132,14 +149,17 @@
   border: var(--border-width-01, 1px) solid var(--strokes-default, #9E9E9E);
   padding: 15px;
 }
+
 .newsletter-subscription-container .block .newsitem2 .form-container .formwrapper .inputfield .error {
   color: #ED2939;
   font-size: 11px;
   font-style: normal;
 }
+
 .newsletter-subscription-container .block .newsitem2 .form-container .formwrapper .inputfield .dsp-none {
   display: none;
 }
+
 .newsletter-subscription-container .block .newsitem2 .form-container .formwrapper .submitbtn button {
   margin: 0;
   display: flex;
@@ -151,4 +171,4 @@
   flex-shrink: 0;
   border-radius: 8px;
   background: var(--blue-1800-primary, #2E2A94);
-}/*# sourceMappingURL=newsletter-subscription.css.map */
+}
