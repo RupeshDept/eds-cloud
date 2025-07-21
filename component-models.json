@@ -1,8 +1,6 @@
-[
-  {
+[{
     "id": "image",
-    "fields": [
-      {
+    "fields": [{
         "component": "reference",
         "name": "image",
         "label": "Image",
@@ -17,8 +15,7 @@
   },
   {
     "id": "title",
-    "fields": [
-      {
+    "fields": [{
         "component": "text",
         "name": "title",
         "label": "Title"
@@ -27,8 +24,7 @@
         "component": "select",
         "name": "titleType",
         "label": "Title Type",
-        "options": [
-          {
+        "options": [{
             "name": "h1",
             "value": "h1"
           },
@@ -58,8 +54,7 @@
   },
   {
     "id": "button",
-    "fields": [
-      {
+    "fields": [{
         "component": "aem-content",
         "name": "link",
         "label": "Link"
@@ -78,8 +73,7 @@
         "component": "select",
         "name": "linkType",
         "label": "Type",
-        "options": [
-          {
+        "options": [{
             "name": "default",
             "value": ""
           },
@@ -97,8 +91,7 @@
   },
   {
     "id": "section",
-    "fields": [
-      {
+    "fields": [{
         "component": "text",
         "name": "name",
         "label": "Section Name",
@@ -108,8 +101,7 @@
         "component": "multiselect",
         "name": "style",
         "label": "Style",
-        "options": [
-          {
+        "options": [{
             "name": "Our Popular Funds",
             "value": "our-popular-funds"
           },
@@ -151,8 +143,7 @@
   },
   {
     "id": "card",
-    "fields": [
-      {
+    "fields": [{
         "component": "reference",
         "valueType": "string",
         "name": "image",
@@ -170,8 +161,7 @@
   },
   {
     "id": "columns",
-    "fields": [
-      {
+    "fields": [{
         "component": "text",
         "valueType": "number",
         "name": "columns",
@@ -189,18 +179,15 @@
   },
   {
     "id": "fragment",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "reference",
-        "label": "Reference"
-      }
-    ]
+    "fields": [{
+      "component": "aem-content",
+      "name": "reference",
+      "label": "Reference"
+    }]
   },
   {
     "id": "hero",
-    "fields": [
-      {
+    "fields": [{
         "component": "reference",
         "valueType": "string",
         "name": "image",
@@ -225,8 +212,7 @@
   },
   {
     "id": "tabsitem",
-    "fields": [
-      {
+    "fields": [{
         "component": "text",
         "name": "title",
         "label": "Tab Title"
@@ -240,8 +226,7 @@
   },
   {
     "id": "hero-section",
-    "fields": [
-      {
+    "fields": [{
         "component": "reference",
         "name": "image",
         "label": "Hero Image",
@@ -268,8 +253,7 @@
   },
   {
     "id": "future-building-item",
-    "fields": [
-      {
+    "fields": [{
         "component": "reference",
         "name": "image",
         "label": "Image",
@@ -290,8 +274,7 @@
   },
   {
     "id": "banner-item",
-    "fields": [
-      {
+    "fields": [{
         "component": "reference",
         "valueType": "string",
         "name": "col1_deskBanner",
@@ -351,44 +334,37 @@
   },
   {
     "id": "cornerstones-advantage-title-richtext",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Headline and description",
-        "valueType": "string"
-      }
-    ]
+    "fields": [{
+      "component": "richtext",
+      "name": "text",
+      "value": "",
+      "label": "Headline and description",
+      "valueType": "string"
+    }]
   },
   {
     "id": "cornerstones-advantage-cards-item",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Cards Content",
-        "valueType": "string"
-      }
-    ]
+    "fields": [{
+      "component": "richtext",
+      "name": "text",
+      "value": "",
+      "label": "Cards Content",
+      "valueType": "string"
+    }]
   },
   {
     "id": "live-streaming-content",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Live Streaming Content",
-        "valueType": "string"
-      }
-    ]
+    "fields": [{
+      "component": "richtext",
+      "name": "text",
+      "value": "",
+      "label": "Live Streaming Content",
+      "valueType": "string"
+    }]
   },
   {
     "id": "newsletter-subscription",
-    "fields": [
-      {
+    "fields": [{
         "component": "richtext",
         "name": "text",
         "value": "",
@@ -414,8 +390,7 @@
   },
   {
     "id": "think-equity",
-    "fields": [
-      {
+    "fields": [{
         "component": "reference",
         "name": "oneimage",
         "label": "Image",
@@ -441,20 +416,17 @@
   },
   {
     "id": "investment-block",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Enter Context",
-        "valueType": "string"
-      }
-    ]
+    "fields": [{
+      "component": "richtext",
+      "name": "text",
+      "value": "",
+      "label": "Enter Context",
+      "valueType": "string"
+    }]
   },
   {
     "id": "hero-section",
-    "fields": [
-      {
+    "fields": [{
         "component": "reference",
         "name": "image",
         "label": "Hero Image",
@@ -481,8 +453,7 @@
   },
   {
     "id": "calculator-sip",
-    "fields": [
-      {
+    "fields": [{
         "component": "text",
         "name": "col1_searchPlaceholder",
         "label": "Search Text Placeholder",
@@ -535,8 +506,7 @@
         "name": "col3_defaultTenure",
         "label": "Default Tenure",
         "value": "10",
-        "options": [
-          {
+        "options": [{
             "name": "1 year",
             "value": "1"
           },
@@ -616,8 +586,7 @@
         "name": "col4_defaultInvestmentType",
         "label": "Default Investment Type",
         "value": "sip",
-        "options": [
-          {
+        "options": [{
             "name": "SIP",
             "value": "sip"
           },
@@ -646,5 +615,28 @@
         "value": "#"
       }
     ]
+  },
+  {
+    "id": "tabs-component",
+    "fields": [{
+      "component": "fieldArray",
+      "name": "tabs",
+      "label": "Tabs",
+      "field": {
+        "component": "group",
+        "name": "tabsitem",
+        "fields": [{
+            "component": "text",
+            "name": "onetitle",
+            "label": "Tab Title"
+          },
+          {
+            "component": "text",
+            "name": "twotitle",
+            "label": "Tab Title"
+          }
+        ]
+      }
+    }]
   }
 ]
