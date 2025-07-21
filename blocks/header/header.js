@@ -95,7 +95,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 
     // enable menu collapse on escape keypress
     if (!expanded || isDesktop.matches) {
-    // collapse menu on escape press
+      // collapse menu on escape press
       window.addEventListener('keydown', closeOnEscape);
       // collapse menu on focus lost
       nav.addEventListener('focusout', closeOnFocusLost);
@@ -166,4 +166,34 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+
+  function initializeLanguageDropdown() {
+    const langDropdownLI = nav.querySelector('.header-top li:has(> p > .icon-arrow-black-down)');
+
+    if (langDropdownLI) {
+      const trigger = langDropdownLI.querySelector('p');
+      langDropdownLI.classList.add('language-dropdown');
+
+
+      trigger.addEventListener('click', (event) => {
+        event.stopPropagation();
+        langDropdownLI.classList.toggle('dropdown-active');
+      });
+
+
+      document.addEventListener('click', () => {
+        if (langDropdownLI.classList.contains('dropdown-active')) {
+          langDropdownLI.classList.remove('dropdown-active');
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeLanguageDropdown);
+  } else {
+    initializeLanguageDropdown();
+  }
 }
+
