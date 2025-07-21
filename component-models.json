@@ -629,11 +629,6 @@
             "component": "text",
             "name": "onetitle",
             "label": "Tab Title"
-          },
-          {
-            "component": "text",
-            "name": "twotitle",
-            "label": "Tab Title"
           }
         ]
       }
