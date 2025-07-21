@@ -138,7 +138,8 @@ function planListEvent(param, block) {
           class: 'cagr-dropdown',
         },
         label('Return (Absolute)'),
-        select(
+        div({class:"cagr-select-wrapper"},
+          select(
           {
             schemeCode: block.schcode,
             value: tempReturns[0],
@@ -152,6 +153,7 @@ function planListEvent(param, block) {
             value: dataMapMoObj.ObjTemp[eloption],
           }, eloption)),
         ),
+        )
       ),
       div(
         {

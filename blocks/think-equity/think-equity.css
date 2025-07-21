@@ -129,6 +129,11 @@ img {
         font-size: 16px;
     }
 
+    .think-equity-container .default-content-wrapper{
+        flex-direction: column;
+        border: 0;
+    }
+
     .think-equity-container .default-content-wrapper p:first-child {
         color: var(--blue-1800-primary, #2E2A94);
 
