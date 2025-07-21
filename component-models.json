@@ -263,7 +263,7 @@
       },
       {
         "component": "select",
-        "name": "col2_default_tenure",
+        "name": "col3_default_tenure",
         "label": "Default Tenure",
         "value": "10",
         "options": [
@@ -325,19 +325,19 @@
       },
       {
         "component": "number",
-        "name": "col3_default_current_value",
+        "name": "col4_default_current_value",
         "label": "Default Current Value of Investment",
         "value": 2500000
       },
       {
         "component": "text",
-        "name": "col3_return_cagr_label",
+        "name": "col4_return_cagr_label",
         "label": "Return (CAGR) Label",
         "value": "Return (CAGR)"
       },
       {
         "component": "number",
-        "name": "col3_annual_return_rate",
+        "name": "col4_annual_return_rate",
         "label": "Annual Return Rate (%)",
         "value": 18,
         "description": "Expected annual return rate for calculations"
