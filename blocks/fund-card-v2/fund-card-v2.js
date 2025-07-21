@@ -29,8 +29,10 @@ export default function decorate(block) {
         { class: 'dropdownTags' },
         div(
           { class: 'dropdown' },
-          select(
-            ...DirectPlanlistArr.map((el) => option({
+          select({
+              "aria-label":"Select Investment Plan"
+          },
+          ...DirectPlanlistArr.map((el) => option({
               value: el.groupedCode,
             }, el.optionName)),
           ),
