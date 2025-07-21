@@ -29,9 +29,14 @@ export default function decorate(block) {
           h2(block.schDetail.schemeName),
         ),
         div(
-          { class: 'star' },
-          img({ class: 'star-icon', src: '../../icons/star.svg' }),
-          img({ class: 'fillstar-icon', src: '../../icons/star-filled.svg' }),
+          { class: 'star',
+            onclick:(event)=>{
+              !Array.from(event.target.parentElement.classList).includes("star-filled") ? event.target.parentElement.classList.add("star-filled") : event.target.parentElement.classList.remove("star-filled")
+            },
+            schcode:block.schcode
+           },
+          img({ class: 'star-icon', src: '../../icons/star.svg',alt:"star-icon" }),
+          img({ class: 'fillstar-icon', src: '../../icons/star-filled.svg',alt:"fillstar-icon" }),
         ),
       ),
       div(
@@ -53,6 +58,7 @@ export default function decorate(block) {
                 // console.log(block.returns, block.planList, block.schDetail.schemeName);
                 planListEvent(event, block);
               },
+              "aria-label":"Select Investment Plan"
             },
             ...DirectPlanlistArr.map((el) => option({
               value: el.groupedCode,
