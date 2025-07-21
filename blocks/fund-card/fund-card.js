@@ -58,6 +58,7 @@ export default function decorate(block) {
                 // console.log(block.returns, block.planList, block.schDetail.schemeName);
                 planListEvent(event, block);
               },
+              "aria-label":"Select Investment Plan"
             },
             ...DirectPlanlistArr.map((el) => option({
               value: el.groupedCode,
