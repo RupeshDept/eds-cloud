@@ -1,7 +1,15 @@
 import {
-  a, div, h2, li, option, select, span, ul, p, img,
+  a,
+  div,
+  h2,
+  li,
+  option,
+  select,
+  span,
+  ul,
+  p,
+  img,
 } from '../../scripts/dom-helpers.js';
-import dataMapMoObj from '../../scripts/constant.js';
 
 export default function decorate(block) {
   const fundsTaggingSection = block.fundsTaggingSection.slice(0, 2);
@@ -9,50 +17,44 @@ export default function decorate(block) {
   const container = div(
     { class: 'card-container' },
     div(
-      { class: 'cardWrapper' },
+      { class: 'card-wrapper' },
       div(
-        { class: 'benchmarkStar' },
+        { class: 'benchmark-star' },
+        div({ class: 'benchmarksec' }, span(block.benchmark)),
         div(
-          { class: 'benchmarksec' },
-          span(block.benchmark),
-        ),
-        div(
-          { class: 'Star' },
-          span('★'),
+          { class: 'star' },
+          img({ class: 'star-icon', src: '../../icons/star.svg' }),
+          img({ class: 'fillstar-icon', src: '../../icons/star-filled.svg' }),
         ),
       ),
+      div({ class: 'scheme-name' }, p(block.schDetail.schemeName)),
       div(
-        { class: 'schemeName' },
-        p(block.schDetail.schemeName),
-      ),
-      div(
-        { class: 'dropdownTags' },
-        div(
-          { class: 'dropdown' },
-          select(
-            ...DirectPlanlistArr.map((el) => option({
+        { class: 'dropdown-tags' },
+        select(
+          ...DirectPlanlistArr.map((el) => option(
+            {
               value: el.groupedCode,
-            }, el.optionName)),
-          ),
+            },
+            el.optionName,
+          )),
         ),
         div(
-          { class: 'fundTagging' },
+          { class: 'fund-tagging' },
           ul(
-            { class: 'fundTaggingList' },
-            ...fundsTaggingSection.map((eloption) => li(eloption.replaceAll('motilal-oswal:', '').replaceAll('-', ' ').toUpperCase())),
+            { class: 'fundtagging-list' },
+            ...fundsTaggingSection.map((eloption) => li(
+              eloption
+                .replaceAll('motilal-oswal:', '')
+                .replaceAll('-', ' ')
+                .toUpperCase(),
+            )),
           ),
         ),
       ),
       div(
-        { class: 'returnBtn' },
-        div(
-          { class: 'cagrValue' },
-          h2('15.28%'),
-        ),
-        div(
-          { class: 'btnKnowMore' },
-          a('Know More'),
-        ),
+        { class: 'return-btn' },
+        div({ class: 'cagr-value' }, h2('15.28%')),
+        div({ class: 'btn-knowmore' }, a('Know More')),
       ),
     ),
   );

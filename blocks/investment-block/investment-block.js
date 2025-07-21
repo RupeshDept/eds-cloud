@@ -10,7 +10,7 @@ export default function decorate(block) {
     });
   });
 
-  if (block.closest(".compound-journey")) {//[...block.classList].includes('compound-journey')
+  if (block.closest('.compound-journey')) { // [...block.classList].includes('compound-journey')
     const dataCF = dataCfObj.slice(0, 3);
     const divWrapper = document.createElement('div');
     divWrapper.classList.add('card-items');
@@ -21,7 +21,7 @@ export default function decorate(block) {
 
     block.querySelector('.compound-item').append(divWrapper);
   }
-  if (block.closest(".index-fund")) { //[...block.classList].includes('index-fund')
+  if (block.closest('.index-fund')) { // [...block.classList].includes('index-fund')
     const dataCF = dataCfObj.slice(0, 2);
     const divWrapper = document.createElement('div');
     divWrapper.classList.add('card-items');
