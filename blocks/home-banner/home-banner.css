@@ -7,10 +7,6 @@
 
 .section.home-banner-container {
     position: relative;
-  aspect-ratio: 1366 / 400;
-  max-height: 400px; /* Optional: Sets a max height for very wide screens */
-  width: 100%;
-  background-color: #f0f0f0; /* Optional: A placeholder color */
 }
 
 .section.home-banner-container,
