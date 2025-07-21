@@ -29,14 +29,13 @@ export default function decorate(block) {
       ),
       div({ class: 'scheme-name' }, p(block.schDetail.schemeName)),
       div(
-        { class: 'dropdownTags' },
-        div(
-          { class: 'dropdown' },
-          select(
+        { class: 'dropdown-tags' },
+        select(
+          {
+            'aria-label': 'Select Investment Plan',
+          },
+          ...DirectPlanlistArr.map((el) => option(
             {
-              'aria-label': 'Select Investment Plan',
-            },
-            ...DirectPlanlistArr.map((el) => option({
               value: el.groupedCode,
             },
             el.optionName,
