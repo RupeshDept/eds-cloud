@@ -18,7 +18,6 @@ export default function decorate(block) {
   const nextBtn = div({ class: 'swiper-button-next' });
   const prevBtn = div({ class: 'swiper-button-prev' });
 
-  block.append(swiperWrapper, paginationDiv, nextBtn, prevBtn);
   Swiper(block, {
     loop: true,
 
@@ -32,6 +31,7 @@ export default function decorate(block) {
       prevEl: block.querySelector('.swiper-button-prev'),
     },
   });
+  block.append(swiperWrapper, paginationDiv, nextBtn, prevBtn);
   loadCSS(import.meta.url.replace('.js', '.css'));
 }
 
