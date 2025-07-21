@@ -1,6 +1,7 @@
 import dataCfObj from '../../scripts/dataCfObj.js';
 import fundCardBlock from '../fund-card-v2/fund-card-v2.js';
 import fundcardblock from '../fund-card/fund-card.js';
+
 export default function decorate(block) {
   Array.from(block.children).forEach((element) => {
     element.classList.add('compound-item');
