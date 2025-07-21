@@ -1,7 +1,6 @@
 import {
-  a, div, h2, li, option, select, span, ul, p, img,
+  a, div, h2, li, option, select, span, ul, p,
 } from '../../scripts/dom-helpers.js';
-import dataMapMoObj from '../../scripts/constant.js';
 
 export default function decorate(block) {
   const fundsTaggingSection = block.fundsTaggingSection.slice(0, 2);
@@ -29,10 +28,11 @@ export default function decorate(block) {
         { class: 'dropdownTags' },
         div(
           { class: 'dropdown' },
-          select({
-              "aria-label":"Select Investment Plan"
-          },
-          ...DirectPlanlistArr.map((el) => option({
+          select(
+            {
+              'aria-label': 'Select Investment Plan',
+            },
+            ...DirectPlanlistArr.map((el) => option({
               value: el.groupedCode,
             }, el.optionName)),
           ),
