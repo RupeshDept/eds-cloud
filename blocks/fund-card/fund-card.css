@@ -471,6 +471,7 @@
 .section.index-fund .card-items .card-container {
     /* stylelint-disable-next-line color-function-notation */
     box-shadow: 2px 9px 12px 0 rgba(0, 0, 0, 0.08);
+    border: none;
 }
 
 .section.index-fund .card-items .card-container:nth-child(odd) {
