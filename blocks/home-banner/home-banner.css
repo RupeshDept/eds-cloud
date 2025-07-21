@@ -9,6 +9,14 @@
     position: relative;
 }
 
+.home-banner-container {
+  /* Reserve space using the image's aspect ratio (width / height) */
+  aspect-ratio: 1366 / 400;
+  max-height: 400px; /* Optional: Sets a max height for very wide screens */
+  width: 100%;
+  background-color: #f0f0f0; /* Optional: A placeholder color */
+}
+
 .section.home-banner-container,
 .section.home-banner-container .home-banner-wrapper {
     padding: 0;
