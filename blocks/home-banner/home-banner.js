@@ -12,8 +12,10 @@ export default function decorate(block) {
     swiperWrapper.append(ele);
   });
 
-  swiperWrapper.querySelectorAll('img').forEach((el) => {
-    el.setAttribute('loading', 'lazy');
+  swiperWrapper.querySelectorAll('img').forEach((el,ind) => {
+    if (ind === 0) {
+      el.setAttribute('loading', 'eager'); 
+    }
   });
   //   Create div for pagination and buttons
   const paginationDiv = div({ class: 'swiper-pagination' });
