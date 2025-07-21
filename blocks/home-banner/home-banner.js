@@ -1,5 +1,5 @@
-// import Swiper from '../swiper/swiper-bundle.min.js';
-// import { div } from '../../scripts/dom-helpers.js';
+import Swiper from '../swiper/swiper-bundle.min.js';
+import { div } from '../../scripts/dom-helpers.js';
 import { loadCSS } from '../../scripts/aem.js';
 
 export default function decorate(block) {
