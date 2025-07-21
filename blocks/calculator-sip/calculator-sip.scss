@@ -137,6 +137,7 @@ $font-family-body: 'Poppins', sans-serif;
           box-sizing: border-box;
           background: url('../../icons/magnifyingglass.svg') no-repeat right 12px center;
           background-size: 20px 20px;
+          border: none;
         }
       }
 
@@ -248,6 +249,7 @@ $font-family-body: 'Poppins', sans-serif;
             // padding: 12px 16px;
             border-radius: 4px;
             // border: 1px solid var(--border-color);
+            border: none;
             box-sizing: border-box;
             color: #2E2A94;
             font-family: 'Poppins', sans-serif;

@@ -68,6 +68,7 @@
   box-sizing: border-box;
   background: url("../../icons/magnifyingglass.svg") no-repeat right 12px center;
   background-size: 20px 20px;
+  border: none;
 }
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper {
   position: relative;
@@ -166,6 +167,7 @@
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input {
   border-radius: 4px;
+  border: none;
   box-sizing: border-box;
   color: #2E2A94;
   font-family: "Poppins", sans-serif;
