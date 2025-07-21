@@ -48,7 +48,9 @@ export default async function decorate(block) {
     });
 
     block.prepend(tablist);
-
+    Array.from(block.querySelectorAll(".tabs-panel")).forEach((el,index)=>{
+        el.classList.add("tabpanel"+(index+1));
+    })
     if (block.closest(".our-popular-funds")) {
         let dataCf = dataCfObj.slice(0,4);
 
