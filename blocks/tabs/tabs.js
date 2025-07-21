@@ -56,9 +56,9 @@ export default async function decorate(block) {
 
         Array.from(tablist.children).forEach(element=>{
             element.addEventListener("click",(event)=>{
-                block.querySelectorAll(".tabs-panel").forEach((el)=>{
-                    el.style.display = "none";
-                })
+                // block.querySelectorAll(".tabs-panel").forEach((el)=>{
+                //     el.style.display = "none";
+                // })
 
                 if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-trending-funds") {
                     dataCf = dataCfObj.slice(0,4)
@@ -76,11 +76,13 @@ export default async function decorate(block) {
                     dataCf = dataCf.filter((el)=> el)
                     dataCf = dataCf.slice(0,4)
                 }
-                block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).innerHTML = ""
+                // block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).innerHTML = ""
+                block.querySelector(".tabpanel1").innerHTML = "";
                 dataCf.map((element)=>{
-                    return block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).append(fundCardblock(element))
+                    return block.querySelector(".tabpanel1").append(fundCardblock(element));
+                    // return block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).append(fundCardblock(element))
                 });    
-                block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).style.display = "flex"
+                // block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).style.display = "flex"
             })
         })
 
@@ -107,9 +109,9 @@ export default async function decorate(block) {
 
         Array.from(tablist.children).forEach(element=>{
             element.addEventListener("click",(event)=>{
-                block.querySelectorAll(".tabs-panel").forEach((el)=>{
-                    el.style.display = "none";
-                })
+                // block.querySelectorAll(".tabs-panel").forEach((el)=>{
+                //     el.style.display = "none";
+                // })
 
                 if (event.currentTarget.getAttribute("aria-controls") === "tabpanel-trending-funds") {
                     dataCf = dataCfObj.slice(0,4)
@@ -144,11 +146,12 @@ export default async function decorate(block) {
                     dataCf = dataCf.filter((el)=> el)
                     dataCf = dataCf.slice(0,4)
                 } 
-                block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).innerHTML = ""
+                block.querySelector(".tabpanel1").innerHTML = "";//("#"+event.currentTarget.getAttribute("aria-controls")).innerHTML = ""
                 dataCf.map((element)=>{
-                    return block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).append(fundCardblock(element))
+                   return block.querySelector(".tabpanel1").append(fundCardblock(element))
+                    // return block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).append(fundCardblock(element))
                 });    
-                block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).style.display = "flex"
+                // block.querySelector("#"+event.currentTarget.getAttribute("aria-controls")).style.display = "flex"
             })
         })
 
