@@ -9,7 +9,9 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-@import url("./quick-actions.css");
+ 
+/* @import url("./quick-actions.css"); */
+@import url("/lazy-styles.css");
 @import url("../blocks/complete-the-investment/complete-the-investment.css");
 
 /* ------------------------------------------------------------------
