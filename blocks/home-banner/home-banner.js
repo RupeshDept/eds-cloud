@@ -17,7 +17,6 @@ export default function decorate(block) {
       el.setAttribute('loading', 'eager'); 
     }
   });
-  //   Create div for pagination and buttons
   const paginationDiv = div({ class: 'swiper-pagination' });
   const nextBtn = div({ class: 'swiper-button-next' });
   const prevBtn = div({ class: 'swiper-button-prev' });

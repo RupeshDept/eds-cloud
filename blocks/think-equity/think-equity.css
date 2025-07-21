@@ -10,7 +10,6 @@ img {
     max-width: 100%;
     height: auto;
 }
-
 .think-equity.block {
     display: flex;
     flex-direction: row;
@@ -18,14 +17,12 @@ img {
     gap: 32px;
     margin-bottom: 48px;
 }
-
 .think-equity.block>div {
     flex-basis: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .columns.block>div {
     display: flex;
     flex-direction: row;
@@ -33,7 +30,6 @@ img {
     text-align: center;
     margin-bottom: 48px;
 }
-
 .columns.block h3 {
     margin: 0 0 8px;
     color: #000053;
@@ -41,19 +37,16 @@ img {
     font-weight: 700;
     line-height: 1.1;
 }
-
 .columns.block p {
     margin: 0;
     color: #333;
     font-size: clamp(0.9rem, 2vw, 1rem);
     line-height: 1.5;
 }
-
 .think-equity-container .default-content-wrapper {
     text-align: center;
     
 }
-
 .think-equity-container .default-content-wrapper p {
     margin: 0 0 24px;
     color: #333;
@@ -87,13 +80,11 @@ img {
     border-radius: var(--border-radius-8, 8px);
     background: var(--button-primary-default, #2E2A94);
 }
-
 .default-content-wrapper .button:hover,
 .default-content-wrapper .button:focus {
     background-color: #181643;
     transform: translateY(-2px);
 }
-
 @media (width >= 1024px) {
     .think-equity-container {
         padding: 40px 67px;
@@ -111,26 +102,19 @@ img {
     padding: 24px;
     border-radius: 8px;
 }
-
 .think-equity-container .default-content-wrapper p:first-child {
     margin: 0;
     text-align: left;
     color: var(--blue-1800-primary, #2E2A94);
-
-    /* Desktop/Body/Medium-medium */
     font-family: var(--body, Poppins);
     font-size: var(--body-medium-medium-size, 16px);
     font-style: normal;
     font-weight: 500;
     line-height: var(--body-medium-medium-line-height, 20px);
-
-    /* 125% */
 }
-
 .default-content-wrapper .button-container {
     margin: 0;
 }
-
 .think-equity-container .button {
     display: inline-block;
     background-color: #232162;
@@ -151,16 +135,13 @@ img {
     background-color: #181643;
     transform: translateY(-2px);
 }
-
 .section.think-equity-container{
     max-width: 100%;
     padding: 48px 16px;
 }
-
 .section.think-equity-container >div{
     padding: 0  ;
 }
-
 @media (width >= 768px) {
     .default-content-wrapper {
         flex-direction: row;
@@ -168,7 +149,6 @@ img {
         align-items: center;
     }
 }
-
 @media (width <= 768px) {
     .think-equity.block {
         justify-content: space-around;
@@ -176,19 +156,15 @@ img {
         align-items: center;
         gap: 48px;
     }
-
     .think-equity.block .imagelist1 .subimagelist picture img {
         padding-left: 45px;
     }
-
-
     .columns.block>div {
         flex-direction: column;
         justify-content: space-around;
         align-items: flex-start;
         gap: 32px;
     }
-
     .columns.block .collist1 .subcollist {
         display: flex;
         flex-direction: row;
@@ -205,23 +181,17 @@ img {
         font-weight: 400;
         font-size: 16px;
     }
-
     .think-equity-container .default-content-wrapper{
         flex-direction: column;
         border: 0;
     }
-
     .think-equity-container .default-content-wrapper p:first-child {
         color: var(--blue-1800-primary, #2E2A94);
-
-        /* Desktop/Body/Small-medium */
         font-family: var(--body, Poppins);
         font-size: var(--body-small-medium-size, 18px);
         font-style: normal;
         font-weight: 500;
         line-height: var(--body-small-medium-line-height, 16px);
-
-        /* 114.286% */
     }
 
 }

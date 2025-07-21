@@ -2,31 +2,26 @@
       .compounding-two-inner {
 .hero-section-wrapper {
     flex: 1 1 40%;
-
     .hero-section {
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 16px;
-
       .hero-image {
         flex: 0 0 auto;
         width: 88px;
         height: 88px;
         flex-shrink: 0;
-
         img {
           width: 80px;
           height: auto;
           display: block;
         }
       }
-
       .hero-text {
         display: flex;
         flex-direction: column;
         gap: 10px;
-
         div:first-child p {
           margin: 0;
           width: 441px;
@@ -38,7 +33,6 @@
           font-weight: 700;
           line-height: 48px;
         }
-
         div:last-child p {
           align-self: stretch;
           color: #2E2A94;
@@ -54,8 +48,6 @@
   }
 }
 }
-
-
 @media (max-width: 768px) {
   .compounding {
     .compounding-two-inner {
@@ -63,11 +55,9 @@
       flex: 1 1 100%;
       width: 100%;
       text-align: center;
-
       .hero-section {
         flex-direction: row;
         align-items: start;
-
         .hero-text {
           text-align: left;
           div:first-child p {
@@ -75,13 +65,11 @@
             line-height: 36px;
             width: 100%;
           }
-
           div:last-child p {
             font-size: 14px;
             line-height: 18px;
           }
         }
-
         .hero-image {
           width: 60px;
           height: 60px;
@@ -92,7 +80,6 @@
         }
       }
     }
-
     }
 }
 }

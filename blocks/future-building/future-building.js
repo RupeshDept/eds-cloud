@@ -11,13 +11,10 @@ export default function decorate(block) {
 
     Array.from(block.children).forEach((row) => {
         row.classList.add('swiper-slide');
-
-        // Add unique class to each direct <div> inside .swiper-slide
         const divs = row.querySelectorAll(':scope > div');
         divs.forEach((div, divIndex) => {
             div.classList.add(`swiper-slide-cards-${divIndex + 1}`);
         });
-
         swiperWrapper.appendChild(row);
     });
 
@@ -35,7 +32,6 @@ export default function decorate(block) {
         //     disableOnInteraction: false,
         // },
         pagination: {
-            // el: swiperPagination,
             disabledClass: 'swiper-pagination-disabled',
         },
         breakpoints: {
