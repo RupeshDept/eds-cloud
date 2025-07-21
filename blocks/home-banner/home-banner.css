@@ -17,8 +17,6 @@
 
 .home-banner .sub-home-banner {
     position: relative;
-
-    /* margin-bottom: 24px; */
 }
 
 .home-banner .sub-home-banner .sub-banner-item-1::after {
@@ -71,8 +69,6 @@
 
 .home-banner .sub-home-banner .sub-banner-item-2 .button-container .button {
     color: var(--button-primary-default, #2E2A94);
-
-    /* font-family: var(--Body, Poppins); */
     font-size: var(--button-medium-size, 16px);
     font-weight: 600;
     line-height: var(--button-medium-line-height, 20px);
@@ -211,17 +207,7 @@
     .home-banner .sub-home-banner .sub-banner-item-3 .button-container {
         position: absolute;
         top: 50%;
-
-        /* left: 93px; */
         left: 25%;
-
-        /* transform: translateY(-50%); */
-
-        /* width: 100%; */
-
-        /* height: 100%; */
-
-        /* padding: 117px 93px; */
     }
 
     .home-banner .sub-home-banner .sub-banner-item-3 .button-container .button {
