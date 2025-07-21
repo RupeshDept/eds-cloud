@@ -35,8 +35,8 @@ export default function decorate(block) {
             },
             schcode:block.schcode
            },
-          img({ class: 'star-icon', src: '../../icons/star.svg' }),
-          img({ class: 'fillstar-icon', src: '../../icons/star-filled.svg' }),
+          img({ class: 'star-icon', src: '../../icons/star.svg',alt:"star-icon" }),
+          img({ class: 'fillstar-icon', src: '../../icons/star-filled.svg',alt:"fillstar-icon" }),
         ),
       ),
       div(
