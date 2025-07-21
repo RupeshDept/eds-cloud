@@ -12,6 +12,9 @@ export default function decorate(block) {
     swiperWrapper.append(ele);
   });
 
+  swiperWrapper.querySelectorAll("img").forEach(el=>{
+    el.setAttribute("loading","lazy")
+  })
   //   Create div for pagination and buttons
   const paginationDiv = div({ class: 'swiper-pagination' });
   const nextBtn = div({ class: 'swiper-button-next' });
