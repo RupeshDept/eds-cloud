@@ -1,5 +1,5 @@
-@import "./variables_mixins";
-@import "./fluid-typography";
+@use "./variables_mixins" as *;
+@use "./fluid-typography";
 
 // ----------------------------------------
 // BASE RESET

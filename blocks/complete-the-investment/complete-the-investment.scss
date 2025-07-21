@@ -1,5 +1,6 @@
-@import '../../styles/common-theme/css/variables_mixins.scss';
-@import '../../styles/common-theme/css/fluid-typography.scss';
+@use '../../styles/common-theme/css/variables_mixins' as *;
+@use '../../styles/common-theme/css/fluid-typography' as *;
+@use 'sass:map';
 
 .complete-the-investment {
     >div:first-child {
@@ -11,7 +12,7 @@
         flex-shrink: 0;
         align-self: stretch;
 
-       @include media(mobile) {
+        @include media(mobile) {
             padding: 0 16px;
             grid-template-columns: 1fr;
             row-gap: 20px;
@@ -19,7 +20,7 @@
 
         >p:first-child {
             // font-family: ButlerPro;
-            @include font-style(28px, 32px, $primary-Blue-1-900, map-get($font-weights, medium), $ButlerPro);
+            @include font-style(28px, 32px, $primary-Blue-1-900, map.get($font-weights, medium), $ButlerPro);
             grid-column: 1 / 2;
 
             @include media(mobile) {
@@ -30,7 +31,7 @@
 
         >p:nth-child(2) {
             // font-family: ButlerPro;
-            @include font-style(28px, 32px, $primary-Blue-1-900, map-get($font-weights, medium), $ButlerPro);
+            @include font-style(28px, 32px, $primary-Blue-1-900,map.get($font-weights, medium), $ButlerPro);
             grid-column: 1 / 2;
             margin: 0;
             padding: 0;
@@ -44,7 +45,7 @@
             }
 
             a {
-                @include font-style(14px, 16px, $primary-white, map-get($font-weights, semi-bold), $Poppins);
+                @include font-style(14px, 16px, $primary-white,map.get($font-weights, semi-bold), $Poppins);
                 margin: 0;
                 padding: 0;
                 display: flex;

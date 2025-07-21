@@ -1,5 +1,6 @@
-@import '../../styles/common-theme/css/variables_mixins.scss';
-@import '../../styles/common-theme/css/fluid-typography.scss';
+@use '../../styles/common-theme/css/variables_mixins' as *;
+@use '../../styles/common-theme/css/fluid-typography' as *;
+@use 'sass:map';
 
 
 

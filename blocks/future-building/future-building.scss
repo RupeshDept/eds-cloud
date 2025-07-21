@@ -1,7 +1,10 @@
-@import '../../styles/common-theme/css/variables_mixins.scss';
-@import '../../styles/common-theme/css/fluid-typography.scss';
-@import '../swiper/swiper-bundle.min.css';
+// @forward '../../styles/common-theme/css/_variables_mixins.scss';
+// @forward '../../styles/common-theme/css/_fluid-typography.scss';
+@use '../swiper/swiper-bundle.min.css';
 
+@use '../../styles/common-theme/css/variables_mixins' as *;
+@use '../../styles/common-theme/css/fluid-typography' as *;
+@use 'sass:map';
 
 .section.future-building-container {
     position: relative;
@@ -18,7 +21,7 @@
         padding-bottom: 40px;
 
         h3 {
-            @include font-style(40px, 48px, $primary-blue, map-get($font-weights, bold));
+            @include font-style(40px, 48px, $primary-blue, map.get($font-weights, bold));
             margin: 0;
             padding: 0;
             padding-bottom: 8px;
@@ -32,7 +35,7 @@
 
         p {
 
-            @include font-style(16px, 20px, $primary-blue, map-get($font-weights, regular), $Poppins);
+            @include font-style(16px, 20px, $primary-blue, map.get($font-weights, regular), $Poppins);
             font-family: $Poppins;
             margin: 0;
             padding: 0;
@@ -80,7 +83,7 @@
                                 padding: 0px 8px;
                                 align-items: center;
                                 gap: 8px;
-                                border-radius: map-get($radius, r40);
+                                border-radius: map.get($radius, r40);
                                 border: 0.5px solid #585EF9;
                                 color: #2E2A94;
                                 // font-family: Poppins;
@@ -102,21 +105,21 @@
                         &>li:nth-child(2) {
                             color: $primary-blue-dark;
                             font-family: $ButlerPro;
-                            @include font-style(18px, 24px, $primary-blue, map-get($font-weights, bold));
+                            @include font-style(18px, 24px, $primary-blue, map.get($font-weights, bold));
                             margin-bottom: 8px;
 
                             @include media(mobile) {
-                                @include font-style(16px, 20px, $primary-blue, map-get($font-weights, bold));
+                                @include font-style(16px, 20px, $primary-blue, map.get($font-weights, bold));
                                 margin-bottom: 4px;
                             }
                         }
 
                         &>li:nth-child(3) {
                             font-family: $ButlerPro;
-                            @include font-style(14px, 20px, map-get($neutrals, 800), map-get($font-weights, regular));
+                            @include font-style(14px, 20px, map.get($neutrals, 800), map.get($font-weights, regular));
 
                             @include media(mobile) {
-                                @include font-style(16px, 20px, map-get($neutrals, 800), map-get($font-weights, regular));
+                                @include font-style(16px, 20px, map.get($neutrals, 800), map.get($font-weights, regular));
                             }
                         }
 
@@ -124,7 +127,7 @@
                             margin-top: 25px;
 
                             a {
-                                @include font-style(14px, 20px, $primary-blue, map-get($font-weights, regular));
+                                @include font-style(14px, 20px, $primary-blue, map.get($font-weights, regular));
                                 text-decoration-line: underline;
                                 text-decoration-style: solid;
                                 text-decoration-skip-ink: auto;
@@ -174,12 +177,12 @@
                 justify-content: center;
                 align-items: center;
                 gap: 8px;
-                border-radius: map-get($radius, r8);
-                background: map-get($button-primary, default);
-                @include font-style(14px, 20px, $primary-white, map-get($font-weights, bold));
+                border-radius: map.get($radius, r8);
+                background: map.get($button-primary, default);
+                @include font-style(14px, 20px, $primary-white, map.get($font-weights, bold));
 
                 @include media(mobile) {
-                    @include font-style(16px, 20px, $primary-white, map-get($font-weights, bold));
+                    @include font-style(16px, 20px, $primary-white, map.get($font-weights, bold));
                 }
 
             }

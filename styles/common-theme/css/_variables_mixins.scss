@@ -1,4 +1,5 @@
-@import "../../../styles/fonts.css";
+@use "../../../styles/fonts.css";
+@use "sass:map";
 
 // ----------------------------------------
 // COLORS
@@ -146,7 +147,8 @@ $font-weights: (
   line-height: $line-height;
   color: $color;
   font-family: $family;
-  @if $weight != null {
+
+  @if $weight !=null {
     font-weight: $weight;
   }
 }
@@ -187,10 +189,20 @@ $breakpoints: (
   desktop-xl: 1921px
 );
 
-// Media query mixins
+
+// // Media query mixin using map.get
+// @mixin media($breakpoint) {
+//   $bp: map.get($breakpoints, $breakpoint);
+
+//   @media (max-width: #{$bp}) {
+//     @content;
+//   }
+// }
+
 @mixin media($breakpoint) {
-  $bp: map-get($breakpoints, $breakpoint);
-  @media (max-width: $bp) {
+  $bp: map.get($breakpoints, $breakpoint);
+
+  @media (max-width: #{$bp}) {
     @content;
   }
 }
@@ -247,4 +259,3 @@ $breakpoints: (
     color: #000;
   }
 }
-  

@@ -1,149 +1,149 @@
-@import "./variables_mixins";
-@import "./fluid-typography";
+// @use "./variables_mixins" as *;
+// @use "./fluid-typography";
 
-// ----------------------------------------
-// POINTER & INTERACTIVITY
-// ----------------------------------------
+// // ----------------------------------------
+// // POINTER & INTERACTIVITY
+// // ----------------------------------------
 
-.cursor-pointer {
-  cursor: pointer;
-}
+// .cursor-pointer {
+//   cursor: pointer;
+// }
 
-.cursor-none {
-  cursor: none;
-}
+// .cursor-none {
+//   cursor: none;
+// }
 
-.pointer-events-none {
-  pointer-events: none;
-}
+// .pointer-events-none {
+//   pointer-events: none;
+// }
 
-.disabled {
-  pointer-events: none;
-  background-color: #969696 !important;
-  // opacity: 0.4; // Uncomment if you want visual feedback
-}
+// .disabled {
+//   pointer-events: none;
+//   background-color: #969696 !important;
+//   // opacity: 0.4; // Uncomment if you want visual feedback
+// }
 
-// ----------------------------------------
-// DISPLAY & FLEX UTILITIES
-// ----------------------------------------
+// // ----------------------------------------
+// // DISPLAY & FLEX UTILITIES
+// // ----------------------------------------
 
-.d-none {
-  display: none !important;
-}
+// .d-none {
+//   display: none !important;
+// }
 
-.dsp-none {
-  display: none !important;
-}
+// .dsp-none {
+//   display: none !important;
+// }
 
-// Mobile specific display toggle
-.mob-d-none {
-  @include mobile {
-    display: none !important;
-  }
-}
+// // Mobile specific display toggle
+// .mob-d-none {
+//   @include mobile {
+//     display: none !important;
+//   }
+// }
 
-.justify-center {
-  justify-content: center;
-}
+// .justify-center {
+//   justify-content: center;
+// }
 
-.justify-between {
-  justify-content: space-between;
-}
+// .justify-between {
+//   justify-content: space-between;
+// }
 
-.justify-end {
-  justify-content: flex-end;
-}
+// .justify-end {
+//   justify-content: flex-end;
+// }
 
-.align-center {
-  align-items: center;
-}
+// .align-center {
+//   align-items: center;
+// }
 
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// .flex-center {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-// ----------------------------------------
-// VISIBILITY & OVERFLOW
-// ----------------------------------------
+// // ----------------------------------------
+// // VISIBILITY & OVERFLOW
+// // ----------------------------------------
 
-.overflow-hidden {
-  overflow: hidden !important;
-}
+// .overflow-hidden {
+//   overflow: hidden !important;
+// }
 
-.visibility-hidden {
-  visibility: hidden;
-}
+// .visibility-hidden {
+//   visibility: hidden;
+// }
 
-// ----------------------------------------
-// BACKGROUND & COLORS
-// ----------------------------------------
+// // ----------------------------------------
+// // BACKGROUND & COLORS
+// // ----------------------------------------
 
-.bg-body {
-  background-color: #f3f3f3;
-}
+// .bg-body {
+//   background-color: #f3f3f3;
+// }
 
-.bg-white {
-  background-color: #fff !important;
-}
+// .bg-white {
+//   background-color: #fff !important;
+// }
 
-// ----------------------------------------
-// TYPOGRAPHY
-// ----------------------------------------
+// // ----------------------------------------
+// // TYPOGRAPHY
+// // ----------------------------------------
 
-.font-primary :is(p, h1, h2, h3, h4, h5, h6) {
-  font-family: $ButlerPro !important;
-  font-style: normal !important;
-}
+// .font-primary :is(p, h1, h2, h3, h4, h5, h6) {
+//   font-family: $ButlerPro !important;
+//   font-style: normal !important;
+// }
 
-// ----------------------------------------
-// HEADER HEIGHT MANAGEMENT
-// ----------------------------------------
+// // ----------------------------------------
+// // HEADER HEIGHT MANAGEMENT
+// // ----------------------------------------
 
-:root {
-  --header-height: 0px; // Default value to prevent errors before JS runs
-}
+// :root {
+//   --header-height: 0px; // Default value to prevent errors before JS runs
+// }
 
-.margin-top-banner {
-  margin-top: calc(var(--header-height) + 32px);
-}
+// .margin-top-banner {
+//   margin-top: calc(var(--header-height) + 32px);
+// }
 
-// ----------------------------------------
-// ANIMATIONS
-// ----------------------------------------
+// // ----------------------------------------
+// // ANIMATIONS
+// // ----------------------------------------
 
-.slide-in {
-  animation-duration: 2s;
-  animation-name: slide-in;
+// .slide-in {
+//   animation-duration: 2s;
+//   animation-name: slide-in;
 
-  @include mobile {
-    animation-name: slide-in-bottom-to-top;
-  }
-}
+//   @include mobile {
+//     animation-name: slide-in-bottom-to-top;
+//   }
+// }
 
-.slide-out {
-  animation-duration: 2s;
-  animation-name: slide-out;
+// .slide-out {
+//   animation-duration: 2s;
+//   animation-name: slide-out;
 
-  @include mobile {
-    animation-name: slide-out-top-to-bottom;
-  }
-}
+//   @include mobile {
+//     animation-name: slide-out-top-to-bottom;
+//   }
+// }
 
-.popup-back-animation {
-  animation: fadeIn 2s;
-  -webkit-animation: fadeIn 2s;
-  -moz-animation: fadeIn 2s;
-  -o-animation: fadeIn 2s;
-  -ms-animation: fadeIn 2s;
-}
+// .popup-back-animation {
+//   animation: fadeIn 2s;
+//   -webkit-animation: fadeIn 2s;
+//   -moz-animation: fadeIn 2s;
+//   -o-animation: fadeIn 2s;
+//   -ms-animation: fadeIn 2s;
+// }
 
-// ----------------------------------------
-// BODY STATES
-// ----------------------------------------
+// // ----------------------------------------
+// // BODY STATES
+// // ----------------------------------------
 
-body.loading {
-  overflow: hidden;
-  pointer-events: none;
-}
+// body.loading {
+//   overflow: hidden;
+//   pointer-events: none;
+// }
