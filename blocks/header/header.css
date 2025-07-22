@@ -1,100 +1,8 @@
+@import url("../../../styles/fonts.css");
 /* stylelint-disable max-line-length */
-
-/* ButllerPro font face */
-@font-face {
-  font-family: ButlerPro;
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url("../fonts/ButlerPro-ExtraBold.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: ButlerPro;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/ButlerPro-Bold.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: ButlerPro;
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("../fonts/ButlerPro-SemiBold.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: ButlerPro;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("../fonts/ButlerPro-Medium.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: ButlerPro;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/ButlerPro-Roman.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* Poppins font face */
-@font-face {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/Poppins700.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("../fonts/Poppins600.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("../fonts/Poppins500.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/Poppins400.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url("../fonts/Poppins300.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
 :root {
   --background-color: #fff;
-  --body-font-family: "Poppins", sans-serif;
+  --nav-height: 64px;
   --heading-font-size-s: 1.25rem;
   --body-font-size-s: 1rem;
   --light-color: #f9f9f9;
@@ -119,7 +27,7 @@ header nav {
   max-width: 1248px;
   height: var(--nav-height);
   padding: 0 24px;
-  font-family: var(--body-font-family);
+  font-family: Poppins, sans-serif;
 }
 
 @media (width <= 768px) {
@@ -293,19 +201,13 @@ header .nav-sections ul > li > ul > li {
   font-weight: 400;
 }
 
-header[aria-expanded="true"] .nav-sections {
-  display: block;
-  visibility: visible;
-  align-self: center;
-}
-
-header[aria-expanded="true"] .nav-sections div {
+header .nav-sections div {
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
-header[aria-expanded="true"] .nav-sections div ul:first-child {
+header .nav-sections div ul:first-child {
   display: flex;
   height: 40px;
   padding: 8px 16px;
@@ -316,11 +218,11 @@ header[aria-expanded="true"] .nav-sections div ul:first-child {
   border: 1px solid #2E2A94;
 }
 
-header[aria-expanded="true"] .nav-sections div ul:first-child li {
+header .nav-sections div ul:first-child li {
   display: flex;
 }
 
-header[aria-expanded="true"] .nav-sections div > ul:nth-child(2) li {
+header .nav-sections div > ul:nth-child(2) li {
   font-size: 14px;
   line-height: 16px;
   color: #2e2a94;
@@ -329,7 +231,7 @@ header[aria-expanded="true"] .nav-sections div > ul:nth-child(2) li {
   padding-right: 12px;
 }
 
-header[aria-expanded="true"] .nav-sections div > ul:nth-child(2) li::after {
+header .nav-sections div > ul:nth-child(2) li::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -344,9 +246,15 @@ header[aria-expanded="true"] .nav-sections div > ul:nth-child(2) li::after {
 }
 
 @media (width <= 768px) {
-  header[aria-expanded="true"] .nav-sections div > ul:nth-child(2) {
+  header .nav-sections div > ul:nth-child(2) {
     display: none;
   }
+}
+
+header[aria-expanded="true"] .nav-sections {
+  display: block;
+  visibility: visible;
+  align-self: center;
 }
 
 header .nav-tools {
@@ -539,6 +447,8 @@ header .header-top div:first-child ul:nth-child(2) li:nth-child(2) p {
   font-family: Poppins, sans-serif;
   font-weight: 400;
   cursor: pointer;
+  user-select: none;
+     user-select: none;
           user-select: none;
 }
 
@@ -549,7 +459,7 @@ header .header-top div:first-child ul:nth-child(2) li:nth-child(2) p span {
 
 header .header-top div:first-child ul:nth-child(2) ul {
   position: absolute;
-  top: 25px;
+  top: 18px;
   align-items: flex-start;
   flex-direction: column;
   background-color: #fff;
@@ -570,11 +480,11 @@ header .header-top div:first-child ul:nth-child(2) ul li {
   border-bottom: 1px solid gray;
 }
 
-header .header-top div:first-child ul:nth-child(2).dropdown-active ul {
+header .header-top div:first-child ul:nth-child(2) .dropdown-active ul {
   display: block;
 }
 
-header .header-top div:first-child ul:nth-child(2).dropdown-active span img {
+header .header-top div:first-child ul:nth-child(2) .dropdown-active span img {
   transform: rotate(180deg);
 }
 
@@ -624,7 +534,7 @@ header .header-top div:first-child ul:nth-child(2).dropdown-active span img {
   }
 
   header nav .nav-sections .nav-drop[aria-expanded="true"]::after {
-    top: unset;
+    top: 7px;
     bottom: 0.5em;
     transform: rotate(315deg);
   }
@@ -638,6 +548,7 @@ header .header-top div:first-child ul:nth-child(2).dropdown-active span img {
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
     position: relative;
+    cursor: pointer;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -654,21 +565,37 @@ header .header-top div:first-child ul:nth-child(2).dropdown-active span img {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    border-bottom: 8px solid #cde3f9;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
+    padding: 14px 11px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #2e2a94;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    border-bottom: 0.4px solid gray;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li:last-child {
+    border: none;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li:hover {
+    background-color: #cde3f9;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded="true"] > ul {
     display: block;
     position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: 16px;
-    background-color: var(--light-color);
+    left: -20px;
+    width: max-content;
+    width: max-content;
+    top: 37px;
+    background-color: #f2f4ff;
     white-space: initial;
+    border-radius: 8px;
   }
 }
+/* stylelint-enable max-line-length */

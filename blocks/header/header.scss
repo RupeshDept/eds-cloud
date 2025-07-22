@@ -2,11 +2,12 @@
 @use '../../styles/common-theme/css/fluid-typography' as *;
 @use 'sass:map';
 
+/* stylelint-disable max-line-length */
 // Variables (Make sure to define these in your _variables.scss or similar)
 :root {
     --background-color: #fff;
-    --body-font-family: "Poppins", sans-serif;
-    // --nav-height: 64px;
+    //     --body-font-family: "Poppins", sans-serif;
+    --nav-height: 64px;
     --heading-font-size-s: 1.25rem;
     --body-font-size-s: 1rem;
     --light-color: #f9f9f9;
@@ -26,15 +27,14 @@ header {
     nav {
         box-sizing: border-box;
         display: grid;
-        grid-template:
-            "hamburger brand tools" var(--nav-height) "sections sections sections" 1fr / auto 1fr auto;
+        grid-template: "hamburger brand tools" var(--nav-height) "sections sections sections" 1fr / auto 1fr auto;
         align-items: center;
         gap: 0 24px;
         margin: auto;
         max-width: 1248px;
         height: var(--nav-height);
         padding: 0 24px;
-        font-family: var(--body-font-family);
+        font-family: $Poppins;
 
         @include media(mobile) {
             gap: inherit;
@@ -202,14 +202,8 @@ header {
                 }
             }
         }
-    }
 
-    &[aria-expanded="true"] .nav-sections {
-        display: block;
-        visibility: visible;
-        align-self: center;
-
-        div {
+        & div {
             display: flex;
             align-items: center;
             gap: 24px;
@@ -254,6 +248,13 @@ header {
                 }
             }
         }
+    }
+
+    &[aria-expanded="true"] .nav-sections {
+        display: block;
+        visibility: visible;
+        align-self: center;
+
     }
 
     // Tools
@@ -424,14 +425,13 @@ header {
 
                 & ul {
                     position: absolute;
-                    top: 25px;
+                    top: 18px;
                     display: flex;
                     align-items: flex-start;
                     flex-direction: column;
                     background-color: $primary-white;
                     color: $primary-blue;
                     gap: 0;
-                    // padding: 8px 8px;
                     border-radius: 4px;
                     display: none;
 
@@ -444,7 +444,7 @@ header {
                     }
                 }
 
-                &.dropdown-active {
+                & .dropdown-active {
                     & ul {
                         display: block;
                     }
@@ -506,7 +506,7 @@ header {
                     }
 
                     &[aria-expanded="true"]::after {
-                        top: unset;
+                        top: 7px;
                         bottom: 0.5em;
                         transform: rotate(315deg);
                     }
@@ -519,9 +519,11 @@ header {
                 }
 
                 .default-content-wrapper {
+
                     >ul>li {
                         flex: 0 1 auto;
                         position: relative;
+                        cursor: pointer;
 
                         >ul {
                             display: none;
@@ -536,23 +538,34 @@ header {
                                 height: 0;
                                 border-left: 8px solid transparent;
                                 border-right: 8px solid transparent;
-                                border-bottom: 8px solid var(--light-color);
+                                border-bottom: 8px solid #cde3f9;
                             }
 
                             >li {
-                                padding: 8px 0;
+                                padding: 14px 11px;
+                                @include font-style(14px, 16px, $primary-blue, map.get($font-weights, medium), $Poppins);
+                                border-bottom: 0.4px solid gray;
                             }
+
+                            >li:last-child {
+                                border: none;
+                            }
+
+                            >li:hover {
+                                background-color: #cde3f9;
+                            }
+
                         }
 
                         &[aria-expanded="true"]>ul {
                             display: block;
                             position: absolute;
-                            left: -24px;
-                            width: 200px;
-                            top: 150%;
-                            padding: 16px;
-                            background-color: var(--light-color);
+                            left: -20px;
+                            width: max-content;
+                            top: 37px;
+                            background-color: #f2f4ff;
                             white-space: initial;
+                            border-radius: 8px;
                         }
                     }
                 }
@@ -560,3 +573,5 @@ header {
         }
     }
 }
+
+/* stylelint-enable max-line-length */
