@@ -1,5 +1,3 @@
-/* stylelint-disable alpha-value-notation */
-/* stylelint-disable media-feature-range-notation */
 * {
     padding: 0;
     margin: 0;
@@ -470,7 +468,7 @@
 
 .section.index-fund .card-items .card-container {
     /* stylelint-disable-next-line color-function-notation */
-    box-shadow: 2px 9px 12px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 2px 9px 12px 0 rgba(0, 0, 0, 8%);
     border: none;
 }
 
@@ -516,7 +514,7 @@
     margin: 0;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (width <= 1200px) {
     .section.index-fund .compound-item .compound-sub-item {
         max-width: 42.43%;
     }
@@ -526,7 +524,7 @@
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (width <= 1024px) {
     .section.index-fund .compound-item {
         flex-direction: column;
     }
@@ -545,7 +543,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width <= 768px) {
     .section.index-fund .compound-item .card-items {
         flex-wrap: wrap;
     }
@@ -557,25 +555,25 @@
 
 /* Make Index Fund End */
 
-@media screen and (max-width: 1300px) {
+@media screen and (width <= 1300px) {
     .section.tabs-container .card-container {
         max-width: 31.8%;
     }
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (width <= 1025px) {
     .section .card-container .button-container .invest-now {
         max-width: 115px;
     }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (width <= 850px) {
     .section.tabs-container .card-container {
         max-width: 47%;
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (width <=768px) {
     .section.tabs-container {
         padding: 40px 16px;
     }

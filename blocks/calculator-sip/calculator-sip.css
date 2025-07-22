@@ -24,6 +24,27 @@
   gap: 8px;
   align-self: stretch;
 }
+.compounding .default-content-wrapper {
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+.compounding .default-content-wrapper p,
+.compounding .default-content-wrapper ul,
+.compounding .default-content-wrapper li {
+  margin-bottom: 6px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  font-style: normal;
+  color: #424242;
+}
+.compounding .default-content-wrapper strong {
+  font-weight: 600;
+}
+.compounding .default-content-wrapper ul {
+  padding-left: 20px;
+}
 .compounding .compounding-two-inner {
   display: flex;
   flex-wrap: wrap;
@@ -112,7 +133,7 @@
   border: none;
   outline: none;
 }
-.compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper input input:active {
+.compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper input:active {
   border: none;
 }
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper {
@@ -174,6 +195,29 @@
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper button.active {
   background: #EDF1FF;
   color: #2E2A94;
+}
+.compounding .calculator-sip-wrapper .cal-container .invested-amount {
+  display: flex;
+  margin: 20px 0;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+}
+.compounding .calculator-sip-wrapper .cal-container .invested-amount label {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  font-style: normal;
+  color: #424242;
+}
+.compounding .calculator-sip-wrapper .cal-container .invested-amount span {
+  color: #2B2E8C;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  margin-left: 4px;
 }
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper {
   display: flex;
@@ -247,30 +291,6 @@
   background-size: contain;
   pointer-events: none;
 }
-.compounding .calculator-sip-wrapper .cal-container .invested-amount {
-  margin-bottom: 24px;
-  display: flex;
-  margin: 20px 0;
-  align-items: flex-start;
-  gap: 4px;
-  align-self: stretch;
-}
-.compounding .calculator-sip-wrapper .cal-container .invested-amount label {
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  font-style: normal;
-  color: #424242;
-}
-.compounding .calculator-sip-wrapper .cal-container .invested-amount span {
-  color: #2B2E8C;
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
-  margin-left: 4px;
-}
 .compounding .calculator-sip-wrapper .cal-container .cal-discription {
   display: flex;
   flex-wrap: wrap;
@@ -322,22 +342,12 @@
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button:hover {
   background: #282480;
 }
-.compounding .calculator-sip-wrapper .cal-container .cal-discription .no-returns-msg {
+.compounding .calculator-sip-wrapper .cal-container .no-returns-msg {
   margin-top: 10px;
   color: rgb(113, 113, 113);
   font-size: 0.875rem;
   line-height: 1.25rem;
   background-color: rgb(251, 238, 221);
-  padding: 5px;
-}
-.compounding .calculator-sip-wrapper .cal-container .no-returns-msg {
-  margin-top: 10px;
-  --tw-text-opacity: 1;
-  color: rgb(113, 113, 113);
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 238 221/var(--tw-bg-opacity, 1));
   padding: 5px;
 }
 .compounding .calculator-sip-wrapper .view-btn-cal {
@@ -350,27 +360,6 @@
   font-size: 14px;
   font-weight: 500;
   text-decoration: underline;
-}
-.compounding .default-content-wrapper {
-  max-width: 1200px;
-  margin: 40px auto 0;
-}
-.compounding .default-content-wrapper p,
-.compounding .default-content-wrapper ul,
-.compounding .default-content-wrapper li {
-  margin-bottom: 6px;
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  font-style: normal;
-  color: #424242;
-}
-.compounding .default-content-wrapper strong {
-  font-weight: 600;
-}
-.compounding .default-content-wrapper ul {
-  padding-left: 20px;
 }
 
 /* Responsive */
