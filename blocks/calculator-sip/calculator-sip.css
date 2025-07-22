@@ -10,6 +10,10 @@
   --border-color: #ccc;
 }
 
+.section.calculator-sip-container {
+  max-width: none;
+}
+
 /* MAIN WRAPPER */
 .compounding {
   background-color: aliceblue;
@@ -27,15 +31,27 @@
   justify-content: center;
   margin: 0 auto;
   gap: 40px;
-  width: 100%;
+  max-width: 1300px;
 }
 .compounding .compounding-two-inner .default-content-wrapper {
   flex: 1 1 40%;
   text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
 }
 .compounding .compounding-two-inner .default-content-wrapper .icon {
-  max-width: 80px;
-  margin-bottom: 24px;
+  flex: 0 0 auto;
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+}
+.compounding .compounding-two-inner .default-content-wrapper .hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
 }
 .compounding .compounding-two-inner .default-content-wrapper h2 {
   color: #2e2a94;
@@ -62,6 +78,7 @@
   border-radius: 8px;
   padding: 24px;
   align-self: stretch;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper {
   display: flex;
@@ -75,6 +92,7 @@
   line-height: 16px;
   font-style: normal;
   color: #424242;
+  text-align: left;
 }
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper label {
   font-weight: 600;
@@ -112,6 +130,7 @@
   width: 100%;
   z-index: 99;
   font-size: 18px;
+  text-align: left;
 }
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li {
   padding: 10px;
@@ -280,6 +299,7 @@
   font-size: 24px;
   font-weight: 600;
   line-height: 32px;
+  text-align: left;
 }
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button {
   display: flex;
@@ -323,6 +343,7 @@
 .compounding .calculator-sip-wrapper .view-btn-cal {
   margin-top: 16px;
   padding-top: 10px;
+  text-align: left;
 }
 .compounding .calculator-sip-wrapper .view-btn-cal a {
   color: #2E2A94;
@@ -369,11 +390,6 @@
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper {
     width: 100%;
     border-bottom: 1px solid #BDBDBD;
-    padding-bottom: 16px;
-  }
-  .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper,
-  .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper {
-    flex: 1 1 45%;
   }
   .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button {
     width: 100%;

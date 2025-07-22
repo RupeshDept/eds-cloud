@@ -25,11 +25,13 @@ $font-family-body: 'Poppins', sans-serif;
   --border-color: #ccc;
 }
 
+.section.calculator-sip-container {
+  max-width: none;
+}
+
 /* MAIN WRAPPER */
 .compounding {
   background-color: aliceblue;
-  // padding: 40px 24px;
-
     padding: 40px 43px;
     display: flex;
     flex-direction: column;
@@ -42,23 +44,33 @@ $font-family-body: 'Poppins', sans-serif;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    // gap: 40px 80px;
-    // max-width: 1200px;
     margin: 0 auto;
-
     gap: 40px;
-    width: 100%;
+    // width: 100%;
+    max-width: 1300px;
 
 
     .default-content-wrapper {
-      // flex: 1 1 400px;
       flex: 1 1 40%;
-
       text-align: left;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+      
 
       .icon {
-        max-width: 80px;
-        margin-bottom: 24px;
+        flex: 0 0 auto;
+        width: 88px;
+        height: 88px;
+        flex-shrink: 0;
+      }
+
+      .hero-text{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: left;
       }
 
       h2 {
@@ -71,18 +83,21 @@ $font-family-body: 'Poppins', sans-serif;
       }
 
       p {
-        color: #424242;
-        font-family: 'Poppins', sans-serif;
+        // color: #424242;
+        // font-family: 'Poppins', sans-serif;
+        color: $color-text-body;
+        font-family: $font-family-body;
         font-size: 1rem;
         line-height: 1.5;
         margin: 0;
         max-width: 450px;
       }
     }
+
+    
   }
 
   .calculator-sip-wrapper {
-    // flex: 1 1 500px;
     flex: 1 1 50%;
     max-width: 600px;
 
@@ -91,15 +106,16 @@ $font-family-body: 'Poppins', sans-serif;
       border-radius: 8px;
       padding: 24px;
       align-self: stretch;
+       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 
       .search-bar-wrapper {
-        // margin-bottom: 16px;
         display: flex;
         flex-direction: column;
         gap: 8px;
 
         span {
           @include text-style-disclaimer-xsmall;
+          text-align: left;
         }
 
         label {
@@ -142,6 +158,7 @@ $font-family-body: 'Poppins', sans-serif;
           width: 100%;
           z-index: 99;
           font-size: 18px;
+          text-align: left;
 
           li {
             padding: 10px;
@@ -224,8 +241,6 @@ $font-family-body: 'Poppins', sans-serif;
 
           input {
             border: none;
-            // border-bottom: 2px solid #e0e0e0;
-            // padding: 8px 0;
             color: #2E2A94;
             font-family: 'Poppins', sans-serif;
             font-size: 20px;
@@ -294,7 +309,6 @@ $font-family-body: 'Poppins', sans-serif;
       .cal-discription {
         display: flex;
         flex-wrap: wrap;
-        // align-items: flex-end;
         justify-content: space-between;
         gap: 20px;
 
@@ -314,6 +328,7 @@ $font-family-body: 'Poppins', sans-serif;
             font-size: 24px;
             font-weight: 600;
             line-height: 32px;
+            text-align: left;
           }
         }
 
@@ -367,6 +382,7 @@ $font-family-body: 'Poppins', sans-serif;
           .view-btn-cal {
         margin-top: 16px;
         padding-top: 10px;
+        text-align: left;
 
         a {
           color: #2E2A94;
@@ -420,15 +436,15 @@ $font-family-body: 'Poppins', sans-serif;
           .tenure-wrapper {
             width: 100%;
             border-bottom: 1px solid #BDBDBD;
-            padding-bottom: 16px;
+            // padding-bottom: 16px;
           }
         }
 
         .cal-discription {
-          .current-value-wrapper,
-          .return-cagr-wrapper {
-            flex: 1 1 45%;
-          }
+          // .current-value-wrapper,
+          // .return-cagr-wrapper {
+          //   flex: 1 1 45%;
+          // }
 
           .start-sip-btn button {
             width: 100%;

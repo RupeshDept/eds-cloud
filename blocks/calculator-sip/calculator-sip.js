@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import {
-  div, a, label, input, span, button, ul,
+  div, a, label, input, span, button, ul, img, h2, p as pTag,
 } from '../../scripts/dom-helpers.js';
 import moslFundData from './datacal.js';
 
@@ -23,6 +23,34 @@ export default function decorate(block) {
     returnCAGR = foundReturn ? parseFloat(foundReturn.inception_Ret) : returnCAGR;
   }
 
+  // ✅ UPDATE: Create hero split structure
+  // const hero = block.closest('.default-content-wrapper');
+  const sectionHero = block.closest('.section');
+  const hero = sectionHero?.querySelector('.default-content-wrapper');
+
+  if (hero && !hero.querySelector('.hero-image')) {
+    // ✅ Find whole <p> that contains <img>
+    const iconPara = hero.querySelector('p:has(img)');
+    const heading = hero.querySelector('h2');
+    const paras = hero.querySelectorAll('p');
+
+    // ✅ Clear hero
+    hero.innerHTML = '';
+
+    // ✅ Separate hero-image and hero-text
+    const heroImage = div({ class: 'hero-image' }, iconPara);
+
+    const heroText = div(
+      { class: 'hero-text' },
+      heading,
+      ...[...paras].filter(p => p !== iconPara) // Exclude the moved one
+    );
+
+    hero.append(heroImage, heroText);
+
+  }
+
+  // ✅ SIP CALCULATOR CONTAINER
   const calContainer = div(
     { class: 'cal-container' },
     div(
@@ -34,8 +62,11 @@ export default function decorate(block) {
         placeholder: col1[0].textContent.trim(),
         name: 'searchFundInput',
         id: 'searchFundInput',
+        role: 'combobox',
+        'aria-autocomplete': 'list',
+        'aria-expanded': 'false',
       }),
-      div({ class: 'search-results-wrapper' }, ul({ id: 'searchResults' })),
+      div({ class: 'search-results-wrapper' }, ul({ id: 'searchResults', role: 'listbox' })),
     ),
     div(
       { class: 'scheme-btns-wrapper' },
@@ -122,30 +153,6 @@ export default function decorate(block) {
   const searchInput = document.getElementById('searchFundInput');
   const searchResults = document.getElementById('searchResults');
 
-  // function updateValues() {
-  //   const amount = parseFloat(amountInput.value) || 0;
-  //   const tenure = parseFloat(tenureInput.value) || 0;
-
-  //   const r = returnCAGR / 100 / 12;
-  //   const n = tenure * 12;
-
-  //   let investedAmount = 0;
-  //   let futureValue = 0;
-
-  //   if (mode === 'sip') {
-  //     investedAmount = amount * n;
-  //     futureValue = amount * (((1 + r) ** n - 1) / r);
-  //   } else {
-  //     investedAmount = amount;
-  //     const lumpsumRate = returnCAGR / 100;
-  //     futureValue = amount * (1 + lumpsumRate) ** tenure;
-  //   }
-
-  //   investedAmountSpan.textContent = `₹${(investedAmount / 100000).toFixed(2)} Lac`;
-  //   currentValueSpan.textContent = `₹${(futureValue / 100000).toFixed(2)} Lac`;
-  //   returnCAGRSpan.textContent = `${parseFloat(returnCAGR).toFixed(2)}%`;
-  // }
-
   function updateValues() {
     const amount = parseFloat(amountInput.value) || 0;
     const tenure = parseFloat(tenureInput.value) || 0;
@@ -197,8 +204,9 @@ export default function decorate(block) {
       futureValue = amount * (1 + lumpsumRate) ** tenure;
     }
 
-    investedAmountSpan.textContent = `₹${(investedAmount / 100000).toFixed(2)} Lac`;
-    currentValueSpan.textContent = `₹${(futureValue / 100000).toFixed(2)} Lac`;
+    // ✅ Add thousands separator
+    investedAmountSpan.textContent = `₹${(investedAmount / 100000).toFixed(2)} Lac`.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    currentValueSpan.textContent = `₹${(futureValue / 100000).toFixed(2)} Lac`.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     returnCAGRSpan.textContent = `${parseFloat(returnCAGR).toFixed(2)}%`;
   }
 
@@ -227,12 +235,16 @@ export default function decorate(block) {
     searchResults.innerHTML = '';
     currentFocus = -1;
 
+    searchInput.setAttribute('aria-expanded', 'true');
+
     const filtered = query
       ? schemeNames.filter((name) => name.toLowerCase().includes(query))
       : schemeNames;
 
     filtered.forEach((name) => {
       const li = document.createElement('li');
+      li.setAttribute('role', 'option');
+
       const regex = new RegExp(`(${query})`, 'gi');
       li.innerHTML = name.replace(regex, '<strong>$1</strong>');
 
@@ -242,30 +254,13 @@ export default function decorate(block) {
         selectedFund = moslFundData.find((f) => f.schDetail.schemeName === name);
         returnCAGR = selectedFund?.returns.find((r) => r.inception_Ret)?.inception_Ret || 0;
         searchResults.innerHTML = '';
+        searchInput.setAttribute('aria-expanded', 'false');
         updateValues();
       });
 
       searchResults.appendChild(li);
     });
   });
-
-  // searchInput.addEventListener('keydown', (e) => {
-  //   const items = searchResults.querySelectorAll('li');
-  //   if (!items.length) return;
-
-  //   if (e.key === 'ArrowDown') {
-  //     currentFocus = Math.min(currentFocus + 1, items.length - 1);
-  //     items.forEach(item => item.classList.remove('active'));
-  //     items[currentFocus].classList.add('active');
-  //   } else if (e.key === 'ArrowUp') {
-  //     currentFocus = Math.max(currentFocus - 1, 0);
-  //     items.forEach(item => item.classList.remove('active'));
-  //     items[currentFocus].classList.add('active');
-  //   } else if (e.key === 'Enter') {
-  //     e.preventDefault();
-  //     if (currentFocus > -1) items[currentFocus].click();
-  //   }
-  // });
 
 
   searchInput.addEventListener('keydown', (e) => {
@@ -283,15 +278,35 @@ export default function decorate(block) {
     } else if (e.key === 'Enter') {
       e.preventDefault();
       if (currentFocus > -1) items[currentFocus].click();
+    } else if (e.key === 'Escape') {
+      searchResults.innerHTML = '';
+      currentFocus = -1;
+      searchInput.setAttribute('aria-expanded', 'false');
+      searchInput.blur();
+      if (searchInput.value.trim() === '') {
+        searchInput.value = selectedFundName;
+      }
     }
+
   });
 
+
+  // document.addEventListener('click', (e) => {
+  //   if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+  //     searchResults.innerHTML = '';
+  //   }
+  // });
 
   document.addEventListener('click', (e) => {
     if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
       searchResults.innerHTML = '';
+      searchInput.setAttribute('aria-expanded', 'false');
+      if (searchInput.value.trim() === '') {
+        searchInput.value = selectedFundName;
+      }
     }
   });
+
 
   updateValues();
 
@@ -300,17 +315,17 @@ export default function decorate(block) {
   const calculatorBlockWrapper = block.closest('.calculator-sip-wrapper');
   const section = calculatorBlockWrapper?.closest('.section');
 
-  if (section) {
-    const hero = section.querySelector('.default-content-wrapper');
-    const calc = section.querySelector('.calculator-sip-wrapper');
 
-    if (hero && calc && !hero.parentElement.classList.contains('compounding-two-inner')) {
+  if (section) {
+    const heroWrap = section.querySelector('.default-content-wrapper');
+    const calcWrap = section.querySelector('.calculator-sip-wrapper');
+
+    const existing = section.querySelector('.compounding-two-inner');
+    if (heroWrap && calcWrap && !existing) {
       const wrapper = document.createElement('div');
       wrapper.className = 'compounding-two-inner';
-
-      section.insertBefore(wrapper, hero);
-      wrapper.append(hero);
-      wrapper.append(calc);
+      section.insertBefore(wrapper, heroWrap);
+      wrapper.append(heroWrap, calcWrap);
     }
   }
 
