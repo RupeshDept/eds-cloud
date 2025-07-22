@@ -118,10 +118,6 @@
             "value": "highlight"
           },
           {
-            "name": "Compounding",
-            "value": "compounding"
-          },
-          {
             "name": "Know Our Funds",
             "value": "known-our-funds"
           },
@@ -239,34 +235,6 @@
         "component": "aem-content",
         "name": "link",
         "label": "Fragment URL"
-      }
-    ]
-  },
-  {
-    "id": "hero-section",
-    "fields": [
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Hero Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Alt Text"
-      },
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Hero Title",
-        "value": "Power of Compounding Starts Here"
-      },
-      {
-        "component": "richtext",
-        "name": "subtitle",
-        "label": "Hero Subtitle",
-        "value": "Explore how much wealth you would have created by investing in our schemes using this SIP Calculator"
       }
     ]
   },
