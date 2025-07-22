@@ -116,7 +116,8 @@
 
                 .inputfield {
                     display: flex;
-                    width: 343px;
+                    max-width: 343px;
+                    width: 100%;
                     flex-direction: column;
                     align-items: flex-start;
                     gap: 10px;
@@ -134,6 +135,7 @@
                     }
 
                     input {
+                        // color: map.get($blue-1, btxt);
                         display: flex;
                         height: 40px;
                         flex-direction: column;

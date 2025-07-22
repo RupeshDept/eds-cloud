@@ -1,7 +1,195 @@
+/* SCSS Variables for better maintainability */
+$primary-blue: #2E2A94;
+$dark-blue: #000053;
+$button-bg: #232162;
+$button-hover-bg: #181643;
+$text-color: #333;
+$system-font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-.think-equity-wrapper{
+/* --- Global Styles --- */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Component Styles --- */
+
+.think-equity-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
+}
+
+.section.think-equity-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 48px 16px;
+    font-family: $system-font-stack;
+
+    >div {
+        padding: 0;
+    }
+
+    .default-content-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 24px;
+        border: 0; // Overrides border: 1px solid #dee2e6 from original CSS
+
+        p {
+            margin: 0 0 24px;
+            color: $text-color;
+            font-size: 1.125rem;
+            line-height: 1.6;
+
+            &:first-child {
+                text-align: left;
+                color: var(--blue-1800-primary, $primary-blue);
+                font-family: var(--body, Poppins);
+                font-size: var(--body-medium-medium-size, 16px);
+                font-weight: 500;
+                line-height: var(--body-medium-medium-line-height, 20px);
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        .button-container {
+            margin: 0; // Overrides margin-top: 24px
+        }
+    }
+
+    .button {
+        display: inline-block;
+        color: #fff;
+        padding: 16px 50px;
+        border: none;
+        border-radius: 4px;
+        background: var(--button-primary-default, $button-bg);
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        white-space: nowrap;
+
+        &:hover,
+        &:focus {
+            background-color: $button-hover-bg;
+            transform: translateY(-2px);
+        }
+    }
+
+    /* Media Queries are nested within their respective selectors */
+    @media (width >=768px) {
+        .default-content-wrapper {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    @media (width >=1024px) {
+        padding: 40px 67px;
+        max-width: 1200px; // Reset max-width for larger screens
+    }
+
+    @media (width <=768px) {
+        .default-content-wrapper {
+            flex-direction: column;
+
+            p:first-child {
+                font-size: var(--body-small-medium-size, 18px);
+                line-height: var(--body-small-medium-line-height, 16px);
+            }
+        }
+    }
+}
+
+
+/* --- Block Styles --- */
+
+.think-equity.block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 48px;
+
+    >div {
+        flex-basis: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (width <=768px) {
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 48px;
+
+        .imagelist1 .subimagelist picture img {
+            padding-left: 45px;
+        }
+    }
+}
+
+
+.columns.block {
+    >div {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    h3 {
+        margin: 0 0 8px;
+        color: $dark-blue;
+        font-size: clamp(2.5rem, 6vw, 3.25rem);
+        font-weight: 700;
+        line-height: 1.1;
+    }
+
+    p {
+        margin: 0;
+        color: $text-color;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        line-height: 1.5;
+    }
+
+    @media (width <=768px) {
+        >div {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 32px;
+        }
+
+        h3 {
+            font-size: 26px;
+        }
+
+        .collist1 .subcollist {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+            width: 100%;
+
+            p {
+                width: 60%;
+                text-align: left;
+                font-weight: 400;
+                font-size: 16px;
+            }
+        }
+    }
 }
