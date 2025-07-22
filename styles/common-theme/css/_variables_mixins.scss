@@ -2,6 +2,20 @@
 @use "sass:map";
 @import "../../../styles/fonts.css";
 
+
+// ----------------------------------------
+// TYPOGRAPHY SIZES & SPACING
+// ----------------------------------------
+
+// H2 Specifics
+$font-size-h2-min: 2rem;
+$font-size-h2-fluid: 5vw;
+$font-size-h2-max: 2.75rem;
+$line-height-h2: 1.2;
+
+// Spacing Units
+$spacing-md: 16px;
+
 // ----------------------------------------
 // COLORS
 // ----------------------------------------
@@ -151,6 +165,19 @@ $font-weights: (
   }
 }
 
+
+// ----------------------------------------
+// COMPONENT MIXINS
+// ----------------------------------------
+
+@mixin typography-h2 {
+  font-family: $ButlerPro;
+  color: $primary-blue;
+  font-weight: map.get($font-weights, bold); 
+  line-height: $line-height-h2;
+  font-size: clamp($font-size-h2-min, $font-size-h2-fluid, $font-size-h2-max);
+}
+
 // ----------------------------------------
 // BORDER RADIUS
 // ----------------------------------------
@@ -171,6 +198,26 @@ $radius: (
   r83: 83px,
   r100: 100px,
 );
+
+// ----------------------------------------
+// SPACING
+// ----------------------------------------
+
+$spacing: (
+  xxs: 4px,
+  xs: 8px,
+  sm: 12px,
+  md: 16px,
+  lg: 24px,
+  xl: 32px,
+  xxl: 40px,
+);
+
+// ----------------------------------------
+// SHADOWS
+// ----------------------------------------
+// $box-shadow-soft: 0 8px 24px rgba(map.get($primary-black, 1), 0.08);
+$box-shadow-soft: 0 8px 24px rgba($primary-black, 0.08);
 
 // ----------------------------------------
 // BREAKPOINTS
