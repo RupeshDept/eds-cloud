@@ -91,6 +91,7 @@
   margin-bottom: 25px;
 }
 @media (max-width: 768px) {
+@media (max-width: 768px) {
   .section.future-building-container .future-building .swiper-wrapper .swiper-slide .swiper-slide-cards-2 > ul > li:first-child {
     margin-bottom: 12px;
   }
@@ -123,6 +124,7 @@
   color: 400;
   font-family: "ButlerPro", sans-serif;
 }
+@media (max-width: 768px) {
 @media (max-width: 768px) {
   .section.future-building-container .future-building .swiper-wrapper .swiper-slide .swiper-slide-cards-2 > ul > li:nth-child(3) {
     font-size: 16px;
