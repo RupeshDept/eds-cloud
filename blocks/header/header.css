@@ -55,6 +55,9 @@ header nav a:-moz-any-link {
 header nav a:any-link {
   color: currentcolor;
 }
+
+/* FIX: Removed the duplicate rule block for 'header nav a:any-link' from here. */
+
 header .nav-hamburger {
   grid-area: hamburger;
   height: 22px;
@@ -316,6 +319,19 @@ header .header-top div:first-child ul:first-child {
   padding: 0;
   margin: 0;
 }
+
+/* FIX: Moved this rule block up to fix the specificity error. */
+header .header-top div:first-child ul:nth-child(2) ul li {
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2e2a94;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  padding: 8px 10px;
+  border-bottom: 1px solid gray;
+}
+
 header .header-top div:first-child ul:first-child li:first-child {
   font-size: 12px;
   line-height: 16px;
@@ -387,9 +403,7 @@ header .header-top div:first-child ul:nth-child(2) li:nth-child(2) p {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 header .header-top div:first-child ul:nth-child(2) li:nth-child(2) p span {
   width: 16px;
@@ -406,16 +420,6 @@ header .header-top div:first-child ul:nth-child(2) ul {
   gap: 0;
   border-radius: 4px;
   display: none;
-}
-header .header-top div:first-child ul:nth-child(2) ul li {
-  width: 100%;
-  font-size: 12px;
-  line-height: 16px;
-  color: #2e2a94;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  padding: 8px 10px;
-  border-bottom: 1px solid gray;
 }
 header .header-top div:first-child ul:nth-child(2) .dropdown-active ul {
   display: block;

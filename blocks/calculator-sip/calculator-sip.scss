@@ -1,7 +1,35 @@
-@use '../../styles/common-theme/css/variables_mixins' as *;
-@use '../../styles/common-theme/css/fluid-typography' as *;
-@use 'sass:map';
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+// Variables
+$color-text-body: #424242;
+$font-family-body: 'Poppins', sans-serif;
+
+// Mixins
+@mixin text-style-disclaimer-xsmall {
+  font-family: $font-family-body;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  font-style: normal;
+  color: $color-text-body;
+}
+
+// Root
+:root {
+  --text-color: #333;
+  --border-color: #ccc;
+}
+
+.section.calculator-sip-container {
+  max-width: none;
+}
+
+/* MAIN WRAPPER */
 .compounding {
   background-color: aliceblue;
   padding: 40px 43px;
@@ -11,80 +39,88 @@
   gap: 8px;
   align-self: stretch;
 
+  /* FIX: Moved this general rule before the more specific one to fix specificity errors. */
+  .default-content-wrapper {
+    max-width: 1200px;
+    margin: 40px auto 0;
+
+    p,
+    ul,
+    li {
+      margin-bottom: 6px;
+      @include text-style-disclaimer-xsmall;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  }
+
   .compounding-two-inner {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 40px;
     margin: 0 auto;
-    // width: 1232px;
-    //  max-width: 1232px; /* <-- Use max-width */
-    width: 100%;
+    gap: 40px;
+    max-width: 1300px;
+
+    .default-content-wrapper {
+      flex: 1 1 40%;
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+
+      .icon {
+        flex: 0 0 auto;
+        width: 88px;
+        height: 88px;
+        flex-shrink: 0;
+      }
+
+      .hero-text {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: left;
+      }
+
+      h2 {
+        color: #2e2a94;
+        font-family: 'ButlerPro', serif;
+        font-size: clamp(2rem, 5vw, 2.75rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 16px;
+      }
+
+      p {
+        color: $color-text-body;
+        font-family: $font-family-body;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0;
+        max-width: 450px;
+      }
+    }
   }
-
-  // .hero-section-wrapper {
-  //   flex: 1 1 40%;
-
-  //   .hero-section {
-  //     display: flex;
-  //     flex-direction: row;
-  //     align-items: center;
-  //     gap: 16px;
-
-  //     .hero-image {
-  //       flex: 0 0 auto;
-  //       width: 88px;
-  //       height: 88px;
-  //       flex-shrink: 0;
-
-  //       img {
-  //         width: 80px;
-  //         height: auto;
-  //         display: block;
-  //       }
-  //     }
-
-  //     .hero-text {
-  //       display: flex;
-  //       flex-direction: column;
-  //       gap: 10px;
-
-  //       div:first-child p {
-  //         margin: 0;
-  //         width: 441px;
-  //         color: #2E2A94;
-  //         font-feature-settings: 'liga' off;
-  //         font-family: 'ButlerPro', serif;
-  //         font-size: 40px;
-  //         font-style: normal;
-  //         font-weight: 700;
-  //         line-height: 48px;
-  //       }
-
-  //       div:last-child p {
-  //         align-self: stretch;
-  //         color: #2E2A94;
-  //         font-family: 'Poppins', sans-serif;
-  //         font-size: 16px;
-  //         font-style: normal;
-  //         font-weight: 500;
-  //         line-height: 20px;
-  //         margin: 0;
-  //       }
-  //     }
-  //   }
-  // }
 
   .calculator-sip-wrapper {
     flex: 1 1 50%;
     max-width: 600px;
 
     .cal-container {
-      background: $primary-white;
-      padding: 24px;
+      background: #fff;
       border-radius: 8px;
+      padding: 24px;
       align-self: stretch;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 
       .search-bar-wrapper {
         display: flex;
@@ -92,8 +128,8 @@
         gap: 8px;
 
         span {
-          align-self: stretch;
-          // @include text-style-disclaimer-xsmall;
+          @include text-style-disclaimer-xsmall;
+          text-align: left;
         }
 
         label {
@@ -104,19 +140,21 @@
 
         input {
           width: 100%;
-          color: $primary-blue;
-          font-family: $Poppins;
+          color: #2E2A94;
+          font-family: 'Poppins', sans-serif;
           font-size: 16px;
-          font-style: normal;
           font-weight: 500;
           line-height: 20px;
-          // padding: 12px 16px;
           border-radius: 4px;
-          // border: 1px solid var(--border-color);
-          box-sizing: border-box;
           background: url('../../icons/magnifyingglass.svg') no-repeat right 12px center;
           background-size: 20px 20px;
           border: none;
+          outline: none;
+
+          /* FIX: Corrected typo from 'input:active' to '&:active' */
+          &:active {
+            border: none;
+          }
         }
       }
 
@@ -130,11 +168,12 @@
           max-height: 200px;
           overflow-y: auto;
           border: 1px solid #ccc;
-          background: $primary-white;
+          background: #fff;
           position: absolute;
           width: 100%;
           z-index: 99;
           font-size: 18px;
+          text-align: left;
 
           li {
             padding: 10px;
@@ -162,7 +201,6 @@
           display: flex;
           width: 104px;
           height: 32px;
-          min-width: 40px;
           padding: 8px 12px;
           justify-content: center;
           align-items: center;
@@ -170,24 +208,45 @@
           border: 1px solid #BDBDBD;
           background: #FAFAFA;
           color: #424242;
-          font-family: $Poppins;
+          font-family: 'Poppins', sans-serif;
           font-size: 14px;
-          font-style: normal;
           font-weight: 600;
           line-height: 22px;
-          font-feature-settings: 'liga' off;
           cursor: pointer;
           transition: all 0.2s ease;
 
           &:hover {
             background: #382AD7;
-            color: $primary-white;
+            color: #ffffff;
           }
 
           &.active {
             background: #EDF1FF;
-            color: $primary-blue;
+            color: #2E2A94;
           }
+        }
+      }
+
+      /* FIX: Moved before .investment-wrapper to fix specificity order. */
+      .invested-amount {
+        /* FIX: Removed redundant 'margin-bottom' property. */
+        display: flex;
+        margin: 20px 0;
+        align-items: flex-start;
+        gap: 4px;
+        align-self: stretch;
+
+        label {
+          @include text-style-disclaimer-xsmall;
+        }
+
+        span {
+          color: #2B2E8C;
+          font-family: 'Poppins', sans-serif;
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 16px;
+          margin-left: 4px;
         }
       }
 
@@ -195,9 +254,8 @@
         display: flex;
         flex-wrap: wrap;
         gap: 40px;
-        border-bottom: 1px solid var(--border-color);
-        // padding-bottom: 20px;
         margin: 20px 0;
+        border-bottom: 1px solid var(--border-color);
         flex-direction: row;
 
         .sip-wrapper,
@@ -211,39 +269,36 @@
           padding: 8px 0;
           justify-content: space-between;
           align-items: flex-start;
+          background: #FFF;
           border: 0 solid #9E9E9E;
-          background: $primary-white;
 
           label {
-            align-self: stretch;
-            color: #424242;
-            font-family: $Poppins;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 16px;
+            @include text-style-disclaimer-xsmall;
           }
 
           input {
-            // padding: 12px 16px;
-            border-radius: 4px;
-            // border: 1px solid var(--border-color);
             border: none;
-            box-sizing: border-box;
-            color: $primary-blue;
-            font-family: $Poppins;
+            color: #2E2A94;
+            font-family: 'Poppins', sans-serif;
             font-size: 20px;
-            font-style: normal;
             font-weight: 500;
             line-height: 24px;
             width: 100%;
             appearance: textfield;
             -moz-appearance: textfield;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-style: normal;
 
             &::-webkit-outer-spin-button,
             &::-webkit-inner-spin-button {
               -webkit-appearance: none;
               margin: 0;
+            }
+
+            &:focus {
+              outline: none;
+              border-bottom-color: #2e2a94;
             }
           }
         }
@@ -255,47 +310,12 @@
             content: '';
             position: absolute;
             right: 10px;
-            bottom: 12px;
+            top: 65%;
             width: 20px;
             height: 20px;
-            background: url('../../icons/frame.svg') no-repeat center;
+            background: url('../../icons/Frame.svg') no-repeat center;
             background-size: contain;
             pointer-events: none;
-            aspect-ratio: 1/1;
-            top: 65%;
-          }
-        }
-      }
-
-      .invested-amount {
-        display: flex;
-        margin: 20px 0;
-        align-items: flex-start;
-        gap: 4px;
-        align-self: stretch;
-
-        .invested-amount-wrapper {
-          display: flex;
-          align-items: flex-start;
-          gap: 4px;
-          align-self: stretch;
-
-          label {
-            color: #424242;
-            font-family: $Poppins;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 16px;
-          }
-
-          span {
-            color: #2B2E8C;
-            font-family: $Poppins;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 16px;
           }
         }
       }
@@ -313,170 +333,83 @@
           gap: 5px;
 
           label {
-            color: #424242;
-            font-family: $Poppins;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 16px;
+            @include text-style-disclaimer-xsmall;
           }
 
           span {
-            color: $primary-blue;
-            font-family: $Poppins;
+            color: #2E2A94;
+            font-family: 'Poppins', sans-serif;
             font-size: 24px;
-            font-style: normal;
             font-weight: 600;
             line-height: 32px;
+            text-align: left;
           }
         }
 
-        .start-sip-btn {
-          button {
-            display: flex;
-            width: 132px;
-            padding: 12px;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            border-radius: 8px;
-            background: $primary-blue;
-            border: none;
-            color: $primary-white;
-            font-family: $Poppins;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 22px;
-            cursor: pointer;
+        .start-sip-btn button {
+          display: flex;
+          width: 132px;
+          padding: 12px;
+          justify-content: center;
+          align-items: center;
+          gap: 8px;
+          border-radius: 8px;
+          background: #2E2A94;
+          border: none;
+          color: #fff;
+          font-family: 'Poppins', sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 22px;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
 
-            &:hover {
-              background: $primary-blue;
-            }
+          &:hover {
+            background: darken(#2E2A94, 5%);
           }
         }
-      }
 
-      .no-returns-msg {
-        margin-top: 10px;
-        --tw-text-opacity: 1;
-        color: rgb(113 113 113);
-        font-size: .875rem;
-        line-height: 1.25rem;
-        --tw-bg-opacity: 1;
-        background-color: rgb(251 238 221 / var(--tw-bg-opacity, 1));
-        padding: 5px;
+        .no-returns-msg {
+          margin-top: 10px;
+          color: rgb(113 113 113);
+          font-size: .875rem;
+          line-height: 1.25rem;
+          background-color: rgb(251 238 221);
+          padding: 5px;
+        }
       }
+      /* FIX: Removed duplicate '.no-returns-msg' block from here. */
     }
 
     .view-btn-cal {
+      margin-top: 16px;
       padding-top: 10px;
+      text-align: left;
 
       a {
-        color: $primary-blue;
-        font-family: $Poppins;
+        color: #2E2A94;
         font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
-        text-decoration-line: underline;
-        text-decoration-style: solid;
-        text-decoration-skip-ink: auto;
-        text-decoration-thickness: auto;
-        text-underline-offset: 2.8px;
-        text-underline-position: from-font;
-
-        &:hover {
-          color: $primary-blue;
-        }
+        font-weight: 500;
+        text-decoration: underline;
       }
-    }
-  }
-
-  .default-content-wrapper {
-    max-width: 1200px;
-    margin: 30px auto 0;
-
-    p,
-    ul,
-    li {
-      color: #424242;
-      font-family: $Poppins;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 16px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
-
-    strong {
-      font-weight: 600;
     }
   }
 }
 
-
-@media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 992px) {
   .compounding {
-    // padding: 20px;
-    padding: 20px 16px;
-
     .compounding-two-inner {
       flex-direction: column;
-      gap: 20px;
-      width: 100%;
+      text-align: center;
+
+      .default-content-wrapper {
+        text-align: center;
+      }
     }
 
-    // .hero-section-wrapper {
-    //   flex: 1 1 100%;
-    //   width: 100%;
-    //   text-align: center;
-
-    //   .hero-section {
-    //     flex-direction: row;
-    //     align-items: start;
-
-    //     .hero-text {
-    //       text-align: left;
-    //       div:first-child p {
-    //         font-size: 28px;
-    //         line-height: 36px;
-    //         width: 100%;
-    //       }
-
-    //       div:last-child p {
-    //         font-size: 14px;
-    //         line-height: 18px;
-    //       }
-    //     }
-
-    //     .hero-image {
-    //       width: 60px;
-    //       height: 60px;
-
-    //       img {
-    //         width: 60px;
-    //       }
-    //     }
-    //   }
-    // }
-
     .calculator-sip-wrapper {
-      flex: 1 1 100%;
-      // max-width: 100%;
-      width: 100%;
-
       .cal-container {
-        padding: 16px;
-
-
         .investment-wrapper {
           flex-direction: column;
           gap: 20px;
@@ -489,35 +422,10 @@
         }
 
         .cal-discription {
-          flex-direction: row;
-          gap: 10px;
-          flex-wrap: wrap;
-
-          .current-value-wrapper,
-          .return-cagr-wrapper {
-            flex: 1 1 45%; // ✅ each takes ~50% so they stay side by side
-          }
-
           .start-sip-btn button {
             width: 100%;
           }
         }
-      }
-
-      .view-btn-cal {
-        padding-top: 16px;
-      }
-    }
-
-    .default-content-wrapper {
-      margin: 20px auto 0;
-      padding: 0 16px;
-
-      p,
-      ul,
-      li {
-        font-size: 12px;
-        line-height: 16px;
       }
     }
   }

@@ -243,34 +243,6 @@
     ]
   },
   {
-    "id": "hero-section",
-    "fields": [
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Hero Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Alt Text"
-      },
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Hero Title",
-        "value": "Power of Compounding Starts Here"
-      },
-      {
-        "component": "richtext",
-        "name": "subtitle",
-        "label": "Hero Subtitle",
-        "value": "Explore how much wealth you would have created by investing in our schemes using this SIP Calculator"
-      }
-    ]
-  },
-  {
     "id": "future-building-item",
     "fields": [
       {
@@ -452,6 +424,158 @@
         "value": "",
         "label": "Enter Context",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "calculator-sip",
+    "fields": [
+      {
+        "component": "text",
+        "name": "col1_search_placeholder",
+        "label": "Search Text Placeholder",
+        "value": "Search a fund"
+      },
+      {
+        "component": "text",
+        "name": "col1_default_fund",
+        "label": "Default Fund Name",
+        "value": "Motilal Oswal Mid cap fund"
+      },
+      {
+        "component": "text",
+        "name": "col1_sip_label",
+        "label": "SIP Button Label",
+        "value": "SIP"
+      },
+      {
+        "component": "text",
+        "name": "col1_lumpsum_label",
+        "label": "Lumpsum Button Label",
+        "value": "Lumpsum"
+      },
+      {
+        "component": "text",
+        "name": "col2_sip_input_label",
+        "label": "SIP Investment Label",
+        "value": "If you would have invested monthly"
+      },
+      {
+        "component": "text",
+        "name": "col2_lumpsum_input_label",
+        "label": "Lumpsum Investment Label",
+        "value": "If you would have invested"
+      },
+      {
+        "component": "number",
+        "name": "col2_default_amount",
+        "label": "Default Investment Amount",
+        "value": 10000
+      },
+      {
+        "component": "text",
+        "name": "col2_tenure_input_label",
+        "label": "Tenure Input Label",
+        "value": "Tenure"
+      },
+      {
+        "component": "select",
+        "name": "col3_default_tenure",
+        "label": "Default Tenure",
+        "value": "10",
+        "options": [
+          {
+            "name": "1 year",
+            "value": "1"
+          },
+          {
+            "name": "2 years",
+            "value": "2"
+          },
+          {
+            "name": "3 years",
+            "value": "3"
+          },
+          {
+            "name": "5 years",
+            "value": "5"
+          },
+          {
+            "name": "10 years",
+            "value": "10"
+          },
+          {
+            "name": "15 years",
+            "value": "15"
+          },
+          {
+            "name": "20 years",
+            "value": "20"
+          },
+          {
+            "name": "25 years",
+            "value": "25"
+          },
+          {
+            "name": "30 years",
+            "value": "30"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "col3_invested_amount_label",
+        "label": "Invested Amount Label",
+        "value": "Invested Amount"
+      },
+      {
+        "component": "number",
+        "name": "col3_invested_amount_value",
+        "label": "Default Invested Amount",
+        "value": 1200000
+      },
+      {
+        "component": "text",
+        "name": "col3_current_value_label",
+        "label": "Current Value Label",
+        "value": "Current Value of Investment"
+      },
+      {
+        "component": "number",
+        "name": "col4_default_current_value",
+        "label": "Default Current Value of Investment",
+        "value": 2500000
+      },
+      {
+        "component": "text",
+        "name": "col4_return_cagr_label",
+        "label": "Return (CAGR) Label",
+        "value": "Return (CAGR)"
+      },
+      {
+        "component": "number",
+        "name": "col4_annual_return_rate",
+        "label": "Annual Return Rate (%)",
+        "value": 18,
+        "description": "Expected annual return rate for calculations"
+      },
+      {
+        "component": "text",
+        "name": "col4_cta_button_text",
+        "label": "CTA Button Text",
+        "value": "Start SIP"
+      },
+      {
+        "component": "text",
+        "name": "col4_other_calculators_text",
+        "label": "Other Calculators Link Text",
+        "value": "View other calculators"
+      },
+      {
+        "component": "text",
+        "name": "col4_other_calculators_url",
+        "label": "Other Calculators URL",
+        "value": "#"
       }
     ]
   }

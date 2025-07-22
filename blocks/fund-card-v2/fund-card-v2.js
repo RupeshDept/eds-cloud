@@ -12,32 +12,48 @@ import {
 } from '../../scripts/dom-helpers.js';
 import dataMapMoObj from '../../scripts/constant.js';
 
+function planListEvent(param, block) {
+  const tempReturns = [];
+  const codeTempArr = [];
+  block.returns.forEach((el) => {
+    codeTempArr.push((el.plancode + el.optioncode));
+    if (param.target.value === (el.plancode + el.optioncode)) {
+      Object.keys(el).forEach((key) => {
+        if (dataMapMoObj.ObjTemp[key]) {
+          tempReturns.push(dataMapMoObj.ObjTemp[key]);
+        }
+      });
+
+      param.target.closest('.card-wrapper').querySelector('.return-btn h2').textContent = '';
+      param.target.closest('.card-wrapper').querySelector('.return-btn h2').textContent = `${el[dataMapMoObj.ObjTemp[tempReturns[0]]]}%`;
+    }
+  });
+}
+
 export default function decorate(block) {
   const fundsTaggingSection = block.fundsTaggingSection.slice(0, 2);
   const finPlangrp = [];
   const tempReturns = [];
   block.returns.forEach((ret, jind) => {
     if (jind === 0) {
-      for (const key in ret) {
+      Object.keys(ret).forEach((key) => {
         if (dataMapMoObj.ObjTemp[key]) {
           tempReturns.push(dataMapMoObj.ObjTemp[key]);
         }
-      }
+      });
     }
     finPlangrp.push((ret.plancode + ret.optioncode));
   });
 
-  const DirectPlanlistArr = Array.from(block.planList).filter((el) => {
-    if (el.planName === 'Regular' && finPlangrp.includes(el.groupedCode)) {
-      return el;
-    }
-  });
+  // FIX: Simplified the filter to explicitly return a boolean value.
+  const DirectPlanlistArr = Array.from(block.planList).filter((el) => (
+    el.planName === 'Regular' && finPlangrp.includes(el.groupedCode)
+  ));
 
-  const findcompval = Array.from(block.returns).filter((ret) => {
-    if (DirectPlanlistArr.length !== 0 && DirectPlanlistArr[0].groupedCode === (ret.plancode + ret.optioncode)) {
-      return ret;
-    }
-  });
+  const findcompval = Array.from(block.returns).filter(
+    (ret) => DirectPlanlistArr.length !== 0
+      && DirectPlanlistArr[0].groupedCode === (ret.plancode + ret.optioncode),
+  );
   const coump = findcompval.length !== 0 ? findcompval[0][dataMapMoObj.ObjTemp[tempReturns[0]]] : 0;
 
   const styleLine = DirectPlanlistArr.length !== 0 ? 'block' : 'none';
@@ -106,22 +122,4 @@ export default function decorate(block) {
   );
 
   return container;
-}
-
-function planListEvent(param, block) {
-  const tempReturns = [];
-  const codeTempArr = [];
-  block.returns.forEach((el) => {
-    codeTempArr.push((el.plancode + el.optioncode));
-    if (param.target.value === (el.plancode + el.optioncode)) {
-      for (const key in el) {
-        if (dataMapMoObj.ObjTemp[key]) {
-          tempReturns.push(dataMapMoObj.ObjTemp[key]);
-        }
-      }
-
-      param.target.closest('.card-wrapper').querySelector('.return-btn h2').textContent = '';
-      param.target.closest('.card-wrapper').querySelector('.return-btn h2').textContent = `${el[dataMapMoObj.ObjTemp[tempReturns[0]]]}%`;
-    }
-  });
 }
