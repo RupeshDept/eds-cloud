@@ -148,10 +148,6 @@ header nav a:any-link {
   color: currentcolor;
 }
 
-header nav a:any-link {
-  color: currentcolor;
-}
-
 header .nav-hamburger {
   grid-area: hamburger;
   height: 22px;
@@ -291,62 +287,7 @@ header .nav-sections ul > li > ul > li {
   font-weight: 400;
 }
 
-header[aria-expanded="true"] .nav-sections {
-  display: block;
-  visibility: visible;
-  align-self: center;
-}
-
-header[aria-expanded="true"] .nav-sections div {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-header[aria-expanded="true"] .nav-sections div ul:first-child {
-  display: flex;
-  height: 40px;
-  padding: 8px 16px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border-radius: 24px;
-  border: 1px solid #2E2A94;
-}
-
-header[aria-expanded="true"] .nav-sections div ul:first-child li {
-  display: flex;
-}
-
-header[aria-expanded="true"] .nav-sections div > ul:nth-child(2) li {
-  font-size: 14px;
-  line-height: 16px;
-  color: #2e2a94;
-  font-family: Poppins, sans-serif;
-  font-weight: 500;
-  padding-right: 12px;
-}
-
-header[aria-expanded="true"] .nav-sections div > ul:nth-child(2) li::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 3px;
-  right: -3px;
-  transform: rotate(135deg);
-  width: 6px;
-  height: 6px;
-  border: 2px solid currentcolor;
-  border-radius: 0 1px 0 0;
-  border-width: 2px 2px 0 0;
-}
-
-@media (width <= 768px) {
-  header[aria-expanded="true"] .nav-sections div > ul:nth-child(2) {
-    display: none;
-  }
-}
-
+/* FIX: Moved .nav-tools rules before .nav-sections[aria-expanded] rules */
 header .nav-tools {
   grid-area: tools;
 }
@@ -417,6 +358,62 @@ header .nav-tools div ul:nth-child(2) {
   }
 }
 
+header[aria-expanded="true"] .nav-sections {
+  display: block;
+  visibility: visible;
+  align-self: center;
+}
+
+header[aria-expanded="true"] .nav-sections div {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+header[aria-expanded="true"] .nav-sections div ul:first-child {
+  display: flex;
+  height: 40px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 24px;
+  border: 1px solid #2E2A94;
+}
+
+header[aria-expanded="true"] .nav-sections div ul:first-child li {
+  display: flex;
+}
+
+header[aria-expanded="true"] .nav-sections div > ul:nth-child(2) li {
+  font-size: 14px;
+  line-height: 16px;
+  color: #2e2a94;
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  padding-right: 12px;
+}
+
+header[aria-expanded="true"] .nav-sections div > ul:nth-child(2) li::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  right: -3px;
+  transform: rotate(135deg);
+  width: 6px;
+  height: 6px;
+  border: 2px solid currentcolor;
+  border-radius: 0 1px 0 0;
+  border-width: 2px 2px 0 0;
+}
+
+@media (width <= 768px) {
+  header[aria-expanded="true"] .nav-sections div > ul:nth-child(2) {
+    display: none;
+  }
+}
+
 header .header-top {
   max-width: 100%;
   width: -webkit-fill-available;
@@ -455,6 +452,18 @@ header .header-top div:first-child ul:first-child {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+/* FIX: Moved this rule block up to fix specificity order. */
+header .header-top div:first-child ul:nth-child(2) ul li {
+  width: 100%;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2e2a94;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  padding: 8px 10px;
+  border-bottom: 1px solid gray;
 }
 
 header .header-top div:first-child ul:first-child li:first-child {
@@ -537,7 +546,7 @@ header .header-top div:first-child ul:nth-child(2) li:nth-child(2) p {
   font-family: Poppins, sans-serif;
   font-weight: 400;
   cursor: pointer;
-          user-select: none;
+  user-select: none;
 }
 
 header .header-top div:first-child ul:nth-child(2) li:nth-child(2) p span {
@@ -555,17 +564,6 @@ header .header-top div:first-child ul:nth-child(2) ul {
   gap: 0;
   border-radius: 4px;
   display: none;
-}
-
-header .header-top div:first-child ul:nth-child(2) ul li {
-  width: 100%;
-  font-size: 12px;
-  line-height: 16px;
-  color: #2e2a94;
-  font-family: Poppins, sans-serif;
-  font-weight: 400;
-  padding: 8px 10px;
-  border-bottom: 1px solid gray;
 }
 
 header .header-top div:first-child ul:nth-child(2).dropdown-active ul {
