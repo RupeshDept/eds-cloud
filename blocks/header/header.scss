@@ -59,144 +59,6 @@ header {
         a:any-link {
             color: currentcolor;
         }
-
-        // Header Top
-        .header-top {
-            max-width: 100%;
-            width: -webkit-fill-available;
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: #141414;
-            color: $primary-white;
-
-            @include media(mobile) {
-                background-color: $primary-white;
-            }
-
-            & div:first-child {
-                width: 71%;
-                display: flex;
-                height: 40px;
-                justify-content: space-between;
-                align-items: center;
-                flex-shrink: 0;
-                align-self: stretch;
-                margin: auto;
-
-                @include media(mobile) {
-                    width: 93%;
-                    border-bottom: 1px solid var(--Neutrals-400, #BDBDBD);
-                }
-
-                & ul:first-child {
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-
-                    & li:first-child {
-                        @include font-style(12px, 16px, $primary-white, map.get($font-weights, regular), $Poppins);
-
-                        @include media(mobile) {
-                            display: none;
-                        }
-                    }
-
-                    & li:nth-child(2) {
-                        display: none;
-
-                        @include media(mobile) {
-                            display: flex;
-                            align-items: center;
-                            gap: 4px;
-                            @include font-style(12px, 14px, $primary-blue, map.get($font-weights, regular), $Poppins);
-
-                            span {
-                                width: 16px;
-                                height: 16px;
-                            }
-                        }
-                    }
-                }
-
-                & ul:nth-child(2) {
-                    list-style: none;
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: center;
-                    gap: 40px;
-                    padding: 0;
-                    margin: 0;
-
-                    & li:nth-child(1) {
-                        p {
-                            @include font-style(12px, 16px, $primary-white, map.get($font-weights, regular), $Poppins);
-
-                            @include media(mobile) {
-                                color: $primary-blue;
-                            }
-                        }
-                    }
-
-                    & li:nth-child(2) {
-                        position: relative;
-
-                        @include media(mobile) {
-                            display: none;
-                        }
-
-                        p {
-                            color: $primary-white;
-                            display: flex;
-                            align-items: center;
-                            gap: 5px;
-                            @include font-style(12px, 16px, $primary-white, map.get($font-weights, regular), $Poppins);
-                            cursor: pointer;
-                            user-select: none;
-
-                            span {
-                                width: 16px;
-                                height: 16px;
-                            }
-                        }
-                    }
-
-                    & ul {
-                        position: absolute;
-                        top: 25px;
-                        display: flex;
-                        align-items: flex-start;
-                        flex-direction: column;
-                        background-color: $primary-white;
-                        color: $primary-blue;
-                        gap: 0;
-                        // padding: 8px 8px;
-                        border-radius: 4px;
-                        display: none;
-
-
-                        & li {
-                            width: 100%;
-                            @include font-style(12px, 16px, $primary-blue, map.get($font-weights, regular), $Poppins);
-                            padding: 8px 10px;
-                            border-bottom: 1px solid gray;
-                        }
-                    }
-
-                    &.dropdown-active {
-                        & ul {
-                            display: block;
-                        }
-
-                        span {
-                            img {
-                                transform: rotate(180deg);
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 
     // Hamburger
@@ -456,6 +318,144 @@ header {
                 }
             }
 
+        }
+    }
+
+    // Header Top
+    .header-top {
+        max-width: 100%;
+        width: -webkit-fill-available;
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #141414;
+        color: $primary-white;
+
+        @include media(mobile) {
+            background-color: $primary-white;
+        }
+
+        & div:first-child {
+            width: 71%;
+            display: flex;
+            height: 40px;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+            align-self: stretch;
+            margin: auto;
+
+            @include media(mobile) {
+                width: 93%;
+                border-bottom: 1px solid #BDBDBD;
+            }
+
+            & ul:first-child {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                & li:first-child {
+                    @include font-style(12px, 16px, $primary-white, map.get($font-weights, regular), $Poppins);
+
+                    @include media(mobile) {
+                        display: none;
+                    }
+                }
+
+                & li:nth-child(2) {
+                    display: none;
+
+                    @include media(mobile) {
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+                        @include font-style(12px, 14px, $primary-blue, map.get($font-weights, regular), $Poppins);
+
+                        span {
+                            width: 16px;
+                            height: 16px;
+                        }
+                    }
+                }
+            }
+
+            & ul:nth-child(2) {
+                list-style: none;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 40px;
+                padding: 0;
+                margin: 0;
+
+                & li:nth-child(1) {
+                    p {
+                        @include font-style(12px, 16px, $primary-white, map.get($font-weights, regular), $Poppins);
+
+                        @include media(mobile) {
+                            color: $primary-blue;
+                        }
+                    }
+                }
+
+                & li:nth-child(2) {
+                    position: relative;
+
+                    @include media(mobile) {
+                        display: none;
+                    }
+
+                    p {
+                        color: $primary-white;
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        @include font-style(12px, 16px, $primary-white, map.get($font-weights, regular), $Poppins);
+                        cursor: pointer;
+                        user-select: none;
+
+                        span {
+                            width: 16px;
+                            height: 16px;
+                        }
+                    }
+                }
+
+                & ul {
+                    position: absolute;
+                    top: 25px;
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    background-color: $primary-white;
+                    color: $primary-blue;
+                    gap: 0;
+                    // padding: 8px 8px;
+                    border-radius: 4px;
+                    display: none;
+
+
+                    & li {
+                        width: 100%;
+                        @include font-style(12px, 16px, $primary-blue, map.get($font-weights, regular), $Poppins);
+                        padding: 8px 10px;
+                        border-bottom: 1px solid gray;
+                    }
+                }
+
+                &.dropdown-active {
+                    & ul {
+                        display: block;
+                    }
+
+                    span {
+                        img {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -1,9 +1,11 @@
-@import '../swiper/swiper-bundle.min.css';
+@import url('../swiper/swiper-bundle.min.css');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 .section.home-banner-container {
     position: relative;
 }

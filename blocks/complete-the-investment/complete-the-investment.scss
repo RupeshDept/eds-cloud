@@ -19,7 +19,6 @@
         }
 
         >p:first-child {
-            // font-family: ButlerPro;
             @include font-style(28px, 32px, $primary-Blue-1-900, map.get($font-weights, medium), $ButlerPro);
             grid-column: 1 / 2;
 
@@ -30,8 +29,7 @@
         }
 
         >p:nth-child(2) {
-            // font-family: ButlerPro;
-            @include font-style(28px, 32px, $primary-Blue-1-900,map.get($font-weights, medium), $ButlerPro);
+            @include font-style(28px, 32px, $primary-Blue-1-900, map.get($font-weights, medium), $ButlerPro);
             grid-column: 1 / 2;
             margin: 0;
             padding: 0;
@@ -41,21 +39,20 @@
                 grid-column: 1 / -1;
                 text-align: left;
                 padding: 0;
-
             }
 
             a {
-                @include font-style(14px, 16px, $primary-white,map.get($font-weights, semi-bold), $Poppins);
+                @include font-style(14px, 16px, $primary-white, map.get($font-weights, semi-bold), $Poppins);
                 margin: 0;
                 padding: 0;
                 display: flex;
                 width: 143px;
-                padding: 12px var(--Spacing-12, 12px) var(--Spacing-12, 12px) var(--Spacing-12, 12px);
+                padding: 12px;
                 justify-content: center;
                 align-items: center;
-                gap: var(--Spacing-8, 8px);
-                border-radius: var(--Border-Radius-8, 8px);
-                background: var(--Blue-1-900, #242177);
+                gap: 8px;
+                border-radius: map.get($radius, r8);
+                background: $primary-Blue-1-900;
             }
         }
 
@@ -76,7 +73,7 @@
                 max-width: 100%;
                 height: 276px;
                 object-fit: cover;
-                border-radius: 8px;
+                border-radius: map.get($radius, r8);
             }
         }
     }

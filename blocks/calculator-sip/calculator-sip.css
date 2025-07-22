@@ -1,12 +1,95 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* stylelint-disable max-line-length */
+
+/* ButllerPro font face */
+@font-face {
+  font-family: ButlerPro;
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/ButlerPro-ExtraBold.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-:root {
-  --text-color: #333;
-  --border-color: #ccc;
+@font-face {
+  font-family: ButlerPro;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/ButlerPro-Bold.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: ButlerPro;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/ButlerPro-SemiBold.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: ButlerPro;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/ButlerPro-Medium.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: ButlerPro;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ButlerPro-Roman.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Poppins font face */
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Poppins700.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/Poppins600.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Poppins500.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Poppins400.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/Poppins300.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 .compounding {
@@ -18,6 +101,7 @@
   gap: 8px;
   align-self: stretch;
 }
+
 .compounding .compounding-two-inner {
   display: flex;
   flex-wrap: wrap;
@@ -27,39 +111,39 @@
   margin: 0 auto;
   width: 100%;
 }
+
 .compounding .calculator-sip-wrapper {
   flex: 1 1 50%;
   max-width: 600px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container {
   background: #fff;
   padding: 24px;
   border-radius: 8px;
   align-self: stretch;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper span {
   align-self: stretch;
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  font-style: normal;
-  color: #424242;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper label {
   font-weight: 600;
   color: var(--text-color);
   font-size: 14px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper input {
   width: 100%;
-  color: #2E2A94;
-  font-family: "Poppins", sans-serif;
+  color: #2e2a94;
+  font-family: Poppins, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -70,9 +154,11 @@
   background-size: 20px 20px;
   border: none;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper {
   position: relative;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul {
   list-style: none;
   margin: 0;
@@ -86,23 +172,28 @@
   z-index: 99;
   font-size: 18px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li {
   padding: 10px;
   cursor: pointer;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li:hover {
   background: #f3f4f6;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li.active {
   background: #e5e7eb;
   border-left: 3px solid #4f46e5;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper {
   display: flex;
   flex-direction: row;
   gap: 12px;
   margin-top: 16px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper button {
   display: flex;
   width: 104px;
@@ -115,7 +206,7 @@
   border: 1px solid #BDBDBD;
   background: #FAFAFA;
   color: #424242;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -124,22 +215,25 @@
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper button:hover {
   background: #382AD7;
-  color: #ffffff;
+  color: #fff;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper button.active {
   background: #EDF1FF;
-  color: #2E2A94;
+  color: #2e2a94;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   gap: 40px;
   border-bottom: 1px solid var(--border-color);
   margin: 20px 0;
-  flex-direction: row;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper {
   flex: 1 1 45%;
@@ -152,43 +246,46 @@
   justify-content: space-between;
   align-items: flex-start;
   border: 0 solid #9E9E9E;
-  background: #FFF;
+  background: #fff;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper label,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper label {
   align-self: stretch;
   color: #424242;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input {
   border-radius: 4px;
   border: none;
   box-sizing: border-box;
-  color: #2E2A94;
-  font-family: "Poppins", sans-serif;
+  color: #2e2a94;
+  font-family: Poppins, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
   width: 100%;
-  -webkit-appearance: textfield;
-          appearance: textfield;
-  -moz-appearance: textfield;
+  appearance: textfield;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input::-webkit-outer-spin-button, .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input::-webkit-inner-spin-button,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input::-webkit-outer-spin-button,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper {
   position: relative;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper::after {
   content: "";
   position: absolute;
@@ -202,6 +299,7 @@
   aspect-ratio: 1/1;
   top: 65%;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .invested-amount {
   display: flex;
   margin: 20px 0;
@@ -209,58 +307,66 @@
   gap: 4px;
   align-self: stretch;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .invested-amount .invested-amount-wrapper {
   display: flex;
   align-items: flex-start;
   gap: 4px;
   align-self: stretch;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .invested-amount .invested-amount-wrapper label {
   color: #424242;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .invested-amount .invested-amount-wrapper span {
   color: #2B2E8C;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
   line-height: 16px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .cal-discription {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper,
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper label,
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper label {
   color: #424242;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper span,
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper span {
-  color: #2E2A94;
-  font-family: "Poppins", sans-serif;
+  color: #2e2a94;
+  font-family: Poppins, sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: 32px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button {
   display: flex;
   width: 132px;
@@ -269,122 +375,146 @@
   align-items: center;
   gap: 8px;
   border-radius: 8px;
-  background: #2E2A94;
+  background: #2e2a94;
   border: none;
   color: #fff;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 22px;
   cursor: pointer;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button:hover {
-  background: #282480;
+  background: #2e2a94;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .no-returns-msg {
   margin-top: 10px;
+
   --tw-text-opacity: 1;
-  color: rgb(113, 113, 113);
+
+  color: rgb(113 113 113);
   font-size: 0.875rem;
   line-height: 1.25rem;
+
   --tw-bg-opacity: 1;
-  background-color: rgb(251 238 221/var(--tw-bg-opacity, 1));
+
+  background-color: rgb(251 238 221 / var(--tw-bg-opacity, 1));
   padding: 5px;
 }
+
 .compounding .calculator-sip-wrapper .view-btn-cal {
   padding-top: 10px;
 }
+
 .compounding .calculator-sip-wrapper .view-btn-cal a {
-  color: #2E2A94;
-  font-family: "Poppins", sans-serif;
+  color: #2e2a94;
+  font-family: Poppins, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
   text-decoration-line: underline;
   text-decoration-style: solid;
-  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
           text-decoration-skip-ink: auto;
   text-decoration-thickness: auto;
   text-underline-offset: 2.8px;
   text-underline-position: from-font;
 }
+
 .compounding .calculator-sip-wrapper .view-btn-cal a:hover {
-  color: #221f6c;
+  color: #2e2a94;
 }
+
 .compounding .default-content-wrapper {
   max-width: 1200px;
   margin: 30px auto 0;
 }
+
 .compounding .default-content-wrapper p,
 .compounding .default-content-wrapper ul,
 .compounding .default-content-wrapper li {
   color: #424242;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
 }
+
 .compounding .default-content-wrapper ul {
   padding-left: 20px;
 }
+
 .compounding .default-content-wrapper li {
   margin-bottom: 6px;
 }
+
 .compounding .default-content-wrapper strong {
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .compounding {
     padding: 20px 16px;
   }
+
   .compounding .compounding-two-inner {
     flex-direction: column;
     gap: 20px;
     width: 100%;
   }
+
   .compounding .calculator-sip-wrapper {
     flex: 1 1 100%;
     width: 100%;
   }
+
   .compounding .calculator-sip-wrapper .cal-container {
     padding: 16px;
   }
+
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper {
     flex-direction: column;
     gap: 20px;
   }
+
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper,
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper {
     width: 100%;
     border-bottom: 1px solid #BDBDBD;
   }
+
   .compounding .calculator-sip-wrapper .cal-container .cal-discription {
-    flex-direction: row;
+    flex-flow: row wrap;
     gap: 10px;
-    flex-wrap: wrap;
   }
+
   .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper,
   .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper {
     flex: 1 1 45%;
   }
+
   .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button {
     width: 100%;
   }
+
   .compounding .calculator-sip-wrapper .view-btn-cal {
     padding-top: 16px;
   }
+
   .compounding .default-content-wrapper {
     margin: 20px auto 0;
     padding: 0 16px;
   }
+
   .compounding .default-content-wrapper p,
   .compounding .default-content-wrapper ul,
   .compounding .default-content-wrapper li {
     font-size: 12px;
     line-height: 16px;
   }
-}/*# sourceMappingURL=calculator-sip.css.map */
+}
