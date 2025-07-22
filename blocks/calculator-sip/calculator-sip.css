@@ -1,3 +1,5 @@
+@charset "UTF-8";
+@import "../../../styles/fonts.css";
 /* Reset */
 *,
 *::before,
@@ -17,50 +19,43 @@
 /* MAIN WRAPPER */
 .compounding {
   background-color: aliceblue;
-  padding: 40px 43px;
+  padding: 40px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
   align-self: stretch;
-
-  /* FIX: Moved this general rule before the more specific one to fix specificity errors. */
 }
-
 .compounding .default-content-wrapper {
   max-width: 1200px;
   margin: 40px auto 0;
 }
-
 .compounding .default-content-wrapper p,
 .compounding .default-content-wrapper ul,
 .compounding .default-content-wrapper li {
-  margin-bottom: 6px;
-  font-family: Poppins, sans-serif;
+  margin-bottom: 8px;
   font-size: 12px;
-  font-weight: 400;
   line-height: 16px;
-  font-style: normal;
   color: #424242;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
-
 .compounding .default-content-wrapper strong {
   font-weight: 600;
 }
-
 .compounding .default-content-wrapper ul {
-  padding-left: 20px;
+  padding-left: 16px;
 }
 .compounding .compounding-two-inner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 0 auto;
   gap: 40px;
   max-width: 1300px;
+  border-radius: 16px;
 }
-
 .compounding .compounding-two-inner .default-content-wrapper {
   flex: 1 1 40%;
   text-align: left;
@@ -69,35 +64,32 @@
   align-items: center;
   gap: 16px;
 }
-
 .compounding .compounding-two-inner .default-content-wrapper .icon {
   flex: 0 0 auto;
   width: 88px;
   height: 88px;
   flex-shrink: 0;
 }
-
 .compounding .compounding-two-inner .default-content-wrapper .hero-text {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   text-align: left;
 }
-
 .compounding .compounding-two-inner .default-content-wrapper h2 {
+  font-family: "ButlerPro", sans-serif;
   color: #2e2a94;
-  font-family: ButlerPro, serif;
-  font-size: clamp(2rem, 5vw, 2.75rem);
   font-weight: 700;
   line-height: 1.2;
+  font-size: clamp(2rem, 5vw, 2.75rem);
   margin: 0 0 16px;
 }
-
 .compounding .compounding-two-inner .default-content-wrapper p {
-  color: #424242;
-  font-family: Poppins, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
+  color: #424242;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   margin: 0;
   max-width: 450px;
 }
@@ -110,11 +102,7 @@
   border-radius: 8px;
   padding: 24px;
   align-self: stretch;
-  box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
-
-  /* FIX: Moved before .investment-wrapper to fix specificity order. */
-
-  /* FIX: Removed duplicate '.no-returns-msg' block from here. */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper {
   display: flex;
@@ -122,35 +110,33 @@
   gap: 8px;
 }
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper span {
-  font-family: Poppins, sans-serif;
   font-size: 12px;
-  font-weight: 400;
   line-height: 16px;
-  font-style: normal;
   color: #424242;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   text-align: left;
 }
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper label {
-  font-weight: 600;
-  color: var(--text-color);
   font-size: 14px;
+  line-height: normal;
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper input {
   width: 100%;
-  color: #2E2A94;
-  font-family: Poppins, sans-serif;
   font-size: 16px;
-  font-weight: 500;
   line-height: 20px;
+  color: #2e2a94;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
   border-radius: 4px;
   background: url("../../icons/magnifyingglass.svg") no-repeat right 12px center;
   background-size: 20px 20px;
   border: none;
   outline: none;
-
-  /* FIX: Corrected typo from 'input:active' to '&:active' */
 }
-
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper input:active {
   border: none;
 }
@@ -158,12 +144,13 @@
   position: relative;
 }
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul {
+  font-family: "Poppins", sans-serif;
   list-style: none;
   margin: 0;
   padding: 0;
   max-height: 200px;
   overflow-y: auto;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   background: #fff;
   position: absolute;
   width: 100%;
@@ -176,15 +163,14 @@
   cursor: pointer;
 }
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li:hover {
-  background: #f3f4f6;
+  background: #f3f3f3;
 }
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li.active {
-  background: #e5e7eb;
-  border-left: 3px solid #4f46e5;
+  background: #EDF1FF;
+  border-left: 3px solid #2e2a94;
 }
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper {
   display: flex;
-  flex-direction: row;
   gap: 12px;
   margin-top: 16px;
 }
@@ -195,97 +181,88 @@
   padding: 8px 12px;
   justify-content: center;
   align-items: center;
-  border-radius: 1000px;
-  border: 1px solid #BDBDBD;
-  background: #FAFAFA;
+  border-radius: 100px;
+  border: 1px solid #b7b7b7;
+  background: #f3f3f3;
+  font-size: 14px;
+  line-height: 22px;
   color: #424242;
   font-family: "Poppins", sans-serif;
-  font-size: 14px;
   font-weight: 600;
-  line-height: 22px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper button:hover {
-  background: #382AD7;
+  background: #2e2a94;
   color: #fff;
 }
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper button.active {
   background: #EDF1FF;
-  color: #2E2A94;
+  color: #2e2a94;
 }
-
 .compounding .calculator-sip-wrapper .cal-container .invested-amount {
-  /* FIX: Removed redundant 'margin-bottom' property. */
   display: flex;
-  margin: 20px 0;
+  margin: 16px 0;
   align-items: flex-start;
   gap: 4px;
   align-self: stretch;
 }
-
 .compounding .calculator-sip-wrapper .cal-container .invested-amount label {
-  font-family: Poppins, sans-serif;
   font-size: 12px;
-  font-weight: 400;
   line-height: 16px;
-  font-style: normal;
   color: #424242;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
-
 .compounding .calculator-sip-wrapper .cal-container .invested-amount span {
-  color: #2B2E8C;
-  font-family: Poppins, sans-serif;
   font-size: 12px;
-  font-weight: 600;
   line-height: 16px;
+  color: #2b2e8c;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   margin-left: 4px;
 }
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  margin: 20px 0;
+  margin: 16px 0;
   border-bottom: 1px solid var(--border-color);
 }
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper {
+  position: relative;
   flex: 1 1 45%;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   width: 290px;
   height: 68px;
   padding: 8px 0;
   justify-content: space-between;
-  align-items: flex-start;
-  background: #FFF;
-  border: 0 solid #9E9E9E;
 }
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper label,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper label {
-  font-family: Poppins, sans-serif;
   font-size: 12px;
-  font-weight: 400;
   line-height: 16px;
-  font-style: normal;
   color: #424242;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input {
   border: none;
-  color: #2E2A94;
-  font-family: Poppins, sans-serif;
   font-size: 20px;
-  font-weight: 500;
   line-height: 24px;
+  color: #2e2a94;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
   width: 100%;
   -webkit-appearance: textfield;
+     -moz-appearance: textfield;
           appearance: textfield;
-  appearance: textfield;
   border-radius: 4px;
   box-sizing: border-box;
-  font-style: normal;
 }
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input::-webkit-outer-spin-button, .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input::-webkit-inner-spin-button,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input::-webkit-outer-spin-button,
@@ -293,15 +270,9 @@
   -webkit-appearance: none;
   margin: 0;
 }
-
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input:focus,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input:focus {
   outline: none;
-  border-bottom-color: #2e2a94;
-}
-
-.compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper {
-  position: relative;
 }
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper::after {
   content: "";
@@ -318,30 +289,29 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
 }
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper,
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper label,
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper label {
-  font-family: Poppins, sans-serif;
   font-size: 12px;
-  font-weight: 400;
   line-height: 16px;
-  font-style: normal;
   color: #424242;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper span,
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper span {
-  color: #2E2A94;
-  font-family: Poppins, sans-serif;
   font-size: 24px;
-  font-weight: 600;
   line-height: 32px;
+  color: #2e2a94;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   text-align: left;
 }
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button {
@@ -352,61 +322,99 @@
   align-items: center;
   gap: 8px;
   border-radius: 8px;
-  background: #2E2A94;
+  background: #2e2a94;
   border: none;
   color: #fff;
-  font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 600;
   line-height: 22px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button:hover {
-  background: #282480;
+  background: #2b2e8c;
 }
-
-.compounding .calculator-sip-wrapper .cal-container .cal-discription .no-returns-msg {
-  margin-top: 10px;
-  color: rgb(113 113 113);
+.compounding .calculator-sip-wrapper .cal-container .no-returns-msg {
+  margin-top: 8px;
+  color: rgb(113, 113, 113);
   font-size: 0.875rem;
   line-height: 1.25rem;
-  background-color: rgb(251 238 221);
-  padding: 5px;
+  background-color: rgb(251, 238, 221);
+  padding: 4px;
 }
 .compounding .calculator-sip-wrapper .view-btn-cal {
   margin-top: 16px;
-  padding-top: 10px;
+  padding-top: 8px;
   text-align: left;
 }
 .compounding .calculator-sip-wrapper .view-btn-cal a {
-  color: #2E2A94;
   font-size: 14px;
+  line-height: normal;
+  color: #2e2a94;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   text-decoration: underline;
 }
 
 /* Responsive */
-@media (width <= 992px) {
+/* ---------------------------------------
+   ✅ MOBILE FIXES
+--------------------------------------- */
+@media (max-width: 768px) {
+  .compounding {
+    padding: 32px;
+  }
   .compounding .compounding-two-inner {
     flex-direction: column;
     text-align: center;
   }
-
   .compounding .compounding-two-inner .default-content-wrapper {
     text-align: center;
   }
+  .compounding .calculator-sip-wrapper {
+    width: 100%;
+  }
+  .compounding .calculator-sip-wrapper .cal-container {
+    padding: 16px;
+  }
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper {
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
+    text-align: left;
   }
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper,
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper {
     width: 100%;
-    border-bottom: 1px solid #BDBDBD;
+    position: relative; /* 🟢 Important for icon */
+    border-bottom: 1px solid var(--border-color);
   }
-
-  .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button {
+  .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input,
+  .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input {
     width: 100%;
   }
-}
+  .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper::after,
+  .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper::after {
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  .compounding .calculator-sip-wrapper .cal-container .cal-discription {
+    display: flex; /* 🟢 Make sure flex stays on mobile */
+    flex-wrap: wrap; /* 🟢 Allow wrapping */
+    justify-content: space-between; /* 🟢 Space between the two wrappers */
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+  .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper,
+  .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper {
+    flex: 1 1 45%; /* 🟢 Side by side */
+  }
+  .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn {
+    flex: 1 1 100%; /* 🟢 Full width below */
+  }
+  .compounding .calculator-sip-wrapper .view-btn-cal {
+    text-align: left;
+  }
+}/*# sourceMappingURL=calculator-sip.css.map */

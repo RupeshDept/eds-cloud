@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use '../../styles/common-theme/css/variables_mixins' as *;
+
 /* Reset */
 *,
 *::before,
@@ -5,21 +8,11 @@
   box-sizing: border-box;
 }
 
-// Variables
-$color-text-body: #424242;
-$font-family-body: 'Poppins', sans-serif;
+// :root {
+//   --text-color: map.get($body, Ctxt);
+//   --border-color: map.get($old-silver, 75);
+// }
 
-// Mixins
-@mixin text-style-disclaimer-xsmall {
-  font-family: $font-family-body;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  font-style: normal;
-  color: $color-text-body;
-}
-
-// Root
 :root {
   --text-color: #333;
   --border-color: #ccc;
@@ -32,31 +25,31 @@ $font-family-body: 'Poppins', sans-serif;
 /* MAIN WRAPPER */
 .compounding {
   background-color: aliceblue;
-  padding: 40px 43px;
+  padding: map.get($spacing, xxl) map.get($spacing, xxl);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: map.get($spacing, xs);
   align-self: stretch;
+  // height: 625px;
 
-  /* FIX: Moved this general rule before the more specific one to fix specificity errors. */
   .default-content-wrapper {
     max-width: 1200px;
-    margin: 40px auto 0;
+    margin: map.get($spacing, xxl) auto 0;
 
     p,
     ul,
     li {
-      margin-bottom: 6px;
-      @include text-style-disclaimer-xsmall;
+      margin-bottom: map.get($spacing, xs);
+      @include font-style(12px, 16px, map.get($body, Ctxt), map.get($font-weights, regular), $Poppins);
     }
 
     strong {
-      font-weight: 600;
+      font-weight: map.get($font-weights, semibold);
     }
 
     ul {
-      padding-left: 20px;
+      padding-left: map.get($spacing, md);
     }
   }
 
@@ -64,10 +57,11 @@ $font-family-body: 'Poppins', sans-serif;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: 0 auto;
-    gap: 40px;
+    gap: map.get($spacing, xxl);
     max-width: 1300px;
+    border-radius: map.get($radius, r16);
 
     .default-content-wrapper {
       flex: 1 1 40%;
@@ -75,7 +69,7 @@ $font-family-body: 'Poppins', sans-serif;
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 16px;
+      gap: map.get($spacing, md);
 
       .icon {
         flex: 0 0 auto;
@@ -87,24 +81,17 @@ $font-family-body: 'Poppins', sans-serif;
       .hero-text {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: map.get($spacing, sm);
         text-align: left;
       }
 
       h2 {
-        color: #2e2a94;
-        font-family: 'ButlerPro', serif;
-        font-size: clamp(2rem, 5vw, 2.75rem);
-        font-weight: 700;
-        line-height: 1.2;
-        margin: 0 0 16px;
+        @include typography-h2;
+        margin: 0 0 map.get($spacing, md);
       }
 
       p {
-        color: $color-text-body;
-        font-family: $font-family-body;
-        font-size: 1rem;
-        line-height: 1.5;
+        @include font-style(1rem, 1.5, map.get($body, Ctxt), map.get($font-weights, regular), $Poppins);
         margin: 0;
         max-width: 450px;
       }
@@ -116,42 +103,35 @@ $font-family-body: 'Poppins', sans-serif;
     max-width: 600px;
 
     .cal-container {
-      background: #fff;
-      border-radius: 8px;
-      padding: 24px;
+      background: $primary-white;
+      border-radius: map.get($radius, r8);
+      padding: map.get($spacing, lg);
       align-self: stretch;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      box-shadow: $box-shadow-soft;
 
       .search-bar-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: map.get($spacing, xs);
 
         span {
-          @include text-style-disclaimer-xsmall;
+          @include font-style(12px, 16px, map.get($body, Ctxt), map.get($font-weights, regular), $Poppins);
           text-align: left;
         }
 
         label {
-          font-weight: 600;
-          color: var(--text-color);
-          font-size: 14px;
+          @include font-style(14px, normal, var(--text-color), map.get($font-weights, semibold), $Poppins);
         }
 
         input {
           width: 100%;
-          color: #2E2A94;
-          font-family: 'Poppins', sans-serif;
-          font-size: 16px;
-          font-weight: 500;
-          line-height: 20px;
-          border-radius: 4px;
-          background: url('../../icons/magnifyingglass.svg') no-repeat right 12px center;
+          @include font-style(16px, 20px, $primary-blue, map.get($font-weights, medium), $Poppins);
+          border-radius: map.get($radius, r4);
+          background: url('../../icons/MagnifyingGlass.svg') no-repeat right 12px center;
           background-size: 20px 20px;
           border: none;
           outline: none;
 
-          /* FIX: Corrected typo from 'input:active' to '&:active' */
           &:active {
             border: none;
           }
@@ -162,13 +142,14 @@ $font-family-body: 'Poppins', sans-serif;
         position: relative;
 
         ul {
+          font-family: 'Poppins', sans-serif;
           list-style: none;
           margin: 0;
           padding: 0;
           max-height: 200px;
           overflow-y: auto;
-          border: 1px solid #ccc;
-          background: #fff;
+          border: 1px solid var(--border-color);
+          background: $primary-white;
           position: absolute;
           width: 100%;
           z-index: 99;
@@ -180,12 +161,12 @@ $font-family-body: 'Poppins', sans-serif;
             cursor: pointer;
 
             &:hover {
-              background: #f3f4f6;
+              background: map.get($old-silver, 50);
             }
 
             &.active {
-              background: #e5e7eb;
-              border-left: 3px solid #4f46e5;
+              background: map.get($blue-1, b25);
+              border-left: 3px solid $primary-blue;
             }
           }
         }
@@ -193,102 +174,82 @@ $font-family-body: 'Poppins', sans-serif;
 
       .scheme-btns-wrapper {
         display: flex;
-        flex-direction: row;
-        gap: 12px;
-        margin-top: 16px;
+        gap: map.get($spacing, sm);
+        margin-top: map.get($spacing, md);
 
         button {
           display: flex;
           width: 104px;
           height: 32px;
-          padding: 8px 12px;
+          padding: map.get($spacing, xs) map.get($spacing, sm);
           justify-content: center;
           align-items: center;
-          border-radius: 1000px;
-          border: 1px solid #BDBDBD;
-          background: #FAFAFA;
-          color: #424242;
-          font-family: 'Poppins', sans-serif;
-          font-size: 14px;
-          font-weight: 600;
-          line-height: 22px;
+          border-radius: map.get($radius, r100);
+          border: 1px solid map.get($old-silver, 100);
+          background: map.get($old-silver, 50);
+          @include font-style(14px, 22px, map.get($body, Ctxt), map.get($font-weights, semibold), $Poppins);
           cursor: pointer;
           transition: all 0.2s ease;
 
           &:hover {
-            background: #382AD7;
-            color: #ffffff;
+            background: $primary-blue;
+            color: $primary-white;
           }
 
           &.active {
-            background: #EDF1FF;
-            color: #2E2A94;
+            background: map.get($blue-1, b25);
+            color: $primary-blue;
           }
         }
       }
 
-      /* FIX: Moved before .investment-wrapper to fix specificity order. */
       .invested-amount {
-        /* FIX: Removed redundant 'margin-bottom' property. */
         display: flex;
-        margin: 20px 0;
+        margin: map.get($spacing, md) 0;
         align-items: flex-start;
-        gap: 4px;
+        gap: map.get($spacing, xxs);
         align-self: stretch;
 
         label {
-          @include text-style-disclaimer-xsmall;
+          @include font-style(12px, 16px, map.get($body, Ctxt), map.get($font-weights, regular), $Poppins);
         }
 
         span {
-          color: #2B2E8C;
-          font-family: 'Poppins', sans-serif;
-          font-size: 12px;
-          font-weight: 600;
-          line-height: 16px;
-          margin-left: 4px;
+          @include font-style(12px, 16px, $primary-blue-dark, map.get($font-weights, semibold), $Poppins);
+          margin-left: map.get($spacing, xxs);
         }
       }
 
       .investment-wrapper {
         display: flex;
         flex-wrap: wrap;
-        gap: 40px;
-        margin: 20px 0;
+        gap: map.get($spacing, xxl);
+        margin: map.get($spacing, md) 0;
         border-bottom: 1px solid var(--border-color);
-        flex-direction: row;
 
         .sip-wrapper,
         .tenure-wrapper {
+          position: relative;
           flex: 1 1 45%;
           display: flex;
           flex-direction: column;
-          gap: 6px;
+          gap: map.get($spacing, xs);
           width: 290px;
           height: 68px;
-          padding: 8px 0;
+          padding: map.get($spacing, xs) 0;
           justify-content: space-between;
-          align-items: flex-start;
-          background: #FFF;
-          border: 0 solid #9E9E9E;
 
           label {
-            @include text-style-disclaimer-xsmall;
+            @include font-style(12px, 16px, map.get($body, Ctxt), map.get($font-weights, regular), $Poppins);
           }
 
           input {
             border: none;
-            color: #2E2A94;
-            font-family: 'Poppins', sans-serif;
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 24px;
+            @include font-style(20px, 24px, $primary-blue, map.get($font-weights, medium), $Poppins);
             width: 100%;
             appearance: textfield;
-            -moz-appearance: textfield;
-            border-radius: 4px;
+            border-radius: map.get($radius, r4);
             box-sizing: border-box;
-            font-style: normal;
 
             &::-webkit-outer-spin-button,
             &::-webkit-inner-spin-button {
@@ -298,25 +259,20 @@ $font-family-body: 'Poppins', sans-serif;
 
             &:focus {
               outline: none;
-              border-bottom-color: #2e2a94;
             }
           }
         }
 
-        .tenure-wrapper {
-          position: relative;
-
-          &::after {
-            content: '';
-            position: absolute;
-            right: 10px;
-            top: 65%;
-            width: 20px;
-            height: 20px;
-            background: url('../../icons/Frame.svg') no-repeat center;
-            background-size: contain;
-            pointer-events: none;
-          }
+        .tenure-wrapper::after {
+          content: '';
+          position: absolute;
+          right: 10px;
+          top: 65%;
+          width: 20px;
+          height: 20px;
+          background: url('../../icons/Frame.svg') no-repeat center;
+          background-size: contain;
+          pointer-events: none;
         }
       }
 
@@ -324,24 +280,20 @@ $font-family-body: 'Poppins', sans-serif;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        gap: 20px;
+        gap: map.get($spacing, lg);
 
         .current-value-wrapper,
         .return-cagr-wrapper {
           display: flex;
           flex-direction: column;
-          gap: 5px;
+          gap: map.get($spacing, xxs);
 
           label {
-            @include text-style-disclaimer-xsmall;
+            @include font-style(12px, 16px, map.get($body, Ctxt), map.get($font-weights, regular), $Poppins);
           }
 
           span {
-            color: #2E2A94;
-            font-family: 'Poppins', sans-serif;
-            font-size: 24px;
-            font-weight: 600;
-            line-height: 32px;
+            @include font-style(24px, 32px, $primary-blue, map.get($font-weights, semibold), $Poppins);
             text-align: left;
           }
         }
@@ -349,47 +301,43 @@ $font-family-body: 'Poppins', sans-serif;
         .start-sip-btn button {
           display: flex;
           width: 132px;
-          padding: 12px;
+          padding: map.get($spacing, sm);
           justify-content: center;
           align-items: center;
-          gap: 8px;
-          border-radius: 8px;
-          background: #2E2A94;
+          gap: map.get($spacing, xs);
+          border-radius: map.get($radius, r8);
+          background: $primary-blue;
           border: none;
-          color: #fff;
-          font-family: 'Poppins', sans-serif;
-          font-size: 14px;
-          font-weight: 600;
-          line-height: 22px;
+          color: $primary-white;
+          @include font-style(14px, 22px, $primary-white, map.get($font-weights, semibold), $Poppins);
           cursor: pointer;
           transition: background-color 0.2s ease;
 
           &:hover {
-            background: darken(#2E2A94, 5%);
+            background: $primary-blue-dark;
           }
         }
 
-        .no-returns-msg {
-          margin-top: 10px;
+        
+      }
+
+      .no-returns-msg {
+          margin-top: map.get($spacing, xs);
           color: rgb(113 113 113);
-          font-size: .875rem;
+          font-size: 0.875rem;
           line-height: 1.25rem;
           background-color: rgb(251 238 221);
-          padding: 5px;
+          padding: map.get($spacing, xxs);
         }
-      }
-      /* FIX: Removed duplicate '.no-returns-msg' block from here. */
     }
 
     .view-btn-cal {
-      margin-top: 16px;
-      padding-top: 10px;
+      margin-top: map.get($spacing, md);
+      padding-top: map.get($spacing, xs);
       text-align: left;
 
       a {
-        color: #2E2A94;
-        font-size: 14px;
-        font-weight: 500;
+        @include font-style(14px, normal, $primary-blue, map.get($font-weights, medium), $Poppins);
         text-decoration: underline;
       }
     }
@@ -397,8 +345,14 @@ $font-family-body: 'Poppins', sans-serif;
 }
 
 /* Responsive */
-@media (max-width: 992px) {
+/* ---------------------------------------
+   ✅ MOBILE FIXES
+--------------------------------------- */
+
+@include media(mobile) {
   .compounding {
+    padding: map.get($spacing, xl);
+
     .compounding-two-inner {
       flex-direction: column;
       text-align: center;
@@ -409,23 +363,55 @@ $font-family-body: 'Poppins', sans-serif;
     }
 
     .calculator-sip-wrapper {
+      width: 100%;
+
       .cal-container {
+        padding: map.get($spacing, md);
+
         .investment-wrapper {
           flex-direction: column;
-          gap: 20px;
+          gap: map.get($spacing, md);
+          text-align: left;
 
           .sip-wrapper,
           .tenure-wrapper {
             width: 100%;
-            border-bottom: 1px solid #BDBDBD;
+            position: relative; /* 🟢 Important for icon */
+            border-bottom: 1px solid var(--border-color);
+
+            input {
+              width: 100%;
+            }
+
+            &::after {
+              right: 10px;
+              transform: translateY(-50%);
+            }
           }
         }
 
         .cal-discription {
-          .start-sip-btn button {
-            width: 100%;
+          display: flex; /* 🟢 Make sure flex stays on mobile */
+          flex-wrap: wrap; /* 🟢 Allow wrapping */
+          justify-content: space-between; /* 🟢 Space between the two wrappers */
+          align-items: flex-start;
+          gap: map.get($spacing, md);
+          text-align: left;
+
+          .current-value-wrapper,
+          .return-cagr-wrapper {
+            flex: 1 1 45%; /* 🟢 Side by side */
+          }
+
+          .start-sip-btn {
+            flex: 1 1 100%; /* 🟢 Full width below */
+            // margin-top: map.get($spacing, md);
           }
         }
+      }
+
+      .view-btn-cal {
+        text-align: left;
       }
     }
   }
