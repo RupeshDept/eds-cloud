@@ -117,7 +117,8 @@ export default function decorate(block) {
                 onchange: (event) => {
                   const cgarValue = block.returns[0][event.target.value];
                   event.target.closest('.cagr-container').querySelector('.cagr-value h2').textContent = '';
-                  event.target.closest('.cagr-container').querySelector('.cagr-value h2').textContent = `${cgarValue}%`;
+                  event.target.closest('.cagr-container').querySelector('.cagr-value h2').textContent = `${cgarValue}`;
+                  event.target.closest('.cagr-container').querySelector('.cagr-value h2').append(span("%"))
                 },
               },
               ...tempReturns.map((eloption) => option({
@@ -129,7 +130,9 @@ export default function decorate(block) {
         div({
             class: 'cagr-value'
           },
-          h2(`${block.returns[0][dataMapMoObj.ObjTemp[tempReturns[0]]]}%`),
+          h2(`${block.returns[0][dataMapMoObj.ObjTemp[tempReturns[0]]]}`,
+            span("%")
+          ),
           p({
             class: 'scheme-yet',
             style: 'display:none'
@@ -206,7 +209,8 @@ function planListEvent(param, block) {
             onchange: (event) => {
               const cgarValue = block.returns[0][event.target.value];
               event.target.closest('.cagr-container').querySelector('.cagr-value h2').textContent = '';
-              event.target.closest('.cagr-container').querySelector('.cagr-value h2').textContent = `${cgarValue}%`;
+              event.target.closest('.cagr-container').querySelector('.cagr-value h2').textContent = `${cgarValue}`;
+              event.target.closest('.cagr-container').querySelector('.cagr-value h2').append(span("%"))
             },
           },
           ...tempReturns.map((eloption) => option({
@@ -218,7 +222,9 @@ function planListEvent(param, block) {
     let dropvalue = div({
         class: 'cagr-value',
       },
-      h2(`${block.returns[0][dataMapMoObj.ObjTemp[tempReturns[0]]]}%`),
+      h2(`${block.returns[0][dataMapMoObj.ObjTemp[tempReturns[0]]]}`,
+        span("%")
+      ),
       p({
         class: 'scheme-yet',
         style: 'display:none',

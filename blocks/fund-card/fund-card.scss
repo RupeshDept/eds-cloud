@@ -352,6 +352,9 @@
           );
           margin: 0;
           text-align: right;
+          span{
+            font-size: 14px
+          }
         }
 
         .scheme-yet,
@@ -712,6 +715,6 @@
 
 @include media(mobile-md) {
   .section.tabs-container .card-container {
-    max-width: 47%;
+    max-width: 100%;
   }
 }
