@@ -1,4 +1,7 @@
 /* Reset */
+@use 'sass:map';
+@use '../../styles/common-theme/css/variables_mixins' as *;
+@use '../../styles/common-theme/css/fluid-typography' as *;
 *,
 *::before,
 *::after {
@@ -7,7 +10,7 @@
 
 // Variables
 $color-text-body: #424242;
-$font-family-body: 'Poppins', sans-serif;
+$font-family-body: $Poppins;
 
 // Mixins
 @mixin text-style-disclaimer-xsmall {
@@ -101,7 +104,7 @@ $font-family-body: 'Poppins', sans-serif;
       }
 
       p {
-        color: $color-text-body;
+        color: #2E2A94;
         font-family: $font-family-body;
         font-size: 1rem;
         line-height: 1.5;
@@ -140,8 +143,8 @@ $font-family-body: 'Poppins', sans-serif;
 
         input {
           width: 100%;
-          color: #2E2A94;
-          font-family: 'Poppins', sans-serif;
+          color: #2E2A94; 
+          font-family: $Poppins;
           font-size: 16px;
           font-weight: 500;
           line-height: 20px;
@@ -208,7 +211,7 @@ $font-family-body: 'Poppins', sans-serif;
           border: 1px solid #BDBDBD;
           background: #FAFAFA;
           color: #424242;
-          font-family: 'Poppins', sans-serif;
+          font-family: $Poppins;
           font-size: 14px;
           font-weight: 600;
           line-height: 22px;
@@ -223,6 +226,7 @@ $font-family-body: 'Poppins', sans-serif;
           &.active {
             background: #EDF1FF;
             color: #2E2A94;
+            border: 1px solid #382AD7;
           }
         }
       }
@@ -242,7 +246,7 @@ $font-family-body: 'Poppins', sans-serif;
 
         span {
           color: #2B2E8C;
-          font-family: 'Poppins', sans-serif;
+          font-family: $Poppins;
           font-size: 12px;
           font-weight: 600;
           line-height: 16px;
@@ -279,7 +283,7 @@ $font-family-body: 'Poppins', sans-serif;
           input {
             border: none;
             color: #2E2A94;
-            font-family: 'Poppins', sans-serif;
+            font-family: $Poppins;
             font-size: 20px;
             font-weight: 500;
             line-height: 24px;
@@ -338,7 +342,7 @@ $font-family-body: 'Poppins', sans-serif;
 
           span {
             color: #2E2A94;
-            font-family: 'Poppins', sans-serif;
+            font-family: $Poppins;
             font-size: 24px;
             font-weight: 600;
             line-height: 32px;
@@ -357,7 +361,7 @@ $font-family-body: 'Poppins', sans-serif;
           background: #2E2A94;
           border: none;
           color: #fff;
-          font-family: 'Poppins', sans-serif;
+          font-family: $Poppins;
           font-size: 14px;
           font-weight: 600;
           line-height: 22px;
@@ -385,12 +389,12 @@ $font-family-body: 'Poppins', sans-serif;
       margin-top: 16px;
       padding-top: 10px;
       text-align: left;
-
       a {
         color: #2E2A94;
         font-size: 14px;
         font-weight: 500;
         text-decoration: underline;
+        font-family: $Poppins;
       }
     }
   }
@@ -399,6 +403,7 @@ $font-family-body: 'Poppins', sans-serif;
 /* Responsive */
 @media (max-width: 992px) {
   .compounding {
+    padding: 0px;
     .compounding-two-inner {
       flex-direction: column;
       text-align: center;
