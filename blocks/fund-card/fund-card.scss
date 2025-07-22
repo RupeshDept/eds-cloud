@@ -682,7 +682,7 @@
 
         .cagr-value h2 {
           @include font-style(
-            $size: 14px,
+            $size: 24px,
             $line-height: 16px,
             $color: $primary-blue,
             $weight: map.get($font-weights, medium),
