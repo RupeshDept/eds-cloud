@@ -11,7 +11,7 @@ export default function decorate(block) {
   });
 
   if (block.closest('.compound-journey')) { // [...block.classList].includes('compound-journey')
-    const dataCF = dataCfObj.slice(0, 3);
+    const dataCF = dataCfObj.slice(0, 5);
     const divWrapper = document.createElement('div');
     divWrapper.classList.add('card-items');
     dataCF.forEach((el) => {
