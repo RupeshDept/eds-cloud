@@ -33,7 +33,7 @@ export default function decorate(block) {
       return el
     }
   });
-  let classplan = tempReturns.length !== 0 ? "" : " not-provided"
+  let classplan = (DirectPlanlistArr.length !== 0 && tempReturns.length !== 0) ? "" : " not-provided"
   const cardContainer = div({
       class: 'card-container'
     },
