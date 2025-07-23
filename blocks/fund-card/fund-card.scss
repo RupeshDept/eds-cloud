@@ -313,7 +313,7 @@
 
       .cagr-select-wrapper {
         @include flex-center($align: center, $justify: flex-start);
-        width: 150px;
+        width: 80px;
 
         &::after {
           content: "";
