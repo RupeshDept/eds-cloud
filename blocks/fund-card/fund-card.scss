@@ -49,6 +49,7 @@
 
       .tabs-panel {
         @include flex-center($align: center, $justify: center);
+        align-items: stretch;
         flex-wrap: wrap;
         gap: 16px;
         margin: 24px 0 0;
@@ -175,7 +176,8 @@
       @include flex-center($align: center, $justify: space-between);
       gap: 30px;
       margin: 0 0 8px;
-      height: 100%;
+      // height: 100%;
+      min-height: 50px;
 
       h2 {
         @include font-style(
@@ -210,7 +212,6 @@
       @include flex-center($align: start, $justify: flex-start);
       gap: 8px;
       margin: 0 0 16px;
-      min-height: 32px;
 
       .fundtagging-list {
         @include flex-center($align: center, $justify: flex-start);
