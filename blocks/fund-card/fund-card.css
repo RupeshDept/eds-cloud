@@ -42,6 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 16px;
   margin: 24px 0 0;
@@ -61,8 +62,8 @@
   flex-wrap: wrap;
   gap: 20px;
 }
-.section.tabs-container .wrappertablist .btndesk,
-.section.tabs-container .wrappertablist .btnmob {
+.section.tabs-container .btndesk,
+.section.tabs-container .btnmob {
   margin: 0;
   padding: 0;
   line-height: 0;
@@ -71,8 +72,8 @@
   background-color: transparent;
   border-radius: 8px;
 }
-.section.tabs-container .wrappertablist .btndesk a,
-.section.tabs-container .wrappertablist .btnmob a {
+.section.tabs-container .btndesk a,
+.section.tabs-container .btnmob a {
   border-radius: 8px;
   border: 1px solid #2e2a94;
   width: 100%;
@@ -147,14 +148,16 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  flex: 1;
 }
 .section .card-container .card-upper-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  align-items: start;
+  min-height: 50px;
   gap: 30px;
   margin: 0 0 8px;
-  height: 100%;
 }
 .section .card-container .card-upper-title h2 {
   font-size: 14px;
@@ -183,7 +186,7 @@
   justify-content: flex-start;
   gap: 8px;
   margin: 0 0 16px;
-  min-height: 32px;
+  height: 100%;
 }
 .section .card-container .card-category .fundtagging-list {
   display: flex;
@@ -250,6 +253,10 @@
   align-items: start;
   justify-content: space-between;
   gap: 24px;
+  padding: 4px 0;
+}
+.section .card-container .cagr-container.not-provided {
+  padding: 0;
 }
 .section .card-container .cagr-container.not-provided .cagr-dropdown,
 .section .card-container .cagr-container.not-provided .cagr-value {
@@ -276,7 +283,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 150px;
+  max-width: 100px;
+  width: 100%;
 }
 .section .card-container .cagr-container .cagr-select-wrapper::after {
   content: "";
@@ -398,6 +406,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: 24px 0 0;
   gap: 20px;
 }
