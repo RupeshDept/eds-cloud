@@ -124,7 +124,7 @@
   border-bottom: 2px solid #2e2a94;
 }
 .section.tabs-container.our-popular-funds .tabs-list .tabs-tab {
-  color: var(--blue-1-200, #9DADFE);
+  color: #9DADFE;
 }
 .section.tabs-container.our-popular-funds .tabs-list .tabs-tab[aria-selected=true] {
   border-bottom: 2px solid #fff;
