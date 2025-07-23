@@ -9,6 +9,7 @@ import {
   ul,
   p,
   img,
+  label,
 } from '../../scripts/dom-helpers.js';
 import dataMapMoObj from '../../scripts/constant.js';
 
@@ -29,7 +30,6 @@ function planListEvent(param, block) {
     }
   });
 }
-
 export default function decorate(block) {
   const fundsTaggingSection = block.fundsTaggingSection.slice(0, 2);
   const finPlangrp = [];
@@ -115,7 +115,11 @@ export default function decorate(block) {
       ),
       div(
         { class: 'return-btn' },
-        div({ class: 'cagr-value' }, h2(`${coump}%`)),
+        div(
+          { class: 'cagr-value' },
+          label('Return'),
+          h2(`${coump}%`),
+        ),
         div({ class: 'btn-knowmore' }, a('Know More')),
       ),
     ),
