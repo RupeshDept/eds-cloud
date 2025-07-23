@@ -50,9 +50,7 @@ $blue-1: (
 
 // body-Color
 
-$body: (
-  Ctxt:#424242,
-);
+$color-text-body: #424242;
 
 // Old Silver
 $old-silver: (
@@ -173,7 +171,7 @@ $font-weights: (
 @mixin typography-h2 {
   font-family: $ButlerPro;
   color: $primary-blue;
-  font-weight: map.get($font-weights, bold); 
+  font-weight: map.get($font-weights, bold);
   line-height: $line-height-h2;
   font-size: clamp($font-size-h2-min, $font-size-h2-fluid, $font-size-h2-max);
 }

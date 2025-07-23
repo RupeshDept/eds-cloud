@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: start;
-  padding: 20px 0px;
+  padding: 20px 16px;
   align-items: flex-start;
   flex-shrink: 0;
   align-self: stretch;
