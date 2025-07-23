@@ -48,6 +48,7 @@
 
       .tabs-panel {
         @include flex-center($align: center, $justify: center);
+        align-items: stretch;
         flex-wrap: wrap;
         gap: 16px;
         margin: 24px 0 0;
@@ -70,8 +71,8 @@
       @include flex-center($align: center, $justify: space-between);
       flex-wrap: wrap;
       gap: 20px;
-
-      .btndesk,
+    }
+    .btndesk,
       .btnmob {
         margin: 0;
         padding: 0;
@@ -98,7 +99,6 @@
         display: block;
         margin: 0;
       }
-    }
 
     &.our-popular-funds {
 

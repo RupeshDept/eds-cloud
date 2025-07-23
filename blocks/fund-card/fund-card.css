@@ -42,6 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 16px;
   margin: 24px 0 0;
@@ -61,8 +62,8 @@
   flex-wrap: wrap;
   gap: 20px;
 }
-.section.tabs-container .wrappertablist .btndesk,
-.section.tabs-container .wrappertablist .btnmob {
+.section.tabs-container .btndesk,
+.section.tabs-container .btnmob {
   margin: 0;
   padding: 0;
   line-height: 0;
@@ -71,8 +72,8 @@
   background-color: transparent;
   border-radius: 8px;
 }
-.section.tabs-container .wrappertablist .btndesk a,
-.section.tabs-container .wrappertablist .btnmob a {
+.section.tabs-container .btndesk a,
+.section.tabs-container .btnmob a {
   border-radius: 8px;
   border: 1px solid #2e2a94;
   width: 100%;
