@@ -80,7 +80,7 @@ $breakpoint-desktop: 1367px;
 }
 
 .section.compound-journey {
-  > div {
+  >div {
     border-radius: $border-radius-md;
     background: $background-light;
     max-width: $container-max-width;
@@ -101,26 +101,32 @@ $breakpoint-desktop: 1367px;
 
       h2 {
         @include typography(24px, 28px, $primary-purple, $font-butler, 700);
-        margin: 0 0 $spacing-lg;
+        // margin: 0 0 $spacing-lg;
+        margin: 0;
       }
 
       p {
         @include typography(14px, 20px, $primary-purple, $font-poppins, 400);
         margin: 0 0 $spacing-md;
-        white-space: nowrap; // Prevent text wrapping
+        white-space: nowrap;
+        margin-bottom: 0;
       }
 
       ul {
         display: flex;
         flex-direction: row;
-        gap: $spacing-sm;
+        // gap: $spacing-sm;
         margin: 0;
         padding: 0;
-        list-style: none;
 
         li {
           @include typography(14px, 20px, $primary-purple, $font-poppins, 400);
-          white-space: nowrap; // Prevent list items from wrapping
+          white-space: nowrap;
+          padding-right: 26px;
+
+          &:first-child {
+            list-style: none;
+          }
         }
       }
 
@@ -132,7 +138,8 @@ $breakpoint-desktop: 1367px;
           @include button-style($bg-color: $accent-blue, $text-color: $white);
           min-width: 157px;
           width: max-content;
-          background: #242177
+          background: #242177;
+          margin: 0;
         }
       }
     }
@@ -148,15 +155,16 @@ $breakpoint-desktop: 1367px;
         @include flex-center(column, flex-start, flex-start, $spacing-md); // Aligned items to start, adjusted gap
         border-radius: $border-radius-md;
         background: $white; // Changed background to white
-        padding: $spacing-lg; // Adjusted padding
+        padding: 10px; // Adjusted padding
         flex: 1; // Allow cards to grow and fill space
         min-width: 240px;
-        margin-bottom: $spacing-xl;
+        // margin-bottom: $spacing-xl;
+
 
         .benchmark-star {
           @include flex-center(row, flex-start, space-between);
           width: 100%; // Ensure full width for space-between
-          margin-bottom: $spacing-md; // Adjusted margin
+          margin-bottom: 20px;
 
           .benchmarksec {
             @include flex-center(row, center, center);
@@ -200,8 +208,8 @@ $breakpoint-desktop: 1367px;
         }
 
         .dropdown-tags {
-          @include flex-center(row, flex-start, flex-start, $spacing-xs);
-          margin-bottom: $spacing-lg; // Added margin bottom for spacing
+          @include flex-center(row, flex-start, flex-start);
+          margin-bottom: $spacing-lg;
           min-height: 32px;
 
           select {
@@ -259,7 +267,7 @@ $breakpoint-desktop: 1367px;
             "label button"
             "value button";
           grid-template-columns: 1fr auto;
-          align-items: center;
+          align-items: flex-end;
           width: 100%;
           margin-top: auto; // Pushes this section to the bottom
           padding-top: $spacing-lg; // Adds space from content above
@@ -281,15 +289,18 @@ $breakpoint-desktop: 1367px;
             grid-area: value;
             @include typography(24px, 28px, $primary-purple, $font-poppins, 600);
             margin: 0;
-            h2{
+
+            h2 {
               margin: 0;
               color: var(--blue-1800-primary, #2E2A94);
-                font-family: Poppins;
-                font-size: 24px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: 32px; /* 133.333% */
+              font-family: Poppins;
+              font-size: 24px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 32px;
+              /* 133.333% */
             }
+
             // Removed incorrect width and background properties
           }
 
@@ -297,10 +308,11 @@ $breakpoint-desktop: 1367px;
             grid-area: button;
             display: flex;
             width: 132px;
-            padding: 12px var(--Spacing-12, 12px) var(--Spacing-12, 12px) var(--Spacing-12, 12px);
+            padding: 0;
             justify-content: center;
             align-items: center;
             gap: var(--Spacing-8, 8px);
+
             a {
               @include button-style($bg-color: $accent-blue, $text-color: $white);
               padding: $spacing-md;
@@ -308,21 +320,23 @@ $breakpoint-desktop: 1367px;
               width: 100%;
               display: block;
               color: #FFF;
-                    font-family: var(--Body, Poppins);
-                    font-size: var(--Button-Small-Size, 14px);
-                    font-style: normal;
-                    font-weight: 600;
-                    line-height: 16px; /* 114.286% */
-                text-decoration: none;
-                background: #242177;
+              font-family: var(--Body, Poppins);
+              font-size: var(--Button-Small-Size, 14px);
+              font-style: normal;
+              font-weight: 600;
+              line-height: 16px;
+              text-decoration: none;
+              background: #242177;
 
-              & span { // Targeting button text
+              & span {
+                // Targeting button text
                 color: #FFF;
                 font-family: var(--Body, $font-poppins);
                 font-size: var(--Button-Small-Size, 14px);
                 font-style: normal;
                 font-weight: 600;
-                line-height: 16px; /* 114.286% */
+                line-height: 16px;
+                /* 114.286% */
               }
             }
           }
@@ -354,7 +368,7 @@ $breakpoint-desktop: 1367px;
 
 @media (max-width: $breakpoint-tablet) {
   .section.compound-journey {
-    > div {
+    >div {
       padding: $spacing-lg;
     }
 
@@ -401,7 +415,7 @@ $breakpoint-desktop: 1367px;
 
 @media (max-width: $breakpoint-mobile) {
   .section.compound-journey {
-    > div {
+    >div {
       padding: $spacing-md;
     }
 
@@ -418,7 +432,7 @@ $breakpoint-desktop: 1367px;
         }
 
         ul {
-          flex-direction: column;
+          // flex-direction: column;
           align-items: flex-start;
           gap: $spacing-xs;
 
@@ -466,7 +480,7 @@ $breakpoint-desktop: 1367px;
           }
 
           .return-btn {
-             // On mobile, stack everything vertically
+            // On mobile, stack everything vertically
             grid-template-areas:
               "label"
               "value"
@@ -486,6 +500,7 @@ $breakpoint-desktop: 1367px;
 }
 
 .section.compound-journey {
+
   .button,
   .btn-knowmore a,
   .star {

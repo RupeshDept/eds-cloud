@@ -38,7 +38,7 @@
   color: #2e2a94;
   font-family: "ButlerPro", sans-serif;
   font-weight: 700;
-  margin: 0 0 16px;
+  margin: 0;
 }
 .section.compound-journey .compound-item .compound-sub-item p {
   font-size: 14px;
@@ -48,14 +48,13 @@
   font-weight: 400;
   margin: 0 0 12px;
   white-space: nowrap;
+  margin-bottom: 0;
 }
 .section.compound-journey .compound-item .compound-sub-item ul {
   display: flex;
   flex-direction: row;
-  gap: 10px;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 .section.compound-journey .compound-item .compound-sub-item ul li {
   font-size: 14px;
@@ -64,6 +63,10 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   white-space: nowrap;
+  padding-right: 26px;
+}
+.section.compound-journey .compound-item .compound-sub-item ul li:first-child {
+  list-style: none;
 }
 .section.compound-journey .compound-item .compound-sub-item .button-container {
   margin-top: auto;
@@ -87,6 +90,7 @@
   width: -moz-max-content;
   width: max-content;
   background: #242177;
+  margin: 0;
 }
 .section.compound-journey .compound-item .compound-sub-item .button-container .button:hover {
   opacity: 0.9;
@@ -112,10 +116,9 @@
   gap: 12px;
   border-radius: 12px;
   background: #fff;
-  padding: 16px;
+  padding: 10px;
   flex: 1;
   min-width: 240px;
-  margin-bottom: 20px;
 }
 .section.compound-journey .compound-item .card-items .card-container:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
@@ -127,7 +130,7 @@
   justify-content: space-between;
   gap: 0;
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 .section.compound-journey .compound-item .card-items .card-container .benchmark-star .benchmarksec {
   display: flex;
@@ -178,7 +181,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 8px;
+  gap: 0;
   margin-bottom: 16px;
   min-height: 32px;
 }
@@ -242,7 +245,7 @@
   display: grid;
   grid-template-areas: "label button" "value button";
   grid-template-columns: 1fr auto;
-  align-items: center;
+  align-items: flex-end;
   width: 100%;
   margin-top: auto;
   padding-top: 16px;
@@ -278,13 +281,14 @@
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
-  line-height: 32px; /* 133.333% */
+  line-height: 32px;
+  /* 133.333% */
 }
 .section.compound-journey .compound-item .card-items .card-container .return-btn .btn-knowmore {
   grid-area: button;
   display: flex;
   width: 132px;
-  padding: 12px var(--Spacing-12, 12px) var(--Spacing-12, 12px) var(--Spacing-12, 12px);
+  padding: 0;
   justify-content: center;
   align-items: center;
   gap: var(--Spacing-8, 8px);
@@ -316,7 +320,7 @@
   font-size: var(--Button-Small-Size, 14px);
   font-style: normal;
   font-weight: 600;
-  line-height: 16px; /* 114.286% */
+  line-height: 16px;
   text-decoration: none;
   background: #242177;
 }
@@ -330,7 +334,8 @@
   font-size: var(--Button-Small-Size, 14px);
   font-style: normal;
   font-weight: 600;
-  line-height: 16px; /* 114.286% */
+  line-height: 16px;
+  /* 114.286% */
 }
 
 @media (max-width: 1367px) {
@@ -406,7 +411,6 @@
     font-weight: 400;
   }
   .section.compound-journey .compound-item .compound-sub-item ul {
-    flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }

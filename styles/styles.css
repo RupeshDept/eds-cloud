@@ -397,3 +397,9 @@ footer .footer[data-block-status="loaded"] {
 .margin-top-banner {
   margin-top: calc(var(--header-height) + 32px);
 }
+
+@media (width <=768px) {
+  main>.section:first-of-type {
+    margin-top: 40px;
+  }
+}
