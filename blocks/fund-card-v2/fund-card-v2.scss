@@ -313,6 +313,11 @@ $breakpoint-desktop: 1367px;
               font-weight: 500;
               line-height: 32px;
               /* 133.333% */
+              span{
+                font-size: 14px;
+                line-height: 16px;
+                font-weight: 300;
+              }
             }
 
             // Removed incorrect width and background properties

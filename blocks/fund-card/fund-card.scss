@@ -355,6 +355,11 @@
           );
           margin: 0;
           text-align: right;
+          span{
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 300;
+          }
         }
 
         .scheme-yet,
@@ -689,8 +694,8 @@
 
         .cagr-value h2 {
           @include font-style(
-            $size: 14px,
-            $line-height: 16px,
+            $size: 24px,
+            $line-height: 32px,
             $color: $primary-blue,
             $weight: map.get($font-weights, medium),
             $family: $Poppins

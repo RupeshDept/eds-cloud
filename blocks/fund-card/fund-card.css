@@ -313,6 +313,11 @@
   margin: 0;
   text-align: right;
 }
+.section .card-container .cagr-container .cagr-value h2 span {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 300;
+}
 .section .card-container .cagr-container .cagr-value .scheme-yet,
 .section .card-container .cagr-container .cagr-value .cagr-date {
   font-size: 12px;
@@ -582,8 +587,8 @@
     padding: 2px 8px 2px 0;
   }
   .section .card-container .cagr-container .cagr-value h2 {
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 24px;
+    line-height: 32px;
     color: #2e2a94;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
