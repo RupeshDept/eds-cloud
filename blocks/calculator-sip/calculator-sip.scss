@@ -2,31 +2,7 @@
 @use 'sass:map';
 @use '../../styles/common-theme/css/variables_mixins' as *;
 @use '../../styles/common-theme/css/fluid-typography' as *;
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
-// Variables
-$color-text-body: #424242;
-$font-family-body: $Poppins;
-
-// Mixins
-@mixin text-style-disclaimer-xsmall {
-  font-family: $font-family-body;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  font-style: normal;
-  color: $color-text-body;
-}
-
-// Root
-:root {
-  --text-color: #333;
-  --border-color: #ccc;
-}
 
 .section.calculator-sip-container {
   max-width: none;
@@ -45,13 +21,13 @@ $font-family-body: $Poppins;
 
   .default-content-wrapper {
     max-width: 1200px;
-    margin: map.get($spacing, xxl) auto 0;
+    margin: 0 auto 0;
 
     p,
     ul,
     li {
       margin-bottom: map.get($spacing, xs);
-      @include font-style(12px, 16px, map.get($body, Ctxt), map.get($font-weights, regular), $Poppins);
+      @include font-style(12px, 16px, $color-text-body, map.get($font-weights, regular), $Poppins);
     }
 
     strong {
@@ -69,7 +45,7 @@ $font-family-body: $Poppins;
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    gap: map.get($spacing, xxl);
+    gap: 16px;
     max-width: 1300px;
     border-radius: map.get($radius, r16);
 
@@ -93,16 +69,25 @@ $font-family-body: $Poppins;
         flex-direction: column;
         gap: map.get($spacing, sm);
         text-align: left;
+
+        @include media(mobile) {
+          gap: 4px;
+        }
       }
 
       h2 {
-        @include typography-h2;
+        @include font-style(40px, 48px, $primary-blue, map.get($font-weights, bold), $ButlerPro);
         margin: 0 0 map.get($spacing, md);
+
+        @include media(mobile) {
+          @include font-style(32px, 40px, $primary-blue, map.get($font-weights, bold), $ButlerPro);
+          margin-bottom: 0;
+        }
       }
 
       p {
-        color: #2E2A94;
-        font-family: $font-family-body;
+        color: $primary-blue;
+        font-family: $Poppins;
         font-size: 1rem;
         line-height: 1.5;
         margin: 0;
@@ -128,7 +113,7 @@ $font-family-body: $Poppins;
         gap: map.get($spacing, xs);
 
         span {
-          @include font-style(12px, 16px, map.get($body, Ctxt), map.get($font-weights, regular), $Poppins);
+          @include font-style(12px, 16px, $color-text-body, map.get($font-weights, regular), $Poppins);
           text-align: left;
         }
 
@@ -138,7 +123,7 @@ $font-family-body: $Poppins;
 
         input {
           width: 100%;
-          color: #2E2A94; 
+          color: #2E2A94;
           font-family: $Poppins;
           font-size: 16px;
           font-weight: 500;
@@ -165,7 +150,7 @@ $font-family-body: $Poppins;
           padding: 0;
           max-height: 200px;
           overflow-y: auto;
-          border: 1px solid var(--border-color);
+          border: 1px solid map.get($strokes, default);
           background: $primary-white;
           position: absolute;
           width: 100%;
@@ -232,8 +217,12 @@ $font-family-body: $Poppins;
         gap: map.get($spacing, xxs);
         align-self: stretch;
 
+        @include media(mobile) {
+          margin: 32px 0 24px;
+        }
+
         label {
-          @include font-style(12px, 16px, map.get($body, Ctxt), map.get($font-weights, regular), $Poppins);
+          @include font-style(12px, 16px, $color-text-body, map.get($font-weights, regular), $Poppins);
         }
 
         span {
@@ -251,7 +240,7 @@ $font-family-body: $Poppins;
         flex-wrap: wrap;
         gap: map.get($spacing, xxl);
         margin: map.get($spacing, md) 0;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid map.get($strokes, default);
 
         .sip-wrapper,
         .tenure-wrapper {
@@ -266,7 +255,7 @@ $font-family-body: $Poppins;
           justify-content: space-between;
 
           label {
-            @include font-style(12px, 16px, map.get($body, Ctxt), map.get($font-weights, regular), $Poppins);
+            @include font-style(12px, 16px, $color-text-body, map.get($font-weights, regular), $Poppins);
           }
 
           input {
@@ -319,7 +308,11 @@ $font-family-body: $Poppins;
           gap: map.get($spacing, xxs);
 
           label {
-            @include font-style(12px, 16px, map.get($body, Ctxt), map.get($font-weights, regular), $Poppins);
+            @include font-style(12px, 16px, $color-text-body, map.get($font-weights, regular), $Poppins);
+
+            @include media(mobile) {
+              white-space: nowrap;
+            }
           }
 
           span {
@@ -355,23 +348,24 @@ $font-family-body: $Poppins;
           }
         }
 
-        
+
       }
 
       .no-returns-msg {
-          margin-top: map.get($spacing, xs);
-          color: rgb(113 113 113);
-          font-size: 0.875rem;
-          line-height: 1.25rem;
-          background-color: rgb(251 238 221);
-          padding: map.get($spacing, xxs);
-        }
+        margin-top: map.get($spacing, xs);
+        color: rgb(113 113 113);
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        background-color: rgb(251 238 221);
+        padding: map.get($spacing, xxs);
+      }
     }
 
     .view-btn-cal {
       margin-top: map.get($spacing, md);
       padding-top: map.get($spacing, xs);
       text-align: left;
+
       a {
         @include font-style(14px, normal, $primary-blue, map.get($font-weights, medium), $Poppins);
         text-decoration: underline;
@@ -389,12 +383,15 @@ $font-family-body: $Poppins;
 @include media(mobile) {
   .compounding {
     padding: 0px;
+
     .compounding-two-inner {
       flex-direction: column;
       text-align: center;
+      gap: 40px;
 
       .default-content-wrapper {
-        text-align: center;
+        align-items: flex-start;
+        padding-top: 40px;
       }
     }
 
@@ -402,7 +399,7 @@ $font-family-body: $Poppins;
       width: 100%;
 
       .cal-container {
-        padding: map.get($spacing, md);
+        padding: 20px;
 
         .investment-wrapper {
           flex-direction: column;
@@ -412,11 +409,12 @@ $font-family-body: $Poppins;
           .sip-wrapper,
           .tenure-wrapper {
             width: 100%;
-            position: relative; /* 🟢 Important for icon */
-            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            border-bottom: 1px solid map.get($strokes, default);
 
             input {
               width: 100%;
+              line-height: 28px;
             }
 
             &::after {
@@ -427,20 +425,30 @@ $font-family-body: $Poppins;
         }
 
         .cal-discription {
-          display: flex; /* 🟢 Make sure flex stays on mobile */
-          flex-wrap: wrap; /* 🟢 Allow wrapping */
-          justify-content: space-between; /* 🟢 Space between the two wrappers */
+          display: flex;
+          /* 🟢 Make sure flex stays on mobile */
+          flex-wrap: wrap;
+          /* 🟢 Allow wrapping */
+          justify-content: space-between;
+          /* 🟢 Space between the two wrappers */
           align-items: flex-start;
           gap: map.get($spacing, md);
           text-align: left;
 
           .current-value-wrapper,
           .return-cagr-wrapper {
-            flex: 1 1 45%; /* 🟢 Side by side */
+            flex: 1 1 45%;
+
+            /* 🟢 Side by side */
+            @include media(mobile) {
+              flex: 1 1 36%;
+              align-items: flex-start;
+            }
           }
 
           .start-sip-btn {
-            flex: 1 1 100%; /* 🟢 Full width below */
+            flex: 1 1 100%;
+            /* 🟢 Full width below */
             // margin-top: map.get($spacing, md);
           }
         }

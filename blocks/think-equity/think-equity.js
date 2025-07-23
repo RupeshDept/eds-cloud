@@ -1,3 +1,4 @@
+
 export default function decorate(block) {
   Array.from(block.children).forEach((el, index) => {
     el.classList.add(`imagelist${index + 1}`);
