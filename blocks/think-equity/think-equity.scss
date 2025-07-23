@@ -87,12 +87,14 @@
             }
 
             >div {
+                max-width: 924px;
+                margin: auto;
                 display: flex;
                 flex-direction: row;
                 gap: 40px;
                 text-align: center;
                 margin-bottom: 48px;
-                justify-content: space-around;
+                justify-content: space-between;
 
                 @include media(mobile) {
                     flex-direction: column;
@@ -123,9 +125,12 @@
 
             p {
                 margin: 0;
-                color: #333;
-                font-size: clamp(0.9rem, 2vw, 1rem);
-                line-height: 1.5;
+                // color: #333;
+                // font-size: clamp(0.9rem, 2vw, 1rem);
+                // line-height: 1.5;
+                max-inline-size: 30ch;
+                text-wrap: balance;
+                @include font-style(14px, 20px, map.get($font-weights, regular), $Poppins);
             }
 
 
@@ -133,16 +138,17 @@
     }
 
     .default-content-wrapper {
+        max-width: 924px;
+        margin: 0 auto;
         text-align: center;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        justify-content: space-around;
+        justify-content: space-between;
         gap: 24px;
-        margin-left: auto;
-        margin-right: auto;
         border: 1px solid #dee2e6;
-        padding: 24px;
+        // padding: 24px;
+        padding: 24px 0;
         border-radius: 8px;
         border: 0;
 
@@ -194,7 +200,7 @@
                 content: '';
                 display: inline-block;
                 color: #fff;
-                padding: 13px 40px;
+                padding: 12px;
                 border: none;
                 font-family: $Poppins;
                 font-weight: 600;
@@ -204,6 +210,7 @@
                 transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
                 border-radius: 8px;
                 background: #2E2A94;
+                margin: 0;
 
                 &:hover,
                 &:focus {
