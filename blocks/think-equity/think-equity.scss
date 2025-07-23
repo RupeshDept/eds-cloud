@@ -114,6 +114,7 @@
                 font-size: clamp(2.5rem, 6vw, 3.25rem);
                 font-weight: 700;
                 line-height: 1.1;
+                text-wrap: balance;
 
                 @include media(mobile) {
                     font-size: 26px;
