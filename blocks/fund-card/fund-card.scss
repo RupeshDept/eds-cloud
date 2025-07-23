@@ -48,7 +48,8 @@
       padding: 0;
 
       .tabs-panel {
-        @include flex-center($align: center, $justify: center);
+        // @include flex-center($align: center, $justify: center);
+        justify-content: center;
         align-items: stretch;
         flex-wrap: wrap;
         gap: 16px;

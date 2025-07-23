@@ -39,8 +39,6 @@
   padding: 0;
 }
 .section.tabs-container .tabs-wrapper .tabs-panel {
-  display: flex;
-  align-items: center;
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
