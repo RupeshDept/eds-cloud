@@ -46,11 +46,11 @@
   }
 }
 .section.compound-journey .compound-item .compound-sub-item h2 {
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 28px;
+  line-height: 32px;
   color: #2e2a94;
   font-family: "ButlerPro", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   margin: 0;
 }
 .section.compound-journey .compound-item .compound-sub-item p {

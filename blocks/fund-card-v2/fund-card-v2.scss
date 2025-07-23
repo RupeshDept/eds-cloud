@@ -112,7 +112,8 @@ $breakpoint-desktop: 1367px;
       }
 
       h2 {
-        @include typography(24px, 28px, $primary-purple, $font-butler, 700);
+        // @include typography(24px, 28px, $primary-purple, $font-butler, 700);
+        @include typography(28px, 32px, $primary-purple, $font-butler, 500);
         // margin: 0 0 $spacing-lg;
         margin: 0;
       }
