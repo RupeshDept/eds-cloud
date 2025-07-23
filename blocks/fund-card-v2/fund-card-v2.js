@@ -13,24 +13,6 @@ import {
 } from '../../scripts/dom-helpers.js';
 import dataMapMoObj from '../../scripts/constant.js';
 
-function planListEvent(param, block) {
-  const tempReturns = [];
-  const codeTempArr = [];
-  block.returns.forEach((el) => {
-    codeTempArr.push((el.plancode + el.optioncode));
-    if (param.target.value === (el.plancode + el.optioncode)) {
-      Object.keys(el).forEach((key) => {
-        if (dataMapMoObj.ObjTemp[key]) {
-          tempReturns.push(dataMapMoObj.ObjTemp[key]);
-        }
-      });
-
-      param.target.closest('.card-wrapper').querySelector('.return-btn h2').textContent = '';
-      param.target.closest('.card-wrapper').querySelector('.return-btn h2').textContent = `${el[dataMapMoObj.ObjTemp[tempReturns[0]]]}%`;
-    }
-  });
-}
-
 export default function decorate(block) {
   const fundsTaggingSection = block.fundsTaggingSection.slice(0, 2);
   const finPlangrp = [];
@@ -59,6 +41,10 @@ export default function decorate(block) {
 
   const styleLine = DirectPlanlistArr.length !== 0 ? 'block' : 'none';
   const container = div(
+    {
+      class: 'card-container',
+      style: `display:${styleLine}`,
+    },
     {
       class: 'card-container',
       style: `display:${styleLine}`,
@@ -125,4 +111,22 @@ export default function decorate(block) {
   );
 
   return container;
+}
+
+function planListEvent(param, block) {
+  const tempReturns = [];
+  const codeTempArr = [];
+  block.returns.forEach((el) => {
+    codeTempArr.push((el.plancode + el.optioncode));
+    if (param.target.value === (el.plancode + el.optioncode)) {
+      Object.keys(el).forEach((key) => {
+        if (dataMapMoObj.ObjTemp[key]) {
+          tempReturns.push(dataMapMoObj.ObjTemp[key]);
+        }
+      });
+
+      param.target.closest('.card-wrapper').querySelector('.return-btn h2').textContent = '';
+      param.target.closest('.card-wrapper').querySelector('.return-btn h2').textContent = `${el[dataMapMoObj.ObjTemp[tempReturns[0]]]}%`;
+    }
+  });
 }
