@@ -1,10 +1,9 @@
-// @forward '../../styles/common-theme/css/_variables_mixins.scss';
-// @forward '../../styles/common-theme/css/_fluid-typography.scss';
-@use '../swiper/swiper-bundle.min.css';
-
+@use 'sass:map';
 @use '../../styles/common-theme/css/variables_mixins' as *;
 @use '../../styles/common-theme/css/fluid-typography' as *;
-@use 'sass:map';
+
+// ✅ Import plain CSS after @use
+@import '../swiper/swiper-bundle.min.css';
 
 .section.future-building-container {
     position: relative;
@@ -91,6 +90,7 @@
                                 font-style: normal;
                                 font-weight: 500;
                                 line-height: 16px;
+                                width: 124px;
                             }
                         }
 
@@ -104,7 +104,7 @@
 
                         &>li:nth-child(2) {
                             color: $primary-blue-dark;
-                            font-family: $ButlerPro;
+                            font-family: $Poppins;
                             @include font-style(18px, 24px, $primary-blue, map.get($font-weights, bold));
                             margin-bottom: 8px;
 
@@ -115,11 +115,12 @@
                         }
 
                         &>li:nth-child(3) {
-                            font-family: $ButlerPro;
-                            @include font-style(14px, 20px, map.get($neutrals, 800), map.get($font-weights, regular));
+                            font-family: $Poppins;
+                            color: #424242;
+                            @include font-style(14px, 20px, map.get($font-weights, regular));
 
                             @include media(mobile) {
-                                @include font-style(16px, 20px, map.get($neutrals, 800), map.get($font-weights, regular));
+                                @include font-style(16px, 20px, map.get($font-weights, regular));
                             }
                         }
 

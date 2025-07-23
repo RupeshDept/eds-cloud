@@ -58,7 +58,7 @@ function focusNavSection() {
  * @param {Boolean} expanded Whether the element should be expanded or collapsed
  */
 function toggleAllNavSections(sections, expanded = false) {
-  sections === null ? '' : sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
+  sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
   });
 }
@@ -77,32 +77,30 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
   // enable nav dropdown keyboard accessibility
-  if (navSections !== null) {
-    const navDrops = navSections.querySelectorAll('.nav-drop');
-    if (isDesktop.matches) {
-      navDrops.forEach((drop) => {
-        if (!drop.hasAttribute('tabindex')) {
-          drop.setAttribute('tabindex', 0);
-          drop.addEventListener('focus', focusNavSection);
-        }
-      });
-    } else {
-      navDrops.forEach((drop) => {
-        drop.removeAttribute('tabindex');
-        drop.removeEventListener('focus', focusNavSection);
-      });
-    }
+  const navDrops = navSections.querySelectorAll('.nav-drop');
+  if (isDesktop.matches) {
+    navDrops.forEach((drop) => {
+      if (!drop.hasAttribute('tabindex')) {
+        drop.setAttribute('tabindex', 0);
+        drop.addEventListener('focus', focusNavSection);
+      }
+    });
+  } else {
+    navDrops.forEach((drop) => {
+      drop.removeAttribute('tabindex');
+      drop.removeEventListener('focus', focusNavSection);
+    });
+  }
 
-    // enable menu collapse on escape keypress
-    if (!expanded || isDesktop.matches) {
-      // collapse menu on escape press
-      window.addEventListener('keydown', closeOnEscape);
-      // collapse menu on focus lost
-      nav.addEventListener('focusout', closeOnFocusLost);
-    } else {
-      window.removeEventListener('keydown', closeOnEscape);
-      nav.removeEventListener('focusout', closeOnFocusLost);
-    }
+  // enable menu collapse on escape keypress
+  if (!expanded || isDesktop.matches) {
+    // collapse menu on escape press
+    window.addEventListener('keydown', closeOnEscape);
+    // collapse menu on focus lost
+    nav.addEventListener('focusout', closeOnFocusLost);
+  } else {
+    window.removeEventListener('keydown', closeOnEscape);
+    nav.removeEventListener('focusout', closeOnFocusLost);
   }
 }
 
@@ -167,6 +165,7 @@ export default async function decorate(block) {
   navWrapper.append(nav);
   block.append(navWrapper);
 
+// Language Dropdown
 
   function initializeLanguageDropdown() {
     const langDropdownLI = nav.querySelector('.header-top li:has(> p > .icon-arrow-black-down)');
@@ -196,4 +195,3 @@ export default async function decorate(block) {
     initializeLanguageDropdown();
   }
 }
-
