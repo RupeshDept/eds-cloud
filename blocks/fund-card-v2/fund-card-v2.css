@@ -1,248 +1,480 @@
-/* stylelint-disable no-descending-specificity */
-/* stylelint-disable media-feature-range-notation */
-.section.compound-journey>div {
-    border-radius: 12px;
-    background: var(--blue-1-25, #EDF1FF);
-    max-width: 1262px;
-    width: 100%;
-    padding: 0 16px;
+@import "../../../styles/fonts.css";
+.section.compound-journey > div {
+  border-radius: 12px;
+  background: #edf1ff;
+  max-width: 1262px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0;
 }
-
 .section.compound-journey .compound-item {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
 }
-
 .section.compound-journey .compound-item .compound-sub-item {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    max-width: 32.93%;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 20px;
+  background: #edf1ff;
+  border-radius: 12px 0 0 12px;
+  max-width: 30%;
+  min-height: 100%;
 }
-
-.section.compound-journey .compound-sub-item h2 {
-    color: var(--blue-1800-primary, #2E2A94);
-    font-family: var(--title, ButlerPro);
-    font-size: var(--heading-h5-size, 28px);
-    font-weight: 500;
-    line-height: var(--heading-h5-line-height, 32px);
-    margin: 0 0 16px;
+.section.compound-journey .compound-item .compound-sub-item h2 {
+  font-size: 24px;
+  line-height: 28px;
+  color: #2e2a94;
+  font-family: "ButlerPro", sans-serif;
+  font-weight: 700;
+  margin: 0 0 16px;
 }
-
-.section.compound-journey .compound-sub-item ul {
-    margin: 0 0 54px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    list-style: none;
+.section.compound-journey .compound-item .compound-sub-item p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #2e2a94;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin: 0 0 12px;
+  white-space: nowrap;
 }
-
-.section.compound-journey .compound-sub-item ul li {
-    color: var(--icon-primary, #2E2A94);
-    font-family: var(--body, Poppins);
-    font-size: var(--body-small-regular-size, 14px);
-    font-weight: 400;
-    line-height: var(--label-large-line-height, 20px);
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.section.compound-journey .compound-item .compound-sub-item ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-
-.section.compound-journey .compound-sub-item ul li:not(:first-of-type)::before {
-    content: '';
-    min-width: 4px;
-    height: 4px;
-    background-color: var(--blue-1-900, #242177);
-    border-radius: 50%;
+.section.compound-journey .compound-item .compound-sub-item ul li {
+  font-size: 14px;
+  line-height: 20px;
+  color: #2e2a94;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  white-space: nowrap;
 }
-
-.section.compound-journey .compound-sub-item .button-container {
-    margin: 0;
-    margin-top: auto;
-    line-height: 0;
+.section.compound-journey .compound-item .compound-sub-item .button-container {
+  margin-top: auto;
+  line-height: 0;
 }
-
-.section.compound-journey .compound-sub-item .button-container .button {
-    margin: 0;
-    color: #FFF;
-    font-family: var(--body, Poppins);
-    font-size: var(--button-small-size, 14px);
-    font-weight: 600;
-    line-height: 16px;
-    border-radius: var(--border-radius-8, 8px);
-    background: var(--blue-1-900, #242177);
-    padding: 12px;
-    min-width: 157px;
-    max-width: max-content;
+.section.compound-journey .compound-item .compound-sub-item .button-container .button {
+  font-size: var(--Button-Small-Size, 14px);
+  line-height: 16px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  background: #5659fa;
+  border-radius: 8px;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-width: 157px;
+  width: -moz-max-content;
+  width: max-content;
+  background: #242177;
 }
-
+.section.compound-journey .compound-item .compound-sub-item .button-container .button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
 .section.compound-journey .compound-item .card-items {
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 10px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+.section.compound-journey .compound-item .card-items .card-container {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 16px;
+  flex: 1;
+  min-width: 240px;
+  margin-bottom: 20px;
+}
+.section.compound-journey .compound-item .card-items .card-container:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+.section.compound-journey .compound-item .card-items .card-container .benchmark-star {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  margin-bottom: 12px;
+}
+.section.compound-journey .compound-item .card-items .card-container .benchmark-star .benchmarksec {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 8px 12px;
+  border-radius: 40px;
+  border: 0.5px solid #5659fa;
+  line-height: 0;
+}
+.section.compound-journey .compound-item .card-items .card-container .benchmark-star .benchmarksec span {
+  font-size: 14px;
+  line-height: 16px;
+  color: #5659fa;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+.section.compound-journey .compound-item .card-items .card-container .benchmark-star .star {
+  min-width: 28px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.section.compound-journey .compound-item .card-items .card-container .benchmark-star .star:hover {
+  transform: scale(1.1);
+}
+.section.compound-journey .compound-item .card-items .card-container .benchmark-star .star.star-filled .star-icon, .section.compound-journey .compound-item .card-items .card-container .benchmark-star .star:not(.star-filled) .fillstar-icon {
+  display: none;
+}
+.section.compound-journey .compound-item .card-items .card-container .scheme-name {
+  margin: 0 0 12px;
+  flex-grow: 1;
+}
+.section.compound-journey .compound-item .card-items .card-container .scheme-name p {
+  font-size: 14px;
+  line-height: 16px;
+  color: #2e2a94;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+.section.compound-journey .compound-item .card-items .card-container .dropdown-tags {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 16px;
+  min-height: 32px;
+}
+.section.compound-journey .compound-item .card-items .card-container .dropdown-tags select {
+  max-width: 20.3%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  line-height: 16px;
+  color: #111;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  background: transparent;
+  cursor: pointer;
+}
+.section.compound-journey .compound-item .card-items .card-container .dropdown-tags select:focus {
+  outline: 1px solid #5659fa;
+}
+.section.compound-journey .compound-item .card-items .card-container .dropdown-tags .fund-tagging {
+  height: 100%;
+  flex: 1;
+}
+.section.compound-journey .compound-item .card-items .card-container .dropdown-tags .fund-tagging .fundtagging-list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  margin: 0;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.section.compound-journey .compound-item .card-items .card-container .dropdown-tags .fund-tagging .fundtagging-list li {
+  font-size: 12px;
+  line-height: 16px;
+  color: #111;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.section.compound-journey .compound-item .card-items .card-container .dropdown-tags .fund-tagging .fundtagging-list li::before {
+  content: "";
+  min-width: 3px;
+  height: 3px;
+  display: block;
+  border-radius: 50%;
+  background-color: #111;
+  flex-shrink: 0;
+}
+.section.compound-journey .compound-item .card-items .card-container .dropdown-tags .fund-tagging .fundtagging-list li:first-child::before {
+  display: none;
+}
+.section.compound-journey .compound-item .card-items .card-container .return-btn {
+  display: grid;
+  grid-template-areas: "label button" "value button";
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 16px;
+}
+.section.compound-journey .compound-item .card-items .card-container .return-btn label {
+  grid-area: label;
+  font-size: 14px;
+  line-height: 16px;
+  color: #2e2a94;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  color: var(--Text-Body, #424242);
+  font-family: var(--Body, Poppins);
+  font-size: var(--Disclaimer-XSmall-Size, 12px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--Disclaimer-XSmall-Line-Height, 16px);
+}
+.section.compound-journey .compound-item .card-items .card-container .return-btn .cagr-value {
+  grid-area: value;
+  font-size: 24px;
+  line-height: 28px;
+  color: #2e2a94;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+.section.compound-journey .compound-item .card-items .card-container .return-btn .cagr-value h2 {
+  margin: 0;
+  color: var(--blue-1800-primary, #2E2A94);
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 133.333% */
+}
+.section.compound-journey .compound-item .card-items .card-container .return-btn .btn-knowmore {
+  grid-area: button;
+  display: flex;
+  width: 132px;
+  padding: 12px var(--Spacing-12, 12px) var(--Spacing-12, 12px) var(--Spacing-12, 12px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--Spacing-8, 8px);
+}
+.section.compound-journey .compound-item .card-items .card-container .return-btn .btn-knowmore a {
+  font-size: var(--Button-Small-Size, 14px);
+  line-height: 16px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  background: #5659fa;
+  border-radius: 8px;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  display: block;
+  color: #FFF;
+  font-family: var(--Body, Poppins);
+  font-size: var(--Button-Small-Size, 14px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 114.286% */
+  text-decoration: none;
+  background: #242177;
+}
+.section.compound-journey .compound-item .card-items .card-container .return-btn .btn-knowmore a:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+.section.compound-journey .compound-item .card-items .card-container .return-btn .btn-knowmore a span {
+  color: #FFF;
+  font-family: var(--Body, "Poppins", sans-serif);
+  font-size: var(--Button-Small-Size, 14px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 114.286% */
 }
 
-.section.compound-journey .compound-item .card-container {
-    padding: 10px;
-    max-width: 258px;
-    border: none;
+@media (max-width: 1367px) {
+  .section.compound-journey .compound-item .compound-sub-item .button-container {
+    margin-top: unset;
+  }
+  .section.compound-journey .compound-item .card-items .card-container {
+    max-width: 244px;
+    min-width: 220px;
+  }
 }
-
-.section.compound-journey .card-container .benchmark-star {
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.section.compound-journey .benchmark-star .benchmarksec {
-    padding: 8px 12px;
-    border-radius: 40px;
-    border: 0.5px solid var(--blue-1-400, #5659FA);
-    line-height: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.section.compound-journey .benchmark-star .benchmarksec span {
-    color: var(--blue-1-400, #5659FA);
-    font-family: var(--body, Poppins);
+@media (max-width: 1025px) {
+  .section.compound-journey > div {
+    padding: 16px;
+  }
+  .section.compound-journey .compound-item {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .section.compound-journey .compound-item .compound-sub-item {
+    max-width: 100%;
+    padding: 16px;
+  }
+  .section.compound-journey .compound-item .compound-sub-item h2 {
+    font-size: 24px;
+    line-height: 28px;
+    color: #2e2a94;
+    font-family: "ButlerPro", sans-serif;
+    font-weight: 700;
+  }
+  .section.compound-journey .compound-item .compound-sub-item p {
     font-size: 14px;
-    font-weight: 600;
-    line-height: var(--paragraph-xsmall-line-height, 16px);
-    text-align: center;
-}
-
-.section.compound-journey .benchmark-star .star {
-    min-width: 28px;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-}
-
-.section.compound-journey .star.star-filled .star-icon,
-.section.compound-journey .star:not(.star-filled) .fillstar-icon {
-    display: none;
-}
-
-.section.compound-journey .card-container .scheme-name {
-    margin: auto 0 12px;
-}
-
-.section.compound-journey .card-container .scheme-name p {
-    color: var(--blue-1800-primary, #2E2A94);
-    font-family: var(--body, Poppins);
-    font-size: var(--body-small-semibold-size, 14px);
-    font-weight: 600;
-    line-height: var(--body-small-semibold-line-height, 16px);
-    margin: 0;
-}
-
-.section.compound-journey .card-container .dropdown-tags {
-    margin-top: auto;
-    display: flex;
-    align-items: start;
-    gap: 8px;
-    min-height: 32px;
-}
-
-.section.compound-journey .dropdown-tags select {
-    max-width: 20.3%;
-    width: 100%;
-    border: none;
-    outline: none;
-}
-
-.section.compound-journey .dropdown-tags .fund-tagging {
-    height: 100%;
-}
-
-.section.compound-journey .fund-tagging .fundtagging-list {
-    display: flex;
-    align-items: start;
-    gap: 8px;
-    margin: 0;
-    height: 100%;
-}
-
-.section.compound-journey .dropdown-tags select,
-.section.compound-journey .fund-tagging .fundtagging-list li {
-    color: var(--neutrals-black, #111);
-    font-family: var(--body, Poppins);
-    font-size: var(--disclaimer-xsmall-size, 12px);
+    line-height: 20px;
+    color: #2e2a94;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
-    line-height: var(--disclaimer-xsmall-line-height, 16px);
-}
-
-.section.compound-journey .fund-tagging .fundtagging-list li::before {
-    content: '';
-    min-width: 3px;
-    height: 3px;
-    display: block;
-    background-color: #2E2A94;
-    border-radius: 50%;
-}
-
-.section.compound-journey .card-container .return-btn {
-    margin: 30px 0 0;
-    display: flex;
-    justify-content: space-between;
+  }
+  .section.compound-journey .compound-item .compound-sub-item ul {
+    flex-direction: row;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
+  }
+  .section.compound-journey .compound-item .compound-sub-item ul li:not(:first-of-type)::before {
+    display: none;
+  }
+  .section.compound-journey .compound-item .card-items {
+    justify-content: center;
+  }
+  .section.compound-journey .compound-item .card-items .card-container {
+    max-width: 49%;
+    min-width: 280px;
+  }
 }
-
-.section.compound-journey .return-btn .btn-knowmore {
-    min-width: 132px;
-}
-
-.section.compound-journey .return-btn .btn-knowmore a {
+@media (max-width: 768px) {
+  .section.compound-journey > div {
     padding: 12px;
-    width: 100%;
-    display: block;
-    border-radius: var(--border-radius-8, 8px);
-    background: var(--blue-1-900, #242177);
-    color: #FFF;
-    font-family: var(--body, Poppins);
-    font-size: var(--button-small-size, 14px);
-    font-weight: 600;
+  }
+  .section.compound-journey .compound-item .compound-sub-item {
+    padding: 12px;
+  }
+  .section.compound-journey .compound-item .compound-sub-item h2 {
+    font-size: 22px;
+    line-height: 26px;
+    color: #2e2a94;
+    font-family: "ButlerPro", sans-serif;
+    font-weight: 700;
+  }
+  .section.compound-journey .compound-item .compound-sub-item p {
+    font-size: 12px;
     line-height: 16px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
+    color: #2e2a94;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  }
+  .section.compound-journey .compound-item .compound-sub-item ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .section.compound-journey .compound-item .compound-sub-item ul li:not(:first-of-type)::before {
+    display: none;
+  }
+  .section.compound-journey .compound-item .card-items {
+    padding: 0;
+  }
+  .section.compound-journey .compound-item .card-items .card-container {
+    max-width: 100%;
+    min-width: 100%;
+  }
+  .section.compound-journey .compound-item .card-items .card-container .benchmark-star {
+    gap: 10px;
+  }
+  .section.compound-journey .compound-item .card-items .card-container .benchmark-star .benchmarksec {
+    padding: 6px 10px;
+  }
+  .section.compound-journey .compound-item .card-items .card-container .benchmark-star .benchmarksec span {
+    font-size: 12px;
+    line-height: 14px;
+    color: #5659fa;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+  }
+  .section.compound-journey .compound-item .card-items .card-container .dropdown-tags {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .section.compound-journey .compound-item .card-items .card-container .dropdown-tags select {
+    max-width: 100%;
+  }
+  .section.compound-journey .compound-item .card-items .card-container .dropdown-tags .fund-tagging .fundtagging-list {
+    flex-wrap: wrap;
+  }
+  .section.compound-journey .compound-item .card-items .card-container .return-btn {
+    grid-template-areas: "label" "value" "button";
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-items: start;
+  }
+  .section.compound-journey .compound-item .card-items .card-container .return-btn .btn-knowmore {
+    width: 100%;
+  }
+}
+.section.compound-journey .button:focus,
+.section.compound-journey .btn-knowmore a:focus,
+.section.compound-journey .star:focus {
+  outline: 2px solid #5659fa;
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .section.compound-journey * {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
-@media screen and (max-width:1260px) {
-    .section.compound-journey .compound-sub-item .button-container {
-        margin-top: unset;
-    }
-
-    .section.compound-journey .compound-item .card-container {
-        max-width: 244px;
-    }
-}
-
-@media screen and (max-width:1200px) {
-    .section.compound-journey .compound-item .card-container {
-        max-width: 49%;
-    }
-}
-
-@media screen and (max-width:1024px) {
-    .section.compound-journey .compound-item {
-        flex-direction: column;
-    }
-
-    .section.compound-journey .compound-item .compound-sub-item {
-        max-width: 100%;
-    }
-}
-
-@media screen and (max-width:768px) {
-    .section.compound-journey .compound-item .card-container {
-        max-width: 100%;
-    }
-}
+@media print {
+  .section.compound-journey .star {
+    display: none;
+  }
+  .section.compound-journey .button,
+  .section.compound-journey .btn-knowmore a {
+    background: transparent !important;
+    color: #111 !important;
+    border: 1px solid #111 !important;
+  }
+}/*# sourceMappingURL=fund-card-v2.css.map */
