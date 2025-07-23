@@ -1,4 +1,7 @@
 @import "../../../styles/fonts.css";
+.section.compound-journey .investment-block {
+  width: 100%;
+}
 .section.compound-journey > div {
   border-radius: 12px;
   background: #edf1ff;
@@ -20,6 +23,11 @@
   gap: 10px;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .section.compound-journey .compound-item {
+    flex-direction: column;
+  }
+}
 .section.compound-journey .compound-item .compound-sub-item {
   display: flex;
   flex-direction: column;
@@ -31,6 +39,11 @@
   border-radius: 12px 0 0 12px;
   max-width: 30%;
   min-height: 100%;
+}
+@media (max-width: 768px) {
+  .section.compound-journey .compound-item .compound-sub-item {
+    min-width: 100%;
+  }
 }
 .section.compound-journey .compound-item .compound-sub-item h2 {
   font-size: 24px;
@@ -100,7 +113,7 @@
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  justify-content: flex-start;
+  justify-content: flex-end;
   gap: 10px;
   padding: 10px;
   flex: 1;
@@ -337,146 +350,155 @@
   line-height: 16px;
   /* 114.286% */
 }
-
+.section.compound-journey.broaden-your .compound-item .card-items .card-container {
+  max-width: 31.4%;
+  flex: 0 0 31.4%;
+  min-width: unset;
+}
+@media (max-width: 768px) {
+  .section.compound-journey.broaden-your .compound-item .card-items .card-container {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}
 @media (max-width: 1367px) {
-  .section.compound-journey .compound-item .compound-sub-item .button-container {
+  .section.compound-journey .section.compound-journey .compound-item .compound-sub-item .button-container {
     margin-top: unset;
   }
-  .section.compound-journey .compound-item .card-items .card-container {
+  .section.compound-journey .section.compound-journey .compound-item .card-items .card-container {
     max-width: 244px;
     min-width: 220px;
   }
 }
 @media (max-width: 1025px) {
-  .section.compound-journey > div {
+  .section.compound-journey .section.compound-journey > div {
     padding: 16px;
   }
-  .section.compound-journey .compound-item {
+  .section.compound-journey .section.compound-journey .compound-item {
     flex-direction: column;
     gap: 16px;
   }
-  .section.compound-journey .compound-item .compound-sub-item {
+  .section.compound-journey .section.compound-journey .compound-item .compound-sub-item {
     max-width: 100%;
     padding: 16px;
   }
-  .section.compound-journey .compound-item .compound-sub-item h2 {
+  .section.compound-journey .section.compound-journey .compound-item .compound-sub-item h2 {
     font-size: 24px;
     line-height: 28px;
     color: #2e2a94;
     font-family: "ButlerPro", sans-serif;
     font-weight: 700;
   }
-  .section.compound-journey .compound-item .compound-sub-item p {
+  .section.compound-journey .section.compound-journey .compound-item .compound-sub-item p {
     font-size: 14px;
     line-height: 20px;
     color: #2e2a94;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
   }
-  .section.compound-journey .compound-item .compound-sub-item ul {
+  .section.compound-journey .section.compound-journey .compound-item .compound-sub-item ul {
     flex-direction: row;
     align-items: center;
     gap: 10px;
   }
-  .section.compound-journey .compound-item .compound-sub-item ul li:not(:first-of-type)::before {
+  .section.compound-journey .section.compound-journey .compound-item .compound-sub-item ul li:not(:first-of-type)::before {
     display: none;
   }
-  .section.compound-journey .compound-item .card-items {
+  .section.compound-journey .section.compound-journey .compound-item .card-items {
     justify-content: center;
   }
-  .section.compound-journey .compound-item .card-items .card-container {
+  .section.compound-journey .section.compound-journey .compound-item .card-items .card-container {
     max-width: 49%;
     min-width: 280px;
   }
 }
 @media (max-width: 768px) {
-  .section.compound-journey > div {
+  .section.compound-journey .section.compound-journey > div {
     padding: 12px;
   }
-  .section.compound-journey .compound-item .compound-sub-item {
+  .section.compound-journey .section.compound-journey .compound-item .compound-sub-item {
     padding: 12px;
   }
-  .section.compound-journey .compound-item .compound-sub-item h2 {
+  .section.compound-journey .section.compound-journey .compound-item .compound-sub-item h2 {
     font-size: 22px;
     line-height: 26px;
     color: #2e2a94;
     font-family: "ButlerPro", sans-serif;
     font-weight: 700;
   }
-  .section.compound-journey .compound-item .compound-sub-item p {
+  .section.compound-journey .section.compound-journey .compound-item .compound-sub-item p {
     font-size: 12px;
     line-height: 16px;
     color: #2e2a94;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
   }
-  .section.compound-journey .compound-item .compound-sub-item ul {
+  .section.compound-journey .section.compound-journey .compound-item .compound-sub-item ul {
     align-items: flex-start;
     gap: 8px;
   }
-  .section.compound-journey .compound-item .compound-sub-item ul li:not(:first-of-type)::before {
+  .section.compound-journey .section.compound-journey .compound-item .compound-sub-item ul li:not(:first-of-type)::before {
     display: none;
   }
-  .section.compound-journey .compound-item .card-items {
+  .section.compound-journey .section.compound-journey .compound-item .card-items {
     padding: 0;
   }
-  .section.compound-journey .compound-item .card-items .card-container {
+  .section.compound-journey .section.compound-journey .compound-item .card-items .card-container {
     max-width: 100%;
     min-width: 100%;
   }
-  .section.compound-journey .compound-item .card-items .card-container .benchmark-star {
+  .section.compound-journey .section.compound-journey .compound-item .card-items .card-container .benchmark-star {
     gap: 10px;
   }
-  .section.compound-journey .compound-item .card-items .card-container .benchmark-star .benchmarksec {
+  .section.compound-journey .section.compound-journey .compound-item .card-items .card-container .benchmark-star .benchmarksec {
     padding: 6px 10px;
   }
-  .section.compound-journey .compound-item .card-items .card-container .benchmark-star .benchmarksec span {
+  .section.compound-journey .section.compound-journey .compound-item .card-items .card-container .benchmark-star .benchmarksec span {
     font-size: 12px;
     line-height: 14px;
     color: #5659fa;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
   }
-  .section.compound-journey .compound-item .card-items .card-container .dropdown-tags {
+  .section.compound-journey .section.compound-journey .compound-item .card-items .card-container .dropdown-tags {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
   }
-  .section.compound-journey .compound-item .card-items .card-container .dropdown-tags select {
+  .section.compound-journey .section.compound-journey .compound-item .card-items .card-container .dropdown-tags select {
     max-width: 100%;
   }
-  .section.compound-journey .compound-item .card-items .card-container .dropdown-tags .fund-tagging .fundtagging-list {
+  .section.compound-journey .section.compound-journey .compound-item .card-items .card-container .dropdown-tags .fund-tagging .fundtagging-list {
     flex-wrap: wrap;
   }
-  .section.compound-journey .compound-item .card-items .card-container .return-btn {
+  .section.compound-journey .section.compound-journey .compound-item .card-items .card-container .return-btn {
     grid-template-areas: "label" "value" "button";
     grid-template-columns: 1fr;
     gap: 10px;
     justify-items: start;
   }
-  .section.compound-journey .compound-item .card-items .card-container .return-btn .btn-knowmore {
+  .section.compound-journey .section.compound-journey .compound-item .card-items .card-container .return-btn .btn-knowmore {
     width: 100%;
   }
 }
-.section.compound-journey .button:focus,
-.section.compound-journey .btn-knowmore a:focus,
-.section.compound-journey .star:focus {
+.section.compound-journey .section.compound-journey .button:focus,
+.section.compound-journey .section.compound-journey .btn-knowmore a:focus,
+.section.compound-journey .section.compound-journey .star:focus {
   outline: 2px solid #5659fa;
   outline-offset: 2px;
 }
 @media (prefers-reduced-motion: reduce) {
-  .section.compound-journey * {
+  .section.compound-journey .section.compound-journey * {
     transition: none !important;
     animation: none !important;
   }
 }
-
 @media print {
-  .section.compound-journey .star {
+  .section.compound-journey .section.compound-journey .star {
     display: none;
   }
-  .section.compound-journey .button,
-  .section.compound-journey .btn-knowmore a {
+  .section.compound-journey .section.compound-journey .button,
+  .section.compound-journey .section.compound-journey .btn-knowmore a {
     background: transparent !important;
     color: #111 !important;
     border: 1px solid #111 !important;

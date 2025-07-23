@@ -80,6 +80,10 @@ $breakpoint-desktop: 1367px;
 }
 
 .section.compound-journey {
+  .investment-block {
+    width: 100%;
+  }
+
   >div {
     border-radius: $border-radius-md;
     background: $background-light;
@@ -94,10 +98,18 @@ $breakpoint-desktop: 1367px;
     @include flex-center(row, stretch, flex-start, $spacing-sm);
     width: 100%;
 
+    @include media (mobile) {
+      flex-direction: column
+    }
+
     .compound-sub-item {
       @include sidebar-style();
       max-width: 30%;
       min-height: 100%;
+
+      @include media (mobile) {
+        min-width: 100%;
+      }
 
       h2 {
         @include typography(24px, 28px, $primary-purple, $font-butler, 700);
@@ -145,7 +157,7 @@ $breakpoint-desktop: 1367px;
     }
 
     .card-items {
-      @include flex-center(row, stretch, flex-start, $spacing-sm);
+      @include flex-center(row, stretch, flex-end, $spacing-sm);
       padding: $spacing-sm;
       flex: 1;
       flex-wrap: wrap;
@@ -344,191 +356,208 @@ $breakpoint-desktop: 1367px;
       }
     }
   }
-}
 
-// Media Queries
-@media (max-width: $breakpoint-desktop) {
-  .section.compound-journey {
+  &.broaden-your {
     .compound-item {
-      .compound-sub-item {
-        .button-container {
-          margin-top: unset;
-        }
-      }
-
       .card-items {
         .card-container {
-          max-width: 244px;
-          min-width: 220px;
+          max-width: 31.4%;
+          flex: 0 0 31.4%;
+          min-width: unset;
+
+          @include media (mobile) {
+            max-width: 100%;
+            flex: 0 0 100%;
+          }
         }
       }
     }
   }
-}
 
-@media (max-width: $breakpoint-tablet) {
-  .section.compound-journey {
-    >div {
-      padding: $spacing-lg;
+  // Media Queries
+  @media (max-width: $breakpoint-desktop) {
+    .section.compound-journey {
+      .compound-item {
+        .compound-sub-item {
+          .button-container {
+            margin-top: unset;
+          }
+        }
+
+        .card-items {
+          .card-container {
+            max-width: 244px;
+            min-width: 220px;
+          }
+        }
+      }
     }
+  }
 
-    .compound-item {
-      flex-direction: column;
-      gap: $spacing-lg;
-
-      .compound-sub-item {
-        max-width: 100%;
+  @media (max-width: $breakpoint-tablet) {
+    .section.compound-journey {
+      >div {
         padding: $spacing-lg;
-
-        h2 {
-          @include typography(24px, 28px, $primary-purple, $font-butler, 700);
-        }
-
-        p {
-          @include typography(14px, 20px, $primary-purple, $font-poppins, 400);
-        }
-
-        ul {
-          flex-direction: row;
-          align-items: center;
-          gap: $spacing-sm;
-
-          li {
-            &:not(:first-of-type)::before {
-              display: none;
-            }
-          }
-        }
       }
 
-      .card-items {
-        justify-content: center;
+      .compound-item {
+        flex-direction: column;
+        gap: $spacing-lg;
 
-        .card-container {
-          max-width: 49%;
-          min-width: 280px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: $breakpoint-mobile) {
-  .section.compound-journey {
-    >div {
-      padding: $spacing-md;
-    }
-
-    .compound-item {
-      .compound-sub-item {
-        padding: $spacing-md;
-
-        h2 {
-          @include typography(22px, 26px, $primary-purple, $font-butler, 700);
-        }
-
-        p {
-          @include typography(12px, 16px, $primary-purple, $font-poppins, 400);
-        }
-
-        ul {
-          // flex-direction: column;
-          align-items: flex-start;
-          gap: $spacing-xs;
-
-          li {
-            &:not(:first-of-type)::before {
-              display: none;
-            }
-          }
-        }
-      }
-
-      .card-items {
-        padding: 0;
-
-        .card-container {
+        .compound-sub-item {
           max-width: 100%;
-          min-width: 100%;
+          padding: $spacing-lg;
 
-          .benchmark-star {
+          h2 {
+            @include typography(24px, 28px, $primary-purple, $font-butler, 700);
+          }
+
+          p {
+            @include typography(14px, 20px, $primary-purple, $font-poppins, 400);
+          }
+
+          ul {
+            flex-direction: row;
+            align-items: center;
             gap: $spacing-sm;
 
-            .benchmarksec {
-              padding: 6px $spacing-sm;
-
-              span {
-                @include typography(12px, 14px, $accent-blue, $font-poppins, 600);
+            li {
+              &:not(:first-of-type)::before {
+                display: none;
               }
             }
           }
+        }
 
-          .dropdown-tags {
-            flex-direction: column;
-            align-items: stretch;
-            gap: $spacing-sm;
+        .card-items {
+          justify-content: center;
 
-            select {
-              max-width: 100%;
-            }
+          .card-container {
+            max-width: 49%;
+            min-width: 280px;
+          }
+        }
+      }
+    }
+  }
 
-            .fund-tagging {
-              .fundtagging-list {
-                flex-wrap: wrap;
+  @media (max-width: $breakpoint-mobile) {
+    .section.compound-journey {
+      >div {
+        padding: $spacing-md;
+      }
+
+      .compound-item {
+        .compound-sub-item {
+          padding: $spacing-md;
+
+          h2 {
+            @include typography(22px, 26px, $primary-purple, $font-butler, 700);
+          }
+
+          p {
+            @include typography(12px, 16px, $primary-purple, $font-poppins, 400);
+          }
+
+          ul {
+            // flex-direction: column;
+            align-items: flex-start;
+            gap: $spacing-xs;
+
+            li {
+              &:not(:first-of-type)::before {
+                display: none;
               }
             }
           }
+        }
 
-          .return-btn {
-            // On mobile, stack everything vertically
-            grid-template-areas:
-              "label"
-              "value"
-              "button";
-            grid-template-columns: 1fr;
-            gap: $spacing-sm;
-            justify-items: start; // Align items to the left
+        .card-items {
+          padding: 0;
 
-            .btn-knowmore {
-              width: 100%; // Make button full width
+          .card-container {
+            max-width: 100%;
+            min-width: 100%;
+
+            .benchmark-star {
+              gap: $spacing-sm;
+
+              .benchmarksec {
+                padding: 6px $spacing-sm;
+
+                span {
+                  @include typography(12px, 14px, $accent-blue, $font-poppins, 600);
+                }
+              }
+            }
+
+            .dropdown-tags {
+              flex-direction: column;
+              align-items: stretch;
+              gap: $spacing-sm;
+
+              select {
+                max-width: 100%;
+              }
+
+              .fund-tagging {
+                .fundtagging-list {
+                  flex-wrap: wrap;
+                }
+              }
+            }
+
+            .return-btn {
+              // On mobile, stack everything vertically
+              grid-template-areas:
+                "label"
+                "value"
+                "button";
+              grid-template-columns: 1fr;
+              gap: $spacing-sm;
+              justify-items: start; // Align items to the left
+
+              .btn-knowmore {
+                width: 100%; // Make button full width
+              }
             }
           }
         }
       }
     }
   }
-}
 
-.section.compound-journey {
-
-  .button,
-  .btn-knowmore a,
-  .star {
-    &:focus {
-      outline: 2px solid $accent-blue;
-      outline-offset: 2px;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      transition: none !important;
-      animation: none !important;
-    }
-  }
-}
-
-@media print {
   .section.compound-journey {
-    .star {
-      display: none;
-    }
 
     .button,
-    .btn-knowmore a {
-      background: transparent !important;
-      color: $text-dark !important;
-      border: 1px solid $text-dark !important;
+    .btn-knowmore a,
+    .star {
+      &:focus {
+        outline: 2px solid $accent-blue;
+        outline-offset: 2px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  }
+
+  @media print {
+    .section.compound-journey {
+      .star {
+        display: none;
+      }
+
+      .button,
+      .btn-knowmore a {
+        background: transparent !important;
+        color: $text-dark !important;
+        border: 1px solid $text-dark !important;
+      }
     }
   }
 }

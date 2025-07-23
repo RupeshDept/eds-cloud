@@ -178,7 +178,7 @@
                 @include font-style(14px, 20px, $primary-white, map.get($font-weights, bold), $Poppins);
 
                 @include media(mobile) {
-                    @include font-style(16px, 20px, $primary-white, map.get($font-weights, bold), $Poppins);
+                    @include font-style(14px, 20px, $primary-white, map.get($font-weights, bold), $Poppins);
                 }
 
             }
