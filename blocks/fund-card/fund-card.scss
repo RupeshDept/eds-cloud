@@ -146,7 +146,7 @@
     }
 
     &.our-popular-funds .tabs-list .tabs-tab {
-      color: map.get($blue-1, b25);
+      color: var(--blue-1-200, #9DADFE);
 
       &[aria-selected="true"] {
         border-bottom: 2px solid $primary-white;
