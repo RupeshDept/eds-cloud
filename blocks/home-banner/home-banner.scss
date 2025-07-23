@@ -1,0 +1,258 @@
+@use '../swiper/swiper-bundle.min.css'; // Modern Sass @use rule is preferred
+@use 'sass:map';
+@use '../../styles/common-theme/css/variables_mixins' as *;
+@use '../../styles/common-theme/css/fluid-typography' as *;
+
+// --- Configuration Variables ---
+$white: #fff;
+$horizontal-padding: 67px;
+$vertical-padding-top: 48px;
+$swiper-nav-size: 40px;
+$primary-button-color: #2E2A94;
+$mobile-breakpoint: 768px;
+$tablet-breakpoint: 950px;
+
+// --- Base Styles ---
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// --- Component Styles ---
+
+.section.home-banner-container {
+  position: relative;
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+
+  .home-banner-wrapper {
+    padding: 0;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .default-content-wrapper {
+    position: absolute;
+    padding: 0;
+    right: $horizontal-padding;
+    bottom: -24px;
+    z-index: 1;
+
+    @media (width <= $mobile-breakpoint) {
+      display: none;
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+
+    li {
+      width: 48px;
+      height: 48px;
+      border-radius: 24px;
+      // Using CSS var with a fallback to a Sass var
+      background: var(--blue-1-500, #4338F3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:first-of-type {
+        background: var(--blue-1-300, #7986FD);
+      }
+    }
+  }
+}
+
+.home-banner {
+  .sub-home-banner {
+    position: relative;
+
+    .sub-banner-item-1 {
+      &::after {
+        content: '';
+        background: linear-gradient(90deg, #787735 -1.21%, rgb(120 119 53 / 0%) 52.42%);
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      picture {
+        line-height: 0;
+        display: block;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 400px;
+        }
+      }
+
+      p:last-of-type {
+        position: absolute;
+        top: $vertical-padding-top;
+        left: $horizontal-padding;
+        margin: 0;
+        z-index: 1;
+      }
+    }
+
+    .sub-banner-item-2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: $vertical-padding-top $horizontal-padding 71px;
+
+      p {
+        margin: 0;
+      }
+
+      .button-container {
+        margin: 0;
+
+        .button {
+          margin: 19px 0 0 94px;
+          color: var(--button-primary-default, $primary-button-color);
+          font-size: var(--button-medium-size, 16px);
+          font-weight: 600;
+          line-height: var(--button-medium-line-height, 20px);
+          padding: 12px;
+          background-color: $white;
+          border-radius: 8px;
+          max-width: 176px;
+          width: 100%;
+          display: block;
+        }
+      }
+
+      @media (width <= $tablet-breakpoint) {
+        padding: $vertical-padding-top 20px 71px;
+      }
+    }
+
+    .sub-banner-item-3 {
+      display: none; // Hidden by default, shown on mobile
+      position: relative;
+
+      p {
+        margin: 0;
+      }
+
+      picture {
+        line-height: 0;
+        height: 100%;
+        display: block;
+
+        img {
+          width: 100%;
+          height: 237px;
+        }
+      }
+
+      .button-container {
+        position: absolute;
+        top: 50%;
+        left: 25%;
+
+        .button {
+          color: var(--button-primary-default, $primary-button-color);
+          font-size: var(--button-small-size, 14px);
+          line-height: var(--button-small-line-height, 16px);
+          background-color: $white;
+          padding: 8px 12px;
+          border-radius: 8px;
+          max-width: 124px;
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+
+    .sub-banner-item-4 {
+      position: absolute;
+      bottom: -24px;
+      right: $horizontal-padding;
+    }
+
+    // Media query to swap banner items on mobile
+    @media (width <= $mobile-breakpoint) {
+      .sub-banner-item-1,
+      .sub-banner-item-2,
+      .sub-banner-item-4 {
+        display: none;
+      }
+      .sub-banner-item-3 {
+        display: block;
+      }
+    }
+  }
+}
+
+.block.home-banner {
+  .swiper-pagination {
+    bottom: 21px;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+
+    .swiper-pagination-bullet {
+      margin: 0;
+      border: 1px solid $white;
+      background-color: transparent;
+      opacity: 1; // 'unset' can be inconsistent, '1' is clearer
+      width: 6px;
+      height: 6px;
+      display: block;
+
+      &.swiper-pagination-bullet-active {
+        background-color: $white;
+      }
+
+      @media (width <= $mobile-breakpoint) {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    background-color: $white;
+    border-radius: 50%;
+    width: $swiper-nav-size;
+    height: $swiper-nav-size;
+    left: $horizontal-padding;
+
+    &::after {
+      content: '';
+      background: url('../../icons/arrow-left.svg') no-repeat center;
+      background-size: cover;
+      min-width: 20px;
+      height: 20px;
+      display: block;
+    }
+
+    @media (width <= $mobile-breakpoint) {
+      display: none;
+    }
+  }
+
+  .swiper-button-next {
+    left: auto; // 'unset' is fine, but 'auto' is often more explicit
+    right: $horizontal-padding;
+
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+}
