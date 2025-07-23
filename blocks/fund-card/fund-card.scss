@@ -1,8 +1,8 @@
 /* stylelint-disable alpha-value-notation */
 /* stylelint-disable media-feature-range-notation */
-@use 'sass:map';
-@use '../../styles/common-theme/css/variables_mixins' as *;
-@use '../../styles/common-theme/css/fluid-typography' as *;
+@use "sass:map";
+@use "../../styles/common-theme/css/variables_mixins" as *;
+@use "../../styles/common-theme/css/fluid-typography" as *;
 * {
   padding: 0;
   margin: 0;
@@ -49,6 +49,7 @@
 
       .tabs-panel {
         @include flex-center($align: center, $justify: center);
+        align-items: stretch;
         flex-wrap: wrap;
         gap: 16px;
         margin: 24px 0 0;
@@ -70,36 +71,35 @@
       @include flex-center($align: center, $justify: space-between);
       flex-wrap: wrap;
       gap: 20px;
+    }
+    .btndesk,
+    .btnmob {
+      margin: 0;
+      padding: 0;
+      line-height: 0;
+      max-width: 105px;
+      width: 100%;
+      background-color: transparent;
+      border-radius: map.get($radius, r8);
+    }
 
-      .btndesk,
-      .btnmob {
-        margin: 0;
-        padding: 0;
-        line-height: 0;
-        max-width: 105px;
-        width: 100%;
-        background-color: transparent;
-        border-radius: map.get($radius, r8);
-      }
-
-      .btndesk a,
-      .btnmob a {
-        border-radius: map.get($radius, r8);
-        border: 1px solid map.get($button-primary, default);
-        width: 100%;
-        background-color: transparent;
-        padding: 8px;
-        @include font-style(
-          $size: 14px,
-          $line-height: 16px,
-          $color: $primary-blue,
-          $weight: map.get($font-weights, semibold),
-          $family: $Poppins
-        );
-        text-decoration: none;
-        display: block;
-        margin: 0;
-      }
+    .btndesk a,
+    .btnmob a {
+      border-radius: map.get($radius, r8);
+      border: 1px solid map.get($button-primary, default);
+      width: 100%;
+      background-color: transparent;
+      padding: 8px;
+      @include font-style(
+        $size: 14px,
+        $line-height: 16px,
+        $color: $primary-blue,
+        $weight: map.get($font-weights, semibold),
+        $family: $Poppins
+      );
+      text-decoration: none;
+      display: block;
+      margin: 0;
     }
 
     &.our-popular-funds {
@@ -158,6 +158,7 @@
   .card-container {
     max-width: 296px;
     width: 100%;
+    // min-height: 364px;
     padding: 24px 16px;
     border-radius: map.get($radius, r8);
     border: 1px solid map.get($old-silver, 100);
@@ -169,13 +170,16 @@
       flex-direction: column;
       height: 100%;
       width: 100%;
+      flex: 1;
     }
 
     .card-upper-title {
       @include flex-center($align: center, $justify: space-between);
+      align-items: start;
+      min-height: 50px;
       gap: 30px;
       margin: 0 0 8px;
-      height: 100%;
+      // height: 100%;
 
       h2 {
         @include font-style(
@@ -210,7 +214,7 @@
       @include flex-center($align: start, $justify: flex-start);
       gap: 8px;
       margin: 0 0 16px;
-      min-height: 32px;
+      height: 100%;
 
       .fundtagging-list {
         @include flex-center($align: center, $justify: flex-start);
@@ -279,12 +283,13 @@
     .cagr-container {
       @include flex-center($align: start, $justify: space-between);
       gap: 24px;
-
+      padding: 4px 0;
       &.not-provided {
         .cagr-dropdown,
         .cagr-value {
           display: none;
         }
+        padding: 0;
       }
 
       &:not(.not-provided) .cagr-desc {
@@ -311,11 +316,13 @@
 
       .cagr-select-wrapper {
         @include flex-center($align: center, $justify: flex-start);
-        width: 150px;
+        max-width: 100px;
+        width: 100%;
 
         &::after {
           content: "";
-          background: url("../../icons/down-arrow-small.svg") center/cover no-repeat;
+          background: url("../../icons/down-arrow-small.svg") center/cover
+            no-repeat;
           width: 12px;
           height: 12px;
           display: block;
@@ -352,8 +359,8 @@
           );
           margin: 0;
           text-align: right;
-          span{
-            font-size: 14px
+          span {
+            font-size: 14px;
           }
         }
 
@@ -455,6 +462,7 @@
 
     .button-container {
       @include flex-center($align: center, $justify: space-between);
+      flex-wrap: wrap;
       margin: 24px 0 0;
       gap: 20px;
 
@@ -570,6 +578,8 @@
 @include media(desktop-sm) {
   .section.tabs-container .card-container {
     max-width: 31.8%;
+    // min-height: 380px;
+    // height: 100%;
   }
 }
 
