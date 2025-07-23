@@ -153,9 +153,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  align-items: start;
   gap: 30px;
   margin: 0 0 8px;
-  height: 100%;
+  min-height: 50px;
 }
 .section .card-container .card-upper-title h2 {
   font-size: 14px;
