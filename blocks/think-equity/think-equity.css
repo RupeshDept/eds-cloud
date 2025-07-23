@@ -84,6 +84,7 @@
   gap: 40px;
   text-align: center;
   margin-bottom: 48px;
+  justify-content: space-around;
 }
 @media (max-width: 768px) {
   .section.think-equity-container .columns-wrapper .columns.block > div {
@@ -94,9 +95,13 @@
     margin-bottom: 30px;
   }
 }
+.section.think-equity-container .columns-wrapper .columns.block > div .subcollist {
+  flex: unset;
+  text-align: left;
+}
 .section.think-equity-container .columns-wrapper .columns.block h3 {
   margin: 0 0 8px;
-  color: #000053;
+  color: #2e2a94;
   font-size: clamp(2.5rem, 6vw, 3.25rem);
   font-weight: 700;
   line-height: 1.1;
