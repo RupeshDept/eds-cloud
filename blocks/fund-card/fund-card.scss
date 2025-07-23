@@ -71,8 +71,8 @@
       @include flex-center($align: center, $justify: space-between);
       flex-wrap: wrap;
       gap: 20px;
-
-      .btndesk,
+    }
+    .btndesk,
       .btnmob {
         margin: 0;
         padding: 0;
@@ -101,7 +101,6 @@
         display: block;
         margin: 0;
       }
-    }
 
     &.our-popular-funds {
       .btnmob a,
