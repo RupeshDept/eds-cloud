@@ -114,8 +114,8 @@
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-end;
-  gap: 10px;
-  padding: 10px;
+  gap: 8px;
+  padding: 8px;
   flex: 1;
   flex-wrap: wrap;
 }

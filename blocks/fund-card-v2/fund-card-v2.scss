@@ -158,8 +158,8 @@ $breakpoint-desktop: 1367px;
     }
 
     .card-items {
-      @include flex-center(row, stretch, flex-end, $spacing-sm);
-      padding: $spacing-sm;
+      @include flex-center(row, stretch, flex-end, $spacing-xs);
+      padding: $spacing-xs;
       flex: 1;
       flex-wrap: wrap;
 
