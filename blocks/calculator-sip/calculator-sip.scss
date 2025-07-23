@@ -92,6 +92,9 @@
         line-height: 1.5;
         margin: 0;
         max-width: 450px;
+        @include media(mobile){
+          font-size: 14px;
+        }
       }
     }
   }
@@ -150,13 +153,15 @@
           padding: 0;
           max-height: 200px;
           overflow-y: auto;
-          border: 1px solid map.get($strokes, default);
           background: $primary-white;
           position: absolute;
           width: 100%;
           z-index: 99;
           font-size: 18px;
           text-align: left;
+          @include media(mobile){
+            border: 1px solid map.get($strokes, default);
+          }
 
           li {
             padding: 10px;
@@ -339,10 +344,10 @@
           font-family: $Poppins;
           font-size: 14px;
           font-weight: 600;
-          line-height: 22px;
+          line-height: 16px;
           cursor: pointer;
           transition: background-color 0.2s ease;
-
+    
           &:hover {
             background: $primary-blue-dark;
           }
@@ -362,14 +367,17 @@
     }
 
     .view-btn-cal {
-      margin-top: map.get($spacing, md);
+      // margin-top: map.get($spacing, md);
       padding-top: map.get($spacing, xs);
       text-align: left;
 
       a {
-        @include font-style(14px, normal, $primary-blue, map.get($font-weights, medium), $Poppins);
+        @include font-style(14px, 20px, $primary-blue, map.get($font-weights, regular), $Poppins);
         text-decoration: underline;
-        font-family: $Poppins;
+        @include media(mobile){
+            font-size: 16px;
+            line-height: 24px;
+        }
       }
     }
   }

@@ -80,7 +80,11 @@ $breakpoint-desktop: 1367px;
 }
 
 .section.compound-journey {
-  > div {
+  .investment-block {
+    width: 100%;
+  }
+
+  >div {
     border-radius: $border-radius-md;
     background: $background-light;
     max-width: $container-max-width;
@@ -94,33 +98,48 @@ $breakpoint-desktop: 1367px;
     @include flex-center(row, stretch, flex-start, $spacing-sm);
     width: 100%;
 
+    @include media (mobile) {
+      flex-direction: column
+    }
+
     .compound-sub-item {
       @include sidebar-style();
       max-width: 30%;
       min-height: 100%;
 
+      @include media (mobile) {
+        min-width: 100%;
+      }
+
       h2 {
-        @include typography(24px, 28px, $primary-purple, $font-butler, 700);
-        margin: 0 0 $spacing-lg;
+        // @include typography(24px, 28px, $primary-purple, $font-butler, 700);
+        @include typography(28px, 32px, $primary-purple, $font-butler, 500);
+        // margin: 0 0 $spacing-lg;
+        margin: 0;
       }
 
       p {
         @include typography(14px, 20px, $primary-purple, $font-poppins, 400);
         margin: 0 0 $spacing-md;
-        white-space: nowrap; // Prevent text wrapping
+        white-space: nowrap;
+        margin-bottom: 0;
       }
 
       ul {
         display: flex;
         flex-direction: row;
-        gap: $spacing-sm;
+        // gap: $spacing-sm;
         margin: 0;
         padding: 0;
-        list-style: none;
 
         li {
           @include typography(14px, 20px, $primary-purple, $font-poppins, 400);
-          white-space: nowrap; // Prevent list items from wrapping
+          white-space: nowrap;
+          padding-right: 26px;
+
+          &:first-child {
+            list-style: none;
+          }
         }
       }
 
@@ -132,14 +151,15 @@ $breakpoint-desktop: 1367px;
           @include button-style($bg-color: $accent-blue, $text-color: $white);
           min-width: 157px;
           width: max-content;
-          background: #242177
+          background: #242177;
+          margin: 0;
         }
       }
     }
 
     .card-items {
-      @include flex-center(row, stretch, flex-start, $spacing-sm);
-      padding: $spacing-sm;
+      @include flex-center(row, stretch, flex-end, $spacing-xs);
+      padding: $spacing-xs;
       flex: 1;
       flex-wrap: wrap;
 
@@ -148,16 +168,17 @@ $breakpoint-desktop: 1367px;
         @include flex-center(column, flex-start, flex-start, $spacing-md); // Aligned items to start, adjusted gap
         border-radius: $border-radius-md;
         background: $white; // Changed background to white
-        padding: $spacing-lg; // Adjusted padding
+        padding: 10px; // Adjusted padding
         flex: 1; // Allow cards to grow and fill space
         min-width: 240px;
-        margin-bottom: $spacing-xl;
+        // margin-bottom: $spacing-xl;
+
 
         .benchmark-star {
           @include flex-center(row, flex-start, space-between);
           width: 100%; // Ensure full width for space-between
-          margin-bottom: $spacing-md; // Adjusted margin
-
+          margin-bottom: 20px;
+          min-height: 49px;
           .benchmarksec {
             @include flex-center(row, center, center);
             padding: $spacing-xs $spacing-md;
@@ -200,8 +221,8 @@ $breakpoint-desktop: 1367px;
         }
 
         .dropdown-tags {
-          @include flex-center(row, flex-start, flex-start, $spacing-xs);
-          margin-bottom: $spacing-lg; // Added margin bottom for spacing
+          @include flex-center(row, flex-start, flex-start);
+          margin-bottom: $spacing-lg;
           min-height: 32px;
 
           select {
@@ -228,12 +249,12 @@ $breakpoint-desktop: 1367px;
               height: 100%;
               list-style: none;
               padding: 0;
-              flex-wrap: wrap;
+              // flex-wrap: wrap;
 
               li {
                 @include typography(12px, 16px, $text-dark, $font-poppins, 400);
                 @include flex-center(row, center, flex-start, 4px);
-
+                align-items: start;
                 &::before {
                   content: "";
                   min-width: 3px;
@@ -242,11 +263,12 @@ $breakpoint-desktop: 1367px;
                   border-radius: 50%;
                   background-color: $text-dark;
                   flex-shrink: 0;
+                  margin-top: 5px;
                 }
 
-                &:first-child::before {
-                  display: none;
-                }
+                // &:first-child::before {
+                //   display: none;
+                // }
               }
             }
           }
@@ -259,10 +281,10 @@ $breakpoint-desktop: 1367px;
             "label button"
             "value button";
           grid-template-columns: 1fr auto;
-          align-items: center;
+          align-items: flex-end;
           width: 100%;
           margin-top: auto; // Pushes this section to the bottom
-          padding-top: $spacing-lg; // Adds space from content above
+          padding-top: 14px; // Adds space from content above
 
           label {
             grid-area: label;
@@ -281,15 +303,18 @@ $breakpoint-desktop: 1367px;
             grid-area: value;
             @include typography(24px, 28px, $primary-purple, $font-poppins, 600);
             margin: 0;
-            h2{
+
+            h2 {
               margin: 0;
               color: var(--blue-1800-primary, #2E2A94);
-                font-family: Poppins;
-                font-size: 24px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: 32px; /* 133.333% */
+              font-family: Poppins;
+              font-size: 24px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 32px;
+              /* 133.333% */
             }
+
             // Removed incorrect width and background properties
           }
 
@@ -297,10 +322,11 @@ $breakpoint-desktop: 1367px;
             grid-area: button;
             display: flex;
             width: 132px;
-            padding: 12px var(--Spacing-12, 12px) var(--Spacing-12, 12px) var(--Spacing-12, 12px);
+            padding: 0;
             justify-content: center;
             align-items: center;
             gap: var(--Spacing-8, 8px);
+
             a {
               @include button-style($bg-color: $accent-blue, $text-color: $white);
               padding: $spacing-md;
@@ -308,21 +334,23 @@ $breakpoint-desktop: 1367px;
               width: 100%;
               display: block;
               color: #FFF;
-                    font-family: var(--Body, Poppins);
-                    font-size: var(--Button-Small-Size, 14px);
-                    font-style: normal;
-                    font-weight: 600;
-                    line-height: 16px; /* 114.286% */
-                text-decoration: none;
-                background: #242177;
+              font-family: var(--Body, Poppins);
+              font-size: var(--Button-Small-Size, 14px);
+              font-style: normal;
+              font-weight: 600;
+              line-height: 16px;
+              text-decoration: none;
+              background: #242177;
 
-              & span { // Targeting button text
+              & span {
+                // Targeting button text
                 color: #FFF;
                 font-family: var(--Body, $font-poppins);
                 font-size: var(--Button-Small-Size, 14px);
                 font-style: normal;
                 font-weight: 600;
-                line-height: 16px; /* 114.286% */
+                line-height: 16px;
+                /* 114.286% */
               }
             }
           }
@@ -330,190 +358,208 @@ $breakpoint-desktop: 1367px;
       }
     }
   }
-}
 
-// Media Queries
-@media (max-width: $breakpoint-desktop) {
-  .section.compound-journey {
+  &.broaden-your {
     .compound-item {
-      .compound-sub-item {
-        .button-container {
-          margin-top: unset;
-        }
-      }
-
       .card-items {
         .card-container {
-          max-width: 244px;
-          min-width: 220px;
+          max-width: 31.4%;
+          flex: 0 0 31.4%;
+          min-width: unset;
+
+          @include media (mobile) {
+            max-width: 100%;
+            flex: 0 0 100%;
+          }
         }
       }
     }
   }
-}
 
-@media (max-width: $breakpoint-tablet) {
-  .section.compound-journey {
-    > div {
-      padding: $spacing-lg;
+  // Media Queries
+  @media (max-width: $breakpoint-desktop) {
+    .section.compound-journey {
+      .compound-item {
+        .compound-sub-item {
+          .button-container {
+            margin-top: unset;
+          }
+        }
+
+        .card-items {
+          .card-container {
+            max-width: 244px;
+            min-width: 220px;
+          }
+        }
+      }
     }
+  }
 
-    .compound-item {
-      flex-direction: column;
-      gap: $spacing-lg;
-
-      .compound-sub-item {
-        max-width: 100%;
+  @media (max-width: $breakpoint-tablet) {
+    .section.compound-journey {
+      >div {
         padding: $spacing-lg;
-
-        h2 {
-          @include typography(24px, 28px, $primary-purple, $font-butler, 700);
-        }
-
-        p {
-          @include typography(14px, 20px, $primary-purple, $font-poppins, 400);
-        }
-
-        ul {
-          flex-direction: row;
-          align-items: center;
-          gap: $spacing-sm;
-
-          li {
-            &:not(:first-of-type)::before {
-              display: none;
-            }
-          }
-        }
       }
 
-      .card-items {
-        justify-content: center;
+      .compound-item {
+        flex-direction: column;
+        gap: $spacing-lg;
 
-        .card-container {
-          max-width: 49%;
-          min-width: 280px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: $breakpoint-mobile) {
-  .section.compound-journey {
-    > div {
-      padding: $spacing-md;
-    }
-
-    .compound-item {
-      .compound-sub-item {
-        padding: $spacing-md;
-
-        h2 {
-          @include typography(22px, 26px, $primary-purple, $font-butler, 700);
-        }
-
-        p {
-          @include typography(12px, 16px, $primary-purple, $font-poppins, 400);
-        }
-
-        ul {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: $spacing-xs;
-
-          li {
-            &:not(:first-of-type)::before {
-              display: none;
-            }
-          }
-        }
-      }
-
-      .card-items {
-        padding: 0;
-
-        .card-container {
+        .compound-sub-item {
           max-width: 100%;
-          min-width: 100%;
+          padding: $spacing-lg;
 
-          .benchmark-star {
+          h2 {
+            @include typography(24px, 28px, $primary-purple, $font-butler, 700);
+          }
+
+          p {
+            @include typography(14px, 20px, $primary-purple, $font-poppins, 400);
+          }
+
+          ul {
+            flex-direction: row;
+            align-items: center;
             gap: $spacing-sm;
 
-            .benchmarksec {
-              padding: 6px $spacing-sm;
-
-              span {
-                @include typography(12px, 14px, $accent-blue, $font-poppins, 600);
+            li {
+              &:not(:first-of-type)::before {
+                display: none;
               }
             }
           }
+        }
 
-          .dropdown-tags {
-            flex-direction: column;
-            align-items: stretch;
-            gap: $spacing-sm;
+        .card-items {
+          justify-content: center;
 
-            select {
-              max-width: 100%;
-            }
+          .card-container {
+            max-width: 49%;
+            min-width: 280px;
+          }
+        }
+      }
+    }
+  }
 
-            .fund-tagging {
-              .fundtagging-list {
-                flex-wrap: wrap;
+  @media (max-width: $breakpoint-mobile) {
+    .section.compound-journey {
+      >div {
+        padding: $spacing-md;
+      }
+
+      .compound-item {
+        .compound-sub-item {
+          padding: $spacing-md;
+
+          h2 {
+            @include typography(22px, 26px, $primary-purple, $font-butler, 700);
+          }
+
+          p {
+            @include typography(12px, 16px, $primary-purple, $font-poppins, 400);
+          }
+
+          ul {
+            // flex-direction: column;
+            align-items: flex-start;
+            gap: $spacing-xs;
+
+            li {
+              &:not(:first-of-type)::before {
+                display: none;
               }
             }
           }
+        }
 
-          .return-btn {
-             // On mobile, stack everything vertically
-            grid-template-areas:
-              "label"
-              "value"
-              "button";
-            grid-template-columns: 1fr;
-            gap: $spacing-sm;
-            justify-items: start; // Align items to the left
+        .card-items {
+          padding: 0;
 
-            .btn-knowmore {
-              width: 100%; // Make button full width
+          .card-container {
+            max-width: 100%;
+            min-width: 100%;
+
+            .benchmark-star {
+              gap: $spacing-sm;
+
+              .benchmarksec {
+                padding: 6px $spacing-sm;
+
+                span {
+                  @include typography(12px, 14px, $accent-blue, $font-poppins, 600);
+                }
+              }
+            }
+
+            .dropdown-tags {
+              flex-direction: column;
+              align-items: stretch;
+              gap: $spacing-sm;
+
+              select {
+                max-width: 100%;
+              }
+
+              .fund-tagging {
+                .fundtagging-list {
+                  flex-wrap: wrap;
+                }
+              }
+            }
+
+            .return-btn {
+              // On mobile, stack everything vertically
+              grid-template-areas:
+                "label"
+                "value"
+                "button";
+              grid-template-columns: 1fr;
+              gap: $spacing-sm;
+              justify-items: start; // Align items to the left
+
+              .btn-knowmore {
+                width: 100%; // Make button full width
+              }
             }
           }
         }
       }
     }
   }
-}
 
-.section.compound-journey {
-  .button,
-  .btn-knowmore a,
-  .star {
-    &:focus {
-      outline: 2px solid $accent-blue;
-      outline-offset: 2px;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      transition: none !important;
-      animation: none !important;
-    }
-  }
-}
-
-@media print {
   .section.compound-journey {
-    .star {
-      display: none;
-    }
 
     .button,
-    .btn-knowmore a {
-      background: transparent !important;
-      color: $text-dark !important;
-      border: 1px solid $text-dark !important;
+    .btn-knowmore a,
+    .star {
+      &:focus {
+        outline: 2px solid $accent-blue;
+        outline-offset: 2px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  }
+
+  @media print {
+    .section.compound-journey {
+      .star {
+        display: none;
+      }
+
+      .button,
+      .btn-knowmore a {
+        background: transparent !important;
+        color: $text-dark !important;
+        border: 1px solid $text-dark !important;
+      }
     }
   }
 }
