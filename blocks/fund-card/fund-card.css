@@ -124,7 +124,7 @@
   border-bottom: 2px solid #2e2a94;
 }
 .section.tabs-container.our-popular-funds .tabs-list .tabs-tab {
-  color: #EDF1FF;
+  color: #9DADFE;
 }
 .section.tabs-container.our-popular-funds .tabs-list .tabs-tab[aria-selected=true] {
   border-bottom: 2px solid #fff;
@@ -185,7 +185,6 @@
   justify-content: flex-start;
   gap: 8px;
   margin: 0 0 16px;
-  min-height: 32px;
 }
 .section .card-container .card-category .fundtagging-list {
   display: flex;
@@ -252,6 +251,7 @@
   align-items: start;
   justify-content: space-between;
   gap: 24px;
+  padding: 4px 0;
 }
 .section .card-container .cagr-container.not-provided .cagr-dropdown,
 .section .card-container .cagr-container.not-provided .cagr-value {
@@ -278,7 +278,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 150px;
+  width: 80px;
 }
 .section .card-container .cagr-container .cagr-select-wrapper::after {
   content: "";
@@ -314,9 +314,6 @@
   font-weight: 500;
   margin: 0;
   text-align: right;
-}
-.section .card-container .cagr-container .cagr-value h2 span {
-  font-size: 14px;
 }
 .section .card-container .cagr-container .cagr-value .scheme-yet,
 .section .card-container .cagr-container .cagr-value .cagr-date {
@@ -587,7 +584,7 @@
     padding: 2px 8px 2px 0;
   }
   .section .card-container .cagr-container .cagr-value h2 {
-    font-size: 24px;
+    font-size: 14px;
     line-height: 16px;
     color: #2e2a94;
     font-family: "Poppins", sans-serif;
@@ -608,6 +605,6 @@
 }
 @media (max-width: 391px) {
   .section.tabs-container .card-container {
-    max-width: 100%;
+    max-width: 47%;
   }
 }/*# sourceMappingURL=fund-card.css.map */

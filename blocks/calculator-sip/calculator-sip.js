@@ -3,7 +3,8 @@
 import {
   div, a, label, input, span, button, ul, img, h2, p as pTag,
 } from '../../scripts/dom-helpers.js';
-import moslFundData from './datacal.js';
+// import moslFundData from './datacal.js';
+import dataCfObj from '../../scripts/dataCfObj.js';
 
 export default function decorate(block) {
   const col1 = block.children[0].querySelectorAll('p');
