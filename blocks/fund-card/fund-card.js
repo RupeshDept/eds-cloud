@@ -34,6 +34,7 @@ export default function decorate(block) {
     }
   });
   let classplan = (DirectPlanlistArr.length !== 0 && tempReturns.length !== 0) ? "" : " not-provided"
+  let classdropdown = DirectPlanlistArr.length !== 0 ? "flex" : "none";
   const cardContainer = div({
       class: 'card-container'
     },
@@ -84,7 +85,8 @@ export default function decorate(block) {
           ),
         ),
         div({
-            class: 'planlist-dropdown'
+            class: 'planlist-dropdown',
+            style:"display:"+classdropdown
           },
           select({
               onchange: (event) => {
