@@ -62,10 +62,6 @@ export default function decorate(block) {
       class: 'card-container',
       style: `display:${styleLine}`,
     },
-    {
-      class: 'card-container',
-      style: `display:${styleLine}`,
-    },
     div(
       { class: 'card-wrapper' },
       div(
@@ -130,22 +126,4 @@ export default function decorate(block) {
   );
 
   return container;
-}
-
-function planListEvent(param, block) {
-  const tempReturns = [];
-  const codeTempArr = [];
-  block.returns.forEach((el) => {
-    codeTempArr.push((el.plancode + el.optioncode));
-    if (param.target.value === (el.plancode + el.optioncode)) {
-      Object.keys(el).forEach((key) => {
-        if (dataMapMoObj.ObjTemp[key]) {
-          tempReturns.push(dataMapMoObj.ObjTemp[key]);
-        }
-      });
-
-      param.target.closest('.card-wrapper').querySelector('.return-btn h2').textContent = '';
-      param.target.closest('.card-wrapper').querySelector('.return-btn h2').textContent = `${el[dataMapMoObj.ObjTemp[tempReturns[0]]]}%`;
-    }
-  });
 }
