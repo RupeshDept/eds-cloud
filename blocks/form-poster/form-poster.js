@@ -1,5 +1,5 @@
 import formBlock from "../form/form.js"
-export default function decorate(block) {
+export default async function decorate(block) {
   console.log(block);
   Array.from(block.children).forEach((el, index) => {
     el.classList.add(`posteritem${index + 1}`);
@@ -10,6 +10,13 @@ export default function decorate(block) {
       });
     });
   });
-  formBlock(block.querySelector(".posteritem1 .posterinneritem1"));
-
+   await formBlock(block.querySelector(".posteritem1 .posterinneritem1"));
+  let divWrapper = document.createElement("div");
+  divWrapper.classList.add("input-btn")
+  Array.from(block.querySelector("form").children).forEach((el,index)=>{
+    if (index !== 0) {
+      divWrapper.append(el)  
+    }
+  })
+  block.querySelector("form").append(divWrapper)
 }
