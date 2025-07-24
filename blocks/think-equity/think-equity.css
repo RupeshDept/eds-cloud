@@ -1,35 +1,42 @@
-@import "../../../styles/fonts.css";
+@import url("../../../styles/fonts.css");
+
 .section.think-equity-container {
-  padding: 48px 0px;
+  padding: 48px 0;
   margin: 0 auto;
-  font-family: "ButlerPro", sans-serif;
+  font-family: ButlerPro, sans-serif;
 }
-@media (max-width: 1025px) {
+
+@media (width <= 1025px) {
   .section.think-equity-container {
-    padding: 40px 0px;
+    padding: 40px 0;
   }
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .section.think-equity-container {
     padding: 40px 16px;
   }
 }
+
 .section.think-equity-container img {
   display: block;
   max-width: 100%;
   height: auto;
 }
+
 .section.think-equity-container .think-equity-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .section.think-equity-container .think-equity-wrapper {
     padding: 0;
   }
 }
+
 .section.think-equity-container .think-equity-wrapper .think-equity.block {
   display: flex;
   flex-direction: row;
@@ -37,7 +44,8 @@
   gap: 32px;
   margin-bottom: 48px;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .section.think-equity-container .think-equity-wrapper .think-equity.block {
     justify-content: space-around;
     flex-direction: column;
@@ -45,21 +53,25 @@
     gap: 48px;
   }
 }
+
 .section.think-equity-container .think-equity-wrapper .think-equity.block > div {
   flex-basis: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .section.think-equity-container .think-equity-wrapper .think-equity.block .imagelist1 .subimagelist picture img {
   padding-left: 45px;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .section.think-equity-container .columns-wrapper {
     padding: 0;
   }
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .section.think-equity-container .columns-wrapper .columns.block .collist1 .subcollist {
     display: flex;
     flex-direction: row;
@@ -67,16 +79,18 @@
     gap: 20px;
     width: 100%;
   }
+
   .section.think-equity-container .columns-wrapper .columns.block .collist1 .subcollist p {
     width: 60%;
     text-align: left;
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins, sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: -0.31px;
   }
 }
+
 .section.think-equity-container .columns-wrapper .columns.block > div {
   max-width: 924px;
   margin: auto;
@@ -87,7 +101,8 @@
   margin-bottom: 48px;
   justify-content: space-between;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .section.think-equity-container .columns-wrapper .columns.block > div {
     flex-direction: column;
     justify-content: space-around;
@@ -96,10 +111,12 @@
     margin-bottom: 30px;
   }
 }
+
 .section.think-equity-container .columns-wrapper .columns.block > div .subcollist {
   flex: unset;
   text-align: left;
 }
+
 .section.think-equity-container .columns-wrapper .columns.block h3 {
   margin: 0 0 8px;
   color: #2e2a94;
@@ -108,11 +125,13 @@
   line-height: 1.1;
   text-wrap: balance;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .section.think-equity-container .columns-wrapper .columns.block h3 {
     font-size: 26px;
   }
 }
+
 .section.think-equity-container .columns-wrapper .columns.block p {
   margin: 0;
   max-inline-size: 30ch;
@@ -120,9 +139,10 @@
   font-size: 14px;
   line-height: 20px;
   color: 400;
-  font-family: "ButlerPro", sans-serif;
+  font-family: ButlerPro, sans-serif;
   font-weight: "Poppins", sans-serif;
 }
+
 .section.think-equity-container .default-content-wrapper {
   max-width: 924px;
   margin: 0 auto;
@@ -132,12 +152,12 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
-  border: 1px solid #dee2e6;
   padding: 24px 0;
   border-radius: 8px;
   border: 0;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .section.think-equity-container .default-content-wrapper {
     flex-direction: column;
     border: 0;
@@ -145,47 +165,53 @@
     padding: 0;
   }
 }
+
 .section.think-equity-container .default-content-wrapper p {
   margin: 0 0 24px;
   color: #333;
   font-size: 1.125rem;
   line-height: 1.6;
 }
+
 .section.think-equity-container .default-content-wrapper p:first-child {
   max-width: 502px;
   width: 100%;
   margin: 0;
   text-align: left;
   color: #2E2A94;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .section.think-equity-container .default-content-wrapper p:first-child {
     color: #2e2a94;
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins, sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 16px;
   }
 }
+
 .section.think-equity-container .default-content-wrapper p:last-of-type {
   margin-bottom: 0;
   margin-top: 0;
 }
+
 .section.think-equity-container .default-content-wrapper .button-container {
   margin-top: 24px;
 }
+
 .section.think-equity-container .default-content-wrapper .button-container .button {
   content: "";
   display: inline-block;
   color: #fff;
   padding: 12px;
   border: none;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
@@ -195,7 +221,8 @@
   background: #2E2A94;
   margin: 0;
 }
+
 .section.think-equity-container .default-content-wrapper .button-container .button:hover, .section.think-equity-container .default-content-wrapper .button-container .button:focus {
   background-color: #181643;
   transform: translateY(-2px);
-}/*# sourceMappingURL=think-equity.css.map */
+}
