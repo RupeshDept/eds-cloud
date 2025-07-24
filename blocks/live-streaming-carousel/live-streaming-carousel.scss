@@ -140,18 +140,19 @@
       }
 
       li:last-of-type {
-        color: var(--text-header, #382ad7);
         display: flex;
         align-items: center;
         gap: 8px;
         min-width: max-content;
         @include font-style(16px, 20px, $color-text-body, 500, $Poppins);
-
+        color: var(--text-header, #382ad7);
         @include media(mobile) {
           font-size: 14px;
           line-height: 16px;
         }
-
+        & a{
+          color: unset;
+        }
         &::before {
           content: "";
           width: 9px;
