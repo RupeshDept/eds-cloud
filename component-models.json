@@ -588,5 +588,28 @@
         "value": "#"
       }
     ]
+  },
+  {
+    "id":"form-poster",
+    "fields":[
+        {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Enter Left Side Content",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "oneimage",
+        "label": "Enter Right Side Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "oneimageAlt",
+        "label": "Enter Right Side Image Alt Text"
+      }
+    ]
   }
 ]
