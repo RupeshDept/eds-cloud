@@ -262,6 +262,7 @@
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input {
   border: none;
+  background-color: transparent;
   color: #2E2A94;
   font-family: "Poppins", sans-serif;
   font-size: 20px;
@@ -283,6 +284,21 @@
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input:focus,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input:focus {
   outline: none;
+}
+.compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper::before {
+  content: "₹";
+  position: absolute;
+  left: 0;
+  top: 74%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #2E2A94;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+.compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input {
+  padding-left: 18px;
 }
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper::after {
   content: "";
@@ -421,6 +437,9 @@
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper::after {
     right: 10px;
     transform: translateY(-50%);
+  }
+  .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper::before {
+    top: 66%;
   }
   .compounding .calculator-sip-wrapper .cal-container .cal-discription {
     display: flex;
