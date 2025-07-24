@@ -1,21 +1,16 @@
 /* Reset */
 @import "../../../styles/fonts.css";
 .section.cornerstones-advantage-cards-container {
-  max-width: 1264px;
   width: 100%;
   margin: 0 auto;
-  padding: 40px 16px;
+  padding: 40px 0px;
 }
-@media (max-width: 768px) {
-  .section.cornerstones-advantage-cards-container {
-    max-width: 100%;
-  }
-}
-.section.cornerstones-advantage .cornerstones-advantage-title-wrapper, .section.cornerstones-advantage .cornerstones-advantage-cards-wrapper {
-  padding: 0;
-  max-width: 100%;
-}
-.section.cornerstones-advantage .cornerstones-advantage-title h1,
+.section.cornerstones-advantage .cornerstones-advantage-title-wrapper h1,
+.section.cornerstones-advantage .cornerstones-advantage-title-wrapper h2,
+.section.cornerstones-advantage .cornerstones-advantage-title-wrapper h3,
+.section.cornerstones-advantage .cornerstones-advantage-title-wrapper h4,
+.section.cornerstones-advantage .cornerstones-advantage-title-wrapper h5,
+.section.cornerstones-advantage .cornerstones-advantage-title-wrapper h6, .section.cornerstones-advantage .cornerstones-advantage-title h1,
 .section.cornerstones-advantage .cornerstones-advantage-title h2,
 .section.cornerstones-advantage .cornerstones-advantage-title h3,
 .section.cornerstones-advantage .cornerstones-advantage-title h4,
@@ -30,7 +25,12 @@
   font-weight: 700;
 }
 @media (max-width: 768px) {
-  .section.cornerstones-advantage .cornerstones-advantage-title h1,
+  .section.cornerstones-advantage .cornerstones-advantage-title-wrapper h1,
+  .section.cornerstones-advantage .cornerstones-advantage-title-wrapper h2,
+  .section.cornerstones-advantage .cornerstones-advantage-title-wrapper h3,
+  .section.cornerstones-advantage .cornerstones-advantage-title-wrapper h4,
+  .section.cornerstones-advantage .cornerstones-advantage-title-wrapper h5,
+  .section.cornerstones-advantage .cornerstones-advantage-title-wrapper h6, .section.cornerstones-advantage .cornerstones-advantage-title h1,
   .section.cornerstones-advantage .cornerstones-advantage-title h2,
   .section.cornerstones-advantage .cornerstones-advantage-title h3,
   .section.cornerstones-advantage .cornerstones-advantage-title h4,
@@ -41,7 +41,7 @@
     text-align: left;
   }
 }
-.section.cornerstones-advantage .cornerstones-advantage-title p {
+.section.cornerstones-advantage .cornerstones-advantage-title-wrapper p, .section.cornerstones-advantage .cornerstones-advantage-title p {
   font-size: 18px;
   line-height: 24px;
   color: #2e2a94;
@@ -51,7 +51,7 @@
   margin: 0;
 }
 @media (max-width: 768px) {
-  .section.cornerstones-advantage .cornerstones-advantage-title p {
+  .section.cornerstones-advantage .cornerstones-advantage-title-wrapper p, .section.cornerstones-advantage .cornerstones-advantage-title p {
     font-size: 16px;
     line-height: 20px;
     text-align: left;
@@ -60,7 +60,7 @@
 .section.cornerstones-advantage .cornerstones-advantage-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 16px;
   margin: 40px 0 0;
 }
@@ -74,7 +74,6 @@
 .section.cornerstones-advantage .cornerstones-advantage-cards .cards-item {
   max-width: 296px;
   width: 100%;
-  padding-right: 26px;
   min-height: 300px;
 }
 @media (max-width: 1025px) {
@@ -156,6 +155,7 @@
   color: #424242;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  padding-right: 20px;
 }
 @media (max-width: 768px) {
   .section.cornerstones-advantage .cornerstones-advantage-cards .cards-item p:not(:first-of-type, :last-of-type) {

@@ -4,24 +4,25 @@
 @use '../../styles/common-theme/css/fluid-typography' as *;
 
 
-.section.calculator-sip-container {
-  max-width: none;
-}
+// .section.calculator-sip-container {
+//   max-width: none;
+// }
 
 /* MAIN WRAPPER */
 .compounding {
   background-color: aliceblue;
-  padding: map.get($spacing, xxl) map.get($spacing, xxl);
+  // padding: map.get($spacing, xxl) map.get($spacing, xxl);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: map.get($spacing, xs);
   align-self: stretch;
-  // height: 625px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
   .default-content-wrapper {
-    max-width: 1200px;
-    margin: 0 auto 0;
+    // max-width: 1200px;
+    // margin: 0 auto 0;
 
     p,
     ul,
@@ -46,7 +47,7 @@
     justify-content: space-between;
     margin: 0 auto;
     gap: 16px;
-    max-width: 1300px;
+    // max-width: 1300px;
     border-radius: map.get($radius, r16);
 
     .default-content-wrapper {
@@ -92,7 +93,8 @@
         line-height: 1.5;
         margin: 0;
         max-width: 450px;
-        @include media(mobile){
+
+        @include media(mobile) {
           font-size: 14px;
         }
       }
@@ -159,7 +161,8 @@
           z-index: 99;
           font-size: 18px;
           text-align: left;
-          @include media(mobile){
+
+          @include media(mobile) {
             border: 1px solid map.get($strokes, default);
           }
 
@@ -240,65 +243,142 @@
         }
       }
 
+      // .investment-wrapper {
+      //   display: flex;
+      //   flex-wrap: wrap;
+      //   gap: map.get($spacing, xxl);
+      //   margin: map.get($spacing, md) 0;
+      //   border-bottom: 1px solid map.get($strokes, default);
+
+      //   .sip-wrapper,
+      //   .tenure-wrapper {
+      //     position: relative;
+      //     flex: 1 1 45%;
+      //     display: flex;
+      //     flex-direction: column;
+      //     gap: map.get($spacing, xs);
+      //     width: 290px;
+      //     height: 68px;
+      //     padding: map.get($spacing, xs) 0;
+      //     justify-content: space-between;
+
+      //     label {
+      //       @include font-style(12px, 16px, $color-text-body, map.get($font-weights, regular), $Poppins);
+      //     }
+
+      //     input {
+      //       border: none;
+      //       color: #2E2A94;
+      //       font-family: $Poppins;
+      //       font-size: 20px;
+      //       font-weight: 500;
+      //       line-height: 24px;
+      //       width: 100%;
+      //       appearance: textfield;
+      //       border-radius: map.get($radius, r4);
+      //       box-sizing: border-box;
+
+      //       &::-webkit-outer-spin-button,
+      //       &::-webkit-inner-spin-button {
+      //         -webkit-appearance: none;
+      //         margin: 0;
+      //       }
+
+      //       &:focus {
+      //         outline: none;
+      //       }
+      //     }
+      //   }
+
+      //   .tenure-wrapper::after {
+      //     content: '';
+      //     position: absolute;
+      //     right: 10px;
+      //     top: 65%;
+      //     width: 20px;
+      //     height: 20px;
+      //     background: url('../../icons/Frame.svg') no-repeat center;
+      //     background-size: contain;
+      //     pointer-events: none;
+      //   }
+      // }
       .investment-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        gap: map.get($spacing, xxl);
-        margin: map.get($spacing, md) 0;
-        border-bottom: 1px solid map.get($strokes, default);
+  display: flex;
+  flex-wrap: wrap;
+  gap: map.get($spacing, xxl);
+  margin: map.get($spacing, md) 0;
+  border-bottom: 1px solid map.get($strokes, default);
 
-        .sip-wrapper,
-        .tenure-wrapper {
-          position: relative;
-          flex: 1 1 45%;
-          display: flex;
-          flex-direction: column;
-          gap: map.get($spacing, xs);
-          width: 290px;
-          height: 68px;
-          padding: map.get($spacing, xs) 0;
-          justify-content: space-between;
+  .sip-wrapper,
+  .tenure-wrapper {
+    position: relative;
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    gap: map.get($spacing, xs);
+    width: 290px;
+    height: 68px;
+    padding: map.get($spacing, xs) 0;
+    justify-content: space-between;
 
-          label {
-            @include font-style(12px, 16px, $color-text-body, map.get($font-weights, regular), $Poppins);
-          }
+    label {
+      @include font-style(12px, 16px, $color-text-body, map.get($font-weights, regular), $Poppins);
+    }
 
-          input {
-            border: none;
-            color: #2E2A94;
-            font-family: $Poppins;
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 24px;
-            width: 100%;
-            appearance: textfield;
-            border-radius: map.get($radius, r4);
-            box-sizing: border-box;
+    input {
+      border: none;
+      background-color: transparent; // Added for consistency
+      color: #2E2A94;
+      font-family: $Poppins;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 24px;
+      width: 100%;
+      appearance: textfield;
+      border-radius: map.get($radius, r4);
+      box-sizing: border-box;
 
-            &::-webkit-outer-spin-button,
-            &::-webkit-inner-spin-button {
-              -webkit-appearance: none;
-              margin: 0;
-            }
-
-            &:focus {
-              outline: none;
-            }
-          }
-        }
-
-        .tenure-wrapper::after {
-          content: '';
-          position: absolute;
-          right: 10px;
-          top: 65%;
-          width: 20px;
-          height: 20px;
-          background: url('../../icons/Frame.svg') no-repeat center;
-          background-size: contain;
-          pointer-events: none;
-        }
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
       }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  
+  .sip-wrapper::before {
+    content: '₹';
+    position: absolute;
+    left: 0;
+    top: 74%; 
+    transform: translateY(-50%);
+    pointer-events: none; 
+    color: #2E2A94;
+    font-family: $Poppins;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .sip-wrapper input {
+    padding-left: 18px; 
+  }
+
+  .tenure-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 65%;
+    width: 20px;
+    height: 20px;
+    background: url('../../icons/Frame.svg') no-repeat center;
+    background-size: contain;
+    pointer-events: none;
+  }
+}
 
       .cal-discription {
         display: flex;
@@ -347,7 +427,7 @@
           line-height: 16px;
           cursor: pointer;
           transition: background-color 0.2s ease;
-    
+
           &:hover {
             background: $primary-blue-dark;
           }
@@ -374,9 +454,10 @@
       a {
         @include font-style(14px, 20px, $primary-blue, map.get($font-weights, regular), $Poppins);
         text-decoration: underline;
-        @include media(mobile){
-            font-size: 16px;
-            line-height: 24px;
+
+        @include media(mobile) {
+          font-size: 16px;
+          line-height: 24px;
         }
       }
     }
@@ -429,6 +510,9 @@
               right: 10px;
               transform: translateY(-50%);
             }
+          }
+          .sip-wrapper::before {
+            top: 66%; 
           }
         }
 
