@@ -124,7 +124,6 @@
   .section.live-streaming-carousel-container .live-streaming-carousel ul {
     flex-direction: column-reverse;
     align-items: start;
-    max-width: 75.53%;
     width: 100%;
   }
 }
