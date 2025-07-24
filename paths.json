@@ -8,7 +8,8 @@
     "/content/eds-ru01/api/fund-api:/api/fund-api.json",
     "/content/eds-ru01/placeholder:/placeholder.json",
     "/content/eds-ru01/schememaster:/schememaster.json",
-    "/content/eds-ru01/api/nav-and-dividendupload:/api/nav-and-dividendupload.json"
+    "/content/eds-ru01/api/nav-and-dividendupload:/api/nav-and-dividendupload.json",
+    "/content/eds-ru01/motilalfigma/phonenumber-form:/motilalfigma/phonenumber-form.json"
 
   ],
   "includes": [
