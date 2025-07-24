@@ -1,0 +1,144 @@
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable media-feature-range-notation */
+@use 'sass:map';
+@use '../../styles/common-theme/css/variables_mixins'as *;
+@use '../../styles/common-theme/css/fluid-typography'as *;
+
+.form-poster {
+    display: flex;
+    max-width: 1232px;
+    width: 100%;
+    height: 483px;
+    padding: 2px 104px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    background: $primary-blue;
+
+    .posteritem1 {
+        position: relative;
+        display: flex;
+        max-width: 476px;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        flex-shrink: 0;
+
+        .postersubitem {
+            .posterinneritem1 {
+                margin: 0;
+                // position: absolute;
+                width: 100%;
+                padding-bottom: 40px;
+                border-bottom: 1px solid #F5F5F5;
+
+                form {
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 18px;
+                    align-self: stretch;
+
+                    .fieldset-wrapper {
+                        #form-titlepart {
+                            border: none;
+
+                            .heading-wrapper {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+
+                                h2 {
+                                    margin: 0;
+                                    @include font-style($size: 40px, $line-height: 48px, $color: $primary-white, $weight: map.get($font-weights, extrabold), $family: $ButlerPro)
+                                }
+                            }
+                        }
+                    }
+
+                    .input-btn {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        align-self: stretch;
+
+                        .field-wrapper {
+                            display: flex;
+                            max-width: 343px;
+                            width: 100%;
+                            height: 40px;
+                            flex-direction: row;
+                            align-items: flex-start;
+
+                            fieldset {
+                                display: flex;
+                                padding: 8px 12px;
+                                justify-content: space-between;
+                                align-items: flex-end;
+                                align-self: stretch;
+                                border-radius: 6px;
+                                border: 1px solid #9E9E9E;
+
+                                .countrycode,
+                                .phnodata {
+                                    display: flex;
+                                    height: 24px;
+                                    padding-right: 8px;
+                                    align-items: center;
+                                    gap: 4px;
+                                }
+
+                                .closebtninput {
+                                    display: flex;
+                                    width: 24px;
+                                    height: 24px;
+                                    padding: 2px;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                            }
+                        }
+
+                        .submit-wrapper {
+                            display: flex;
+                            padding: map.get($spacing, sm);
+                            justify-content: center;
+                            align-items: center;
+                            gap: map.get($spacing, xs);
+                            border-radius: 8px;
+                            background: #FFF;
+
+                            button {
+                                margin: 0;
+                                background: #FFF;
+                                color: $primary-blue;
+                                font-family: $Poppins;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .posterinneritem2 {
+                display: flex;
+                margin: 40px 0 0 0;
+                @include font-style($size: 18px, $line-height: 24px, $color: $primary-white, $weight: map.get($font-weights, extrabold), $family: $Poppins)
+            }
+
+            .posterinneritem3 {
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: 22px;
+                }
+            }
+        }
+    }
+
+}

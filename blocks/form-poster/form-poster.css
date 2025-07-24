@@ -1,0 +1,125 @@
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable media-feature-range-notation */
+@import "../../../styles/fonts.css";
+.form-poster {
+  display: flex;
+  max-width: 1232px;
+  width: 100%;
+  height: 483px;
+  padding: 2px 104px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  background: #2e2a94;
+}
+.form-poster .posteritem1 {
+  position: relative;
+  display: flex;
+  max-width: 476px;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  flex-shrink: 0;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem1 {
+  margin: 0;
+  width: 100%;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #F5F5F5;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem1 form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  align-self: stretch;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem1 form .fieldset-wrapper #form-titlepart {
+  border: none;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem1 form .fieldset-wrapper #form-titlepart .heading-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem1 form .fieldset-wrapper #form-titlepart .heading-wrapper h2 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 48px;
+  color: #fff;
+  font-family: "ButlerPro", sans-serif;
+  font-weight: 800;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem1 form .input-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  align-self: stretch;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem1 form .input-btn .field-wrapper {
+  display: flex;
+  max-width: 343px;
+  width: 100%;
+  height: 40px;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem1 form .input-btn .field-wrapper fieldset {
+  display: flex;
+  padding: 8px 12px;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-self: stretch;
+  border-radius: 6px;
+  border: 1px solid #9E9E9E;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem1 form .input-btn .field-wrapper fieldset .countrycode,
+.form-poster .posteritem1 .postersubitem .posterinneritem1 form .input-btn .field-wrapper fieldset .phnodata {
+  display: flex;
+  height: 24px;
+  padding-right: 8px;
+  align-items: center;
+  gap: 4px;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem1 form .input-btn .field-wrapper fieldset .closebtninput {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem1 form .input-btn .submit-wrapper {
+  display: flex;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  background: #FFF;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem1 form .input-btn .submit-wrapper button {
+  margin: 0;
+  background: #FFF;
+  color: #2e2a94;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem2 {
+  display: flex;
+  margin: 40px 0 0 0;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+.form-poster .posteritem1 .postersubitem .posterinneritem3 li {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}/*# sourceMappingURL=form-poster.css.map */

@@ -10,12 +10,17 @@ export default async function decorate(block) {
       });
     });
   });
-   await formBlock(block.querySelector(".posteritem1 .posterinneritem1"));
+  await formBlock(block.querySelector(".posteritem1 .posterinneritem1"));
   let divWrapper = document.createElement("div");
   divWrapper.classList.add("input-btn")
-  Array.from(block.querySelector("form").children).forEach((el,index)=>{
+  Array.from(block.querySelector("form").children).forEach((el, index) => {
     if (index !== 0) {
-      divWrapper.append(el)  
+      divWrapper.append(el)
+    }
+    if (index === 1) {
+      let divWrapperclose = document.createElement("div");
+      divWrapperclose.classList.add("closebtninput")
+      el.querySelector("fieldset").append(divWrapperclose)
     }
   })
   block.querySelector("form").append(divWrapper)
