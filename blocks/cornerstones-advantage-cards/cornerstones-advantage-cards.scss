@@ -5,21 +5,25 @@
 
 .section.cornerstones-advantage {
   &-cards-container {
-    max-width: 1264px;
+    // max-width: 1264px;
     width: 100%;
     margin: 0 auto;
-    padding: 40px 16px;
-    @include media(mobile) {
-      max-width: 100%;
-    }
+    padding: 40px 0px;
+    // @include media(mobile) {
+    //   max-width: 100%;
+    // }
   }
+
   .cornerstones-advantage {
+
     &-title-wrapper,
-    &-cards-wrapper {
-      padding: 0;
-      max-width: 100%;
-    }
+    // &-cards-wrapper {
+    //   padding: 0;
+    //   max-width: 100%;
+    // }
+
     &-title {
+
       h1,
       h2,
       h3,
@@ -29,16 +33,19 @@
         margin: 0 0 4px;
         text-align: center;
         @include font-style(48px, 56px, $primary-blue, 700, $ButlerPro);
+
         @include media(mobile) {
           font-size: 28px;
           line-height: 32px;
           text-align: left;
         }
       }
+
       p {
         @include font-style(18px, 24px, $primary-blue, 500, $Poppins);
         text-align: center;
         margin: 0;
+
         @include media(mobile) {
           font-size: 16px;
           line-height: 20px;
@@ -46,41 +53,51 @@
         }
       }
     }
+
     &-cards {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 16px;
       margin: 40px 0 0;
+
+
       @include media(mobile) {
         flex-wrap: unset;
         flex-direction: column;
         gap: 40px;
       }
+
       & .cards-item {
         max-width: 296px;
         width: 100%;
-        padding-right: 26px;
+        // padding-right: 26px;
         min-height: 300px;
+
         @include media(tab) {
           max-width: 32%;
         }
+
         @media screen and (width <=851px) {
           max-width: 48%;
         }
+
         @include media(mobile) {
           min-height: 176px;
           max-width: 100%;
           padding-right: 0;
-          &:last-of-type > div {
+
+          &:last-of-type>div {
             border: none;
             padding: 0;
           }
         }
-        > div {
+
+        >div {
           height: 100%;
           display: flex;
           flex-direction: column;
+
           @include media(mobile) {
             padding-right: 0;
             border-bottom: 1px solid var(--neutrals-400, #bdbdbd);
@@ -100,11 +117,13 @@
         p {
           margin: 0;
         }
+
         p:first-of-type,
         .icon {
           width: 64px;
           height: 64px;
         }
+
         h1,
         h2,
         h3,
@@ -113,6 +132,7 @@
         h6 {
           margin: 24px 0 8px;
           @include font-style(18px, 24px, $primary-blue, 600, $Poppins);
+
           @include media(mobile) {
             grid-area: heading;
             margin: 0;
@@ -120,27 +140,35 @@
             line-height: 20px;
           }
         }
+
         p {
           &:not(:first-of-type, :last-of-type) {
             @include font-style(16px, 24px, $color-text-body, 400, $Poppins);
+            padding-right: 20px;
+
             @include media(mobile) {
               font-size: 14px;
               line-height: 20px;
             }
           }
+
           @include media(mobile) {
             grid-area: text;
+
             &:first-of-type {
               grid-area: icon;
             }
           }
         }
+
         .button-container {
           margin-top: auto;
+
           @include media(mobile) {
             grid-area: button;
             margin: 24px 0 0;
           }
+
           .button {
             margin: 0;
             padding: 0;

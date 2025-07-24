@@ -1,14 +1,19 @@
 @import "../../../styles/fonts.css";
 .section.compound-journey .investment-block {
   width: 100%;
+  padding: 10px 0;
+}
+@media (max-width: 768px) {
+  .section.compound-journey .investment-block {
+    padding: 20px 0;
+    padding-top: 0;
+  }
 }
 .section.compound-journey > div {
   border-radius: 12px;
   background: #edf1ff;
-  max-width: 1262px;
   width: 100%;
   margin: 0 auto;
-  padding: 0;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -43,6 +48,8 @@
 @media (max-width: 768px) {
   .section.compound-journey .compound-item .compound-sub-item {
     min-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 .section.compound-journey .compound-item .compound-sub-item h2 {
@@ -115,7 +122,6 @@
   align-items: stretch;
   justify-content: flex-end;
   gap: 8px;
-  padding: 8px;
   flex: 1;
   flex-wrap: wrap;
 }

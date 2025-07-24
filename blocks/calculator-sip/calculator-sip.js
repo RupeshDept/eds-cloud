@@ -80,13 +80,24 @@ export default function decorate(block) {
         { class: 'sip-wrapper' },
         label({ class: 'labelforsip' }, col2[0].textContent.trim()),
         label({ class: 'labelforlumsum', style: 'display:none' }, col2[1].textContent.trim()),
-        input({
-          type: 'number',
-          value: col2[2].textContent.trim(),
-          name: 'investmentAmount',
-          id: 'investmentAmount',
-          placeholder: 'Enter amount',
-        }),
+        // input({
+        //   type: 'number',
+        //   value: col2[2].textContent.trim(),
+        //   name: 'investmentAmount',
+        //   id: 'investmentAmount',
+        //   placeholder: 'Enter amount',
+        // }),
+        div(
+          { class: 'input-with-symbol' },
+          span({ class: 'rupee-symbol' }, ''),
+          input({ // The original input
+            type: 'number',
+            value: col2[2].textContent.trim(),
+            name: 'investmentAmount',
+            id: 'investmentAmount',
+            placeholder: 'Enter amount',
+          }),
+        ),
       ),
       div(
         { class: 'tenure-wrapper' },

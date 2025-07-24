@@ -4,6 +4,8 @@
 @import '../swiper/swiper-bundle.min.css';
 
 .section.future-building-container {
+    max-width: 1232px;
+    margin: 0 auto;
     position: relative;
     padding-top: 40px;
 
@@ -152,7 +154,11 @@
         position: absolute;
         padding: 0;
         top: 78px;
-        right: 166px;
+        right: 0;
+
+        @include media(desktop-sm) {
+            right: 20px;
+        }
 
         @include media(mobile) {
             display: flex;

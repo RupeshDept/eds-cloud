@@ -3,18 +3,13 @@
 @use 'sass:map';
 @use '../../styles/common-theme/css/variables_mixins' as *;
 @use '../../styles/common-theme/css/fluid-typography' as *;
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 
 .section {
   &.tabs-container {
-    max-width: 1264px;
+    // max-width: 1264px;
     width: 100%;
     margin: 0 auto;
-    padding: 40px 16px;
+    padding: 40px 0px;
 
     &.our-popular-funds {
       background: $primary-blue;
@@ -22,18 +17,16 @@
     }
 
     .default-content-wrapper {
-      margin: 0;
-      padding: 0;
-      max-width: 100%;
+      // margin: 0;
+      // padding: 0;
+      // max-width: 100%;
 
       h1 {
-        @include font-style(
-          $size: 40px,
+        @include font-style($size: 40px,
           $line-height: 48px,
           $color: $primary-blue,
           $weight: map.get($font-weights, bold),
-          $family: $ButlerPro
-        );
+          $family: $ButlerPro );
         margin: 0;
       }
     }
@@ -43,13 +36,13 @@
     }
 
     .tabs-wrapper {
-      margin: 8px 0 0;
-      max-width: 100%;
-      padding: 0;
+      margin: 0 auto;
+      // max-width: 100%;
+      // padding: 0;
 
       .tabs-panel {
         // @include flex-center($align: center, $justify: center);
-        justify-content: center;
+        justify-content: flex-start;
         align-items: stretch;
         flex-wrap: wrap;
         gap: 16px;
@@ -60,9 +53,10 @@
     }
 
     &.our-popular-funds {
+
       .default-content-wrapper,
       .tabs-wrapper {
-        max-width: 1264px;
+        // max-width: 1264px;
         width: 100%;
         margin: 0 auto;
       }
@@ -73,37 +67,37 @@
       flex-wrap: wrap;
       gap: 20px;
     }
-    .btndesk,
-      .btnmob {
-        margin: 0;
-        padding: 0;
-        line-height: 0;
-        max-width: 105px;
-        width: 100%;
-        background-color: transparent;
-        border-radius: map.get($radius, r8);
-      }
 
-      .btndesk a,
-      .btnmob a {
-        border-radius: map.get($radius, r8);
-        border: 1px solid map.get($button-primary, default);
-        width: 100%;
-        background-color: transparent;
-        padding: 8px;
-        @include font-style(
-          $size: 14px,
-          $line-height: 16px,
-          $color: $primary-blue,
-          $weight: map.get($font-weights, semibold),
-          $family: $Poppins
-        );
-        text-decoration: none;
-        display: block;
-        margin: 0;
-      }
+    .btndesk,
+    .btnmob {
+      margin: 0;
+      padding: 0;
+      line-height: 0;
+      max-width: 105px;
+      width: 100%;
+      background-color: transparent;
+      border-radius: map.get($radius, r8);
+    }
+
+    .btndesk a,
+    .btnmob a {
+      border-radius: map.get($radius, r8);
+      border: 1px solid map.get($button-primary, default);
+      width: 100%;
+      background-color: transparent;
+      padding: 8px;
+      @include font-style($size: 14px,
+        $line-height: 16px,
+        $color: $primary-blue,
+        $weight: map.get($font-weights, semibold),
+        $family: $Poppins );
+      text-decoration: none;
+      display: block;
+      margin: 0;
+    }
 
     &.our-popular-funds {
+
       .btnmob a,
       .wrappertablist .btndesk a {
         border: 1px solid $primary-white;
@@ -125,22 +119,18 @@
         border: none;
         background-color: transparent;
         padding: 12px;
-        @include font-style(
-          $size: 14px,
+        @include font-style($size: 14px,
           $line-height: 16px,
           $color: $primary-blue,
           $weight: map.get($font-weights, medium),
-          $family: $Poppins
-        );
+          $family: $Poppins );
 
         &[aria-selected="true"] {
-          @include font-style(
-            $size: 14px,
+          @include font-style($size: 14px,
             $line-height: 16px,
             $color: $primary-blue,
             $weight: map.get($font-weights, semibold),
-            $family: $Poppins
-          );
+            $family: $Poppins );
           border-bottom: 2px solid $primary-blue;
         }
       }
@@ -181,13 +171,11 @@
       min-height: 50px;
 
       h2 {
-        @include font-style(
-          $size: 14px,
+        @include font-style($size: 14px,
           $line-height: 16px,
           $color: $primary-blue,
           $weight: map.get($font-weights, medium),
-          $family: $Poppins
-        );
+          $family: $Poppins );
         margin: 0;
       }
 
@@ -221,13 +209,11 @@
         margin: 0;
 
         li {
-          @include font-style(
-            $size: 12px,
+          @include font-style($size: 12px,
             $line-height: 16px,
             $color: map.get($dark-liver, 500),
             $weight: map.get($font-weights, regular),
-            $family: $Poppins
-          );
+            $family: $Poppins );
           @include flex-center($align: center, $justify: flex-start);
           gap: 8px;
 
@@ -262,13 +248,11 @@
         }
 
         select {
-          @include font-style(
-            $size: 12px,
+          @include font-style($size: 12px,
             $line-height: 16px,
             $color: map.get($dark-liver, 500),
             $weight: map.get($font-weights, regular),
-            $family: $Poppins
-          );
+            $family: $Poppins );
           border: none;
           outline: none;
           appearance: none;
@@ -281,9 +265,10 @@
     .cagr-container {
       @include flex-center($align: start, $justify: space-between);
       gap: 24px;
-      padding : 4px 0;
-        
+      padding: 4px 0;
+
       &.not-provided {
+
         .cagr-dropdown,
         .cagr-value {
           display: none;
@@ -301,13 +286,11 @@
         line-height: 0;
 
         label {
-          @include font-style(
-            $size: 12px,
+          @include font-style($size: 12px,
             $line-height: 16px,
             $color: map.get($dark-liver, 500),
             $weight: map.get($font-weights, regular),
-            $family: $Poppins
-          );
+            $family: $Poppins );
           padding-bottom: 4px;
         }
       }
@@ -325,13 +308,11 @@
         }
 
         select {
-          @include font-style(
-            $size: 12px,
+          @include font-style($size: 12px,
             $line-height: 16px,
             $color: $primary-blue,
             $weight: map.get($font-weights, medium),
-            $family: $Poppins
-          );
+            $family: $Poppins );
           width: 100%;
           border: none;
           outline: none;
@@ -346,16 +327,15 @@
         width: 100%;
 
         h2 {
-          @include font-style(
-            $size: 24px,
+          @include font-style($size: 24px,
             $line-height: 32px,
             $color: $primary-blue,
             $weight: map.get($font-weights, medium),
-            $family: $Poppins
-          );
+            $family: $Poppins );
           margin: 0;
           text-align: right;
-          span{
+
+          span {
             font-size: 14px;
             line-height: 16px;
             font-weight: 300;
@@ -364,13 +344,11 @@
 
         .scheme-yet,
         .cagr-date {
-          @include font-style(
-            $size: 12px,
+          @include font-style($size: 12px,
             $line-height: 16px,
             $color: map.get($dark-liver, 500),
             $weight: map.get($font-weights, regular),
-            $family: $Poppins
-          );
+            $family: $Poppins );
           text-align: right;
           margin: 0;
           padding: 0;
@@ -384,13 +362,11 @@
         width: 100%;
 
         span {
-          @include font-style(
-            $size: 12px,
+          @include font-style($size: 12px,
             $line-height: 16px,
             $color: $primary-blue,
             $weight: map.get($font-weights, regular),
-            $family: $Poppins
-          );
+            $family: $Poppins );
           padding: 8px 0;
           display: block;
         }
@@ -406,25 +382,21 @@
       margin: 8px 0 0;
 
       label {
-        @include font-style(
-          $size: 12px,
+        @include font-style($size: 12px,
           $line-height: 16px,
           $color: map.get($dark-liver, 500),
           $weight: map.get($font-weights, regular),
-          $family: $Poppins
-        );
+          $family: $Poppins );
         margin: 0;
         padding: 0;
       }
 
       span {
-        @include font-style(
-          $size: 12px,
+        @include font-style($size: 12px,
           $line-height: 16px,
           $color: $primary-blue,
           $weight: map.get($font-weights, medium),
-          $family: $Poppins
-        );
+          $family: $Poppins );
         @include flex-center($align: center, $justify: flex-start);
         gap: 4px;
 
@@ -443,13 +415,11 @@
       margin: 24px 0 0;
 
       .dis-choosen {
-        @include font-style(
-          $size: 12px,
+        @include font-style($size: 12px,
           $line-height: 16px,
           $color: $primary-blue,
           $weight: map.get($font-weights, regular),
-          $family: $Poppins
-        );
+          $family: $Poppins );
         margin: 0;
 
         .dis-investor {
@@ -464,13 +434,11 @@
       gap: 20px;
 
       .know-more {
-        @include font-style(
-          $size: 14px,
+        @include font-style($size: 14px,
           $line-height: 20px,
           $color: $primary-blue,
           $weight: map.get($font-weights, medium),
-          $family: $Poppins
-        );
+          $family: $Poppins );
         margin: 0;
         padding: 0;
         background-color: transparent;
@@ -487,27 +455,25 @@
         padding: 12px;
         margin: 0;
         border: none;
-        @include font-style(
-          $size: 14px,
+        @include font-style($size: 14px,
           $line-height: 16px,
           $color: $primary-white,
           $weight: map.get($font-weights, semibold),
-          $family: $Poppins
-        );
+          $family: $Poppins );
       }
     }
   }
 
   &.index-fund {
     margin: 40px auto;
-    max-width: 1232px;
+    // max-width: 1232px;
     width: 100%;
-    padding: 12px 10px;
+    padding: 12px 0px;
 
-    & > div {
-      padding: 0;
-      max-width: 100%;
-    }
+    // & > div {
+    //   padding: 0;
+    //   // max-width: 100%;
+    // }
 
     .compound-item {
       @include flex-center($align: center, $justify: space-between);
@@ -542,13 +508,11 @@
         height: max-content;
 
         h2 {
-          @include font-style(
-            $size: 28px,
+          @include font-style($size: 28px,
             $line-height: 32px,
             $color: $primary-blue,
             $weight: map.get($font-weights, medium),
-            $family: $ButlerPro
-          );
+            $family: $ButlerPro );
           margin: 0;
           max-width: 306px;
           width: 100%;
@@ -595,6 +559,11 @@
 
       .compound-sub-item {
         max-width: 100%;
+
+        @include media(mobile) {
+          padding-left: 0;
+          padding-right: 0;
+        }
       }
 
       .card-items .card-container {
@@ -611,16 +580,14 @@
 
 @include media(mobile) {
   .section.tabs-container {
-    padding: 40px 16px;
+    padding: 40px 0px;
 
     .default-content-wrapper h1 {
-      @include font-style(
-        $size: 32px,
+      @include font-style($size: 32px,
         $line-height: 40px,
         $color: $primary-blue,
         $weight: map.get($font-weights, bold),
-        $family: $ButlerPro
-      );
+        $family: $ButlerPro );
     }
 
     .tabs-wrapper {
@@ -633,13 +600,11 @@
       }
 
       .tabs-tab {
-        @include font-style(
-          $size: 14px,
+        @include font-style($size: 14px,
           $line-height: 16px,
           $color: $primary-blue,
           $weight: map.get($font-weights, medium),
-          $family: $Poppins
-        );
+          $family: $Poppins );
       }
     }
 
@@ -667,13 +632,11 @@
       }
 
       .card-upper-title h2 {
-        @include font-style(
-          $size: 16px,
+        @include font-style($size: 16px,
           $line-height: 20px,
           $color: $primary-blue,
           $weight: map.get($font-weights, medium),
-          $family: $Poppins
-        );
+          $family: $Poppins );
       }
 
       .card-category {
@@ -693,13 +656,11 @@
         }
 
         .cagr-value h2 {
-          @include font-style(
-            $size: 24px,
+          @include font-style($size: 24px,
             $line-height: 32px,
             $color: $primary-blue,
             $weight: map.get($font-weights, medium),
-            $family: $Poppins
-          );
+            $family: $Poppins );
         }
       }
 
@@ -722,8 +683,8 @@
   }
 }
 
-@include media(mobile-md) {
+@include media(mobile) {
   .section.tabs-container .card-container {
-    max-width: 47%;
+    max-width: 100%;
   }
 }

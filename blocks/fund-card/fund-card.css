@@ -1,25 +1,13 @@
 /* stylelint-disable alpha-value-notation */
 /* stylelint-disable media-feature-range-notation */
 @import "../../../styles/fonts.css";
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 .section.tabs-container {
-  max-width: 1264px;
   width: 100%;
   margin: 0 auto;
-  padding: 40px 16px;
+  padding: 40px 0px;
 }
 .section.tabs-container.our-popular-funds {
   background: #2e2a94;
-  max-width: 100%;
-}
-.section.tabs-container .default-content-wrapper {
-  margin: 0;
-  padding: 0;
   max-width: 100%;
 }
 .section.tabs-container .default-content-wrapper h1 {
@@ -34,12 +22,10 @@
   color: #fff;
 }
 .section.tabs-container .tabs-wrapper {
-  margin: 8px 0 0;
-  max-width: 100%;
-  padding: 0;
+  margin: 0 auto;
 }
 .section.tabs-container .tabs-wrapper .tabs-panel {
-  justify-content: center;
+  justify-content: flex-start;
   align-items: stretch;
   flex-wrap: wrap;
   gap: 16px;
@@ -49,7 +35,6 @@
 }
 .section.tabs-container.our-popular-funds .default-content-wrapper,
 .section.tabs-container.our-popular-funds .tabs-wrapper {
-  max-width: 1264px;
   width: 100%;
   margin: 0 auto;
 }
@@ -432,13 +417,8 @@
 }
 .section.index-fund {
   margin: 40px auto;
-  max-width: 1232px;
   width: 100%;
-  padding: 12px 10px;
-}
-.section.index-fund > div {
-  padding: 0;
-  max-width: 100%;
+  padding: 12px 0px;
 }
 .section.index-fund .compound-item {
   display: flex;
@@ -516,6 +496,14 @@
   .section.index-fund .compound-item .compound-sub-item {
     max-width: 100%;
   }
+}
+@media (max-width: 1025px) and (max-width: 768px) {
+  .section.index-fund .compound-item .compound-sub-item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: 1025px) {
   .section.index-fund .compound-item .card-items .card-container {
     max-width: 49.8%;
   }
@@ -525,7 +513,7 @@
 }
 @media (max-width: 768px) {
   .section.tabs-container {
-    padding: 40px 16px;
+    padding: 40px 0px;
   }
   .section.tabs-container .default-content-wrapper h1 {
     font-size: 32px;
@@ -606,8 +594,8 @@
     max-width: 100%;
   }
 }
-@media (max-width: 391px) {
+@media (max-width: 768px) {
   .section.tabs-container .card-container {
-    max-width: 47%;
+    max-width: 100%;
   }
 }/*# sourceMappingURL=fund-card.css.map */

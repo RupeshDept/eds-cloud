@@ -3,13 +3,13 @@
 @use '../../styles/common-theme/css/fluid-typography' as *;
 
 .section.think-equity-container {
-    padding: 48px 24px;
-    max-width: 1264px;
+    padding: 48px 0px;
+    // max-width: 1264px;
     margin: 0 auto;
     font-family: $ButlerPro;
 
     @include media(tab) {
-        padding: 40px 67px;
+        padding: 40px 0px;
     }
 
     @include media(mobile) {
