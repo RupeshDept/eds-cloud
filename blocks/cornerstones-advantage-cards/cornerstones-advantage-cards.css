@@ -74,7 +74,6 @@
 .section.cornerstones-advantage .cornerstones-advantage-cards .cards-item {
   max-width: 296px;
   width: 100%;
-  padding-right: 26px;
   min-height: 300px;
 }
 @media (max-width: 1025px) {
@@ -156,6 +155,7 @@
   color: #424242;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  padding-right: 20px;
 }
 @media (max-width: 768px) {
   .section.cornerstones-advantage .cornerstones-advantage-cards .cards-item p:not(:first-of-type, :last-of-type) {

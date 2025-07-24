@@ -71,7 +71,7 @@
       & .cards-item {
         max-width: 296px;
         width: 100%;
-        padding-right: 26px;
+        // padding-right: 26px;
         min-height: 300px;
 
         @include media(tab) {
@@ -144,6 +144,7 @@
         p {
           &:not(:first-of-type, :last-of-type) {
             @include font-style(16px, 24px, $color-text-body, 400, $Poppins);
+            padding-right: 20px;
 
             @include media(mobile) {
               font-size: 14px;
