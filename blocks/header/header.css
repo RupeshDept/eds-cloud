@@ -361,7 +361,7 @@ header .nav-tools div ul:nth-child(2) {
 }
 header .header-top {
   max-width: 100%;
-  width: -webkit-fill-available;
+  width: 100%;
   position: absolute;
   top: -40px;
   left: 0;
@@ -374,19 +374,25 @@ header .header-top {
   }
 }
 header .header-top div:first-child {
-  width: 71%;
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   height: 40px;
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
   align-self: stretch;
-  margin: auto;
+}
+@media (max-width: 1025px) {
+  header .header-top div:first-child {
+    padding: 0 20px;
+  }
 }
 @media (max-width: 768px) {
   header .header-top div:first-child {
-    width: 93%;
     border-bottom: 1px solid #BDBDBD;
+    padding: 0 16px;
   }
 }
 header .header-top div:first-child ul:first-child {
@@ -508,7 +514,7 @@ header .header-top div:first-child ul:nth-child(2) .dropdown-active span img {
     justify-content: space-between;
     gap: 0 32px;
     max-width: 1264px;
-    padding: 0 32px;
+    padding: 0 20px;
   }
   header nav[aria-expanded=true] {
     min-height: 0;

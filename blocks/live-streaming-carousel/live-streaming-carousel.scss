@@ -4,15 +4,17 @@
 @use "../../styles/common-theme/css/fluid-typography" as *;
 
 .section.live-streaming-carousel-container {
-  padding: 24px;
-  margin: 0;
-  @include media(desktop-md) {
-    padding: 24px 16px;
-  }
+  // padding: 24px;
+  margin: 20px 0;
+
+  // @include media(desktop-md) {
+  //   padding: 24px 16px;
+  // }
   .default-content-wrapper {
-    max-width: 1232px;
-    padding: 0;
+    // max-width: 1232px;
+    // padding: 0;
     margin: 0 auto;
+
     h1,
     h2,
     h3,
@@ -21,25 +23,30 @@
     h6 {
       margin: 0 0 8px;
       @include font-style(14px, 16px, $primary-blue, 500, $Poppins);
+
       @include media(mobile) {
         font-size: 12px;
         line-height: 16px;
       }
     }
   }
+
   .live-streaming-carousel {
     max-width: 1100px;
     margin: 0;
     margin-right: 140px;
+
     @include media(mobile) {
       margin-right: 115px;
     }
+
     &-wrapper {
-      max-width: 1232px;
-      padding: 0;
+      // max-width: 1232px;
+      // padding: 0;
       margin: 0 auto;
       position: relative;
       border-top: 1px solid rgb(66 82 110 / 20%);
+
       .swiper-button-next,
       .swiper-button-prev,
       .swiper-pagination {
@@ -50,12 +57,14 @@
         height: 20px;
         margin: 16px 0 2px;
         display: block;
+
         @include media(mobile) {
           right: 0;
           top: unset;
           bottom: 0;
           margin: 0;
         }
+
         &::after {
           content: "";
           background: url("../../icons/arrow-left.svg");
@@ -67,36 +76,45 @@
           display: block;
         }
       }
+
       .swiper-button-next {
         &::after {
           transform: rotate(180deg);
         }
       }
+
       .swiper-button-prev {
         right: 104px;
+
         @include media(mobile) {
           right: 83px;
         }
       }
+
       .swiper-pagination {
         right: 36px;
         width: max-content;
+
         @include media(mobile) {
           right: 25px;
         }
+
         &,
         &-current,
         &-total {
           @include font-style(16px, 20px, $primary-blue, 500, $Poppins);
         }
+
         &-total {
           color: var(--blue-1-300, #7986fd);
         }
+
         &::after {
           content: unset;
         }
       }
     }
+
     ul {
       padding: 16px 0 0;
       margin: 0;
@@ -104,19 +122,23 @@
       display: flex;
       align-items: center;
       gap: 16px;
+
       @include media(mobile) {
         flex-direction: column-reverse;
         align-items: start;
         max-width: 75.53%;
         width: 100%;
       }
+
       li:first-of-type {
         @include font-style(16px, 24px, $color-text-body, 400, $Poppins);
+
         @include media(mobile) {
           font-size: 14px;
           line-height: 20px;
         }
       }
+
       li:last-of-type {
         color: var(--text-header, #382ad7);
         display: flex;
@@ -124,10 +146,12 @@
         gap: 8px;
         min-width: max-content;
         @include font-style(16px, 20px, $color-text-body, 500, $Poppins);
+
         @include media(mobile) {
           font-size: 14px;
           line-height: 16px;
         }
+
         &::before {
           content: "";
           width: 9px;

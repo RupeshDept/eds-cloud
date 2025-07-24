@@ -1,23 +1,16 @@
 @charset "UTF-8";
 /* Reset */
 @import "../../../styles/fonts.css";
-.section.calculator-sip-container {
-  max-width: none;
-}
-
 /* MAIN WRAPPER */
 .compounding {
   background-color: aliceblue;
-  padding: 40px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
   align-self: stretch;
-}
-.compounding .default-content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 .compounding .default-content-wrapper p,
 .compounding .default-content-wrapper ul,
@@ -42,7 +35,6 @@
   justify-content: space-between;
   margin: 0 auto;
   gap: 16px;
-  max-width: 1300px;
   border-radius: 16px;
 }
 .compounding .compounding-two-inner .default-content-wrapper {

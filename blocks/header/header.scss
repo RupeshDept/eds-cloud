@@ -352,7 +352,7 @@ header {
 
                 @include media(mobile) {
                     display: none;
-                    
+
                 }
 
                 li {
@@ -363,7 +363,6 @@ header {
                         align-items: center;
                         gap: 8px;
                     }
-
                 }
 
                 li:last-child {
@@ -407,7 +406,7 @@ header {
     // Header Top
     .header-top {
         max-width: 100%;
-        width: -webkit-fill-available;
+        width: 100%;
         position: absolute;
         top: -40px;
         left: 0;
@@ -419,18 +418,25 @@ header {
         }
 
         & div:first-child {
-            width: 71%;
+            max-width: 1110px;
+            width: 100%;
+            margin: 0 auto;
             display: flex;
             height: 40px;
             justify-content: space-between;
             align-items: center;
             flex-shrink: 0;
             align-self: stretch;
-            margin: auto;
+
+            @include media(tab) {
+                padding: 0 20px;
+            }
+
 
             @include media(mobile) {
-                width: 93%;
+                // width: 93%;
                 border-bottom: 1px solid #BDBDBD;
+                padding: 0 16px;
             }
 
             & ul:first-child {
@@ -551,7 +557,7 @@ header {
             justify-content: space-between;
             gap: 0 32px;
             max-width: 1264px;
-            padding: 0 32px;
+            padding: 0 20px;
 
             &[aria-expanded="true"] {
                 min-height: 0;

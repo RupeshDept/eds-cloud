@@ -8,7 +8,6 @@
   align-self: stretch;
 }
 .newsletter-subscription-container .default-content-wrapper {
-  max-width: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;

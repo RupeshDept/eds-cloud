@@ -1,17 +1,9 @@
 /* Reset */
 @import "../../../styles/fonts.css";
 .section.live-streaming-carousel-container {
-  padding: 24px;
-  margin: 0;
-}
-@media (max-width: 1367px) {
-  .section.live-streaming-carousel-container {
-    padding: 24px 16px;
-  }
+  margin: 20px 0;
 }
 .section.live-streaming-carousel-container .default-content-wrapper {
-  max-width: 1232px;
-  padding: 0;
   margin: 0 auto;
 }
 .section.live-streaming-carousel-container .default-content-wrapper h1,
@@ -49,8 +41,6 @@
   }
 }
 .section.live-streaming-carousel-container .live-streaming-carousel-wrapper {
-  max-width: 1232px;
-  padding: 0;
   margin: 0 auto;
   position: relative;
   border-top: 1px solid rgba(66, 82, 110, 0.2);

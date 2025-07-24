@@ -4,24 +4,25 @@
 @use '../../styles/common-theme/css/fluid-typography' as *;
 
 
-.section.calculator-sip-container {
-  max-width: none;
-}
+// .section.calculator-sip-container {
+//   max-width: none;
+// }
 
 /* MAIN WRAPPER */
 .compounding {
   background-color: aliceblue;
-  padding: map.get($spacing, xxl) map.get($spacing, xxl);
+  // padding: map.get($spacing, xxl) map.get($spacing, xxl);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: map.get($spacing, xs);
   align-self: stretch;
-  // height: 625px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
   .default-content-wrapper {
-    max-width: 1200px;
-    margin: 0 auto 0;
+    // max-width: 1200px;
+    // margin: 0 auto 0;
 
     p,
     ul,
@@ -46,7 +47,7 @@
     justify-content: space-between;
     margin: 0 auto;
     gap: 16px;
-    max-width: 1300px;
+    // max-width: 1300px;
     border-radius: map.get($radius, r16);
 
     .default-content-wrapper {
@@ -92,7 +93,8 @@
         line-height: 1.5;
         margin: 0;
         max-width: 450px;
-        @include media(mobile){
+
+        @include media(mobile) {
           font-size: 14px;
         }
       }
@@ -159,7 +161,8 @@
           z-index: 99;
           font-size: 18px;
           text-align: left;
-          @include media(mobile){
+
+          @include media(mobile) {
             border: 1px solid map.get($strokes, default);
           }
 
@@ -347,7 +350,7 @@
           line-height: 16px;
           cursor: pointer;
           transition: background-color 0.2s ease;
-    
+
           &:hover {
             background: $primary-blue-dark;
           }
@@ -374,9 +377,10 @@
       a {
         @include font-style(14px, 20px, $primary-blue, map.get($font-weights, regular), $Poppins);
         text-decoration: underline;
-        @include media(mobile){
-            font-size: 16px;
-            line-height: 24px;
+
+        @include media(mobile) {
+          font-size: 16px;
+          line-height: 24px;
         }
       }
     }
