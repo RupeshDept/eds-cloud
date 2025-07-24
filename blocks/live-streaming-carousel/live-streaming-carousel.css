@@ -2,7 +2,7 @@
 @import url("../../../styles/fonts.css");
 
 .section.live-streaming-carousel-container {
-  margin: 20px 0;
+  margin: 20px 16px;
 }
 
 .section.live-streaming-carousel-container .default-content-wrapper {
