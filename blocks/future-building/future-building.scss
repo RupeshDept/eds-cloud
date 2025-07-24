@@ -160,12 +160,19 @@
             right: 20px;
         }
 
-        @include media(mobile) {
+        @include media (tab) {
             display: flex;
             position: unset;
             padding: 0 16px;
             margin-top: 40px;
         }
+
+        // @include media(mobile) {
+        //     display: flex;
+        //     position: unset;
+        //     padding: 0 16px;
+        //     margin-top: 40px;
+        // }
 
         p {
             margin: 0;

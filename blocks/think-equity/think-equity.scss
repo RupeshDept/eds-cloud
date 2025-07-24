@@ -153,11 +153,14 @@
         border-radius: 8px;
         border: 0;
 
+        @include media (desktop-md) {
+            padding: 24px 16px;
+        }
+
         @include media(mobile) {
             flex-direction: column;
             border: 0;
             align-items: flex-start;
-            padding: 0;
         }
 
         p {
