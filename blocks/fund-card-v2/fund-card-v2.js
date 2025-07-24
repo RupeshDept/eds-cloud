@@ -27,7 +27,7 @@ function planListEvent(param, block) {
 
       param.target.closest('.card-wrapper').querySelector('.return-btn h2').textContent = '';
       param.target.closest('.card-wrapper').querySelector('.return-btn h2').textContent = `${el[dataMapMoObj.ObjTemp[tempReturns[0]]]}`;
-      param.target.closest('.card-wrapper').querySelector('.return-btn h2').append(span("%"))
+      param.target.closest('.card-wrapper').querySelector('.return-btn h2').append(span('%'));
     }
   });
 }
@@ -119,8 +119,9 @@ export default function decorate(block) {
         div(
           { class: 'cagr-value' },
           label('Return'),
-          h2(`${coump}`,
-            span("%")
+          h2(
+            `${coump}`,
+            span('%'),
           ),
         ),
         div({ class: 'btn-knowmore' }, a('Know More')),
