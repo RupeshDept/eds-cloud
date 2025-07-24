@@ -12,10 +12,10 @@ export default function decorate(block) {
   const col3 = block.children[2].querySelectorAll('p');
   const col4 = block.children[3].querySelectorAll('p');
 
-  const schemeNames = moslFundData.map((fund) => fund.schDetail.schemeName);
+  const schemeNames = dataCfObj.map((fund) => fund.schDetail.schemeName);
 
   let selectedFundCode = 'CP';
-  let selectedFund = moslFundData.find((fund) => fund.schcode === selectedFundCode);
+  let selectedFund = dataCfObj.find((fund) => fund.schcode === selectedFundCode);
   let selectedFundName = selectedFund.schDetail.schemeName;
   let returnCAGR = parseFloat(col4[2].textContent.trim()) || 0;
 
@@ -252,7 +252,7 @@ export default function decorate(block) {
       li.addEventListener('click', () => {
         searchInput.value = name;
         selectedFundName = name;
-        selectedFund = moslFundData.find((f) => f.schDetail.schemeName === name);
+        selectedFund = dataCfObj.find((f) => f.schDetail.schemeName === name);
         returnCAGR = selectedFund?.returns.find((r) => r.inception_Ret)?.inception_Ret || 0;
         searchResults.innerHTML = '';
         searchInput.setAttribute('aria-expanded', 'false');

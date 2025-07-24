@@ -48,7 +48,8 @@
       padding: 0;
 
       .tabs-panel {
-        @include flex-center($align: center, $justify: center);
+        // @include flex-center($align: center, $justify: center);
+        justify-content: center;
         align-items: stretch;
         flex-wrap: wrap;
         gap: 16px;
@@ -173,6 +174,7 @@
 
     .card-upper-title {
       @include flex-center($align: center, $justify: space-between);
+      align-items: start;
       gap: 30px;
       margin: 0 0 8px;
       // height: 100%;
@@ -353,6 +355,11 @@
           );
           margin: 0;
           text-align: right;
+          span{
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 300;
+          }
         }
 
         .scheme-yet,
@@ -687,8 +694,8 @@
 
         .cagr-value h2 {
           @include font-style(
-            $size: 14px,
-            $line-height: 16px,
+            $size: 24px,
+            $line-height: 32px,
             $color: $primary-blue,
             $weight: map.get($font-weights, medium),
             $family: $Poppins

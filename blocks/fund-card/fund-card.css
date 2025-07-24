@@ -39,8 +39,6 @@
   padding: 0;
 }
 .section.tabs-container .tabs-wrapper .tabs-panel {
-  display: flex;
-  align-items: center;
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
@@ -153,6 +151,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  align-items: start;
   gap: 30px;
   margin: 0 0 8px;
   min-height: 50px;
@@ -313,6 +312,11 @@
   font-weight: 500;
   margin: 0;
   text-align: right;
+}
+.section .card-container .cagr-container .cagr-value h2 span {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 300;
 }
 .section .card-container .cagr-container .cagr-value .scheme-yet,
 .section .card-container .cagr-container .cagr-value .cagr-date {
@@ -583,8 +587,8 @@
     padding: 2px 8px 2px 0;
   }
   .section .card-container .cagr-container .cagr-value h2 {
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 24px;
+    line-height: 32px;
     color: #2e2a94;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
