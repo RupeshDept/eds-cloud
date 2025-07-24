@@ -119,9 +119,9 @@
   text-wrap: balance;
   font-size: 14px;
   line-height: 20px;
-  color: 400;
-  font-family: "ButlerPro", sans-serif;
-  font-weight: "Poppins", sans-serif;
+  color: #424242;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 .section.think-equity-container .default-content-wrapper {
   max-width: 924px;

@@ -1,7 +1,7 @@
 @import "../../../styles/fonts.css";
 .section.compound-journey .investment-block {
   width: 100%;
-  padding: 10px 0;
+  padding: 10px 10px 10px 0px;
 }
 @media (max-width: 768px) {
   .section.compound-journey .investment-block {
