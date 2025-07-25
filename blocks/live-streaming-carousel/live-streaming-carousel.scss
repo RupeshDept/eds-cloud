@@ -81,7 +81,7 @@
             background: url("../../icons/arrow-left-disabled.svg");
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: 25px;
           }
         }
       }
@@ -149,12 +149,12 @@
       }
 
       li:last-of-type {
-        color: $text-header;
         display: flex;
         align-items: center;
         gap: 8px;
         min-width: max-content;
         @include font-style(16px, 20px, $color-text-body, 500, $Poppins);
+        color: $text-header;
 
         @include media(mobile) {
           font-size: 14px;
@@ -168,6 +168,9 @@
           display: block;
           background-color: #f00;
           border-radius: map.get($radius, r50);
+        }
+        a{
+          color: unset;
         }
       }
     }
