@@ -241,13 +241,6 @@ $breakpoints: (
 
 
 // // Media query mixin using map.get
-// @mixin media($breakpoint) {
-//   $bp: map.get($breakpoints, $breakpoint);
-
-//   @media (max-width: #{$bp}) {
-//     @content;
-//   }
-// }
 
 @mixin media($breakpoint) {
   $bp: map.get($breakpoints, $breakpoint);
