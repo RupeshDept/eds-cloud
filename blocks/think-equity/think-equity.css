@@ -139,7 +139,7 @@
   font-size: 14px;
   line-height: 20px;
   color: #424242;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 400;
 }
 
@@ -156,12 +156,14 @@
   border-radius: 8px;
   border: 0;
 }
-@media (max-width: 1367px) {
+
+@media (width <= 1367px) {
   .section.think-equity-container .default-content-wrapper {
     padding: 24px 16px;
   }
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .section.think-equity-container .default-content-wrapper {
     flex-direction: column;
     border: 0;

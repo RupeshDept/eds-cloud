@@ -481,7 +481,6 @@
 
 .section.index-fund .compound-item .card-items {
   display: flex;
-  align-items: center;
   justify-content: flex-start;
   align-items: stretch;
   gap: 10px;

@@ -1,6 +1,8 @@
 @charset "UTF-8";
+
 /* Reset */
-@import "../../../styles/fonts.css";
+@import url("../../../styles/fonts.css");
+
 /* MAIN WRAPPER */
 .compounding {
   background-color: aliceblue;
@@ -12,6 +14,7 @@
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
 .compounding .default-content-wrapper p,
 .compounding .default-content-wrapper ul,
 .compounding .default-content-wrapper li {
@@ -19,15 +22,18 @@
   font-size: 12px;
   line-height: 16px;
   color: #424242;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 400;
 }
+
 .compounding .default-content-wrapper strong {
   font-weight: 600;
 }
+
 .compounding .default-content-wrapper ul {
   padding-left: 16px;
 }
+
 .compounding .compounding-two-inner {
   display: flex;
   flex-wrap: wrap;
@@ -37,6 +43,7 @@
   gap: 16px;
   border-radius: 16px;
 }
+
 .compounding .compounding-two-inner .default-content-wrapper {
   flex: 1 1 40%;
   text-align: left;
@@ -45,89 +52,102 @@
   align-items: center;
   gap: 16px;
 }
+
 .compounding .compounding-two-inner .default-content-wrapper .icon {
   flex: 0 0 auto;
   width: 88px;
   height: 88px;
   flex-shrink: 0;
 }
+
 .compounding .compounding-two-inner .default-content-wrapper .hero-text {
   display: flex;
   flex-direction: column;
   gap: 12px;
   text-align: left;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .compounding .compounding-two-inner .default-content-wrapper .hero-text {
     gap: 4px;
   }
 }
+
 .compounding .compounding-two-inner .default-content-wrapper h2 {
   font-size: 40px;
   line-height: 48px;
   color: #2e2a94;
-  font-family: "ButlerPro", sans-serif;
+  font-family: ButlerPro, sans-serif;
   font-weight: 700;
   margin: 0 0 16px;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .compounding .compounding-two-inner .default-content-wrapper h2 {
     font-size: 32px;
     line-height: 40px;
     color: #2e2a94;
-    font-family: "ButlerPro", sans-serif;
+    font-family: ButlerPro, sans-serif;
     font-weight: 700;
     margin-bottom: 0;
   }
 }
+
 .compounding .compounding-two-inner .default-content-wrapper p {
   color: #2e2a94;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   margin: 0;
   max-width: 450px;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .compounding .compounding-two-inner .default-content-wrapper p {
     font-size: 14px;
   }
 }
+
 .compounding .calculator-sip-wrapper {
   flex: 1 1 50%;
   max-width: 600px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container {
   background: #fff;
   border-radius: 8px;
   padding: 24px;
   align-self: stretch;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper span {
   font-size: 12px;
   line-height: 16px;
   color: #424242;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 400;
   text-align: left;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper label {
   font-size: 14px;
   line-height: normal;
   color: var(--text-color);
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 600;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper input {
   width: 100%;
   color: #2E2A94;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
@@ -137,14 +157,17 @@
   border: none;
   outline: none;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-bar-wrapper input:active {
   border: none;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper {
   position: relative;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul {
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -157,27 +180,33 @@
   font-size: 18px;
   text-align: left;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul {
     border: 1px solid #9E9E9E;
   }
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li {
   padding: 10px;
   cursor: pointer;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li:hover {
   background: #f3f3f3;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .search-results-wrapper ul li.active {
   background: #EDF1FF;
   border-left: 3px solid #2e2a94;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper {
   display: flex;
   gap: 12px;
   margin-top: 16px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper button {
   display: flex;
   width: 104px;
@@ -189,22 +218,25 @@
   border: 1px solid #BDBDBD;
   background: #FAFAFA;
   color: #424242;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 22px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper button:hover {
   background: #2e2a94;
   color: #fff;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .scheme-btns-wrapper button.active {
   background: #EDF1FF;
   color: #2E2A94;
   border: 1px solid #382AD7;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .invested-amount {
   display: flex;
   margin: 16px 0;
@@ -212,26 +244,30 @@
   gap: 4px;
   align-self: stretch;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .compounding .calculator-sip-wrapper .cal-container .invested-amount {
     margin: 32px 0 24px;
   }
 }
+
 .compounding .calculator-sip-wrapper .cal-container .invested-amount label {
   font-size: 12px;
   line-height: 16px;
   color: #424242;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 400;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .invested-amount span {
   color: #2B2E8C;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   margin-left: 4px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -239,6 +275,7 @@
   margin: 16px 0;
   border-bottom: 1px solid #9E9E9E;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper {
   position: relative;
@@ -251,44 +288,50 @@
   padding: 8px 0;
   justify-content: space-between;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper label,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper label {
   font-size: 12px;
   line-height: 16px;
   color: #424242;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 400;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input {
   border: none;
   background-color: transparent;
   color: #2E2A94;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
   width: 100%;
-  -webkit-appearance: textfield;
-     -moz-appearance: textfield;
+  appearance: textfield;
+     appearance: textfield;
           appearance: textfield;
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input::-webkit-outer-spin-button, .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input::-webkit-inner-spin-button,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input::-webkit-outer-spin-button,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input {
   padding-left: 28px;
   height: 100%;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input:focus,
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input:focus {
   outline: none;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper::before {
   content: "₹";
   position: absolute;
@@ -297,10 +340,11 @@
   transform: translateY(-50%);
   pointer-events: none;
   color: #2E2A94;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 20px;
   font-weight: 500;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper::after {
   content: "";
   position: absolute;
@@ -312,41 +356,47 @@
   background-size: contain;
   pointer-events: none;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .cal-discription {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 24px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper,
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper label,
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper label {
   font-size: 12px;
   line-height: 16px;
   color: #424242;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 400;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper label,
   .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper label {
     white-space: nowrap;
   }
 }
+
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper span,
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper span {
   color: #2E2A94;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 32px;
   text-align: left;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button {
   display: flex;
   width: 132px;
@@ -358,37 +408,42 @@
   background: #2e2a94;
   border: none;
   color: #fff;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 16px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn button:hover {
   background: #2b2e8c;
 }
+
 .compounding .calculator-sip-wrapper .cal-container .no-returns-msg {
   margin-top: 8px;
-  color: rgb(113, 113, 113);
+  color: rgb(113 113 113);
   font-size: 0.875rem;
   line-height: 1.25rem;
-  background-color: rgb(251, 238, 221);
+  background-color: rgb(251 238 221);
   padding: 4px;
 }
+
 .compounding .calculator-sip-wrapper .view-btn-cal {
   padding-top: 8px;
   text-align: left;
 }
+
 .compounding .calculator-sip-wrapper .view-btn-cal a {
   font-size: 14px;
   line-height: 20px;
   color: #2e2a94;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 400;
   text-decoration: underline;
 }
-@media (max-width: 768px) {
+
+@media (width <= 768px) {
   .compounding .calculator-sip-wrapper .view-btn-cal a {
     font-size: 16px;
     line-height: 24px;
@@ -396,49 +451,59 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .compounding {
-    padding: 0px;
+    padding: 0;
   }
+
   .compounding .compounding-two-inner {
     flex-direction: column;
     text-align: center;
     gap: 40px;
   }
+
   .compounding .compounding-two-inner .default-content-wrapper {
     align-items: flex-start;
     padding-top: 40px;
   }
+
   .compounding .calculator-sip-wrapper {
     width: 100%;
   }
+
   .compounding .calculator-sip-wrapper .cal-container {
     padding: 20px;
   }
+
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper {
     flex-direction: column;
     gap: 16px;
     text-align: left;
   }
+
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper,
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper {
     width: 100%;
     position: relative;
     border-bottom: 1px solid #9E9E9E;
   }
+
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper input,
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper input {
     width: 100%;
     line-height: 28px;
   }
+
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper::after,
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .tenure-wrapper::after {
     right: 10px;
     transform: translateY(-50%);
   }
+
   .compounding .calculator-sip-wrapper .cal-container .investment-wrapper .sip-wrapper::before {
     top: 66%;
   }
+
   .compounding .calculator-sip-wrapper .cal-container .cal-discription {
     display: flex;
     flex-wrap: wrap;
@@ -447,15 +512,18 @@
     gap: 16px;
     text-align: left;
   }
+
   .compounding .calculator-sip-wrapper .cal-container .cal-discription .current-value-wrapper,
   .compounding .calculator-sip-wrapper .cal-container .cal-discription .return-cagr-wrapper {
     flex: 1 1 36%;
     align-items: flex-start;
   }
+
   .compounding .calculator-sip-wrapper .cal-container .cal-discription .start-sip-btn {
     flex: 1 1 100%;
   }
+
   .compounding .calculator-sip-wrapper .view-btn-cal {
     text-align: left;
   }
-}/*# sourceMappingURL=calculator-sip.css.map */
+}
