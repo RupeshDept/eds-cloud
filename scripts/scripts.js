@@ -67,7 +67,7 @@ function autolinkModals(element) {
   element.addEventListener('click', async (e) => {
     const origin = e.target.closest('a');
 
-    if (origin && origin.href && origin.href.includes('/modals/')) {
+    if (origin && origin.href && origin.href.includes('/modal/')) {
       e.preventDefault();
       const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
       openModal(origin.href);
