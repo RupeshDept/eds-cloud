@@ -14,13 +14,8 @@ export default function decorate(block) {
   const nextBtn = div({ clasS: 'swiper-button-next' });
   const prevBtn = div({ clasS: 'swiper-button-prev' });
   block.append(swiperWrapper);
-  block
-    .closest('.live-streaming-carousel-wrapper')
-    .append(pagination, nextBtn, prevBtn);
-
   const wrapper = block.closest('.live-streaming-carousel-wrapper');
-  const mobPageLine = div({ class: 'mobile-pagination-line' });
-  wrapper.append(mobPageLine);
+  wrapper.append(pagination, nextBtn, prevBtn);
 
   Swiper(block, {
     loop: false,
