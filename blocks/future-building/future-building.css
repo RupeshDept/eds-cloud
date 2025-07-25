@@ -161,7 +161,7 @@
     right: 20px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1025px) {
   .section.future-building-container > div:nth-child(3) {
     display: flex;
     position: unset;

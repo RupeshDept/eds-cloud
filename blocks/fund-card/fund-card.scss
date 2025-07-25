@@ -481,6 +481,7 @@
 
       .card-items {
         @include flex-center($align: center, $justify: flex-start);
+        align-items: stretch;
         gap: 10px;
         width: 100%;
 

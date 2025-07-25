@@ -1,17 +1,7 @@
-@use '../swiper/swiper-bundle.min.css'; // Modern Sass @use rule is preferred
-@use 'sass:map';
-@use '../../styles/common-theme/css/variables_mixins' as *;
-@use '../../styles/common-theme/css/fluid-typography' as *;
-
-// --- Configuration Variables ---
-$white: #fff;
-$horizontal-padding: 67px;
-$vertical-padding-top: 48px;
-$swiper-nav-size: 40px;
-$primary-button-color: #2E2A94;
-$mobile-breakpoint: 768px;
-$tablet-breakpoint: 950px;
-
+@use "../swiper/swiper-bundle.min.css"; // Modern Sass @use rule is preferred
+@use "sass:map";
+@use "../../styles/common-theme/css/variables_mixins" as *;
+@use "../../styles/common-theme/css/fluid-typography" as *;
 
 .section.home-banner-container {
   position: relative;
@@ -28,33 +18,27 @@ $tablet-breakpoint: 950px;
   .default-content-wrapper {
     position: absolute;
     padding: 0;
-    right: $horizontal-padding;
-    bottom: -24px;
+    right: 67px;
+    bottom: -13px;
     z-index: 1;
-
-    @media (width <=$mobile-breakpoint) {
-      display: none;
-    }
   }
 
   ul {
     display: flex;
     gap: 8px;
     list-style: none;
-
+    margin: 0;
     li {
       width: 48px;
       height: 48px;
-      border-radius: 24px;
-      // Using CSS var with a fallback to a Sass var
-      background: $primary-button-color;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border-radius: map.get($radius, r24);
+      background: map.get($blue-1, b500);
+
+      @include flex-center($align: center, $justify: center);
       cursor: pointer;
 
       &:first-of-type {
-        background: var(--blue-1-300, #7986FD);
+        background: map.get($blue-1, b900);
       }
     }
   }
@@ -66,8 +50,12 @@ $tablet-breakpoint: 950px;
 
     .sub-banner-item-1 {
       &::after {
-        content: '';
-        background: linear-gradient(90deg, #787735 -1.21%, rgb(120 119 53 / 0%) 52.42%);
+        content: "";
+        background: linear-gradient(
+          90deg,
+          #787735 -1.21%,
+          rgb(120 119 53 / 0%) 52.42%
+        );
         width: 100%;
         height: 100%;
         display: block;
@@ -93,8 +81,8 @@ $tablet-breakpoint: 950px;
 
       p:last-of-type {
         position: absolute;
-        top: $vertical-padding-top;
-        left: $horizontal-padding;
+        top: 48px;
+        left: 67px;
         margin: 0;
         z-index: 1;
       }
@@ -106,7 +94,7 @@ $tablet-breakpoint: 950px;
       left: 0;
       width: 100%;
       height: 100%;
-      padding: $vertical-padding-top $horizontal-padding 71px;
+      padding: 48px 67px 71px;
 
       p {
         margin: 0;
@@ -117,21 +105,21 @@ $tablet-breakpoint: 950px;
 
         .button {
           margin: 19px 0 0 94px;
-          color: var(--button-primary-default, $primary-button-color);
-          font-size: var(--button-medium-size, 16px);
+          color: $primary-blue;
+          font-size: 16px;
           font-weight: 600;
-          line-height: var(--button-medium-line-height, 20px);
+          line-height: 20px;
           padding: 12px;
-          background-color: $white;
-          border-radius: 8px;
+          background-color: $primary-white;
+          border-radius: map.get($radius, r8);
           max-width: 176px;
           width: 100%;
           display: block;
         }
       }
 
-      @media (width <=$tablet-breakpoint) {
-        padding: $vertical-padding-top 20px 71px;
+      @media (width <=950px) {
+        padding: 48px 20px 71px;
       }
     }
 
@@ -160,12 +148,12 @@ $tablet-breakpoint: 950px;
         left: 25%;
 
         .button {
-          color: var(--button-primary-default, $primary-button-color);
-          font-size: var(--button-small-size, 14px);
-          line-height: var(--button-small-line-height, 16px);
-          background-color: $white;
+          color: $primary-blue;
+          font-size: 14px;
+          line-height: 16px;
+          background-color: $primary-white;
           padding: 8px 12px;
-          border-radius: 8px;
+          border-radius: map.get($radius, r8);
           max-width: 124px;
           width: 100%;
           margin: 0;
@@ -176,12 +164,10 @@ $tablet-breakpoint: 950px;
     .sub-banner-item-4 {
       position: absolute;
       bottom: -24px;
-      right: $horizontal-padding;
+      right: 67px;
     }
 
-    // Media query to swap banner items on mobile
-    @media (width <=$mobile-breakpoint) {
-
+    @include media(mobile) {
       .sub-banner-item-1,
       .sub-banner-item-2,
       .sub-banner-item-4 {
@@ -204,50 +190,50 @@ $tablet-breakpoint: 950px;
 
     .swiper-pagination-bullet {
       margin: 0;
-      border: 1px solid $white;
+      border: 1px solid $primary-white;
       background-color: transparent;
-      opacity: 1; // 'unset' can be inconsistent, '1' is clearer
+      opacity: 1;
       width: 6px;
       height: 6px;
       display: block;
 
       &.swiper-pagination-bullet-active {
-        background-color: $white;
+        background-color: $primary-white;
       }
 
-      @media (width <=$mobile-breakpoint) {
+      @include media(mobile) {
         width: 5px;
         height: 5px;
-        border-radius: 50%;
+        border-radius: map.get($radius, r50);
       }
     }
   }
 
   .swiper-button-prev,
   .swiper-button-next {
-    background-color: $white;
-    border-radius: 50%;
-    width: $swiper-nav-size;
-    height: $swiper-nav-size;
-    left: $horizontal-padding;
+    background-color: $primary-white;
+    border-radius: map.get($radius, r50);
+    width: 40px;
+    height: 40px;
+    left: 67px;
 
     &::after {
-      content: '';
-      background: url('../../icons/arrow-left.svg') no-repeat center;
+      content: "";
+      background: url("../../icons/arrow-left.svg") no-repeat center;
       background-size: cover;
       min-width: 20px;
       height: 20px;
       display: block;
     }
 
-    @media (width <=$mobile-breakpoint) {
+    @include media(mobile) {
       display: none;
     }
   }
 
   .swiper-button-next {
     left: auto; // 'unset' is fine, but 'auto' is often more explicit
-    right: $horizontal-padding;
+    right: 67px;
 
     &::after {
       transform: rotate(180deg);

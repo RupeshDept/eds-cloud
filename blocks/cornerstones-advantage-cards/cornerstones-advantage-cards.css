@@ -105,7 +105,7 @@
 @media (max-width: 768px) {
   .section.cornerstones-advantage .cornerstones-advantage-cards .cards-item > div {
     padding-right: 0;
-    border-bottom: 1px solid var(--neutrals-400, #bdbdbd);
+    border-bottom: 1px solid #bdbdbd;
     padding-bottom: 16px;
     display: grid;
     grid-template-areas: "icon heading" "icon text" "icon button";

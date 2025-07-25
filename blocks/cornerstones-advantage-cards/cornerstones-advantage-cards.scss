@@ -100,7 +100,7 @@
 
           @include media(mobile) {
             padding-right: 0;
-            border-bottom: 1px solid var(--neutrals-400, #bdbdbd);
+            border-bottom: 1px solid $neutrals-400;
             padding-bottom: 16px;
             display: grid;
             grid-template-areas:

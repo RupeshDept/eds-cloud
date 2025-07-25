@@ -82,7 +82,7 @@ $breakpoint-desktop: 1367px;
 .section.compound-journey {
   .investment-block {
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 10px 10px 0px;
 
     @include media(mobile) {
       padding: 20px 0;

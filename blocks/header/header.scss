@@ -316,6 +316,7 @@ header {
                 li {
                     @include font-style(14px, 16px, $primary-blue, map.get($font-weights, medium), $Poppins);
                     // padding-right: 12px;
+                    // font-size: rem(16px);
 
                     &::after {
                         content: "";
