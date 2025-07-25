@@ -594,20 +594,20 @@
     "fields":[
         {
         "component": "richtext",
-        "name": "lefttext",
+        "name": "left_text",
         "value": "",
         "label": "Enter Left Side Title",
         "valueType": "string"
       },
       {
         "component": "reference",
-        "name": "leftimage",
+        "name": "left_image",
         "label": "Enter Left Side QR Image",
         "multi": false
       },
       {
         "component": "text",
-        "name": "leftimageAlt",
+        "name": "left_imageAlt",
         "label": "Enter Left Side QR Image Alt Text"
       },
       {
