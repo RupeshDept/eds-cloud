@@ -126,12 +126,9 @@
 
             p {
                 margin: 0;
-                // color: #333;
-                // font-size: clamp(0.9rem, 2vw, 1rem);
-                // line-height: 1.5;
                 max-inline-size: 30ch;
                 text-wrap: balance;
-                @include font-style(14px, 20px, map.get($font-weights, regular), $Poppins);
+                @include font-style(14px, 20px, $color-text-body, map.get($font-weights, regular), $Poppins);
             }
 
 
@@ -153,11 +150,14 @@
         border-radius: 8px;
         border: 0;
 
+        @include media (desktop-md) {
+            padding: 24px 16px;
+        }
+
         @include media(mobile) {
             flex-direction: column;
             border: 0;
             align-items: flex-start;
-            padding: 0;
         }
 
         p {

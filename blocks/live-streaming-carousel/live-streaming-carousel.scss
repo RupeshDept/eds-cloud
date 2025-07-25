@@ -5,14 +5,14 @@
 
 .section.live-streaming-carousel-container {
   // padding: 24px;
-  margin: 20px 16px;
+  margin: 24px 16px;
 
   // @include media(desktop-md) {
   //   padding: 24px 16px;
   // }
   .default-content-wrapper {
     // max-width: 1232px;
-    // padding: 0;
+    padding: 0;
     margin: 0 auto;
 
     h1,
@@ -42,7 +42,7 @@
 
     &-wrapper {
       // max-width: 1232px;
-      // padding: 0;
+      padding: 0;
       margin: 0 auto;
       position: relative;
       border-top: 1px solid rgb(66 82 110 / 20%);
@@ -57,6 +57,7 @@
         height: 20px;
         margin: 16px 0 2px;
         display: block;
+        opacity: 1;
 
         @include media(mobile) {
           right: 0;
@@ -74,6 +75,14 @@
           min-width: 20px;
           height: 20px;
           display: block;
+        }
+        &.swiper-button-disabled {
+          &::after {
+            background: url("../../icons/arrow-left-disabled.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 25px;
+          }
         }
       }
 
@@ -106,7 +115,7 @@
         }
 
         &-total {
-          color: var(--blue-1-300, #7986fd);
+          color: map.get($blue-1, b300);
         }
 
         &::after {
@@ -120,7 +129,7 @@
       margin: 0;
       list-style: none;
       display: flex;
-      align-items: center;
+      align-items: start;
       gap: 16px;
 
       @include media(mobile) {
@@ -140,12 +149,12 @@
       }
 
       li:last-of-type {
-        color: var(--text-header, #382ad7);
         display: flex;
         align-items: center;
         gap: 8px;
         min-width: max-content;
         @include font-style(16px, 20px, $color-text-body, 500, $Poppins);
+        color: $text-header;
 
         @include media(mobile) {
           font-size: 14px;
@@ -158,7 +167,10 @@
           height: 9px;
           display: block;
           background-color: #f00;
-          border-radius: 50%;
+          border-radius: map.get($radius, r50);
+        }
+        a{
+          color: unset;
         }
       }
     }

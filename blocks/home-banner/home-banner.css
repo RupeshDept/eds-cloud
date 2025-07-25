@@ -748,31 +748,27 @@ button.swiper-pagination-bullet {
   position: absolute;
   padding: 0;
   right: 67px;
-  bottom: -24px;
+  bottom: -15px;
   z-index: 1;
-}
-@media (width <= 768px) {
-  .section.home-banner-container .default-content-wrapper {
-    display: none;
-  }
 }
 .section.home-banner-container ul {
   display: flex;
   gap: 8px;
   list-style: none;
+  margin: 0;
 }
 .section.home-banner-container ul li {
   width: 48px;
   height: 48px;
   border-radius: 24px;
-  background: #2E2A94;
+  background: #4338f3;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 .section.home-banner-container ul li:first-of-type {
-  background: var(--blue-1-300, #7986FD);
+  background: #242177;
 }
 
 .home-banner .sub-home-banner {
@@ -825,10 +821,10 @@ button.swiper-pagination-bullet {
 }
 .home-banner .sub-home-banner .sub-banner-item-2 .button-container .button {
   margin: 19px 0 0 94px;
-  color: var(--button-primary-default, #2E2A94);
-  font-size: var(--button-medium-size, 16px);
+  color: #2e2a94;
+  font-size: 16px;
   font-weight: 600;
-  line-height: var(--button-medium-line-height, 20px);
+  line-height: 20px;
   padding: 12px;
   background-color: #fff;
   border-radius: 8px;
@@ -863,9 +859,9 @@ button.swiper-pagination-bullet {
   left: 25%;
 }
 .home-banner .sub-home-banner .sub-banner-item-3 .button-container .button {
-  color: var(--button-primary-default, #2E2A94);
-  font-size: var(--button-small-size, 14px);
-  line-height: var(--button-small-line-height, 16px);
+  color: #2e2a94;
+  font-size: 14px;
+  line-height: 16px;
   background-color: #fff;
   padding: 8px 12px;
   border-radius: 8px;
@@ -878,7 +874,7 @@ button.swiper-pagination-bullet {
   bottom: -24px;
   right: 67px;
 }
-@media (width <= 768px) {
+@media (max-width: 768px) {
   .home-banner .sub-home-banner .sub-banner-item-1,
   .home-banner .sub-home-banner .sub-banner-item-2,
   .home-banner .sub-home-banner .sub-banner-item-4 {
@@ -907,7 +903,7 @@ button.swiper-pagination-bullet {
 .block.home-banner .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #fff;
 }
-@media (width <= 768px) {
+@media (max-width: 768px) {
   .block.home-banner .swiper-pagination .swiper-pagination-bullet {
     width: 5px;
     height: 5px;
@@ -931,7 +927,7 @@ button.swiper-pagination-bullet {
   height: 20px;
   display: block;
 }
-@media (width <= 768px) {
+@media (max-width: 768px) {
   .block.home-banner .swiper-button-prev,
   .block.home-banner .swiper-button-next {
     display: none;
