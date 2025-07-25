@@ -236,6 +236,16 @@
         "name": "ctaUrl",
         "label": "CTA URL",
         "value": ""
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "linkText",
+        "label": "Text"
       }
     ]
   }
