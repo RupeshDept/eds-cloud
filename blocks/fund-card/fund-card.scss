@@ -1,5 +1,691 @@
-.card-container .card-wrapper{
-        width: 30%;
-        height: 100%;
-        border: 1px solid;
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable media-feature-range-notation */
+@use 'sass:map';
+@use '../../styles/common-theme/css/variables_mixins' as *;
+@use '../../styles/common-theme/css/fluid-typography' as *;
+
+.section {
+  &.tabs-container {
+    // max-width: 1264px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0px;
+
+    &.our-popular-funds {
+      background: $primary-blue;
+      max-width: 100%;
     }
+
+    .default-content-wrapper {
+      // margin: 0;
+      // padding: 0;
+      // max-width: 100%;
+
+      h1 {
+        @include font-style($size: 40px,
+          $line-height: 48px,
+          $color: $primary-blue,
+          $weight: map.get($font-weights, bold),
+          $family: $ButlerPro );
+        margin: 0;
+      }
+    }
+
+    &.our-popular-funds .default-content-wrapper h1 {
+      color: $primary-white;
+    }
+
+    .tabs-wrapper {
+      margin: 0 auto;
+      // max-width: 100%;
+      // padding: 0;
+
+      .tabs-panel {
+        // @include flex-center($align: center, $justify: center);
+        justify-content: flex-start;
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin: 24px 0 0;
+        border: none;
+        padding: 0;
+      }
+    }
+
+    &.our-popular-funds {
+
+      .default-content-wrapper,
+      .tabs-wrapper {
+        // max-width: 1264px;
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+
+    .wrappertablist {
+      @include flex-center($align: center, $justify: space-between);
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .btndesk,
+    .btnmob {
+      margin: 0;
+      padding: 0;
+      line-height: 0;
+      max-width: 105px;
+      width: 100%;
+      background-color: transparent;
+      border-radius: map.get($radius, r8);
+    }
+
+    .btndesk a,
+    .btnmob a {
+      border-radius: map.get($radius, r8);
+      border: 1px solid map.get($button-primary, default);
+      width: 100%;
+      background-color: transparent;
+      padding: 8px;
+      @include font-style($size: 14px,
+        $line-height: 16px,
+        $color: $primary-blue,
+        $weight: map.get($font-weights, semibold),
+        $family: $Poppins );
+      text-decoration: none;
+      display: block;
+      margin: 0;
+    }
+
+    &.our-popular-funds {
+
+      .btnmob a,
+      .wrappertablist .btndesk a {
+        border: 1px solid $primary-white;
+        color: $primary-white;
+      }
+    }
+
+    .btnmob {
+      display: none;
+    }
+
+    .tabs-list {
+      @include flex-center($align: center, $justify: flex-start);
+      gap: 0;
+      border-bottom: 1px solid map.get($old-silver, 100);
+      max-width: max-content;
+
+      .tabs-tab {
+        border: none;
+        background-color: transparent;
+        padding: 12px;
+        @include font-style($size: 14px,
+          $line-height: 16px,
+          $color: $primary-blue,
+          $weight: map.get($font-weights, medium),
+          $family: $Poppins );
+
+        &[aria-selected="true"] {
+          @include font-style($size: 14px,
+            $line-height: 16px,
+            $color: $primary-blue,
+            $weight: map.get($font-weights, semibold),
+            $family: $Poppins );
+          border-bottom: 2px solid $primary-blue;
+        }
+      }
+    }
+
+    &.our-popular-funds .tabs-list .tabs-tab {
+      color: map.get($blue-1, b200);
+
+      &[aria-selected="true"] {
+        border-bottom: 2px solid $primary-white;
+        color: $primary-white;
+      }
+    }
+  }
+
+  .card-container {
+    max-width: 296px;
+    width: 100%;
+    padding: 24px 16px;
+    border-radius: map.get($radius, r8);
+    border: 1px solid map.get($old-silver, 100);
+    @include flex-center;
+    background-color: $primary-white;
+
+    .card-wrapper {
+      @include flex-center($align: stretch, $justify: space-between);
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+    }
+
+    .card-upper-title {
+      @include flex-center($align: center, $justify: space-between);
+      align-items: start;
+      gap: 30px;
+      margin: 0 0 8px;
+      // height: 100%;
+      min-height: 50px;
+
+      h2 {
+        @include font-style($size: 14px,
+          $line-height: 16px,
+          $color: $primary-blue,
+          $weight: map.get($font-weights, medium),
+          $family: $Poppins );
+        margin: 0;
+      }
+
+      .star {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+
+        &.star-filled .star-icon,
+        &:not(.star-filled) .fillstar-icon {
+          display: none;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .card-category {
+      @include flex-center($align: start, $justify: flex-start);
+      gap: 8px;
+      margin: 0 0 16px;
+
+      .fundtagging-list {
+        @include flex-center($align: center, $justify: flex-start);
+        gap: 8px;
+        list-style: none;
+        margin: 0;
+
+        li {
+          @include font-style($size: 12px,
+            $line-height: 16px,
+            $color: map.get($dark-liver, 500),
+            $weight: map.get($font-weights, regular),
+            $family: $Poppins );
+          @include flex-center($align: center, $justify: flex-start);
+          gap: 8px;
+
+          &::before {
+            content: "";
+            min-width: 3px;
+            height: 3px;
+            display: block;
+            background-color: $primary-blue;
+            border-radius: 50%;
+          }
+
+          &:first-of-type::before {
+            content: none;
+          }
+        }
+      }
+
+      .planlist-dropdown {
+        max-width: 70px;
+        width: 100%;
+        @include flex-center($align: center, $justify: flex-start);
+        gap: 8px;
+
+        &::before {
+          content: "";
+          min-width: 3px;
+          height: 3px;
+          display: block;
+          background-color: $primary-blue;
+          border-radius: 50%;
+        }
+
+        select {
+          @include font-style($size: 12px,
+            $line-height: 16px,
+            $color: map.get($dark-liver, 500),
+            $weight: map.get($font-weights, regular),
+            $family: $Poppins );
+          border: none;
+          outline: none;
+          appearance: none;
+          background-color: transparent;
+          width: 100%;
+        }
+      }
+    }
+
+    .cagr-container {
+      @include flex-center($align: start, $justify: space-between);
+      gap: 24px;
+      padding: 4px 0;
+
+      &.not-provided {
+
+        .cagr-dropdown,
+        .cagr-value {
+          display: none;
+        }
+      }
+
+      &:not(.not-provided) .cagr-desc {
+        display: none;
+      }
+
+      .cagr-dropdown {
+        max-width: 46%;
+        width: 100%;
+        position: relative;
+        line-height: 0;
+
+        label {
+          @include font-style($size: 12px,
+            $line-height: 16px,
+            $color: map.get($dark-liver, 500),
+            $weight: map.get($font-weights, regular),
+            $family: $Poppins );
+          padding-bottom: 4px;
+        }
+      }
+
+      .cagr-select-wrapper {
+        @include flex-center($align: center, $justify: flex-start);
+        width: 80px;
+
+        &::after {
+          content: "";
+          background: url("../../icons/down-arrow-small.svg") center/cover no-repeat;
+          width: 12px;
+          height: 12px;
+          display: block;
+        }
+
+        select {
+          @include font-style($size: 12px,
+            $line-height: 16px,
+            $color: $primary-blue,
+            $weight: map.get($font-weights, medium),
+            $family: $Poppins );
+          width: 100%;
+          border: none;
+          outline: none;
+          background-color: transparent;
+          appearance: none;
+          padding: 4px 4px 4px 0;
+        }
+      }
+
+      .cagr-value {
+        max-width: 46%;
+        width: 100%;
+
+        h2 {
+          @include font-style($size: 24px,
+            $line-height: 32px,
+            $color: $primary-blue,
+            $weight: map.get($font-weights, medium),
+            $family: $Poppins );
+          margin: 0;
+          text-align: right;
+
+          span {
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 300;
+          }
+        }
+
+        .scheme-yet,
+        .cagr-date {
+          @include font-style($size: 12px,
+            $line-height: 16px,
+            $color: map.get($dark-liver, 500),
+            $weight: map.get($font-weights, regular),
+            $family: $Poppins );
+          text-align: right;
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .cagr-desc {
+        background: map.get($old-silver, 50);
+        padding: 4px 8px;
+        line-height: 0;
+        width: 100%;
+
+        span {
+          @include font-style($size: 12px,
+            $line-height: 16px,
+            $color: $primary-blue,
+            $weight: map.get($font-weights, regular),
+            $family: $Poppins );
+          padding: 8px 0;
+          display: block;
+        }
+      }
+    }
+
+    .risk-container {
+      @include flex-center($align: stretch, $justify: flex-start);
+      flex-direction: column;
+      gap: 2px;
+      border-bottom: 1px solid map.get($old-silver, 100);
+      padding-bottom: 16px;
+      margin: 8px 0 0;
+
+      label {
+        @include font-style($size: 12px,
+          $line-height: 16px,
+          $color: map.get($dark-liver, 500),
+          $weight: map.get($font-weights, regular),
+          $family: $Poppins );
+        margin: 0;
+        padding: 0;
+      }
+
+      span {
+        @include font-style($size: 12px,
+          $line-height: 16px,
+          $color: $primary-blue,
+          $weight: map.get($font-weights, medium),
+          $family: $Poppins );
+        @include flex-center($align: center, $justify: flex-start);
+        gap: 4px;
+
+        &::after {
+          content: "";
+          background: url("../../icons/info-icon.svg") center/cover no-repeat;
+          width: 12px;
+          height: 12px;
+          display: block;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .discription {
+      margin: 24px 0 0;
+
+      .dis-choosen {
+        @include font-style($size: 12px,
+          $line-height: 16px,
+          $color: $primary-blue,
+          $weight: map.get($font-weights, regular),
+          $family: $Poppins );
+        margin: 0;
+
+        .dis-investor {
+          font-weight: map.get($font-weights, semibold);
+        }
+      }
+    }
+
+    .button-container {
+      @include flex-center($align: center, $justify: space-between);
+      margin: 24px 0 0;
+      gap: 20px;
+
+      .know-more {
+        @include font-style($size: 14px,
+          $line-height: 20px,
+          $color: $primary-blue,
+          $weight: map.get($font-weights, medium),
+          $family: $Poppins );
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        text-decoration-line: underline;
+        text-underline-offset: 20%;
+        border-radius: 0;
+      }
+
+      .invest-now {
+        max-width: 132px;
+        width: 100%;
+        border-radius: map.get($radius, r8);
+        background: map.get($button-primary, default);
+        padding: 12px;
+        margin: 0;
+        border: none;
+        @include font-style($size: 14px,
+          $line-height: 16px,
+          $color: $primary-white,
+          $weight: map.get($font-weights, semibold),
+          $family: $Poppins );
+      }
+    }
+  }
+
+  &.index-fund {
+    margin: 40px auto;
+    // max-width: 1232px;
+    width: 100%;
+    padding: 12px 0px;
+
+    // & > div {
+    //   padding: 0;
+    //   // max-width: 100%;
+    // }
+
+    .compound-item {
+      @include flex-center($align: center, $justify: space-between);
+      gap: 10px;
+
+      .card-items {
+        @include flex-center($align: center, $justify: flex-start);
+        align-items: stretch;
+        gap: 10px;
+        width: 100%;
+
+        .card-container {
+          box-shadow: 2px 9px 12px 0 rgba(0, 0, 0, 0.08);
+          border: none;
+
+          &:nth-child(odd) {
+            margin-bottom: 20px;
+          }
+
+          &:nth-child(even) {
+            margin-top: 20px;
+          }
+        }
+      }
+
+      .compound-sub-item {
+        @include flex-center($align: stretch, $justify: flex-start);
+        flex-direction: column;
+        padding: 12px;
+        max-width: 49.53%;
+        width: 100%;
+        min-height: 180px;
+        height: max-content;
+
+        h2 {
+          @include font-style($size: 28px,
+            $line-height: 32px,
+            $color: $primary-blue,
+            $weight: map.get($font-weights, medium),
+            $family: $ButlerPro );
+          margin: 0;
+          max-width: 306px;
+          width: 100%;
+        }
+
+        .button-container {
+          margin: 0;
+          margin-top: auto;
+          line-height: 0;
+
+          .button {
+            border-radius: map.get($radius, r8);
+            background: $primary-blue;
+            padding: 12px;
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 16px;
+            font-family: $Poppins;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+@include media(desktop-sm) {
+  .section.tabs-container .card-container {
+    max-width: 31.8%;
+  }
+}
+
+@include media(tab) {
+  .section {
+    .card-container .button-container .invest-now {
+      max-width: 115px;
+    }
+  }
+
+  .section.index-fund {
+    .compound-item {
+      flex-direction: column;
+
+      .compound-sub-item {
+        max-width: 100%;
+
+        @include media(mobile) {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      .card-items .card-container {
+        max-width: 49.8%;
+
+        &:nth-child(odd),
+        &:nth-child(even) {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@include media(mobile) {
+  .section.tabs-container {
+    padding: 40px 0px;
+
+    .default-content-wrapper h1 {
+      @include font-style($size: 32px,
+        $line-height: 40px,
+        $color: $primary-blue,
+        $weight: map.get($font-weights, bold),
+        $family: $ButlerPro );
+    }
+
+    .tabs-wrapper {
+      margin: 24px 0 0;
+    }
+
+    .tabs-list {
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .tabs-tab {
+        @include font-style($size: 14px,
+          $line-height: 16px,
+          $color: $primary-blue,
+          $weight: map.get($font-weights, medium),
+          $family: $Poppins );
+      }
+    }
+
+    .wrappertablist .btndesk {
+      display: none;
+    }
+
+    .btnmob {
+      display: block;
+      margin: 40px auto 0;
+    }
+
+    .card-container {
+      padding: 20px 16px;
+      max-width: 100%;
+    }
+  }
+
+  .section {
+    .card-container {
+      max-width: 100%;
+
+      .card-wrapper {
+        max-width: 100%;
+      }
+
+      .card-upper-title h2 {
+        @include font-style($size: 16px,
+          $line-height: 20px,
+          $color: $primary-blue,
+          $weight: map.get($font-weights, medium),
+          $family: $Poppins );
+      }
+
+      .card-category {
+        margin: 0 0 20px;
+        min-height: unset;
+      }
+
+      .cagr-container {
+        @include flex-center($align: start, $justify: space-between);
+
+        .cagr-dropdown {
+          max-width: 39.75%;
+        }
+
+        .cagr-select-wrapper select {
+          padding: 2px 8px 2px 0;
+        }
+
+        .cagr-value h2 {
+          @include font-style($size: 24px,
+            $line-height: 32px,
+            $color: $primary-blue,
+            $weight: map.get($font-weights, medium),
+            $family: $Poppins );
+        }
+      }
+
+      .risk-container {
+        padding-bottom: 8px;
+      }
+
+      .button-container {
+        margin: 28px 0 0;
+      }
+    }
+  }
+
+  .section.index-fund .compound-item .card-items {
+    flex-wrap: wrap;
+
+    .card-container {
+      max-width: 100%;
+    }
+  }
+}
+
+@include media(mobile) {
+  .section.tabs-container .card-container {
+    max-width: 100%;
+  }
+}

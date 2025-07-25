@@ -1,25 +1,25 @@
-@import '../../styles/common-theme/css/variables_mixins.scss';
-@import '../../styles/common-theme/css/fluid-typography.scss';
+@use '../../styles/common-theme/css/variables_mixins' as *;
+@use '../../styles/common-theme/css/fluid-typography' as *;
+@use 'sass:map';
 
 .complete-the-investment {
     >div:first-child {
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: start;
-        padding: 20px 0px;
+        padding: 20px 16px;
         align-items: flex-start;
         flex-shrink: 0;
         align-self: stretch;
 
-       @include media(mobile) {
+        @include media(mobile) {
             padding: 0 16px;
             grid-template-columns: 1fr;
             row-gap: 20px;
         }
 
         >p:first-child {
-            // font-family: ButlerPro;
-            @include font-style(28px, 32px, $primary-Blue-1-900, map-get($font-weights, medium), $ButlerPro);
+            @include font-style(28px, 32px, $primary-Blue-1-900, map.get($font-weights, medium), $ButlerPro);
             grid-column: 1 / 2;
 
             @include media(mobile) {
@@ -29,8 +29,7 @@
         }
 
         >p:nth-child(2) {
-            // font-family: ButlerPro;
-            @include font-style(28px, 32px, $primary-Blue-1-900, map-get($font-weights, medium), $ButlerPro);
+            @include font-style(28px, 32px, $primary-Blue-1-900, map.get($font-weights, medium), $ButlerPro);
             grid-column: 1 / 2;
             margin: 0;
             padding: 0;
@@ -40,21 +39,20 @@
                 grid-column: 1 / -1;
                 text-align: left;
                 padding: 0;
-
             }
 
             a {
-                @include font-style(14px, 16px, $primary-white, map-get($font-weights, semi-bold), $Poppins);
+                @include font-style(14px, 16px, $primary-white, map.get($font-weights, semi-bold), $Poppins);
                 margin: 0;
                 padding: 0;
                 display: flex;
                 width: 143px;
-                padding: 12px var(--Spacing-12, 12px) var(--Spacing-12, 12px) var(--Spacing-12, 12px);
+                padding: 12px;
                 justify-content: center;
                 align-items: center;
-                gap: var(--Spacing-8, 8px);
-                border-radius: var(--Border-Radius-8, 8px);
-                background: var(--Blue-1-900, #242177);
+                gap: 8px;
+                border-radius: map.get($radius, r8);
+                background: $primary-Blue-1-900;
             }
         }
 
@@ -75,7 +73,7 @@
                 max-width: 100%;
                 height: 276px;
                 object-fit: cover;
-                border-radius: 8px;
+                border-radius: map.get($radius, r8);
             }
         }
     }

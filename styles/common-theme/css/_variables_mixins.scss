@@ -1,4 +1,20 @@
+// @use "../../../styles/fonts.css";
+@use "sass:map";
 @import "../../../styles/fonts.css";
+
+
+// ----------------------------------------
+// TYPOGRAPHY SIZES & SPACING
+// ----------------------------------------
+
+// H2 Specifics
+$font-size-h2-min: 2rem;
+$font-size-h2-fluid: 5vw;
+$font-size-h2-max: 2.75rem;
+$line-height-h2: 1.2;
+
+// Spacing Units
+$spacing-md: 16px;
 
 // ----------------------------------------
 // COLORS
@@ -27,25 +43,18 @@ $button-secondary: (
   text: #2e2a94,
 );
 
-// Neutral colors
-$neutrals: (
-  n00: #262626,
-  n25: #ebebeb,
-  n50: #adadad,
-  n200: #4a4a4a,
-  n400: #1f1f1f,
-  50: #e6e6e6,
-  75: #969696,
-  100: #6b6b6b,
-  200: #2b2b2b,
-  300: #000000,
-  400: #000000,
-  500: hsl(0, 0%, 0%),
-  600: #b0b0b0,
-  700: #828282,
-  800: #424242,
-  900: #8a8a8a,
+// Neutral colors blue-1-25
+$blue-1: (
+  b25: #EDF1FF,
+  b200: #9DADFE,
+  b300: #7986fd,
+  b900: #242177,
+  b500: #4338f3
 );
+
+// body-Color
+
+$color-text-body: #424242;
 
 // Old Silver
 $old-silver: (
@@ -82,6 +91,12 @@ $dark-liver: (
   400: #353936,
   500: #2e312f,
 );
+
+//strokes
+$strokes: (
+  default:#9E9E9E,
+);
+
 
 // Success
 $success: (
@@ -123,6 +138,8 @@ $danger: (
 $blue-100: #4e78e6;
 $dark-500: #7b7b7b;
 $light-600: #9d9d9d;
+$text-header: #382ad7;
+$neutrals-400: #bdbdbd;
 
 // ----------------------------------------
 // FONTS
@@ -146,9 +163,23 @@ $font-weights: (
   line-height: $line-height;
   color: $color;
   font-family: $family;
-  @if $weight != null {
+
+  @if $weight !=null {
     font-weight: $weight;
   }
+}
+
+
+// ----------------------------------------
+// COMPONENT MIXINS
+// ----------------------------------------
+
+@mixin typography-h2 {
+  font-family: $ButlerPro;
+  color: $primary-blue;
+  font-weight: map.get($font-weights, bold);
+  line-height: $line-height-h2;
+  font-size: clamp($font-size-h2-min, $font-size-h2-fluid, $font-size-h2-max);
 }
 
 // ----------------------------------------
@@ -170,7 +201,28 @@ $radius: (
   r52: 52px,
   r83: 83px,
   r100: 100px,
+  r50: 50%
 );
+
+// ----------------------------------------
+// SPACING
+// ----------------------------------------
+
+$spacing: (
+  xxs: 4px,
+  xs: 8px,
+  sm: 12px,
+  md: 16px,
+  lg: 24px,
+  xl: 32px,
+  xxl: 40px,
+);
+
+// ----------------------------------------
+// SHADOWS
+// ----------------------------------------
+// $box-shadow-soft: 0 8px 24px rgba(map.get($primary-black, 1), 0.08);
+$box-shadow-soft: 0 8px 24px rgba($primary-black, 0.08);
 
 // ----------------------------------------
 // BREAKPOINTS
@@ -187,10 +239,20 @@ $breakpoints: (
   desktop-xl: 1921px
 );
 
-// Media query mixins
+
+// // Media query mixin using map.get
+// @mixin media($breakpoint) {
+//   $bp: map.get($breakpoints, $breakpoint);
+
+//   @media (max-width: #{$bp}) {
+//     @content;
+//   }
+// }
+
 @mixin media($breakpoint) {
-  $bp: map-get($breakpoints, $breakpoint);
-  @media (max-width: $bp) {
+  $bp: map.get($breakpoints, $breakpoint);
+
+  @media (max-width: #{$bp}) {
     @content;
   }
 }
@@ -247,4 +309,3 @@ $breakpoints: (
     color: #000;
   }
 }
-  

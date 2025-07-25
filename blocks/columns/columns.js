@@ -16,12 +16,12 @@ export default function decorate(block) {
     });
   });
 
-  if (block.closest(".think-equity-container")) {
+  if (block.closest('.think-equity-container')) {
     Array.from(block.children).forEach((el, index) => {
-      el.classList.add("collist" + (index + 1))
+      el.classList.add(`collist${index + 1}`);
       Array.from(el.children).forEach((elsub) => {
-        elsub.classList.add("subcollist")
-      })
-    })
+        elsub.classList.add('subcollist');
+      });
+    });
   }
 }

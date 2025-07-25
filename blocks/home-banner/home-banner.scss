@@ -1,0 +1,242 @@
+@use "../swiper/swiper-bundle.min.css"; // Modern Sass @use rule is preferred
+@use "sass:map";
+@use "../../styles/common-theme/css/variables_mixins" as *;
+@use "../../styles/common-theme/css/fluid-typography" as *;
+
+.section.home-banner-container {
+  position: relative;
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+
+  .home-banner-wrapper {
+    padding: 0;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .default-content-wrapper {
+    position: absolute;
+    padding: 0;
+    right: 67px;
+    bottom: -15px;
+    z-index: 1;
+  }
+
+  ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    li {
+      width: 48px;
+      height: 48px;
+      border-radius: map.get($radius, r24);
+      background: map.get($blue-1, b500);
+
+      @include flex-center($align: center, $justify: center);
+      cursor: pointer;
+
+      &:first-of-type {
+        background: map.get($blue-1, b900);
+      }
+    }
+  }
+}
+
+.home-banner {
+  .sub-home-banner {
+    position: relative;
+
+    .sub-banner-item-1 {
+      &::after {
+        content: "";
+        background: linear-gradient(
+          90deg,
+          #787735 -1.21%,
+          rgb(120 119 53 / 0%) 52.42%
+        );
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      picture {
+        line-height: 0;
+        display: block;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+
+          @include media(desktop-md) {
+            height: 400px;
+          }
+        }
+      }
+
+      p:last-of-type {
+        position: absolute;
+        top: 48px;
+        left: 67px;
+        margin: 0;
+        z-index: 1;
+      }
+    }
+
+    .sub-banner-item-2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 48px 67px 71px;
+
+      p {
+        margin: 0;
+      }
+
+      .button-container {
+        margin: 0;
+
+        .button {
+          margin: 19px 0 0 94px;
+          color: $primary-blue;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 20px;
+          padding: 12px;
+          background-color: $primary-white;
+          border-radius: map.get($radius, r8);
+          max-width: 176px;
+          width: 100%;
+          display: block;
+        }
+      }
+
+      @media (width <=950px) {
+        padding: 48px 20px 71px;
+      }
+    }
+
+    .sub-banner-item-3 {
+      display: none; // Hidden by default, shown on mobile
+      position: relative;
+
+      p {
+        margin: 0;
+      }
+
+      picture {
+        line-height: 0;
+        height: 100%;
+        display: block;
+
+        img {
+          width: 100%;
+          height: 237px;
+        }
+      }
+
+      .button-container {
+        position: absolute;
+        top: 50%;
+        left: 25%;
+
+        .button {
+          color: $primary-blue;
+          font-size: 14px;
+          line-height: 16px;
+          background-color: $primary-white;
+          padding: 8px 12px;
+          border-radius: map.get($radius, r8);
+          max-width: 124px;
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+
+    .sub-banner-item-4 {
+      position: absolute;
+      bottom: -24px;
+      right: 67px;
+    }
+
+    @include media(mobile) {
+      .sub-banner-item-1,
+      .sub-banner-item-2,
+      .sub-banner-item-4 {
+        display: none;
+      }
+
+      .sub-banner-item-3 {
+        display: block;
+      }
+    }
+  }
+}
+
+.block.home-banner {
+  .swiper-pagination {
+    bottom: 21px;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+
+    .swiper-pagination-bullet {
+      margin: 0;
+      border: 1px solid $primary-white;
+      background-color: transparent;
+      opacity: 1;
+      width: 6px;
+      height: 6px;
+      display: block;
+
+      &.swiper-pagination-bullet-active {
+        background-color: $primary-white;
+      }
+
+      @include media(mobile) {
+        width: 5px;
+        height: 5px;
+        border-radius: map.get($radius, r50);
+      }
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    background-color: $primary-white;
+    border-radius: map.get($radius, r50);
+    width: 40px;
+    height: 40px;
+    left: 67px;
+
+    &::after {
+      content: "";
+      background: url("../../icons/arrow-left.svg") no-repeat center;
+      background-size: cover;
+      min-width: 20px;
+      height: 20px;
+      display: block;
+    }
+
+    @include media(mobile) {
+      display: none;
+    }
+  }
+
+  .swiper-button-next {
+    left: auto; // 'unset' is fine, but 'auto' is often more explicit
+    right: 67px;
+
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+}

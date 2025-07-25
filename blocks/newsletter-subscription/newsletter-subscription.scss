@@ -1,11 +1,12 @@
-@import '../../styles/common-theme/css/variables_mixins.scss';
-@import '../../styles/common-theme/css/fluid-typography.scss';
+@use '../../styles/common-theme/css/variables_mixins' as *;
+@use '../../styles/common-theme/css/fluid-typography' as *;
+@use 'sass:map';
 
 
 
 .newsletter-subscription-container {
     display: flex;
-    padding: 20px 10px;
+    padding: 0;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
@@ -19,25 +20,37 @@
         align-items: center;
         gap: 32px;
         align-self: stretch;
-        background: var(--blue-1-25, #EDF1FF);
+        background: map.get($blue-1, b25);
+
+        @include media(mobile) {
+            margin-top: 32px;
+        }
 
         p:nth-child(1) {
-            color: var(--blue-1-900, #242177);
+            color: $primary-Blue-1-900;
             text-align: center;
-            font-family: ButlerPro;
+            font-family: $ButlerPro;
             font-size: 44px;
             font-style: normal;
             font-weight: 600;
-            line-height: 120%;
-            /* 52.8px */
-            letter-spacing: var(--display-medium-tracking, 0px);
+            line-height: 52.8px;
+            letter-spacing: 0px;
+            margin: 0;
+            margin-top: 20px;
+
+            @include media(mobile) {
+                font-size: 38px;
+                line-height: 46px;
+            }
         }
 
         .button-container {
             display: flex;
-            width: 634px;
+            width: 100%;
             justify-content: center;
             align-items: flex-end;
+            padding-bottom: 28px;
+            margin: 0;
 
             a {
                 display: flex;
@@ -47,60 +60,73 @@
                 align-items: center;
                 gap: 10px;
                 flex-shrink: 0;
-                color: #FFF;
+                color: $primary-white;
                 text-align: center;
-                font-family: Poppins;
+                font-family: $Poppins;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 500;
                 line-height: 24px;
                 text-transform: capitalize;
                 border-radius: 8px;
-                background: var(--blue-1800-primary, #2E2A94);
+                background: $primary-blue;
+                margin: 0;
+
             }
         }
     }
 
     .block {
         display: flex;
-        padding: 40px 10px;
+        padding: 40px 0px;
         flex-direction: column;
         align-items: flex-start;
         gap: 32px;
         align-self: stretch;
-        background: #FFF;
+        background: $primary-white;
+
+        @include media(mobile) {
+            padding: 0;
+        }
 
         .newsitem1 {
             align-self: stretch;
 
             .newssubitem .newsinneritem1 {
                 margin: 0;
-                color: var(--blue-1-900, #242177);
+                color: $primary-Blue-1-900;
                 text-align: center;
-                font-family: ButlerPro;
+                font-family: $ButlerPro;
                 font-size: 44px;
                 font-style: normal;
                 font-weight: 600;
-                line-height: 120%;
-                /* 52.8px */
-                letter-spacing: var(--display-medium-tracking, 0px);
+                line-height: 52.8px;
+                letter-spacing: 0px;
             }
 
             .newssubitem .newsinneritem2 {
                 margin: 0;
-                color: var(--blue-1-900, #242177);
-                font-family: Poppins;
+                color: $primary-Blue-1-900;
+                font-family: $Poppins;
                 font-size: 24px;
                 font-style: normal;
                 font-weight: 500;
                 line-height: 170%;
-                letter-spacing: var(--display-medium-tracking, 0px);
+                letter-spacing: 0px;
                 text-align: center;
+
+                @include media(mobile) {
+                    font-size: 20px;
+                    line-height: 28px;
+                    padding-top: 24px;
+                }
             }
         }
 
         .newsitem2 {
+            max-width: 634px;
             width: 100%;
+            margin: auto;
 
             .form-container .formwrapper {
                 display: flex;
@@ -111,37 +137,47 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 10px;
+                    gap: 24px;
                 }
 
                 .inputfield {
                     display: flex;
-                    width: 343px;
+                    max-width: 343px;
+                    width: 100%;
                     flex-direction: column;
                     align-items: flex-start;
-                    gap: 10px;
+                    gap: 16px;
                     flex-shrink: 0;
 
                     label {
-                        color: var(--blue-1-900, #242177);
-                        font-family: Poppins;
+                        color: $primary-Blue-1-900;
+                        font-family: $Poppins;
                         font-size: 14px;
                         font-style: normal;
                         font-weight: 600;
                         line-height: 16.8px;
-                        letter-spacing: var(--headline-small-tracking, 0px);
+                        letter-spacing: 0px;
                         text-transform: uppercase;
                     }
 
                     input {
+                        // color: map.get($blue-1, btxt);
                         display: flex;
                         height: 40px;
                         flex-direction: column;
                         align-items: flex-start;
                         align-self: stretch;
-                        border-radius: var(--border-radius-6, 6px);
-                        border: var(--border-width-01, 1px) solid var(--strokes-default, #9E9E9E);
-                        padding: 15px;
+                        border: 1px solid map.get($strokes, default);
+                        padding: 8px 12px;
+                        border-radius: 6px;
+
+                        &::placeholder {
+                            color: #616161;
+                            font-family: $Poppins;
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 20px;
+                        }
                     }
 
                     .error {
@@ -166,7 +202,10 @@
                         gap: 10px;
                         flex-shrink: 0;
                         border-radius: 8px;
-                        background: var(--blue-1800-primary, #2E2A94);
+                        background: $primary-blue;
+                        text-align: center;
+                        @include font-style(16px, 21px, $primary-white, map.get($font-weights, medium), $Poppins);
+                        text-transform: capitalize;
                     }
                 }
             }
