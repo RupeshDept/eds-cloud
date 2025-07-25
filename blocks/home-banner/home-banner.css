@@ -748,13 +748,14 @@ button.swiper-pagination-bullet {
   position: absolute;
   padding: 0;
   right: 67px;
-  bottom: -24px;
+  bottom: -15px;
   z-index: 1;
 }
 .section.home-banner-container ul {
   display: flex;
   gap: 8px;
   list-style: none;
+  margin: 0;
 }
 .section.home-banner-container ul li {
   width: 48px;
