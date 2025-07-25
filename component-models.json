@@ -205,5 +205,31 @@
         "label": "Fragment URL"
       }
     ]
+  },
+  {
+    "id": "performance-graph",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "fundName",
+        "label": "Fund Name",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaText",
+        "label": "CTA Text",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "ctaUrl",
+        "label": "CTA URL",
+        "value": ""
+      }
+    ]
   }
 ]
