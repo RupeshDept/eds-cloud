@@ -51,6 +51,10 @@
     line-height: 20px;
 }
 
+.section.quick-actions > div > ul > li > ul > li > a {
+    color: #2E2A94;
+}
+
 .section.quick-actions>div>ul>li>ul>li .icon {
     width: 56px;
     height: 56px;
