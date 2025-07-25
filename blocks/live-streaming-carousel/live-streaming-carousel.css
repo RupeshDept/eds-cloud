@@ -126,7 +126,7 @@
   margin: 0;
   list-style: none;
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 16px;
 }
 @media (max-width: 768px) {
