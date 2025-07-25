@@ -107,7 +107,7 @@
   font-weight: 500;
 }
 .section.live-streaming-carousel-container .live-streaming-carousel-wrapper .swiper-pagination-total {
-  color: var(--blue-1-300, #7986fd);
+  color: #7986fd;
 }
 .section.live-streaming-carousel-container .live-streaming-carousel-wrapper .swiper-pagination::after {
   content: unset;
@@ -141,7 +141,7 @@
   }
 }
 .section.live-streaming-carousel-container .live-streaming-carousel ul li:last-of-type {
-  color: var(--text-header, #382ad7);
+  color: #382ad7;
   display: flex;
   align-items: center;
   gap: 8px;

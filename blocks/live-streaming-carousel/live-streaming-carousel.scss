@@ -106,7 +106,7 @@
         }
 
         &-total {
-          color: var(--blue-1-300, #7986fd);
+          color: map.get($blue-1, b300);
         }
 
         &::after {
@@ -140,7 +140,7 @@
       }
 
       li:last-of-type {
-        color: var(--text-header, #382ad7);
+        color: $text-header;
         display: flex;
         align-items: center;
         gap: 8px;
@@ -158,7 +158,7 @@
           height: 9px;
           display: block;
           background-color: #f00;
-          border-radius: 50%;
+          border-radius: map.get($radius, r50);
         }
       }
     }
