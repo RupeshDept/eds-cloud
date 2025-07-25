@@ -9,11 +9,22 @@
     max-width: 1232px;
     width: 100%;
     height: 483px;
-    padding: 2px 104px;
+    padding: 0px 104px;
     justify-content: space-between;
     align-items: center;
     border-radius: 12px;
     background: $primary-blue;
+
+    @include media(mobile) {
+        display: flex;
+        width: 340px;
+        padding: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        height: unset;
+    }
 
     .posteritem1 {
         position: relative;
@@ -26,6 +37,15 @@
         flex-shrink: 0;
 
         .postersubitem {
+            @include media(mobile) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 32px;
+                align-self: stretch;
+                padding: 24px 24px 0 24px;
+            }
+
             .posterinneritem1 {
                 margin: 0;
                 // position: absolute;
@@ -34,12 +54,19 @@
                 border-bottom: 1px solid #F5F5F5;
 
                 form {
-
                     display: flex;
                     flex-direction: column;
                     align-items: flex-start;
                     gap: 18px;
                     align-self: stretch;
+
+                    @include media(mobile) {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 28px;
+                        align-self: stretch;
+                    }
 
                     .fieldset-wrapper {
                         #form-titlepart {
@@ -52,7 +79,11 @@
 
                                 h2 {
                                     margin: 0;
-                                    @include font-style($size: 40px, $line-height: 48px, $color: $primary-white, $weight: map.get($font-weights, extrabold), $family: $ButlerPro)
+                                    @include font-style($size: 40px, $line-height: 48px, $color: $primary-white, $weight: map.get($font-weights, extrabold), $family: $ButlerPro);
+
+                                    @include media(mobile) {
+                                        @include font-style($size: 28px, $line-height: 32px, $color: $primary-white, $weight: map.get($font-weights, bold), $family: $ButlerPro)
+                                    }
                                 }
                             }
                         }
@@ -64,13 +95,35 @@
                         gap: 5px;
                         align-self: stretch;
 
-                        .field-wrapper {
+                        @include media(mobile) {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: flex-start;
+                            gap: 5px;
+                            align-self: stretch;
+                        }
+
+                        .field-wrapper:not(.countrycode, .submit-wrapper) {
                             display: flex;
                             max-width: 343px;
                             width: 100%;
                             height: 40px;
                             flex-direction: row;
                             align-items: flex-start;
+
+                            input {
+                                background: none;
+                                border: none;
+                                outline: none;
+                                color: #F5F5F5;
+                                padding-left: 6px;
+                                width: 100%;
+
+                                &::placeholder {
+                                    color: #F5F5F5;
+                                }
+                            }
 
                             fieldset {
                                 display: flex;
@@ -80,6 +133,7 @@
                                 align-self: stretch;
                                 border-radius: 6px;
                                 border: 1px solid #9E9E9E;
+                                width: 100%;
 
                                 .countrycode,
                                 .phnodata {
@@ -88,6 +142,20 @@
                                     padding-right: 8px;
                                     align-items: center;
                                     gap: 4px;
+                                    border-right: 1px solid #6d7983;
+                                }
+
+                                .phnodata {
+                                    border: none;
+                                }
+
+                                .countrycode {
+                                    select {
+                                        background-color: transparent;
+                                        border: none;
+                                        outline: none;
+                                        color: #F5F5F5;
+                                    }
                                 }
 
                                 .closebtninput {
@@ -101,16 +169,27 @@
                             }
                         }
 
+                        .fieldset-wrapper {
+                            @include media(mobile) {
+                                display: flex;
+                                height: 40px;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                align-self: stretch;
+                            }
+                        }
+
                         .submit-wrapper {
-                            display: flex;
-                            padding: map.get($spacing, sm);
-                            justify-content: center;
-                            align-items: center;
-                            gap: map.get($spacing, xs);
-                            border-radius: 8px;
-                            background: #FFF;
 
                             button {
+                                display: flex;
+                                padding: 10px;
+                                justify-content: center;
+                                align-items: center;
+                                gap: map.get($spacing, xs);
+                                border-radius: 8px;
+                                background: #FFF;
+
                                 margin: 0;
                                 background: #FFF;
                                 color: $primary-blue;
@@ -127,18 +206,99 @@
 
             .posterinneritem2 {
                 display: flex;
-                margin: 40px 0 0 0;
+                margin: 40px 0 12px;
                 @include font-style($size: 18px, $line-height: 24px, $color: $primary-white, $weight: map.get($font-weights, extrabold), $family: $Poppins)
             }
 
-            .posterinneritem3 {
-                li {
+            .Apps-icons {
+                display: flex;
+                align-items: center;
+                gap: 22px;
+
+                .posterinneritem3 {
+                    margin: 0;
+                    width: 85px;
+                    height: 85px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        flex-shrink: 0;
+                    }
+                }
+
+                .posterinneritem4 {
                     display: flex;
-                    align-items: center;
-                    gap: 22px;
+                    max-width: 131px;
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 9px;
+                    margin: 0;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        align-self: stretch;
+
+                        p {
+                            margin: 0;
+                            display: flex;
+
+                            span {
+                                width: 21px;
+                                height: 24px;
+                            }
+                        }
+
+                        ul {
+                            margin: 0;
+                            display: flex;
+                            // max-width: 85px;
+                            height: 38px;
+                            flex-direction: column;
+                            align-items: flex-start;
+
+                            li:first-of-type {
+                                @include font-style($size: 12px, $line-height: 16px, $color: $primary-white, $weight: map.get($font-weights, regular), $family: $Poppins)
+                                /* Desktop/Paragraph/Xsmall */
+                            }
+
+                            li:last-of-type {
+                                @include font-style($size: 14px, $line-height: 16px, $color: $primary-white, $weight: map.get($font-weights, semibold), $family: $Poppins)
+                                /* Desktop/Paragraph/Xsmall */
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 
+    .posteritem2 {
+        // position: relative;
+        width: 432px;
+        height: 440px;
+        align-self: flex-end;
+
+        @include media(mobile) {
+            // display: none;
+            width: 262px;
+            height: 267px;
+            align-self: flex-start;
+        }
+
+        picture {
+            line-height: 0;
+            height: 100%;
+            display: block;
+            img {
+                // position: absolute;
+                right: 104px;
+                bottom: -23.168px;
+                border-radius: 14px;
+            }
+        }
+    }
 }

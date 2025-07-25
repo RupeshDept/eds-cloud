@@ -24,4 +24,11 @@ export default async function decorate(block) {
     }
   })
   block.querySelector("form").append(divWrapper)
+
+  let divwrappergrop = document.createElement("div");
+  divwrappergrop.classList.add("Apps-icons");
+  divwrappergrop.append(block.querySelector(".posteritem1 .posterinneritem3"))
+  divwrappergrop.append(block.querySelector(".posteritem1 .posterinneritem4"))
+
+  block.querySelector(".posteritem1 .postersubitem").append(divwrappergrop);
 }
