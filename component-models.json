@@ -224,20 +224,6 @@
         "value": ""
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "ctaText",
-        "label": "CTA Text",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "ctaUrl",
-        "label": "CTA URL",
-        "value": ""
-      },
-      {
         "component": "aem-content",
         "name": "link",
         "label": "Link"
