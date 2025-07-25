@@ -23,7 +23,7 @@ export default function decorate(block) {
   wrapper.append(mobPageLine);
 
   Swiper(block, {
-    loop: true,
+    loop: false,
     pagination: {
       el: wrapper.querySelector('.swiper-pagination'),
       type: 'fraction',

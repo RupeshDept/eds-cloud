@@ -55,6 +55,7 @@
   height: 20px;
   margin: 16px 0 2px;
   display: block;
+  opacity: 1;
 }
 @media (max-width: 768px) {
   .section.live-streaming-carousel-container .live-streaming-carousel-wrapper .swiper-button-next,
@@ -77,6 +78,14 @@
   min-width: 20px;
   height: 20px;
   display: block;
+}
+.section.live-streaming-carousel-container .live-streaming-carousel-wrapper .swiper-button-next.swiper-button-disabled::after,
+.section.live-streaming-carousel-container .live-streaming-carousel-wrapper .swiper-button-prev.swiper-button-disabled::after,
+.section.live-streaming-carousel-container .live-streaming-carousel-wrapper .swiper-pagination.swiper-button-disabled::after {
+  background: url("../../icons/arrow-left-disabled.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .section.live-streaming-carousel-container .live-streaming-carousel-wrapper .swiper-button-next::after {
   transform: rotate(180deg);
