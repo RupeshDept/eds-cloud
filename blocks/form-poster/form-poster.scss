@@ -151,10 +151,14 @@
 
                                 .countrycode {
                                     select {
-                                        background-color: transparent;
+                                        background-color: $primary-blue;
                                         border: none;
                                         outline: none;
                                         color: #F5F5F5;
+                                        option {
+                                            color: $primary-white;
+                                            background-color: $primary-blue;
+                                        }
                                     }
                                 }
 
@@ -293,6 +297,7 @@
             line-height: 0;
             height: 100%;
             display: block;
+
             img {
                 // position: absolute;
                 right: 104px;
