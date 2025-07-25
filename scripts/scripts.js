@@ -1,7 +1,6 @@
 /* eslint-disable */
 
 import loadFragment from '../blocks/fragment/fragment.js';
-
 import {
   loadHeader,
   loadFooter,
@@ -67,7 +66,7 @@ function autolinkModals(element) {
   element.addEventListener('click', async (e) => {
     const origin = e.target.closest('a');
 
-    if (origin && origin.href && origin.href.includes('/modal/')) {
+    if (origin && origin.href && origin.href.includes('/modals/')) {
       e.preventDefault();
       const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
       openModal(origin.href);
@@ -133,8 +132,9 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
+  autolinkModals(doc)
   const main = doc.querySelector('main');
-  autolinkFragements(doc); // 15 Apr 25
+  autolinkFragements(doc);
   await loadSections(main);
 
   const { hash } = window.location;
