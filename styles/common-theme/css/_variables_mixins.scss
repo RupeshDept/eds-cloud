@@ -46,7 +46,10 @@ $button-secondary: (
 // Neutral colors blue-1-25
 $blue-1: (
   b25: #EDF1FF,
-  b200: #9DADFE
+  b200: #9DADFE,
+  b300: #7986fd,
+  b900: #242177,
+  b500: #4338f3
 );
 
 // body-Color
@@ -196,6 +199,7 @@ $radius: (
   r52: 52px,
   r83: 83px,
   r100: 100px,
+  r50: 50%
 );
 
 // ----------------------------------------
