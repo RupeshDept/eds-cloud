@@ -212,6 +212,13 @@
       {
         "component": "text",
         "valueType": "string",
+        "name": "FundType",
+        "label": "Fund Note",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
         "name": "fundName",
         "label": "Fund Name",
         "value": ""
