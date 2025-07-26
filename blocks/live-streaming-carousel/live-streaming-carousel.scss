@@ -37,7 +37,8 @@
     margin-right: 140px;
 
     @include media(mobile) {
-      margin-right: 115px;
+      // margin-right: 115px;
+      margin-right: 87px;
     }
 
     &-wrapper {
@@ -49,7 +50,7 @@
 
       .swiper-button-next,
       .swiper-button-prev,
-      .swiper-pagination {
+      .custom-pagination {
         top: 0;
         right: 0;
         left: unset;
@@ -64,6 +65,7 @@
           top: unset;
           bottom: 0;
           margin: 0;
+          display: none;
         }
 
         &::after {
@@ -93,33 +95,59 @@
       }
 
       .swiper-button-prev {
-        right: 104px;
-
-        @include media(mobile) {
-          right: 83px;
+        right: 105px;
+      }
+      .swiper-pagination{
+        display: none;
+        &::after{
+          content: unset;
+        }
+        @include media(mobile){
+          display: flex;
+          position: absolute;
+          right: 8px;
+          top: unset;
+          left: unset;
+          bottom: 0;
+          max-width: max-content;
+          height: 2px;
+          border-radius: 10px;
+          background-color: $neutrals-300;
+          &-bullet{
+            background-color: transparent;
+            opacity: unset;
+            margin: 0;
+            height: 2px;
+            border-radius: 10px;
+          }
+          &-bullet-active{
+            background-color: map.get($button-primary, default);
+          }
         }
       }
 
-      .swiper-pagination {
+      .custom-pagination{
+        max-width: max-content;
+        width: unset;
+        height: unset;
+        display: flex;
+        gap: 4px;
+        position: absolute;
         right: 36px;
-        width: max-content;
-
-        @include media(mobile) {
-          right: 25px;
+        &::after{
+          content: unset;
         }
-
-        &,
-        &-current,
-        &-total {
+        @include media(mobile){
+          right: 0;
+          bottom: 8px;
+        }
+        & .current-slide,
+        & .total-slide{
+          margin: 0;
           @include font-style(16px, 20px, $primary-blue, 500, $Poppins);
         }
-
-        &-total {
+        & .total-slide {
           color: map.get($blue-1, b300);
-        }
-
-        &::after {
-          content: unset;
         }
       }
     }
@@ -137,6 +165,7 @@
         align-items: start;
         // max-width: 75.53%;
         width: 100%;
+        gap: 8px;
       }
 
       li:first-of-type {
@@ -145,6 +174,7 @@
         @include media(mobile) {
           font-size: 14px;
           line-height: 20px;
+          padding-right: 9px;
         }
       }
 
